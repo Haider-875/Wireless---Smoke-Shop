@@ -58,6 +58,9 @@ class Product extends Model
             if (file_exists(public_path('assets/images/products/' . $base . '.png'))) {
                 return asset('assets/images/products/' . $base . '.png');
             }
+            if (file_exists(public_path('assets/images/products/' . $base . '.jpg'))) {
+                return asset('assets/images/products/' . $base . '.jpg');
+            }
             if (file_exists(public_path('assets/images/products/' . $this->image))) {
                 return asset('assets/images/products/' . $this->image);
             }

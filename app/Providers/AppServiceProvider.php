@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Enable Bootstrap 5 pagination for cohesive luxury UI styling
+        Paginator::useBootstrapFive();
+
         // Graceful Database Fallback:
         // If MySQL is configured on localhost / 127.0.0.1 but no MySQL daemon is listening (e.g. on Wasmer, cloud container, or headless server)
         // automatically fallback to SQLite so the application never breaks with SQLSTATE[HY000] [2002] Connection refused.

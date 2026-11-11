@@ -42,14 +42,13 @@
                 @endif
             </div>
 
-            <!-- Quick Add to Bag Button -->
+            <!-- Quick Add to Bag Button (100% Round Luxury Circle) -->
             <button type="button" 
-                    class="btn btn-sm btn-bugs-outline rounded-circle p-2 d-inline-flex align-items-center justify-content-center" 
-                    style="width: 36px; height: 36px;"
+                    class="btn btn-bugs-add-bag" 
                     title="Add to Bag"
                     aria-label="Add {{ $product->name }} to bag"
                     data-add-to-cart="{{ $product->id }}">
-                <i class="bi bi-plus-lg fs-6"></i>
+                <i class="bi bi-bag-plus"></i>
             </button>
         </div>
     </div>

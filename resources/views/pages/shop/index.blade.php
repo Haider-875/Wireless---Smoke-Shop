@@ -68,9 +68,11 @@
             @endforeach
         </div>
 
-        <div class="mt-5 d-flex justify-content-center">
-            {{ $products->links() }}
-        </div>
+        @if($products->hasPages())
+            <div class="mt-5 d-flex justify-content-center">
+                {{ $products->links() }}
+            </div>
+        @endif
     @else
         <div class="py-5 text-center my-4">
             <div class="d-flex align-items-center justify-content-center rounded-circle border mx-auto mb-3" style="width: 60px; height: 60px; border-color: var(--bugs-border-light) !important; color: var(--bugs-primary);">

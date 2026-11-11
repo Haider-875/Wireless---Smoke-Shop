@@ -241,6 +241,9 @@ class RefinementAndCompletionTest extends TestCase
             'name' => 'Unit Test Premium Vape',
             'price' => 24.99,
         ]);
+
+        // Clean up test product to keep database pristine
+        Product::where('name', 'Unit Test Premium Vape')->delete();
     }
 
     /**
