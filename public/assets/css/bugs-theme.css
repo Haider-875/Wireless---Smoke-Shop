@@ -154,6 +154,84 @@ body {
   color: #fff !important;
 }
 
+/* Shelves Aisle Cards — Exact Reference Clone (No Blue Font) */
+.bugs-aisle-card {
+  position: relative;
+  min-height: 195px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 1rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  background-color: var(--bugs-card) !important;
+  padding: 1.25rem !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: border-color 0.4s ease, background-color 0.4s ease, transform 0.3s ease !important;
+}
+
+.bugs-aisle-card:hover {
+  border-color: rgba(184, 151, 102, 0.45) !important;
+  background-color: #111112 !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.bugs-aisle-card .bugs-aisle-num {
+  font-family: var(--bugs-font-mono);
+  font-size: 11px;
+  color: var(--bugs-fg-muted) !important;
+  position: relative;
+  z-index: 2;
+}
+
+.bugs-aisle-card .bugs-aisle-title {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #f2f2f2 !important;
+  margin-bottom: 0.35rem;
+  transition: color 0.2s ease;
+}
+
+.bugs-aisle-card .bugs-aisle-desc {
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--bugs-fg-muted) !important;
+  margin-bottom: 0;
+}
+
+.bugs-aisle-card .bugs-aisle-browse {
+  margin-top: 1rem;
+  font-size: 12px;
+  color: var(--bugs-primary) !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(2px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.bugs-aisle-card:hover .bugs-aisle-browse {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bugs-aisle-card .glow-gold {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.bugs-aisle-card:hover .glow-gold {
+  opacity: 1;
+}
+
 /* Sticky Navbar Glassmorphism */
 .bugs-navbar-scroll {
   background: rgba(10, 10, 11, 0.45);

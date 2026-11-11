@@ -98,42 +98,49 @@
     </div>
 </div>
 
-<!-- Section 2: Five Aisles, One Counter -->
-<section class="py-5 py-lg-5">
-    <div class="container-fluid px-3 px-lg-5 py-4" style="max-width: 1400px;">
-        <div class="row align-items-end mb-4 pb-2">
-            <div class="col-lg-6">
-                <p class="eyebrow mb-2" style="color: var(--bugs-primary)">What's on the shelves</p>
-                <h2 class="bugs-section-title text-white mb-2">
-                    Five aisles, one <span class="font-serif-display">counter</span>.
+<!-- Section 2: Five Aisles, One Counter — Exact Reference Clone (No Blue Font) -->
+<section id="shelves" class="py-5 py-lg-5">
+    <div class="container-fluid px-3 px-lg-5 py-4 py-lg-5" style="max-width: 1400px;">
+        <div class="row align-items-end justify-content-between g-4 mb-4 mb-lg-5">
+            <div class="col-lg-7">
+                <p class="eyebrow mb-2" style="color: var(--bugs-primary) !important;">What's on the shelves</p>
+                <h2 class="text-white fw-semibold mb-0" style="font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.02em;">
+                    Five aisles, one<span class="font-serif-display fw-normal" style="color: var(--bugs-primary) !important;"> counter</span>.
                 </h2>
-                <p class="text-secondary small mb-0">
+            </div>
+            <div class="col-lg-5 col-xl-4">
+                <p class="text-secondary small mb-0" style="font-size: 0.875rem; line-height: 1.6;">
                     Everything in the store is stocked online too. Reserve for pickup or have it delivered across the neighbourhood.
                 </p>
             </div>
-            <div class="col-lg-6 text-lg-end mt-3 mt-lg-0">
-                <a href="{{ route('shop.index') }}" class="btn btn-bugs-outline btn-bugs-pill-sm gap-2">
-                    Browse All Aisles <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
         </div>
 
-        <div class="row g-3 g-md-4">
-            @foreach($categories as $index => $cat)
-                <div class="col-6 col-md-4 col-lg">
-                    <a href="{{ route('shop.index', ['category' => $cat->slug]) }}" class="bugs-service-card text-decoration-none h-100 d-flex flex-column p-3 p-md-4">
-                        <div class="ratio ratio-1x1 rounded-3 overflow-hidden mb-3" style="background-color: #0d0d0f;">
-                            <img src="{{ asset('assets/images/categories/' . $cat->image) }}" 
-                                 alt="{{ $cat->name }}" 
-                                 loading="lazy"
-                                 class="w-100 h-100 object-fit-cover transition-transform duration-300">
+        <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-5">
+            @php
+                $aisles = [
+                    ['slug' => 'vapes', 'name' => 'Vapes', 'desc' => 'Disposables, pods and rechargeables'],
+                    ['slug' => 'e-liquids', 'name' => 'E-Liquids', 'desc' => 'Nic salts and freebase, 0–50mg'],
+                    ['slug' => 'glass-pipes', 'name' => 'Glass & Pipes', 'desc' => 'Beakers, spoons and hand-blown pieces'],
+                    ['slug' => 'hookah', 'name' => 'Hookah', 'desc' => 'Stems, hoses, bowls and shisha'],
+                    ['slug' => 'phone-accessories', 'name' => 'Phone Accessories', 'desc' => 'Cases, glass, audio and power'],
+                ];
+            @endphp
+            @foreach($aisles as $index => $aisle)
+                <div class="col">
+                    <a href="{{ route('shop.index', ['category' => $aisle['slug']]) }}" class="bugs-aisle-card h-100">
+                        <div class="glow-gold"></div>
+                        <span class="bugs-aisle-num">0{{ $index + 1 }}</span>
+                        <div class="position-relative" style="z-index: 2;">
+                            <h3 class="bugs-aisle-title">{{ $aisle['name'] }}</h3>
+                            <p class="bugs-aisle-desc">{{ $aisle['desc'] }}</p>
+                            <span class="bugs-aisle-browse">
+                                Browse 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 7h10v10"></path>
+                                    <path d="M7 17 17 7"></path>
+                                </svg>
+                            </span>
                         </div>
-                        <p class="num text-primary mb-1 small" style="font-size: 0.75rem;">0{{ $index + 1 }}</p>
-                        <h3 class="fs-6 fw-semibold text-white mb-1">{{ $cat->name }}</h3>
-                        <p class="text-secondary small mb-3 flex-grow-1" style="font-size: 0.75rem;">{{ $cat->description }}</p>
-                        <span class="small text-primary d-inline-flex align-items-center gap-1 mt-auto">
-                            Browse <i class="bi bi-arrow-right"></i>
-                        </span>
                     </a>
                 </div>
             @endforeach
