@@ -79,21 +79,35 @@
 </section>
 
 <!-- Reference Marquee Strip -->
-<div class="overflow-hidden border-bottom py-3" style="background-color: #0c0c0e; border-color: var(--bugs-border) !important;">
-    <div class="d-flex w-100 overflow-x-hidden" style="white-space: nowrap;">
-        <div class="d-flex align-items-center gap-4 text-secondary small eyebrow" style="font-size: 0.72rem; letter-spacing: 0.1em; animation: marquee 35s linear infinite;">
-            <span>Same-day screen repair</span> &bull;
-            <span>21+ age verified</span> &bull;
-            <span>Walk-ins welcome</span> &bull;
-            <span>Free local delivery over $50</span> &bull;
-            <span>Clean glass guaranteed</span> &bull;
-            <span>Direct carrier unlocking</span> &bull;
-            <span>Same-day screen repair</span> &bull;
-            <span>21+ age verified</span> &bull;
-            <span>Walk-ins welcome</span> &bull;
-            <span>Free local delivery over $50</span> &bull;
-            <span>Clean glass guaranteed</span> &bull;
+<div class="bugs-marquee-wrapper border-bottom py-3" style="background-color: #0c0c0e; border-color: var(--bugs-border) !important;">
+    <div class="bugs-marquee-track">
+        <div class="bugs-marquee-content">
+            <span>Same-day screen repair</span>
+            <span class="bugs-marquee-dot"></span>
+            <span>21+ age verified</span>
+            <span class="bugs-marquee-dot"></span>
+            <span>Walk-ins welcome</span>
+            <span class="bugs-marquee-dot"></span>
+            <span>Free local delivery over $50</span>
+            <span class="bugs-marquee-dot"></span>
+            <span>Clean glass guaranteed</span>
+            <span class="bugs-marquee-dot"></span>
             <span>Direct carrier unlocking</span>
+            <span class="bugs-marquee-dot"></span>
+        </div>
+        <div class="bugs-marquee-content" aria-hidden="true">
+            <span>Same-day screen repair</span>
+            <span class="bugs-marquee-dot"></span>
+            <span>21+ age verified</span>
+            <span class="bugs-marquee-dot"></span>
+            <span>Walk-ins welcome</span>
+            <span class="bugs-marquee-dot"></span>
+            <span>Free local delivery over $50</span>
+            <span class="bugs-marquee-dot"></span>
+            <span>Clean glass guaranteed</span>
+            <span class="bugs-marquee-dot"></span>
+            <span>Direct carrier unlocking</span>
+            <span class="bugs-marquee-dot"></span>
         </div>
     </div>
 </div>

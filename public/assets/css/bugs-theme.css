@@ -90,6 +90,62 @@ body {
   letter-spacing: -0.015em;
 }
 
+/* Continuous Seamless Marquee Strip */
+.bugs-marquee-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  user-select: none;
+}
+
+.bugs-marquee-track {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  animation: bugsMarqueeAnimation 30s linear infinite;
+  will-change: transform;
+}
+
+.bugs-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.bugs-marquee-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.bugs-marquee-content span {
+  font-family: var(--bugs-font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--bugs-fg-muted);
+  white-space: nowrap;
+}
+
+.bugs-marquee-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--bugs-primary);
+  display: inline-block;
+  opacity: 0.85;
+}
+
+@keyframes bugsMarqueeAnimation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Announcement Bar — Exact Reference Color Match (hsl(39, 42%, 56%) / #b89766) */
 .bugs-announcement,
 .bugs-announcement-bar {
