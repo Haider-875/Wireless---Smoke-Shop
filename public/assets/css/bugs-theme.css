@@ -304,6 +304,13 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+@media (min-width: 992px) {
+  .bugs-navbar-left,
+  .bugs-navbar-right {
+    flex: 1 1 0%;
+  }
+}
+
 .bugs-nav-link {
   color: var(--bugs-fg-muted);
   font-size: 0.85rem;

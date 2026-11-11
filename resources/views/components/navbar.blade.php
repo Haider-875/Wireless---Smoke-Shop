@@ -1,18 +1,20 @@
 <header class="sticky-top z-3">
     @include('components.announcement-bar')
     <nav class="navbar navbar-expand-lg bugs-navbar-scroll py-3">
-        <div class="container-fluid px-3 px-lg-5">
-            <!-- Brand Logo -->
-            <a class="navbar-brand d-flex align-items-center gap-3 text-white text-decoration-none me-4" href="{{ route('home') }}">
-                <span class="fs-4 fw-bold font-display">BUGS<span style="color: var(--bugs-primary)">.</span></span>
-                <span class="eyebrow d-none d-sm-block text-secondary leading-tight" style="font-size: 0.65rem;">
-                    Wireless &<br>Smoke Shop
-                </span>
-            </a>
+        <div class="container-fluid px-3 px-lg-5 d-flex align-items-center justify-content-between">
+            <!-- Left: Brand Logo -->
+            <div class="bugs-navbar-left d-flex align-items-center">
+                <a class="navbar-brand d-flex align-items-center gap-3 text-white text-decoration-none m-0" href="{{ route('home') }}">
+                    <span class="fs-4 fw-bold font-display">BUGS<span style="color: var(--bugs-primary)">.</span></span>
+                    <span class="eyebrow d-none d-sm-block text-secondary leading-tight" style="font-size: 0.65rem;">
+                        Wireless &<br>Smoke Shop
+                    </span>
+                </a>
+            </div>
 
-            <!-- Desktop Navigation Links -->
-            <div class="collapse navbar-collapse d-none d-lg-block" id="desktopNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3 gap-xl-4">
+            <!-- Center: Desktop Navigation Links (Center-Aligned) -->
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-center flex-grow-1" id="desktopNav">
+                <ul class="navbar-nav mx-auto mb-0 gap-3 gap-xl-4 align-items-center justify-content-center">
                     <li class="nav-item">
                         <a class="bugs-nav-link {{ request()->routeIs('shop.index') && !request('category') ? 'active' : '' }}" href="{{ route('shop.index') }}">Shop all</a>
                     </li>
@@ -34,25 +36,8 @@
                 </ul>
             </div>
 
-            <!-- Right CTA Actions -->
-            <div class="d-flex align-items-center gap-2 ms-auto">
-                <!-- Search Field (Desktop) -->
-                <form action="{{ route('shop.index') }}" method="GET" class="d-none d-lg-block position-relative me-1" style="width: 220px;">
-                    <span class="bugs-search-icon" style="left: 0.95rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.3-4.3"></path>
-                        </svg>
-                    </span>
-                    <input type="text" 
-                           name="search" 
-                           value="{{ request('search') }}" 
-                           placeholder="Search the shelves" 
-                           aria-label="Search products" 
-                           class="bugs-search-input py-1 ps-4 pe-3" 
-                           style="font-size: 0.8rem !important; height: 38px;">
-                </form>
-
+            <!-- Right: Actions (Phone, Cart, Mobile Toggle) -->
+            <div class="bugs-navbar-right d-flex align-items-center justify-content-end gap-2">
                 <!-- Phone Button -->
                 <a href="tel:+13144412851" class="btn btn-bugs-outline d-none d-xl-inline-flex align-items-center gap-2 py-2 px-3 fs-6">
                     <i class="bi bi-telephone text-secondary"></i>
@@ -82,22 +67,6 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body d-flex flex-column p-4">
-        <!-- Mobile Search Field -->
-        <form action="{{ route('shop.index') }}" method="GET" class="bugs-search-container mb-4">
-            <span class="bugs-search-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.3-4.3"></path>
-                </svg>
-            </span>
-            <input type="text" 
-                   name="search" 
-                   value="{{ request('search') }}" 
-                   placeholder="Search the shelves" 
-                   aria-label="Search products" 
-                   class="bugs-search-input py-2 ps-5 pe-3 small">
-        </form>
-
         <ul class="nav flex-column gap-3 mb-4">
             <li class="nav-item">
                 <a class="bugs-nav-link fs-5 {{ request()->routeIs('shop.index') && !request('category') ? 'active text-white' : '' }}" href="{{ route('shop.index') }}">Shop all</a>
