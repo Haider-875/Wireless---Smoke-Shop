@@ -21,3 +21,4 @@ class EnsureAdmin
         return $next($request);
     }
 }
+

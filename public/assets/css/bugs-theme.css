@@ -90,13 +90,68 @@ body {
   letter-spacing: -0.015em;
 }
 
-/* Announcement Bar */
+/* Announcement Bar — Exact Reference Color Match (hsl(39, 42%, 56%) / #b89766) */
+.bugs-announcement,
 .bugs-announcement-bar {
-  background-color: var(--bugs-primary);
-  color: var(--bugs-primary-fg);
+  background-color: var(--bugs-primary) !important;
+  color: var(--bugs-primary-fg) !important;
   font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+}
+
+.bugs-announcement .eyebrow,
+.bugs-announcement-bar .eyebrow {
+  color: var(--bugs-primary-fg) !important;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Reference Exact Search Field */
+.bugs-search-container {
+  position: relative;
+  width: 100%;
+}
+
+.bugs-search-icon {
+  position: absolute;
+  left: 1.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--bugs-fg-muted);
+  pointer-events: none;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.bugs-search-input {
+  width: 100%;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background-color: var(--bugs-card) !important;
+  padding: 0.75rem 1.15rem 0.75rem 2.85rem !important;
+  font-size: 0.875rem !important;
+  color: var(--bugs-fg) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+}
+
+.bugs-search-input::placeholder {
+  color: var(--bugs-fg-muted) !important;
+  opacity: 0.85;
+}
+
+.bugs-search-input:focus {
+  border-color: rgba(184, 151, 102, 0.6) !important;
+  box-shadow: 0 0 0 1px rgba(184, 151, 102, 0.3) !important;
+  background-color: var(--bugs-card) !important;
+  color: #fff !important;
 }
 
 /* Sticky Navbar Glassmorphism */

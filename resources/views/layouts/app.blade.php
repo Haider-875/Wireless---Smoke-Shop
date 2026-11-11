@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="theme-color" content="#0a0a0b">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/logo.png') }}">
     <title>@yield('title', 'Bugs Wireless & Smoke Shop — St. Louis, MO')</title>
 
     <!-- Google Fonts -->

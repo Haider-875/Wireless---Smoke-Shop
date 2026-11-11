@@ -15,26 +15,29 @@
                 Reserve online for same-day store pickup or local St. Louis delivery. 21+ ID required.
             </p>
         </div>
-        <div class="col-lg-6 mt-4 mt-lg-0">
-            <!-- Search Form -->
-            <form action="{{ route('shop.index') }}" method="GET" class="d-flex gap-2">
+        <div class="col-lg-6 mt-4 mt-lg-0 d-flex justify-content-lg-end">
+            <!-- Search Form — Exact Reference Design -->
+            <form action="{{ route('shop.index') }}" method="GET" class="bugs-search-container" style="max-width: 420px;">
                 @if(request('category'))
                     <input type="hidden" name="category" value="{{ request('category') }}">
                 @endif
-                <div class="input-group">
-                    <span class="input-group-text bg-dark border-secondary text-secondary">
-                        <i class="bi bi-search"></i>
-                    </span>
-                    <input type="text" 
-                           name="search" 
-                           value="{{ request('search') }}" 
-                           class="form-control bg-dark text-white border-secondary" 
-                           placeholder="Search vapes, glass, chargers, e-liquids...">
-                </div>
-                <button type="submit" class="btn btn-bugs-primary px-3">Search</button>
+                <span class="bugs-search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                </span>
+                <input type="text" 
+                       name="search" 
+                       value="{{ request('search') }}" 
+                       placeholder="Search the shelves" 
+                       aria-label="Search products" 
+                       class="bugs-search-input">
                 @if(request('search'))
-                    <a href="{{ route('shop.index', request('category') ? ['category' => request('category')] : []) }}" class="btn btn-bugs-outline px-3" title="Clear Search">
-                        <i class="bi bi-x-lg"></i>
+                    <a href="{{ route('shop.index', request('category') ? ['category' => request('category')] : []) }}" 
+                       class="position-absolute end-0 top-50 translate-middle-y me-3 text-secondary text-decoration-none" 
+                       title="Clear Search" style="z-index: 3;">
+                        <i class="bi bi-x-circle-fill"></i>
                     </a>
                 @endif
             </form>
@@ -82,3 +85,4 @@
     @endif
 </div>
 @endsection
+

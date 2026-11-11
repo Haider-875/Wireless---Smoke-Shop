@@ -36,6 +36,23 @@
 
             <!-- Right CTA Actions -->
             <div class="d-flex align-items-center gap-2 ms-auto">
+                <!-- Search Field (Desktop) -->
+                <form action="{{ route('shop.index') }}" method="GET" class="d-none d-lg-block position-relative me-1" style="width: 220px;">
+                    <span class="bugs-search-icon" style="left: 0.95rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </svg>
+                    </span>
+                    <input type="text" 
+                           name="search" 
+                           value="{{ request('search') }}" 
+                           placeholder="Search the shelves" 
+                           aria-label="Search products" 
+                           class="bugs-search-input py-1 ps-4 pe-3" 
+                           style="font-size: 0.8rem !important; height: 38px;">
+                </form>
+
                 <!-- Phone Button -->
                 <a href="tel:+13144412851" class="btn btn-bugs-outline d-none d-xl-inline-flex align-items-center gap-2 py-2 px-3 fs-6">
                     <i class="bi bi-telephone text-secondary"></i>
@@ -65,6 +82,22 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body d-flex flex-column p-4">
+        <!-- Mobile Search Field -->
+        <form action="{{ route('shop.index') }}" method="GET" class="bugs-search-container mb-4">
+            <span class="bugs-search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                </svg>
+            </span>
+            <input type="text" 
+                   name="search" 
+                   value="{{ request('search') }}" 
+                   placeholder="Search the shelves" 
+                   aria-label="Search products" 
+                   class="bugs-search-input py-2 ps-5 pe-3 small">
+        </form>
+
         <ul class="nav flex-column gap-3 mb-4">
             <li class="nav-item">
                 <a class="bugs-nav-link fs-5 {{ request()->routeIs('shop.index') && !request('category') ? 'active text-white' : '' }}" href="{{ route('shop.index') }}">Shop all</a>

@@ -144,7 +144,6 @@ class CartController extends Controller
         $cart = $request->session()->get('bugs_cart', []);
         $identifier = $validated['product_id'];
 
-        // Find by id directly or through slug
         $targetId = null;
         if (isset($cart[$identifier])) {
             $targetId = $identifier;

@@ -189,7 +189,7 @@ class RefinementAndCompletionTest extends TestCase
     public function test_admin_dashboard_redirects_unauthenticated(): void
     {
         $response = $this->get(route('admin.dashboard'));
-        $response->assertRedirect(route('admin.login'));
+        $response->assertRedirect(route('login'));
     }
 
     /**

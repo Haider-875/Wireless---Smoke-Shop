@@ -53,10 +53,21 @@ class Product extends Model
             return $this->image;
         }
 
-        if ($this->image && file_exists(public_path('assets/images/products/' . $this->image))) {
-            return asset('assets/images/products/' . $this->image);
+        if ($this->image) {
+            $base = pathinfo($this->image, PATHINFO_FILENAME);
+            if (file_exists(public_path('assets/images/products/' . $base . '.png'))) {
+                return asset('assets/images/products/' . $base . '.png');
+            }
+            if (file_exists(public_path('assets/images/products/' . $this->image))) {
+                return asset('assets/images/products/' . $this->image);
+            }
+        }
+
+        if (file_exists(public_path('assets/images/products/vape-midnight-ice.png'))) {
+            return asset('assets/images/products/vape-midnight-ice.png');
         }
 
         return asset('assets/images/products/vape-midnight-ice.jpg');
     }
 }
+

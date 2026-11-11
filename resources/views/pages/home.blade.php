@@ -7,17 +7,21 @@
 <section class="position-relative overflow-hidden border-bottom py-5 py-lg-5" style="border-color: var(--bugs-border) !important;">
     <div class="glow-gold" style="top: 0; right: -120px; width: 480px; height: 480px;"></div>
     <div class="container-fluid px-3 px-lg-5 py-4 py-lg-5" style="max-width: 1400px;">
-        <div class="row align-items-center g-4">
-            <div class="col-lg-7 col-xl-8">
-                <p class="eyebrow mb-3 d-inline-flex align-items-center gap-1" style="color: var(--bugs-primary)">
-                    <i class="bi bi-geo-alt-fill"></i> Halls Ferry · St. Louis
+        <div class="row align-items-center g-5 py-lg-3">
+            <div class="col-lg-6 col-xl-6">
+                <p class="eyebrow mb-3 d-inline-flex align-items-center gap-2" style="color: var(--bugs-primary)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Halls Ferry · St. Louis
                 </p>
                 <h1 class="bugs-hero-title text-white">
                     Your smoke shop<br>
                     <span class="font-serif-display">&amp; phone doctor</span><br>
                     on Halls Ferry.
                 </h1>
-                <p class="text-secondary fs-5 mt-4 leading-relaxed" style="max-width: 600px; font-size: 1.05rem !important;">
+                <p class="text-secondary fs-5 mt-4 leading-relaxed" style="max-width: 540px; font-size: 1.05rem !important;">
                     Disposables, nic salts, hand-blown glass and hookah on one side. Screen repair, batteries and carrier activation on the other. Same counter, same afternoon.
                 </p>
                 <div class="d-flex flex-wrap align-items-center gap-3 mt-4 pt-2">
@@ -28,39 +32,71 @@
                         Fix my phone
                     </a>
                 </div>
+
+                <!-- Reference Exact Stats Row -->
+                <div class="row g-4 mt-4 pt-4 border-top" style="border-color: var(--bugs-border) !important; max-width: 480px;">
+                    <div class="col-4">
+                        <div class="num text-white fs-4 fw-bold">30 min</div>
+                        <div class="text-secondary small mt-1" style="font-size: 0.75rem;">Most screen repairs</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="num text-white fs-4 fw-bold">21+</div>
+                        <div class="text-secondary small mt-1" style="font-size: 0.75rem;">ID checked in store</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="num text-white fs-4 fw-bold">7 days</div>
+                        <div class="text-secondary small mt-1" style="font-size: 0.75rem;">Open 10 – 8 daily</div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Hero Stats Box -->
-            <div class="col-lg-5 col-xl-4">
-                <div class="p-4 rounded-4 border" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
-                    <div class="row g-3 text-center border-bottom pb-4 mb-3" style="border-color: var(--bugs-border) !important;">
-                        <div class="col-4">
-                            <span class="num text-primary fs-3 fw-bold d-block">30m</span>
-                            <span class="text-secondary small" style="font-size: 0.75rem;">Screen repairs</span>
-                        </div>
-                        <div class="col-4 border-start border-end" style="border-color: var(--bugs-border) !important;">
-                            <span class="num text-primary fs-3 fw-bold d-block">21+</span>
-                            <span class="text-secondary small" style="font-size: 0.75rem;">ID required</span>
-                        </div>
-                        <div class="col-4">
-                            <span class="num text-primary fs-3 fw-bold d-block">7d</span>
-                            <span class="text-secondary small" style="font-size: 0.75rem;">Open 10 – 8</span>
-                        </div>
+            <!-- Reference Exact Hero Image with Floating Desk Card -->
+            <div class="col-lg-6 col-xl-6 position-relative mt-5 mt-lg-0 pb-4 pb-sm-0">
+                <div class="overflow-hidden border position-relative" style="background-color: var(--bugs-card); border-color: rgba(255, 255, 255, 0.08) !important; border-radius: 28px;">
+                    <div class="ratio ratio-4x3" style="min-height: 380px;">
+                        <img src="{{ asset('assets/images/lifestyle/hero-display.png') }}" 
+                             alt="Bugs Wireless and Smoke Shop Store Counter" 
+                             class="w-100 h-100 object-fit-cover">
                     </div>
-                    <div class="d-flex align-items-start gap-3 pt-1">
-                        <div class="d-flex align-items-center justify-content-center rounded-circle border flex-shrink-0" style="width: 40px; height: 40px; border-color: var(--bugs-border-light) !important; color: var(--bugs-primary);">
-                            <i class="bi bi-tools fs-6"></i>
-                        </div>
+                    <div class="position-absolute w-100 h-100 top-0 start-0 pointer-events-none" style="background: linear-gradient(to top, rgba(10, 10, 11, 0.75) 0%, transparent 60%);"></div>
+                </div>
+
+                <!-- Overlaid Floating Repair Desk Card -->
+                <div class="position-absolute p-3 rounded-4 border" style="bottom: -15px; left: 24px; right: 24px; background: rgba(10, 10, 11, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-color: rgba(255, 255, 255, 0.12) !important; z-index: 2;">
+                    <div class="d-flex align-items-center justify-content-between gap-3">
                         <div>
-                            <p class="eyebrow text-secondary mb-1" style="font-size: 0.65rem;">Walk-in repair desk</p>
-                            <p class="text-white small mb-0">Cracked screen? Bring it in — free quote, no appointment.</p>
+                            <p class="eyebrow text-primary mb-1" style="font-size: 0.7rem;">Walk-in repair desk</p>
+                            <p class="text-white small mb-0" style="font-size: 0.85rem;">Cracked screen? Bring it in — free quote, no appointment.</p>
                         </div>
+                        <a href="tel:+13144412851" aria-label="Call the shop" class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 44px; height: 44px; background-color: var(--bugs-primary); color: var(--bugs-primary-fg); transition: transform 0.2s ease;">
+                            <i class="bi bi-arrow-up-right fs-5"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Reference Marquee Strip -->
+<div class="overflow-hidden border-bottom py-3" style="background-color: #0c0c0e; border-color: var(--bugs-border) !important;">
+    <div class="d-flex w-100 overflow-x-hidden" style="white-space: nowrap;">
+        <div class="d-flex align-items-center gap-4 text-secondary small eyebrow" style="font-size: 0.72rem; letter-spacing: 0.1em; animation: marquee 35s linear infinite;">
+            <span>Same-day screen repair</span> &bull;
+            <span>21+ age verified</span> &bull;
+            <span>Walk-ins welcome</span> &bull;
+            <span>Free local delivery over $50</span> &bull;
+            <span>Clean glass guaranteed</span> &bull;
+            <span>Direct carrier unlocking</span> &bull;
+            <span>Same-day screen repair</span> &bull;
+            <span>21+ age verified</span> &bull;
+            <span>Walk-ins welcome</span> &bull;
+            <span>Free local delivery over $50</span> &bull;
+            <span>Clean glass guaranteed</span> &bull;
+            <span>Direct carrier unlocking</span>
+        </div>
+    </div>
+</div>
 
 <!-- Section 2: Five Aisles, One Counter -->
 <section class="py-5 py-lg-5">
@@ -138,7 +174,7 @@
             <div class="col-lg-5">
                 <div class="rounded-4 overflow-hidden border position-relative" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
                     <div class="ratio ratio-4x3">
-                        <img src="{{ asset('assets/images/lifestyle/repair-bench.jpg') }}" 
+                        <img src="{{ asset('assets/images/lifestyle/repair-bench.png') }}" 
                              alt="Phone Repair Workbench at Bugs Wireless" 
                              loading="lazy"
                              class="w-100 h-100 object-fit-cover">
@@ -281,7 +317,7 @@
             <!-- Right: Retail Store Counter Photo -->
             <div class="col-lg-6">
                 <div class="rounded-4 overflow-hidden border ratio ratio-4x3" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
-                    <img src="{{ asset('assets/images/lifestyle/store-counter.jpg') }}" 
+                    <img src="{{ asset('assets/images/lifestyle/store-counter.png') }}" 
                          alt="Inside Bugs Wireless and Smoke Shop Store Counter" 
                          loading="lazy"
                          class="w-100 h-100 object-fit-cover">
