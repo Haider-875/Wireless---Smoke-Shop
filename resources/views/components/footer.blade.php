@@ -1,5 +1,5 @@
 <footer class="border-top py-5 mt-auto" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-card-alt);">
-    <div class="container-fluid px-3 px-lg-5">
+    <div class="container-fluid px-3 px-lg-5" style="max-width: 1400px;">
         <div class="row g-4 justify-content-between">
             <!-- Brand & Location Details -->
             <div class="col-lg-4">
@@ -31,11 +31,11 @@
             <div class="col-6 col-md-3 col-lg-2">
                 <p class="eyebrow text-secondary mb-3">Shop</p>
                 <ul class="list-unstyled d-flex flex-column gap-2 small">
-                    <li><a href="{{ route('home') }}" class="text-secondary text-decoration-none hover-white">Vapes</a></li>
-                    <li><a href="{{ route('home') }}" class="text-secondary text-decoration-none hover-white">E-Liquids</a></li>
-                    <li><a href="{{ route('home') }}" class="text-secondary text-decoration-none hover-white">Glass &amp; Pipes</a></li>
-                    <li><a href="{{ route('home') }}" class="text-secondary text-decoration-none hover-white">Hookah</a></li>
-                    <li><a href="{{ route('home') }}" class="text-secondary text-decoration-none hover-white">Phone Accessories</a></li>
+                    <li><a href="{{ route('shop.index', ['category' => 'vapes']) }}" class="text-secondary text-decoration-none hover-white">Vapes</a></li>
+                    <li><a href="{{ route('shop.index', ['category' => 'e-liquids']) }}" class="text-secondary text-decoration-none hover-white">E-Liquids</a></li>
+                    <li><a href="{{ route('shop.index', ['category' => 'glass-pipes']) }}" class="text-secondary text-decoration-none hover-white">Glass &amp; Pipes</a></li>
+                    <li><a href="{{ route('shop.index', ['category' => 'hookah']) }}" class="text-secondary text-decoration-none hover-white">Hookah</a></li>
+                    <li><a href="{{ route('shop.index', ['category' => 'phone-accessories']) }}" class="text-secondary text-decoration-none hover-white">Phone Accessories</a></li>
                 </ul>
             </div>
 
@@ -55,9 +55,13 @@
             <div class="col-lg-4 text-lg-end">
                 <p class="eyebrow text-secondary mb-2">Age Verification &amp; Legal</p>
                 <p class="text-secondary small leading-relaxed">
-                    21+ Only. Valid government-issued photo ID required for all tobacco, vapor, and nicotine purchases in store and upon delivery.
+                    21+ Only. Valid government-issued photo ID required for all tobacco, vapor, and nicotine purchases in store and upon pickup or delivery.
                 </p>
-                <p class="text-secondary small mt-4 mb-0">&copy; {{ date('Y') }} Bugs Wireless &amp; Smoke Shop. All rights reserved.</p>
+                <p class="text-secondary small mt-3 mb-0">
+                    <a href="{{ route('orders.lookup') }}" class="text-secondary text-decoration-none hover-white me-3">Track Order</a>
+                    <a href="{{ route('admin.login') }}" class="text-secondary text-decoration-none hover-white">Staff Login</a>
+                </p>
+                <p class="text-secondary small mt-3 mb-0">&copy; {{ date('Y') }} Bugs Wireless &amp; Smoke Shop. All rights reserved.</p>
             </div>
         </div>
     </div>

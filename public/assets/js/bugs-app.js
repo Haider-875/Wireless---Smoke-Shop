@@ -1,10 +1,10 @@
 /**
- * BUGS Wireless & Smoke Shop - Vanilla JavaScript Utilities & Interactive Logic
- * Reference: https://fanatic-luxe-mart-go.base44.app/repairs
+ * BUGS Wireless & Smoke Shop - Frontend Application Logic
+ * Integrates Laravel Session Cart API, 21+ Age Gate, and Dynamic Glassmorphic Navbar
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Dynamic Sticky Navbar Glassmorphism Scroll Effect
+    // 1. Dynamic Sticky Navbar Glassmorphism
     const navbar = document.querySelector('.bugs-navbar-scroll');
     if (navbar) {
         const handleScroll = () => {
@@ -49,89 +49,286 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 3. Simple Client-Side Bag / Cart Drawer Manager
-    const cartState = {
+    // 3. Centralized Laravel-Backed Cart Client
+    const getCsrfToken = () => {
+        const meta = document.querySelector('meta[name="csrf-token"]');
+        return meta ? meta.getAttribute('content') : '';
+    };
+
+    const bugsCart = {
+        isLoading: false,
         items: [],
-        addItem(item) {
-            const existing = this.items.find(i => i.id === item.id);
-            if (existing) {
-                existing.quantity += item.quantity || 1;
-            } else {
-                this.items.push({ ...item, quantity: item.quantity || 1 });
+        count: 0,
+        subtotal: 0,
+        formatted_subtotal: '$0.00',
+
+        async fetchCart() {
+            try {
+                const response = await fetch('/api/cart', {
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    this.updateState(data);
+                }
+            } catch (err) {
+                console.warn('Could not load cart:', err);
             }
+        },
+
+        async add(productId, quantity = 1, openDrawer = true) {
+            if (this.isLoading) return;
+            this.setLoading(true);
+
+            try {
+                const response = await fetch('/api/cart/add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': getCsrfToken(),
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: JSON.stringify({
+                        product_id: parseInt(productId, 10),
+                        quantity: parseInt(quantity, 10) || 1
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    this.updateState(data);
+                    if (openDrawer) {
+                        this.openDrawer();
+                    }
+                } else {
+                    const err = await response.json();
+                    alert(err.message || 'Unable to add item to bag.');
+                }
+            } catch (err) {
+                console.error('Error adding to cart:', err);
+                alert('Network error while adding to bag.');
+            } finally {
+                this.setLoading(false);
+            }
+        },
+
+        async update(productId, quantity) {
+            if (this.isLoading) return;
+            this.setLoading(true);
+
+            try {
+                const response = await fetch('/api/cart/update', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': getCsrfToken(),
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: JSON.stringify({
+                        product_id: parseInt(productId, 10),
+                        quantity: parseInt(quantity, 10)
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    this.updateState(data);
+                }
+            } catch (err) {
+                console.error('Error updating quantity:', err);
+            } finally {
+                this.setLoading(false);
+            }
+        },
+
+        async remove(productId) {
+            if (this.isLoading) return;
+            this.setLoading(true);
+
+            try {
+                const response = await fetch('/api/cart/remove', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': getCsrfToken(),
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: JSON.stringify({
+                        product_id: parseInt(productId, 10)
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    this.updateState(data);
+                }
+            } catch (err) {
+                console.error('Error removing product:', err);
+            } finally {
+                this.setLoading(false);
+            }
+        },
+
+        async clear() {
+            if (this.isLoading) return;
+            if (!confirm('Are you sure you want to empty your bag?')) return;
+            this.setLoading(true);
+
+            try {
+                const response = await fetch('/api/cart/clear', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': getCsrfToken(),
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    this.updateState(data);
+                }
+            } catch (err) {
+                console.error('Error emptying cart:', err);
+            } finally {
+                this.setLoading(false);
+            }
+        },
+
+        updateState(data) {
+            this.items = data.items || [];
+            this.count = data.count || 0;
+            this.subtotal = data.subtotal || 0;
+            this.formatted_subtotal = data.formatted_subtotal || '$0.00';
             this.render();
         },
-        removeItem(id) {
-            this.items = this.items.filter(i => i.id !== id);
-            this.render();
-        },
-        clear() {
-            this.items = [];
-            this.render();
-        },
-        get count() {
-            return this.items.reduce((sum, item) => sum + item.quantity, 0);
-        },
-        get subtotal() {
-            return this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        },
-        render() {
-            const badge = document.getElementById('navCartCount');
-            const drawerBadge = document.getElementById('cartItemBadge');
-            const emptyState = document.getElementById('cartEmptyState');
+
+        setLoading(loading) {
+            this.isLoading = loading;
+            const spinner = document.getElementById('cartLoadingState');
             const itemsList = document.getElementById('cartItemsList');
+            const emptyState = document.getElementById('cartEmptyState');
+
+            if (spinner) {
+                if (loading) {
+                    spinner.classList.remove('d-none');
+                    if (itemsList) itemsList.classList.add('d-none');
+                    if (emptyState) emptyState.classList.add('d-none');
+                } else {
+                    spinner.classList.add('d-none');
+                }
+            }
+        },
+
+        openDrawer() {
+            const drawerEl = document.getElementById('bugsCartOffcanvas');
+            if (drawerEl && typeof bootstrap !== 'undefined') {
+                const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(drawerEl);
+                bsOffcanvas.show();
+            }
+        },
+
+        render() {
+            // Update badges
+            const navBadge = document.getElementById('navCartCount');
+            const drawerBadge = document.getElementById('cartItemBadge');
             const subtotalText = document.getElementById('cartSubtotalText');
             const checkoutBtn = document.getElementById('btnCartCheckout');
+            const emptyState = document.getElementById('cartEmptyState');
+            const itemsList = document.getElementById('cartItemsList');
+            const deliveryNotice = document.getElementById('deliveryNoticeText');
 
-            if (badge) {
-                badge.textContent = this.count;
-                badge.classList.toggle('d-none', this.count === 0);
+            if (navBadge) {
+                navBadge.textContent = this.count;
+                navBadge.classList.toggle('d-none', this.count === 0);
             }
             if (drawerBadge) {
                 drawerBadge.textContent = this.count;
             }
             if (subtotalText) {
-                subtotalText.textContent = `$${this.subtotal.toFixed(2)}`;
+                subtotalText.textContent = this.formatted_subtotal;
             }
 
-            if (emptyState && itemsList) {
-                if (this.items.length === 0) {
-                    emptyState.classList.remove('d-none');
+            // Free local delivery threshold progress (free over $50)
+            if (deliveryNotice) {
+                if (this.subtotal >= 50) {
+                    deliveryNotice.innerHTML = `<i class="bi bi-check-circle-fill text-success me-1"></i> You unlocked <strong>Free Local Delivery</strong>!`;
+                } else if (this.subtotal > 0) {
+                    const diff = (50 - this.subtotal).toFixed(2);
+                    deliveryNotice.innerHTML = `<i class="bi bi-truck me-1 text-primary"></i> Add <strong>$${diff}</strong> more for Free Local Delivery`;
+                } else {
+                    deliveryNotice.innerHTML = `<i class="bi bi-truck me-1 text-primary"></i> Free local delivery on orders over $50`;
+                }
+            }
+
+            if (this.items.length === 0) {
+                if (emptyState) emptyState.classList.remove('d-none');
+                if (itemsList) {
                     itemsList.classList.add('d-none');
                     itemsList.innerHTML = '';
-                    if (checkoutBtn) checkoutBtn.classList.add('disabled');
-                } else {
-                    emptyState.classList.add('d-none');
+                }
+                if (checkoutBtn) checkoutBtn.classList.add('disabled');
+            } else {
+                if (emptyState) emptyState.classList.add('d-none');
+                if (itemsList) {
                     itemsList.classList.remove('d-none');
-                    if (checkoutBtn) checkoutBtn.classList.remove('disabled');
-
                     itemsList.innerHTML = this.items.map(item => `
                         <div class="d-flex align-items-center gap-3 py-3 border-bottom" style="border-color: var(--bugs-border) !important;">
-                            <div class="rounded border p-1" style="width: 50px; height: 50px; border-color: var(--bugs-border) !important;">
-                                <i class="bi bi-box text-secondary fs-4 d-flex align-items-center justify-content-center h-100"></i>
+                            <div class="flex-shrink-0 rounded-3 overflow-hidden border" style="width: 58px; height: 58px; border-color: var(--bugs-border) !important; background-color: var(--bugs-card);">
+                                <img src="${item.image}" alt="${item.name}" class="w-100 h-100 object-fit-cover">
                             </div>
-                            <div class="flex-grow-1">
-                                <h6 class="text-white mb-0 small">${item.name}</h6>
-                                <span class="num text-primary small">$${item.price.toFixed(2)}</span>
+                            <div class="flex-grow-1 min-w-0">
+                                <p class="eyebrow text-secondary mb-1" style="font-size: 0.6rem;">${item.category}</p>
+                                <h6 class="text-white text-truncate mb-1" style="font-size: 0.85rem;" title="${item.name}">${item.name}</h6>
+                                <span class="num text-primary fw-medium" style="font-size: 0.825rem;">${item.formatted_price}</span>
                             </div>
-                            <span class="num text-secondary small">x${item.quantity}</span>
-                            <button type="button" class="btn btn-link text-danger p-0 ms-2" onclick="window.bugsCart.removeItem('${item.id}')">
-                                <i class="bi bi-trash"></i>
+                            <div class="d-flex align-items-center gap-1 border rounded-pill px-2 py-1" style="border-color: rgba(255,255,255,0.15) !important;">
+                                <button type="button" class="btn btn-sm text-secondary p-0 border-0" aria-label="Decrease" onclick="window.bugsCart.update(${item.id}, ${item.quantity - 1})">
+                                    <i class="bi bi-dash"></i>
+                                </button>
+                                <span class="num text-white small px-1">${item.quantity}</span>
+                                <button type="button" class="btn btn-sm text-secondary p-0 border-0" aria-label="Increase" onclick="window.bugsCart.update(${item.id}, ${item.quantity + 1})">
+                                    <i class="bi bi-plus"></i>
+                                </button>
+                            </div>
+                            <button type="button" class="btn btn-sm text-danger p-1 border-0" aria-label="Remove" title="Remove" onclick="window.bugsCart.remove(${item.id})">
+                                <i class="bi bi-trash3 fs-6"></i>
                             </button>
                         </div>
                     `).join('');
                 }
+                if (checkoutBtn) checkoutBtn.classList.remove('disabled');
             }
         }
     };
 
-    window.bugsCart = cartState;
-    cartState.render();
+    window.bugsCart = bugsCart;
+
+    // Load server cart on startup
+    bugsCart.fetchCart();
+
+    // Delegate "Add to Bag" buttons across all pages
+    document.addEventListener('click', (e) => {
+        const addBtn = e.target.closest('[data-add-to-cart]');
+        if (addBtn) {
+            e.preventDefault();
+            const productId = addBtn.getAttribute('data-add-to-cart');
+            const qtyInput = document.getElementById('productQuantityInput');
+            const qty = qtyInput ? parseInt(qtyInput.value, 10) : 1;
+            bugsCart.add(productId, qty, true);
+        }
+    });
 
     const emptyBtn = document.getElementById('btnEmptyCart');
     if (emptyBtn) {
         emptyBtn.addEventListener('click', () => {
-            cartState.clear();
+            bugsCart.clear();
         });
     }
 });

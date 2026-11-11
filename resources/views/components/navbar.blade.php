@@ -14,22 +14,22 @@
             <div class="collapse navbar-collapse d-none d-lg-block" id="desktopNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3 gap-xl-4">
                     <li class="nav-item">
-                        <a class="bugs-nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Shop all</a>
+                        <a class="bugs-nav-link {{ request()->routeIs('shop.index') && !request('category') ? 'active' : '' }}" href="{{ route('shop.index') }}">Shop all</a>
                     </li>
                     <li class="nav-item">
-                        <a class="bugs-nav-link" href="{{ route('home') }}">Vapes</a>
+                        <a class="bugs-nav-link {{ request('category') === 'vapes' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'vapes']) }}">Vapes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="bugs-nav-link" href="{{ route('home') }}">Glass & Pipes</a>
+                        <a class="bugs-nav-link {{ request('category') === 'glass-pipes' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'glass-pipes']) }}">Glass &amp; Pipes</a>
                     </li>
                     <li class="nav-item">
                         <a class="bugs-nav-link {{ request()->routeIs('repairs') ? 'active' : '' }}" href="{{ route('repairs') }}">Repairs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="bugs-nav-link" href="{{ route('home') }}">Visit us</a>
+                        <a class="bugs-nav-link" href="{{ route('home') }}#visit">Visit us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="bugs-nav-link" href="{{ route('home') }}">Your orders</a>
+                        <a class="bugs-nav-link {{ request()->routeIs('orders.lookup') ? 'active' : '' }}" href="{{ route('orders.lookup') }}">Your orders</a>
                     </li>
                 </ul>
             </div>
@@ -67,22 +67,25 @@
     <div class="offcanvas-body d-flex flex-column p-4">
         <ul class="nav flex-column gap-3 mb-4">
             <li class="nav-item">
-                <a class="bugs-nav-link fs-5 {{ request()->routeIs('home') ? 'active text-white' : '' }}" href="{{ route('home') }}">Shop all</a>
+                <a class="bugs-nav-link fs-5 {{ request()->routeIs('shop.index') && !request('category') ? 'active text-white' : '' }}" href="{{ route('shop.index') }}">Shop all</a>
             </li>
             <li class="nav-item">
-                <a class="bugs-nav-link fs-5" href="{{ route('home') }}">Vapes</a>
+                <a class="bugs-nav-link fs-5 {{ request('category') === 'vapes' ? 'active text-white' : '' }}" href="{{ route('shop.index', ['category' => 'vapes']) }}">Vapes</a>
             </li>
             <li class="nav-item">
-                <a class="bugs-nav-link fs-5" href="{{ route('home') }}">Glass & Pipes</a>
+                <a class="bugs-nav-link fs-5 {{ request('category') === 'glass-pipes' ? 'active text-white' : '' }}" href="{{ route('shop.index', ['category' => 'glass-pipes']) }}">Glass &amp; Pipes</a>
+            </li>
+            <li class="nav-item">
+                <a class="bugs-nav-link fs-5 {{ request('category') === 'phone-accessories' ? 'active text-white' : '' }}" href="{{ route('shop.index', ['category' => 'phone-accessories']) }}">Phone Accessories</a>
             </li>
             <li class="nav-item">
                 <a class="bugs-nav-link fs-5 {{ request()->routeIs('repairs') ? 'active text-white' : '' }}" href="{{ route('repairs') }}">Repairs</a>
             </li>
             <li class="nav-item">
-                <a class="bugs-nav-link fs-5" href="{{ route('home') }}">Visit us</a>
+                <a class="bugs-nav-link fs-5" href="{{ route('home') }}#visit">Visit us</a>
             </li>
             <li class="nav-item">
-                <a class="bugs-nav-link fs-5" href="{{ route('home') }}">Your orders</a>
+                <a class="bugs-nav-link fs-5 {{ request()->routeIs('orders.lookup') ? 'active text-white' : '' }}" href="{{ route('orders.lookup') }}">Your orders</a>
             </li>
         </ul>
 
