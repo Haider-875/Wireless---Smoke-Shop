@@ -173,97 +173,140 @@
     </div>
 </section>
 
-<!-- Section 4: The Repair Bench Highlight -->
-<section class="py-5 py-lg-5 border-top" style="background-color: var(--bugs-card-alt); border-color: var(--bugs-border) !important;">
-    <div class="container-fluid px-3 px-lg-5 py-4" style="max-width: 1400px;">
-        <div class="row g-5 align-items-center">
-            <!-- Left: Workbench Realistic Photo Card -->
-            <div class="col-lg-5">
-                <div class="rounded-4 overflow-hidden border position-relative" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
-                    <div class="ratio ratio-4x3">
+<!-- Section 4: The Repair Bench Highlight — Exact Reference Clone -->
+<section id="repairs" class="py-5 py-lg-5">
+    <div class="container-fluid px-3 px-lg-5 py-4 py-lg-5" style="max-width: 1400px;">
+        <div class="row align-items-center g-5">
+            <!-- Left: Workbench Photo Card with Floating Diagnosis Badge -->
+            <div class="col-lg-6 order-2 order-lg-1">
+                <div class="overflow-hidden border position-relative" style="background-color: var(--bugs-card); border-color: rgba(255, 255, 255, 0.08) !important; border-radius: 28px;">
+                    <div class="ratio ratio-4x3" style="min-height: 360px;">
                         <img src="{{ asset('assets/images/lifestyle/repair-bench.png') }}" 
                              alt="Phone Repair Workbench at Bugs Wireless" 
                              loading="lazy"
                              class="w-100 h-100 object-fit-cover">
                     </div>
-                    <div class="p-4">
-                        <p class="eyebrow text-primary mb-1">Free diagnosis</p>
-                        <h4 class="fs-5 text-white mb-2">Walk in, we'll quote it first.</h4>
-                        <p class="text-secondary small mb-0">No appointment necessary. Bring your iPhone, Galaxy, Pixel or tablet right up to the glass.</p>
+                    <!-- Overlaid Floating Diagnosis Card on Bottom-Left -->
+                    <div class="position-absolute bottom-0 start-0 m-3 m-sm-4 p-3 rounded-3 border" style="background: rgba(10, 10, 11, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-color: rgba(255, 255, 255, 0.1) !important; z-index: 2;">
+                        <p class="eyebrow mb-1" style="color: var(--bugs-primary) !important; font-size: 0.7rem;">Free diagnosis</p>
+                        <p class="text-white small mb-0" style="font-size: 0.875rem;">Walk in, we'll quote it first.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Right: Repair Details & Capabilities -->
-            <div class="col-lg-7">
-                <p class="eyebrow mb-2" style="color: var(--bugs-primary)">The repair bench</p>
-                <h2 class="bugs-hero-title text-white mb-3" style="font-size: clamp(2rem, 4vw, 3.2rem);">
+            <div class="col-lg-6 order-1 order-lg-2">
+                <p class="eyebrow mb-2" style="color: var(--bugs-primary) !important;">The repair bench</p>
+                <h2 class="text-white fw-semibold mb-3" style="font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.02em;">
                     Broken today,<br>
-                    <span class="font-serif-display">fixed by tonight</span>.
+                    <span class="font-serif-display fw-normal" style="color: var(--bugs-primary) !important;">fixed by tonight</span>.
                 </h2>
-                <p class="text-secondary leading-relaxed mb-4" style="max-width: 580px;">
+                <p class="text-secondary leading-relaxed mb-4 pb-2" style="max-width: 520px; font-size: 1rem;">
                     Our technicians work on the counter in front of you. Most screen and battery jobs are finished the same day, and you'll always hear the price before we open a single screw.
                 </p>
 
-                <!-- 6 Mini Repair Capabilities -->
-                <div class="row g-3 mb-4">
+                <!-- 6 Capabilities Matching Reference SVG Icons & Typography -->
+                <div class="row g-4 mb-4 pb-2">
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-center gap-3 p-2 rounded-3 border" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-card);">
-                            <i class="bi bi-phone text-primary fs-5 ms-1"></i>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                                    <path d="M12 18h.01"></path>
+                                </svg>
+                            </span>
                             <div>
-                                <span class="d-block text-white small fw-medium">Screen &amp; glass replacement</span>
-                                <span class="text-secondary" style="font-size: 0.7rem;">iPhone, Galaxy, Pixel</span>
+                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Screen &amp; glass replacement</span>
+                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">iPhone, Galaxy, Pixel</span>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-center gap-3 p-2 rounded-3 border" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-card);">
-                            <i class="bi bi-battery-charging text-primary fs-5 ms-1"></i>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"></path>
+                                    <path d="M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1"></path>
+                                    <path d="m11 7-3 5h4l-3 5"></path>
+                                    <line x1="22" x2="22" y1="11" y2="13"></line>
+                                </svg>
+                            </span>
                             <div>
-                                <span class="d-block text-white small fw-medium">Battery replacement</span>
-                                <span class="text-secondary" style="font-size: 0.7rem;">Holds a charge again</span>
+                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Battery replacement</span>
+                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">Holds a charge again</span>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-center gap-3 p-2 rounded-3 border" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-card);">
-                            <i class="bi bi-plugin text-primary fs-5 ms-1"></i>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22v-5"></path>
+                                    <path d="M9 8V2"></path>
+                                    <path d="M15 8V2"></path>
+                                    <path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"></path>
+                                </svg>
+                            </span>
                             <div>
-                                <span class="d-block text-white small fw-medium">Charging port repair</span>
-                                <span class="text-secondary" style="font-size: 0.7rem;">Loose cable, no charge</span>
+                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Charging port repair</span>
+                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">Loose cable, no charge</span>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-center gap-3 p-2 rounded-3 border" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-card);">
-                            <i class="bi bi-droplet text-primary fs-5 ms-1"></i>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"></path>
+                                    <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"></path>
+                                </svg>
+                            </span>
                             <div>
-                                <span class="d-block text-white small fw-medium">Liquid damage service</span>
-                                <span class="text-secondary" style="font-size: 0.7rem;">Cleaned and assessed</span>
+                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Liquid damage service</span>
+                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">Cleaned and assessed</span>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-center gap-3 p-2 rounded-3 border" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-card);">
-                            <i class="bi bi-arrow-repeat text-primary fs-5 ms-1"></i>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" x2="2" y1="12" y2="12"></line>
+                                    <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+                                    <line x1="6" x2="6.01" y1="16" y2="16"></line>
+                                    <line x1="10" x2="10.01" y1="16" y2="16"></line>
+                                </svg>
+                            </span>
                             <div>
-                                <span class="d-block text-white small fw-medium">Data transfer &amp; backup</span>
-                                <span class="text-secondary" style="font-size: 0.7rem;">Move to your new phone</span>
+                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Data transfer &amp; backup</span>
+                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">Move to your new phone</span>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-center gap-3 p-2 rounded-3 border" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-card);">
-                            <i class="bi bi-broadcast-pin text-primary fs-5 ms-1"></i>
+                        <div class="d-flex align-items-start gap-3">
+                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 20h.01"></path>
+                                    <path d="M2 8.82a15 15 0 0 1 20 0"></path>
+                                    <path d="M5 12.859a10 10 0 0 1 14 0"></path>
+                                    <path d="M8.5 16.429a5 5 0 0 1 7 0"></path>
+                                </svg>
+                            </span>
                             <div>
-                                <span class="d-block text-white small fw-medium">Carrier activation</span>
-                                <span class="text-secondary" style="font-size: 0.7rem;">Prepaid &amp; postpaid</span>
+                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Carrier activation</span>
+                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">Prepaid &amp; postpaid</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <a href="{{ route('repairs') }}" class="btn btn-bugs-primary px-4 py-3">
+                <a href="{{ route('repairs') }}" class="btn btn-bugs-outline px-4 py-3" style="border-radius: 9999px; font-size: 0.875rem;">
                     See repair services
                 </a>
             </div>
