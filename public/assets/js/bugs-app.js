@@ -279,16 +279,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (itemsList) {
                     itemsList.classList.remove('d-none');
                     itemsList.innerHTML = this.items.map(item => `
-                        <div class="d-flex align-items-center gap-3 py-3 border-bottom" style="border-color: var(--bugs-border) !important;">
-                            <div class="flex-shrink-0 rounded-3 overflow-hidden border" style="width: 58px; height: 58px; border-color: var(--bugs-border) !important; background-color: var(--bugs-card);">
+                        <div class="d-flex align-items-center gap-2 gap-sm-3 py-2.5 my-1 border-bottom" style="border-color: rgba(255, 255, 255, 0.07) !important;">
+                            <div class="flex-shrink-0 rounded-3 overflow-hidden border" style="width: 52px; height: 52px; border-color: var(--bugs-border) !important; background-color: var(--bugs-card);">
                                 <img src="${item.image}" alt="${item.name}" class="w-100 h-100 object-fit-cover">
                             </div>
-                            <div class="flex-grow-1 min-w-0">
-                                <p class="eyebrow text-secondary mb-1" style="font-size: 0.6rem;">${item.category}</p>
+                            <div class="flex-grow-1 min-w-0 pe-1">
+                                <p class="eyebrow text-secondary mb-0" style="font-size: 0.6rem; letter-spacing: 0.15em;">${item.category}</p>
                                 <h6 class="text-white text-truncate mb-1" style="font-size: 0.85rem;" title="${item.name}">${item.name}</h6>
                                 <span class="num text-primary fw-medium" style="font-size: 0.825rem;">${item.formatted_price}</span>
                             </div>
-                            <div class="d-flex align-items-center gap-1 border rounded-pill px-2 py-1" style="border-color: rgba(255,255,255,0.15) !important;">
+                            <div class="d-flex align-items-center gap-1 border rounded-pill px-2 py-0.5 flex-shrink-0" style="border-color: rgba(255,255,255,0.15) !important;">
                                 <button type="button" class="btn btn-sm text-secondary p-0 border-0" aria-label="Decrease" onclick="window.bugsCart.update(${item.id}, ${item.quantity - 1})">
                                     <i class="bi bi-dash"></i>
                                 </button>
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <i class="bi bi-plus"></i>
                                 </button>
                             </div>
-                            <button type="button" class="btn btn-sm text-danger p-1 border-0" aria-label="Remove" title="Remove" onclick="window.bugsCart.remove(${item.id})">
+                            <button type="button" class="btn btn-sm text-secondary hover-danger p-1 border-0 flex-shrink-0" aria-label="Remove" title="Remove" onclick="window.bugsCart.remove(${item.id})">
                                 <i class="bi bi-trash3 fs-6"></i>
                             </button>
                         </div>

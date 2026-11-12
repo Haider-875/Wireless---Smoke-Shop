@@ -1,6 +1,6 @@
 <!-- Cart Bag Offcanvas Drawer -->
 <div class="offcanvas offcanvas-end bugs-offcanvas" tabindex="-1" id="bugsCartOffcanvas" aria-labelledby="bugsCartOffcanvasLabel">
-    <div class="offcanvas-header border-bottom py-3 px-4" style="border-color: var(--bugs-border) !important;">
+    <div class="offcanvas-header border-bottom py-3 px-3 px-sm-4" style="border-color: var(--bugs-border) !important;">
         <h5 class="offcanvas-title text-white fs-6 fw-semibold d-flex align-items-center gap-2 mb-0" id="bugsCartOffcanvasLabel">
             <i class="bi bi-bag" style="color: var(--bugs-primary) !important;"></i> Your Bag
             <span class="badge rounded-pill text-black ms-1" style="background-color: var(--bugs-primary); font-size: 0.7rem;" id="cartItemBadge">0</span>
@@ -9,13 +9,13 @@
     </div>
 
     <!-- Free Delivery Notice / Progress -->
-    <div class="px-4 py-2 border-bottom bg-black bg-opacity-25" style="border-color: var(--bugs-border) !important;" id="deliveryThresholdBanner">
+    <div class="px-3 px-sm-4 py-2 border-bottom bg-black bg-opacity-25 flex-shrink-0" style="border-color: var(--bugs-border) !important;" id="deliveryThresholdBanner">
         <p class="eyebrow text-secondary mb-0 small" style="font-size: 0.65rem;" id="deliveryNoticeText">
             <i class="bi bi-truck me-1" style="color: var(--bugs-primary) !important;"></i> Free local delivery on orders over $50
         </p>
     </div>
 
-    <div class="offcanvas-body d-flex flex-column px-4 py-3">
+    <div class="offcanvas-body d-flex flex-column px-3 px-sm-4 py-3">
         <!-- Loading Spinner State -->
         <div id="cartLoadingState" class="flex-grow-1 d-none d-flex flex-column align-items-center justify-content-center text-center p-4">
             <div class="spinner-border mb-2" role="status" style="width: 2rem; height: 2rem; color: var(--bugs-primary) !important;">
@@ -36,13 +36,13 @@
             </a>
         </div>
 
-        <!-- Populated Cart Items Container -->
-        <div id="cartItemsList" class="flex-grow-1 d-none overflow-y-auto pe-1">
+        <!-- Populated Cart Items Container (Controlled Scroll, No Ugly Browser Bars) -->
+        <div id="cartItemsList" class="bugs-cart-items-container flex-grow-1 d-none">
             <!-- Dynamic Cart Items Rendered via JS -->
         </div>
 
         <!-- Cart Summary Footer -->
-        <div class="border-top pt-3 mt-auto" style="border-color: var(--bugs-border) !important;">
+        <div class="border-top pt-3 mt-auto flex-shrink-0" style="border-color: var(--bugs-border) !important;">
             <div class="d-flex justify-content-between align-items-baseline mb-1">
                 <span class="text-secondary small">Subtotal</span>
                 <span class="num fw-bold text-white fs-5" id="cartSubtotalText">$0.00</span>

@@ -552,7 +552,50 @@ a, button, .btn {
   color: var(--bugs-fg);
   border-left: 1px solid var(--bugs-border);
   width: 420px !important;
-  max-width: 90vw;
+  max-width: 100vw;
+}
+
+.bugs-offcanvas .offcanvas-body {
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.25rem 1.5rem !important;
+}
+
+@media (max-width: 575.98px) {
+  .bugs-offcanvas .offcanvas-body {
+    padding: 1rem 0.875rem !important;
+  }
+}
+
+/* Cart Items Container - No unwanted scrollbars */
+.bugs-cart-items-container {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(184, 151, 102, 0.25) transparent;
+}
+
+.bugs-cart-items-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.bugs-cart-items-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.bugs-cart-items-container::-webkit-scrollbar-thumb {
+  background: rgba(184, 151, 102, 0.25);
+  border-radius: 9999px;
+}
+
+.bugs-cart-items-container::-webkit-scrollbar-thumb:hover {
+  background: var(--bugs-primary);
+}
+
+.hover-danger:hover {
+  color: #ef4444 !important;
 }
 
 .bugs-modal-content {
@@ -625,6 +668,18 @@ a, button, .btn {
 
 .btn-bugs-add-bag:active {
   transform: scale(0.95);
+}
+
+@media (max-width: 575.98px) {
+  .btn-bugs-add-bag {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    font-size: 0.8rem !important;
+  }
 }
 
 /* Dark Luxury Bootstrap Pagination */

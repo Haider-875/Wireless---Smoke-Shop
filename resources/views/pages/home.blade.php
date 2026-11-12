@@ -177,7 +177,7 @@
             </a>
         </div>
 
-        <div class="row g-3 g-md-4">
+        <div class="row g-2 g-sm-3 g-md-4">
             @foreach($featuredProducts as $prod)
                 <div class="col-6 col-md-3">
                     <x-product-card :product="$prod" />

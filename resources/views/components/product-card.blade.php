@@ -10,32 +10,32 @@
     </a>
 
     <!-- Card Body -->
-    <div class="p-3 p-md-4 d-flex flex-column flex-grow-1">
-        <p class="eyebrow text-secondary mb-1" style="font-size: 0.625rem;">
+    <div class="p-2 p-sm-3 p-md-3 d-flex flex-column flex-grow-1">
+        <p class="eyebrow text-secondary mb-1" style="font-size: 0.6rem; letter-spacing: 0.16em;">
             {{ $product->category->name ?? 'Shop' }}
         </p>
 
-        <h3 class="fs-6 fw-medium text-white mb-2 leading-snug">
+        <h3 class="fw-medium text-white mb-2 leading-snug" style="font-size: clamp(0.8125rem, 2.5vw, 0.9375rem); min-height: 2.5em; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
             <a href="{{ route('shop.show', $product->slug) }}" class="text-white text-decoration-none hover-primary">
                 {{ $product->name }}
             </a>
         </h3>
 
-        <div class="mt-auto pt-2 d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-baseline gap-2">
-                <span class="num fw-bold fs-6" style="color: var(--bugs-primary)">
-                    {{ $product->formatted_price }}
-                </span>
+        <div class="mt-auto pt-2 d-flex align-items-end justify-content-between gap-1">
+            <div class="d-flex flex-column">
                 @if($product->formatted_compare_at_price)
-                    <span class="num text-secondary small text-decoration-line-through">
+                    <span class="num text-secondary text-decoration-line-through leading-none" style="font-size: 0.7rem; line-height: 1.1;">
                         {{ $product->formatted_compare_at_price }}
                     </span>
                 @endif
+                <span class="num fw-bold leading-none" style="color: var(--bugs-primary); font-size: clamp(0.875rem, 2.6vw, 1rem); line-height: 1.2;">
+                    {{ $product->formatted_price }}
+                </span>
             </div>
 
             <!-- Quick Add to Bag Button (100% Round Luxury Circle) -->
             <button type="button" 
-                    class="btn btn-bugs-add-bag" 
+                    class="btn btn-bugs-add-bag flex-shrink-0" 
                     title="Add to Bag"
                     aria-label="Add {{ $product->name }} to bag"
                     data-add-to-cart="{{ $product->id }}">
@@ -44,4 +44,3 @@
         </div>
     </div>
 </article>
-
