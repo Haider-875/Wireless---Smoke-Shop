@@ -527,39 +527,47 @@ a, button, .btn {
   transform: scale(1.05);
 }
 
-/* Repair Bench Interactive Capability Points */
+/* Repair Bench Interactive Capability Points — Silky Smooth */
 .bugs-repair-point {
-  background-color: transparent;
-  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 0.875rem;
-  padding: 0.5rem 0.65rem;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, background-color, border-color;
+  padding: 0.65rem 0.85rem;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, background-color, border-color, box-shadow;
   cursor: pointer;
+  display: flex;
 }
 
 .bugs-repair-point:hover {
-  background-color: rgba(255, 255, 255, 0.035) !important;
-  border-color: rgba(184, 151, 102, 0.25) !important;
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(184, 151, 102, 0.3) !important;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.65), 0 0 18px -4px rgba(184, 151, 102, 0.12) !important;
 }
 
 .bugs-repair-point-icon {
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background-color: rgba(255, 255, 255, 0.02);
   color: var(--bugs-primary);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .bugs-repair-point:hover .bugs-repair-point-icon {
   border-color: var(--bugs-primary);
-  background-color: rgba(184, 151, 102, 0.15);
+  background-color: rgba(184, 151, 102, 0.12);
   color: #ffffff;
-  transform: scale(1.08);
-  box-shadow: 0 0 16px rgba(184, 151, 102, 0.28);
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(184, 151, 102, 0.25);
 }
 
 .bugs-repair-point-title {
@@ -567,7 +575,7 @@ a, button, .btn {
   font-weight: 500;
   line-height: 1.35;
   color: #ffffff;
-  transition: color 0.25s ease;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bugs-repair-point:hover .bugs-repair-point-title {
@@ -578,7 +586,7 @@ a, button, .btn {
   font-size: 12px;
   line-height: 1.35;
   color: var(--bugs-fg-muted);
-  transition: color 0.25s ease;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bugs-repair-point:hover .bugs-repair-point-sub {
