@@ -308,26 +308,34 @@ a, button, .btn {
   color: #fff !important;
 }
 
-/* Shelves Aisle Cards — Exact Reference Clone (No Blue Font) */
+/* Shelves Aisle Cards — Luxury Dark Clone */
 .bugs-aisle-card {
   position: relative;
-  min-height: 195px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  border-radius: 1rem !important;
-  border: 1px solid rgba(255, 255, 255, 0.07) !important;
-  background-color: var(--bugs-card) !important;
-  padding: 1.25rem !important;
+  border-radius: 1.125rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+  padding: 1.35rem !important;
   text-decoration: none !important;
   color: inherit !important;
-  transition: border-color 0.4s ease, background-color 0.4s ease, transform 0.3s ease !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, box-shadow;
 }
 
 .bugs-aisle-card:hover {
-  border-color: rgba(184, 151, 102, 0.45) !important;
-  background-color: #111112 !important;
+  transform: translateY(-5px) !important;
+  border-color: rgba(184, 151, 102, 0.5) !important;
+  box-shadow: inset 0 1px 0 0 rgba(184, 151, 102, 0.45), 
+              0 20px 40px -10px rgba(0, 0, 0, 0.8), 
+              0 0 24px -2px rgba(184, 151, 102, 0.16) !important;
   color: inherit !important;
   text-decoration: none !important;
 }
@@ -335,9 +343,27 @@ a, button, .btn {
 .bugs-aisle-card .bugs-aisle-num {
   font-family: var(--bugs-font-mono);
   font-size: 11px;
-  color: var(--bugs-fg-muted) !important;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--bugs-primary) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 22px;
+  border-radius: 9999px;
+  background: rgba(184, 151, 102, 0.08);
+  border: 1px solid rgba(184, 151, 102, 0.22);
   position: relative;
   z-index: 2;
+  transition: all 0.35s ease;
+}
+
+.bugs-aisle-card:hover .bugs-aisle-num {
+  background: rgba(184, 151, 102, 0.22);
+  border-color: var(--bugs-primary);
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(184, 151, 102, 0.3);
 }
 
 .bugs-aisle-card .bugs-aisle-title {
@@ -346,7 +372,11 @@ a, button, .btn {
   line-height: 1.25;
   color: #f2f2f2 !important;
   margin-bottom: 0.35rem;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
+}
+
+.bugs-aisle-card:hover .bugs-aisle-title {
+  color: #ffffff !important;
 }
 
 .bugs-aisle-card .bugs-aisle-desc {
@@ -359,6 +389,7 @@ a, button, .btn {
 .bugs-aisle-card .bugs-aisle-browse {
   margin-top: 1rem;
   font-size: 12px;
+  font-weight: 500;
   color: var(--bugs-primary) !important;
   display: inline-flex;
   align-items: center;
@@ -370,7 +401,7 @@ a, button, .btn {
 
 .bugs-aisle-card:hover .bugs-aisle-browse {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(3px);
 }
 
 .bugs-aisle-card .glow-gold {
@@ -378,6 +409,7 @@ a, button, .btn {
   inset: 0;
   opacity: 0;
   pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, rgba(184, 151, 102, 0.18) 0%, transparent 70%);
   transition: opacity 0.5s ease;
   z-index: 1;
 }
@@ -472,10 +504,12 @@ a, button, .btn {
 }
 
 .btn-bugs-pill-sm {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.15rem;
   font-size: 0.825rem;
   min-height: 38px;
   border-radius: 9999px;
+  width: auto !important;
+  white-space: nowrap;
 }
 
 /* Atmospheric Glow */
@@ -497,34 +531,86 @@ a, button, .btn {
 
 /* Service Card Styling with Responsive Lift & Glow */
 .bugs-service-card {
-  background-color: var(--bugs-card);
-  border: 1px solid var(--bugs-border);
-  border-radius: 1.25rem;
-  padding: 1.75rem;
-  transition: border-color 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  background: linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+  border-radius: 1.25rem !important;
+  padding: 1.75rem !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease !important;
+  will-change: transform, box-shadow;
 }
 
 .bugs-service-card:hover {
-  border-color: var(--bugs-border-gold);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  transform: translateY(-5px) !important;
+  border-color: rgba(184, 151, 102, 0.45) !important;
+  box-shadow: inset 0 1px 0 0 rgba(184, 151, 102, 0.4), 
+              0 18px 36px -8px rgba(0, 0, 0, 0.75), 
+              0 0 22px -3px rgba(184, 151, 102, 0.18) !important;
 }
 
 .bugs-icon-badge {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(184, 151, 102, 0.08);
+  border: 1px solid rgba(184, 151, 102, 0.22);
   color: var(--bugs-primary);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.35s ease,
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              color 0.35s ease !important;
 }
 
 .bugs-service-card:hover .bugs-icon-badge {
+  background: rgba(184, 151, 102, 0.2);
   border-color: var(--bugs-primary);
-  transform: scale(1.05);
+  color: #ffffff;
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 0 18px rgba(184, 151, 102, 0.35);
+}
+
+/* 3-Step Process Cards */
+.bugs-step-card {
+  background: linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+  border-radius: 1.25rem !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease !important;
+}
+
+.bugs-step-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(184, 151, 102, 0.45) !important;
+  box-shadow: inset 0 1px 0 0 rgba(184, 151, 102, 0.35), 0 16px 32px -8px rgba(0, 0, 0, 0.7), 0 0 18px -2px rgba(184, 151, 102, 0.15) !important;
+}
+
+.bugs-step-num {
+  font-family: var(--bugs-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--bugs-primary) !important;
+  width: 34px;
+  height: 22px;
+  border-radius: 9999px;
+  background: rgba(184, 151, 102, 0.08);
+  border: 1px solid rgba(184, 151, 102, 0.22);
+  transition: all 0.35s ease;
+}
+
+.bugs-step-card:hover .bugs-step-num {
+  background: rgba(184, 151, 102, 0.22);
+  border-color: var(--bugs-primary);
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(184, 151, 102, 0.3);
 }
 
 /* Repair Bench Interactive Capability Points — Silky Smooth */
@@ -595,11 +681,12 @@ a, button, .btn {
 
 /* CTA Counter Banner */
 .bugs-cta-card {
-  background-color: var(--bugs-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1.75rem;
+  background: radial-gradient(circle at 85% 20%, rgba(184, 151, 102, 0.09) 0%, transparent 60%), linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 1.75rem !important;
   padding: 2.25rem 1.75rem;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease !important;
 }
 
 @media (min-width: 992px) {
@@ -609,7 +696,8 @@ a, button, .btn {
 }
 
 .bugs-cta-card:hover {
-  border-color: rgba(184, 151, 102, 0.25);
+  border-color: rgba(184, 151, 102, 0.4) !important;
+  box-shadow: inset 0 1px 0 0 rgba(184, 151, 102, 0.35), 0 16px 40px -10px rgba(0, 0, 0, 0.8), 0 0 24px -2px rgba(184, 151, 102, 0.15) !important;
 }
 
 /* Custom Modals & Offcanvas Drawers */
@@ -729,21 +817,32 @@ a, button, .btn {
   color: var(--bugs-fg);
   font-size: 0.95rem;
   line-height: 1;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease,
+              border-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease !important;
   flex-shrink: 0 !important;
   box-shadow: none !important;
   outline: none;
+}
+
+.bugs-product-card:hover .btn-bugs-add-bag {
+  border-color: rgba(184, 151, 102, 0.45) !important;
+  color: var(--bugs-primary) !important;
+  background-color: rgba(184, 151, 102, 0.08);
 }
 
 .btn-bugs-add-bag:hover {
   background-color: var(--bugs-primary) !important;
   border-color: var(--bugs-primary) !important;
   color: #0a0a0b !important;
-  transform: scale(1.08);
+  transform: scale(1.1) !important;
+  box-shadow: 0 0 16px rgba(184, 151, 102, 0.5) !important;
 }
 
 .btn-bugs-add-bag:active {
-  transform: scale(0.95);
+  transform: scale(0.92) !important;
 }
 
 @media (max-width: 575.98px) {
@@ -907,26 +1006,98 @@ a.text-primary:hover {
 
 /* Smooth Product Card Hover Transitions */
 .bugs-product-card {
+  background: linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 1.125rem !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 4px 18px rgba(0, 0, 0, 0.4) !important;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              background 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: transform, box-shadow;
 }
 
 .bugs-product-card:hover {
-  transform: translateY(-4px) !important;
-  border-color: rgba(184, 151, 102, 0.4) !important;
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.75), 0 0 20px -4px rgba(184, 151, 102, 0.12) !important;
+  transform: translateY(-5px) !important;
+  border-color: rgba(184, 151, 102, 0.48) !important;
+  box-shadow: inset 0 1px 0 0 rgba(184, 151, 102, 0.42), 
+              0 22px 42px -10px rgba(0, 0, 0, 0.85), 
+              0 0 24px -2px rgba(184, 151, 102, 0.16) !important;
+}
+
+.bugs-card-img-wrap {
+  position: relative;
+  background-color: #0e0e11 !important;
+}
+
+.bugs-card-img-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13, 13, 16, 0.7) 0%, rgba(13, 13, 16, 0) 35%);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.bugs-product-card:hover .bugs-card-img-gradient {
+  opacity: 0.35;
 }
 
 .bugs-card-img {
-  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s ease !important;
   will-change: transform;
 }
 
 .bugs-product-card:hover .bugs-card-img {
-  transform: scale(1.05) !important;
+  transform: scale(1.06) !important;
+  filter: brightness(1.03) contrast(1.02);
+}
+
+.bugs-product-card .eyebrow {
+  transition: color 0.3s ease;
+}
+
+.bugs-product-card:hover .eyebrow {
+  color: var(--bugs-primary) !important;
+}
+
+.bugs-product-card h3 a {
+  transition: color 0.3s ease;
+}
+
+.bugs-product-card:hover h3 a {
+  color: #ffffff !important;
+}
+
+/* Generic Luxury Surface Card & Admin Card */
+.bugs-card,
+.bugs-card-surface {
+  background: linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 1.25rem !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.bugs-card:hover {
+  border-color: rgba(184, 151, 102, 0.35) !important;
+}
+
+/* Fulfillment Option in Checkout */
+.bugs-fulfillment-option {
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bugs-fulfillment-option:hover {
+  border-color: rgba(184, 151, 102, 0.4) !important;
+  background-color: rgba(184, 151, 102, 0.04);
+}
+
+.bugs-fulfillment-option:has(input:checked) {
+  border-color: var(--bugs-primary) !important;
+  background-color: rgba(184, 151, 102, 0.08);
+  box-shadow: 0 0 16px -4px rgba(184, 151, 102, 0.2);
 }
 
 /* Smooth Button Feedback */

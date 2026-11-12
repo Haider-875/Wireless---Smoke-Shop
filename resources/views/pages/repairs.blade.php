@@ -71,12 +71,14 @@
 <!-- 3-Step Process Section -->
 <section class="border-top py-5 py-lg-5" style="background-color: var(--bugs-card-alt); border-color: var(--bugs-border) !important;">
     <div class="container-fluid px-3 px-lg-5 py-4" style="max-width: 1280px;">
-        <div class="row g-5">
+        <div class="row g-4 g-lg-5">
             @foreach($steps as $step)
                 <div class="col-lg-4">
-                    <p class="num mb-2" style="color: var(--bugs-primary) !important; font-size: 0.78rem;">{{ $step['number'] }}</p>
-                    <h3 class="fs-4 fw-medium text-white mb-2">{{ $step['title'] }}</h3>
-                    <p class="text-secondary small leading-relaxed mb-0">{{ $step['body'] }}</p>
+                    <div class="bugs-step-card p-4 rounded-4 h-100 border">
+                        <span class="bugs-step-num d-inline-flex align-items-center justify-content-center mb-3">{{ $step['number'] }}</span>
+                        <h3 class="fs-5 fw-medium text-white mb-2">{{ $step['title'] }}</h3>
+                        <p class="text-secondary small leading-relaxed mb-0">{{ $step['body'] }}</p>
+                    </div>
                 </div>
             @endforeach
         </div>

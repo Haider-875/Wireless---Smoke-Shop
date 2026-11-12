@@ -1,12 +1,13 @@
 @props(['product'])
 
-<article class="bugs-product-card h-100 d-flex flex-column rounded-4 border overflow-hidden position-relative group" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
+<article class="bugs-product-card h-100 d-flex flex-column rounded-4 border overflow-hidden position-relative group">
     <!-- Product Image -->
-    <a href="{{ route('shop.show', $product->slug) }}" class="d-block position-relative ratio ratio-1x1 overflow-hidden" style="background-color: #0e0e10;">
+    <a href="{{ route('shop.show', $product->slug) }}" class="d-block position-relative ratio ratio-1x1 overflow-hidden bugs-card-img-wrap" style="background-color: #0e0e11;">
         <img src="{{ $product->image_url }}" 
              alt="{{ $product->name }}" 
              loading="lazy" 
              class="object-fit-cover w-100 h-100 bugs-card-img">
+        <div class="bugs-card-img-gradient"></div>
     </a>
 
     <!-- Card Body -->

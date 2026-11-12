@@ -343,7 +343,7 @@
 
                 <div class="d-flex flex-column gap-3 mb-4">
                     <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" target="_blank" rel="noreferrer" class="bugs-service-card p-3 text-decoration-none d-flex align-items-center gap-3">
-                        <div class="d-flex align-items-center justify-content-center rounded-circle border flex-shrink-0" style="width: 44px; height: 44px; border-color: var(--bugs-border-light) !important; color: var(--bugs-primary);">
+                        <div class="bugs-icon-badge flex-shrink-0">
                             <i class="bi bi-geo-alt fs-5"></i>
                         </div>
                         <div>
@@ -353,7 +353,7 @@
                     </a>
 
                     <a href="tel:+13144412851" class="bugs-service-card p-3 text-decoration-none d-flex align-items-center gap-3">
-                        <div class="d-flex align-items-center justify-content-center rounded-circle border flex-shrink-0" style="width: 44px; height: 44px; border-color: var(--bugs-border-light) !important; color: var(--bugs-primary);">
+                        <div class="bugs-icon-badge flex-shrink-0">
                             <i class="bi bi-telephone fs-5"></i>
                         </div>
                         <div>
@@ -363,7 +363,7 @@
                     </a>
 
                     <div class="bugs-service-card p-3 d-flex align-items-center gap-3">
-                        <div class="d-flex align-items-center justify-content-center rounded-circle border flex-shrink-0" style="width: 44px; height: 44px; border-color: var(--bugs-border-light) !important; color: var(--bugs-primary);">
+                        <div class="bugs-icon-badge flex-shrink-0">
                             <i class="bi bi-clock fs-5"></i>
                         </div>
                         <div>

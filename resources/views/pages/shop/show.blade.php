@@ -15,10 +15,11 @@
     <div class="row g-4 g-lg-5 align-items-start">
         <!-- Product Realistic Image -->
         <div class="col-lg-6">
-            <div class="rounded-4 overflow-hidden border position-relative ratio ratio-1x1" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
+            <div class="rounded-4 overflow-hidden border position-relative ratio ratio-1x1 bugs-card-surface" style="border-color: rgba(255, 255, 255, 0.08) !important;">
                 <img src="{{ $product->image_url }}" 
                      alt="{{ $product->name }}" 
-                     class="w-100 h-100 object-fit-cover">
+                     class="w-100 h-100 object-fit-cover bugs-card-img">
+                <div class="bugs-card-img-gradient"></div>
             </div>
         </div>
 
@@ -71,20 +72,35 @@
                 </button>
             </div>
 
-            <!-- Compliance & Store Guarantee List -->
-            <div class="border-top pt-4 mt-2" style="border-color: var(--bugs-border) !important;">
+            <!-- Compliance & Store Guarantee List (Luxury Guarantee Card) -->
+            <div class="bugs-card-surface p-3 p-sm-4 rounded-4 mt-4">
                 <ul class="list-unstyled d-flex flex-column gap-3 small text-secondary mb-0">
-                    <li class="d-flex align-items-start gap-2">
-                        <i class="bi bi-shield-check fs-5 mt-n1 flex-shrink-0" style="color: var(--bugs-primary) !important;"></i>
-                        <span><strong>21+ Age Verification Required</strong> — Valid government photo ID strictly checked upon collection or delivery.</span>
+                    <li class="d-flex align-items-start gap-3">
+                        <div class="bugs-icon-badge flex-shrink-0" style="width: 32px; height: 32px; font-size: 0.9rem;">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div>
+                            <span class="text-white fw-medium d-block mb-0.5">21+ Age Verification Required</span>
+                            <span>Valid government photo ID strictly checked upon collection or delivery.</span>
+                        </div>
                     </li>
-                    <li class="d-flex align-items-start gap-2">
-                        <i class="bi bi-truck fs-5 mt-n1 flex-shrink-0" style="color: var(--bugs-primary) !important;"></i>
-                        <span><strong>Same-Day Counter Pickup &amp; Local Delivery</strong> — Free local delivery on orders over $50.</span>
+                    <li class="d-flex align-items-start gap-3">
+                        <div class="bugs-icon-badge flex-shrink-0" style="width: 32px; height: 32px; font-size: 0.9rem;">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <div>
+                            <span class="text-white fw-medium d-block mb-0.5">Same-Day Counter Pickup &amp; Local Delivery</span>
+                            <span>Free local delivery on orders over $50 within St. Louis.</span>
+                        </div>
                     </li>
-                    <li class="d-flex align-items-start gap-2">
-                        <i class="bi bi-shop fs-5 mt-n1 flex-shrink-0" style="color: var(--bugs-primary) !important;"></i>
-                        <span><strong>Straight from the Counter</strong> — Have questions? Call the shop at <a href="tel:+13144412851" class="text-white">314-441-2851</a>.</span>
+                    <li class="d-flex align-items-start gap-3">
+                        <div class="bugs-icon-badge flex-shrink-0" style="width: 32px; height: 32px; font-size: 0.9rem;">
+                            <i class="bi bi-shop"></i>
+                        </div>
+                        <div>
+                            <span class="text-white fw-medium d-block mb-0.5">Straight from the Counter</span>
+                            <span>Have questions? Call the shop directly at <a href="tel:+13144412851" class="text-primary text-decoration-none fw-medium">314-441-2851</a>.</span>
+                        </div>
                     </li>
                 </ul>
             </div>

@@ -19,7 +19,7 @@
     </div>
 
     <!-- Order Details Box -->
-    <div class="p-4 p-md-5 rounded-4 border mb-4" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
+    <div class="bugs-card-surface p-4 p-md-5 rounded-4 mb-4">
         <div class="row g-4 border-bottom pb-4 mb-4" style="border-color: var(--bugs-border) !important;">
             <div class="col-sm-6">
                 <p class="eyebrow text-secondary mb-1" style="font-size: 0.65rem;">Fulfillment Method</p>

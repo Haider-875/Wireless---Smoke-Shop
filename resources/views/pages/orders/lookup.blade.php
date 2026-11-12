@@ -11,7 +11,7 @@
     </div>
 
     <!-- Lookup Form -->
-    <div class="p-4 p-md-5 rounded-4 border mb-5" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
+    <div class="bugs-card-surface p-4 p-md-5 rounded-4 mb-5">
         <form action="{{ route('orders.lookup') }}" method="GET">
             <div class="row g-3">
                 <div class="col-md-6">
@@ -45,7 +45,7 @@
     <!-- Result -->
     @if($searched)
         @if($order)
-            <div class="p-4 rounded-4 border" style="background-color: var(--bugs-card); border-color: var(--bugs-border-gold) !important;">
+            <div class="bugs-card-surface p-4 rounded-4" style="border-color: var(--bugs-border-gold) !important; box-shadow: 0 0 25px -5px rgba(184, 151, 102, 0.2) !important;">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div>
                         <span class="eyebrow d-block" style="color: var(--bugs-primary) !important;">Order Found</span>

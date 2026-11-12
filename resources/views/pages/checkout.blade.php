@@ -31,12 +31,12 @@
                 @csrf
 
                 <!-- Fulfillment Selection -->
-                <div class="p-4 rounded-4 border mb-4" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
+                <div class="bugs-card-surface p-4 rounded-4 mb-4">
                     <p class="eyebrow mb-2" style="color: var(--bugs-primary) !important;">Step 1 · Fulfillment</p>
                     <h5 class="text-white fw-semibold mb-3">How would you like to receive your order?</h5>
 
                     <div class="d-flex flex-column gap-3">
-                        <label class="d-flex align-items-center justify-content-between p-3 rounded-3 border cursor-pointer" style="border-color: rgba(255,255,255,0.15) !important;">
+                        <label class="bugs-fulfillment-option d-flex align-items-center justify-content-between p-3 rounded-3 border cursor-pointer" style="border-color: rgba(255,255,255,0.12) !important;">
                             <div class="d-flex align-items-center gap-3">
                                 <input type="radio" name="fulfillment_type" value="pickup" checked class="form-check-input mt-0" onchange="toggleDeliveryAddress(false)">
                                 <div>
@@ -47,7 +47,7 @@
                             <span class="num fw-medium small" style="color: var(--bugs-primary) !important;">FREE</span>
                         </label>
 
-                        <label class="d-flex align-items-center justify-content-between p-3 rounded-3 border cursor-pointer" style="border-color: rgba(255,255,255,0.15) !important;">
+                        <label class="bugs-fulfillment-option d-flex align-items-center justify-content-between p-3 rounded-3 border cursor-pointer" style="border-color: rgba(255,255,255,0.12) !important;">
                             <div class="d-flex align-items-center gap-3">
                                 <input type="radio" name="fulfillment_type" value="delivery" class="form-check-input mt-0" onchange="toggleDeliveryAddress(true)">
                                 <div>
@@ -58,7 +58,7 @@
                             <span class="num fw-medium small" style="color: var(--bugs-primary) !important;">{{ $subtotal >= 50 ? 'FREE' : '$4.99' }}</span>
                         </label>
 
-                        <label class="d-flex align-items-center justify-content-between p-3 rounded-3 border cursor-pointer" style="border-color: rgba(255,255,255,0.15) !important;">
+                        <label class="bugs-fulfillment-option d-flex align-items-center justify-content-between p-3 rounded-3 border cursor-pointer" style="border-color: rgba(255,255,255,0.12) !important;">
                             <div class="d-flex align-items-center gap-3">
                                 <input type="radio" name="fulfillment_type" value="shipping" class="form-check-input mt-0" onchange="toggleDeliveryAddress(true)">
                                 <div>
@@ -72,7 +72,7 @@
                 </div>
 
                 <!-- Customer Contact Details -->
-                <div class="p-4 rounded-4 border mb-4" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
+                <div class="bugs-card-surface p-4 rounded-4 mb-4">
                     <p class="eyebrow mb-2" style="color: var(--bugs-primary) !important;">Step 2 · Contact Information</p>
                     <h5 class="text-white fw-semibold mb-3">Your Details</h5>
 
@@ -108,7 +108,7 @@
                 </div>
 
                 <!-- Payment & Age Terms -->
-                <div class="p-4 rounded-4 border mb-4" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
+                <div class="bugs-card-surface p-4 rounded-4 mb-4">
                     <p class="eyebrow mb-2" style="color: var(--bugs-primary) !important;">Step 3 · Payment &amp; Compliance</p>
                     <h5 class="text-white fw-semibold mb-2">Payment Terms</h5>
                     <p class="text-secondary small leading-relaxed mb-3">
@@ -133,7 +133,7 @@
 
         <!-- Right: Order Summary -->
         <div class="col-lg-5">
-            <div class="p-4 rounded-4 border sticky-top" style="top: 100px; background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
+            <div class="bugs-card-surface p-4 rounded-4 sticky-top" style="top: 100px;">
                 <h5 class="text-white fw-semibold mb-3 border-bottom pb-3" style="border-color: var(--bugs-border) !important;">
                     Order Summary ({{ count($items) }} {{ count($items) === 1 ? 'item' : 'items' }})
                 </h5>
