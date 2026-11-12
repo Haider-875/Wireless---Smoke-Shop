@@ -129,6 +129,65 @@ a, button, .btn {
   letter-spacing: -0.015em;
 }
 
+/* Hero Floating Repair Desk Card (Narrower than image & truly floating) */
+.bugs-hero-floating-card {
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 480px;
+  background: rgba(10, 10, 11, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85), 0 0 24px -4px rgba(184, 151, 102, 0.15) !important;
+  border-radius: 1.25rem !important;
+  z-index: 3;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.bugs-hero-floating-card:hover {
+  transform: translateX(-50%) translateY(-4px);
+  border-color: rgba(184, 151, 102, 0.45) !important;
+  box-shadow: 0 26px 55px -12px rgba(0, 0, 0, 0.95), 0 0 32px -4px rgba(184, 151, 102, 0.25) !important;
+}
+
+@media (min-width: 576px) {
+  .bugs-hero-floating-card {
+    width: calc(100% - 60px);
+  }
+}
+
+@media (min-width: 992px) {
+  .bugs-hero-floating-card {
+    width: 84%;
+    max-width: 460px;
+    bottom: -24px;
+  }
+}
+
+.bugs-hero-call-btn {
+  width: 44px;
+  height: 44px;
+  background-color: var(--bugs-primary);
+  color: #0a0a0b !important;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.bugs-hero-call-btn:hover {
+  transform: scale(1.08);
+  background-color: #c7a776;
+  color: #0a0a0b !important;
+  box-shadow: 0 0 16px rgba(184, 151, 102, 0.4);
+}
+
 /* Continuous Seamless Marquee Strip */
 .bugs-marquee-wrapper {
   overflow: hidden;
