@@ -65,7 +65,7 @@
                 <div class="position-absolute p-3 rounded-4 border" style="bottom: -15px; left: 24px; right: 24px; background: rgba(10, 10, 11, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-color: rgba(255, 255, 255, 0.12) !important; z-index: 2;">
                     <div class="d-flex align-items-center justify-content-between gap-3">
                         <div>
-                            <p class="eyebrow text-primary mb-1" style="font-size: 0.7rem;">Walk-in repair desk</p>
+                            <p class="eyebrow mb-1" style="color: var(--bugs-primary) !important; font-size: 0.7rem;">Walk-in repair desk</p>
                             <p class="text-white small mb-0" style="font-size: 0.85rem;">Cracked screen? Bring it in — free quote, no appointment.</p>
                         </div>
                         <a href="tel:+13144412851" aria-label="Call the shop" class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 44px; height: 44px; background-color: var(--bugs-primary); color: var(--bugs-primary-fg); transition: transform 0.2s ease;">

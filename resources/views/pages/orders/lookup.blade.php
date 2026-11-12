@@ -5,7 +5,7 @@
 @section('content')
 <div class="container-fluid px-3 px-lg-5 py-5" style="max-width: 800px;">
     <div class="text-center mb-4">
-        <p class="eyebrow text-primary mb-1">Customer Service</p>
+        <p class="eyebrow mb-1" style="color: var(--bugs-primary) !important;">Customer Service</p>
         <h1 class="display-6 fw-bold text-white mb-2">Track Your Order</h1>
         <p class="text-secondary small">Enter your BUGS order number and contact email or phone to check live fulfillment status.</p>
     </div>
@@ -48,7 +48,7 @@
             <div class="p-4 rounded-4 border" style="background-color: var(--bugs-card); border-color: var(--bugs-border-gold) !important;">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div>
-                        <span class="eyebrow text-primary d-block">Order Found</span>
+                        <span class="eyebrow d-block" style="color: var(--bugs-primary) !important;">Order Found</span>
                         <h4 class="text-white fw-bold mb-0">{{ $order->order_number }}</h4>
                     </div>
                     <span class="badge rounded-pill bg-warning bg-opacity-25 text-warning border border-warning px-3 py-1">
@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-sm-6 text-sm-end">
                         <p class="mb-1"><strong>Method:</strong> {{ ucfirst($order->fulfillment_type) }}</p>
-                        <p class="mb-1"><strong>Total:</strong> <span class="num text-primary fw-bold">{{ $order->formatted_total }}</span></p>
+                        <p class="mb-1"><strong>Total:</strong> <span class="num fw-bold" style="color: var(--bugs-primary) !important;">{{ $order->formatted_total }}</span></p>
                     </div>
                 </div>
 

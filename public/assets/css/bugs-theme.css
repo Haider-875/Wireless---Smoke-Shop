@@ -5,6 +5,20 @@
  */
 
 :root {
+  /* Override Bootstrap 5 theme colors so no element ever defaults to Bootstrap Blue */
+  --bs-primary: #b89766;
+  --bs-primary-rgb: 184, 151, 102;
+  --bs-primary-text-emphasis: #c8a776;
+  --bs-primary-bg-subtle: rgba(184, 151, 102, 0.15);
+  --bs-primary-border-subtle: rgba(184, 151, 102, 0.35);
+
+  --bs-link-color: #b89766;
+  --bs-link-hover-color: #c8a776;
+  --bs-link-color-rgb: 184, 151, 102;
+  --bs-link-hover-color-rgb: 200, 167, 118;
+
+  --bs-focus-ring-color: rgba(184, 151, 102, 0.25);
+
   /* Core Theme Colors */
   --bugs-bg: #0a0a0b;               /* hsl(240, 6%, 4%) - Main Dark Backdrop */
   --bugs-card: #111113;             /* hsl(240, 6%, 7%) - Card Surface */
@@ -592,4 +606,82 @@ nav:has(.pagination),
   border-color: rgba(255, 255, 255, 0.05);
   color: rgba(255, 255, 255, 0.25);
   cursor: not-allowed;
+}
+
+/* All Primary / Blue Text Globally Set to Brand Gold #b89766 */
+.text-primary,
+.text-primary-emphasis,
+.link-primary,
+a.text-primary,
+.text-info {
+  color: #b89766 !important;
+}
+
+.text-primary:hover,
+.text-primary-emphasis:hover,
+.link-primary:hover,
+a.text-primary:hover {
+  color: #c8a776 !important;
+}
+
+.border-primary {
+  border-color: #b89766 !important;
+}
+
+.bg-primary {
+  background-color: #b89766 !important;
+  color: #0a0a0b !important;
+}
+
+.btn-primary {
+  background-color: #b89766 !important;
+  border-color: #b89766 !important;
+  color: #0a0a0b !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #c8a776 !important;
+  border-color: #c8a776 !important;
+  color: #0a0a0b !important;
+}
+
+.btn-outline-primary {
+  color: #b89766 !important;
+  border-color: #b89766 !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: #b89766 !important;
+  border-color: #b89766 !important;
+  color: #0a0a0b !important;
+}
+
+.btn-link,
+.btn-link.text-primary {
+  color: #b89766 !important;
+}
+
+.btn-link:hover,
+.btn-link.text-primary:hover {
+  color: #c8a776 !important;
+}
+
+.spinner-border.text-primary {
+  border-color: #b89766 !important;
+  border-right-color: transparent !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #b89766 !important;
+  box-shadow: 0 0 0 0.25rem rgba(184, 151, 102, 0.25) !important;
+}
+
+.form-check-input:checked {
+  background-color: #b89766 !important;
+  border-color: #b89766 !important;
 }

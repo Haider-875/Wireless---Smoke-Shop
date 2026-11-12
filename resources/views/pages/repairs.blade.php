@@ -74,7 +74,7 @@
         <div class="row g-5">
             @foreach($steps as $step)
                 <div class="col-lg-4">
-                    <p class="num text-primary mb-2" style="font-size: 0.78rem;">{{ $step['number'] }}</p>
+                    <p class="num mb-2" style="color: var(--bugs-primary) !important; font-size: 0.78rem;">{{ $step['number'] }}</p>
                     <h3 class="fs-4 fw-medium text-white mb-2">{{ $step['title'] }}</h3>
                     <p class="text-secondary small leading-relaxed mb-0">{{ $step['body'] }}</p>
                 </div>

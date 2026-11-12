@@ -32,7 +32,7 @@
 
                 <!-- Fulfillment Selection -->
                 <div class="p-4 rounded-4 border mb-4" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
-                    <p class="eyebrow text-primary mb-2">Step 1 · Fulfillment</p>
+                    <p class="eyebrow mb-2" style="color: var(--bugs-primary) !important;">Step 1 · Fulfillment</p>
                     <h5 class="text-white fw-semibold mb-3">How would you like to receive your order?</h5>
 
                     <div class="d-flex flex-column gap-3">
@@ -44,7 +44,7 @@
                                     <span class="text-secondary small">Ready in about an hour · 10010 Halls Ferry Rd</span>
                                 </div>
                             </div>
-                            <span class="num text-primary fw-medium small">FREE</span>
+                            <span class="num fw-medium small" style="color: var(--bugs-primary) !important;">FREE</span>
                         </label>
 
                         <label class="d-flex align-items-center justify-content-between p-3 rounded-3 border cursor-pointer" style="border-color: rgba(255,255,255,0.15) !important;">
@@ -55,7 +55,7 @@
                                     <span class="text-secondary small">Same day within St. Louis · Free on orders $50+</span>
                                 </div>
                             </div>
-                            <span class="num text-primary fw-medium small">{{ $subtotal >= 50 ? 'FREE' : '$4.99' }}</span>
+                            <span class="num fw-medium small" style="color: var(--bugs-primary) !important;">{{ $subtotal >= 50 ? 'FREE' : '$4.99' }}</span>
                         </label>
 
                         <label class="d-flex align-items-center justify-content-between p-3 rounded-3 border cursor-pointer" style="border-color: rgba(255,255,255,0.15) !important;">
@@ -66,19 +66,19 @@
                                     <span class="text-secondary small">Non-restricted accessories only, 2–4 business days</span>
                                 </div>
                             </div>
-                            <span class="num text-primary fw-medium small">$5.99</span>
+                            <span class="num fw-medium small" style="color: var(--bugs-primary) !important;">$5.99</span>
                         </label>
                     </div>
                 </div>
 
                 <!-- Customer Contact Details -->
                 <div class="p-4 rounded-4 border mb-4" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
-                    <p class="eyebrow text-primary mb-2">Step 2 · Contact Information</p>
+                    <p class="eyebrow mb-2" style="color: var(--bugs-primary) !important;">Step 2 · Contact Information</p>
                     <h5 class="text-white fw-semibold mb-3">Your Details</h5>
 
                     <div class="row g-3">
                         <div class="col-12">
-                            <label for="customer_name" class="form-label text-secondary small">Full Name (as on ID) *</label>
+                            <label for="customer_name" class="form-label text-secondary small">Full Name *</label>
                             <input type="text" name="customer_name" id="customer_name" value="{{ old('customer_name') }}" required class="form-control bg-dark text-white border-secondary" placeholder="e.g. Michael Smith">
                         </div>
                         <div class="col-md-6">
@@ -88,6 +88,10 @@
                         <div class="col-md-6">
                             <label for="customer_phone" class="form-label text-secondary small">Mobile Phone (for order updates) *</label>
                             <input type="tel" name="customer_phone" id="customer_phone" value="{{ old('customer_phone') }}" required class="form-control bg-dark text-white border-secondary" placeholder="314-555-0199">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="customer_address" class="form-label text-secondary small">Address</label>
+                            <input type="text" name="customer_address" id="customer_address" value="{{ old('customer_address') }}" class="form-control bg-dark text-white border-secondary" placeholder="Enter your complete delivery address">
                         </div>
                     </div>
 
@@ -105,10 +109,10 @@
 
                 <!-- Payment & Age Terms -->
                 <div class="p-4 rounded-4 border mb-4" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
-                    <p class="eyebrow text-primary mb-2">Step 3 · Payment &amp; Compliance</p>
+                    <p class="eyebrow mb-2" style="color: var(--bugs-primary) !important;">Step 3 · Payment &amp; Compliance</p>
                     <h5 class="text-white fw-semibold mb-2">Payment Terms</h5>
                     <p class="text-secondary small leading-relaxed mb-3">
-                        <i class="bi bi-info-circle text-primary me-1"></i>
+                        <i class="bi bi-info-circle me-1" style="color: var(--bugs-primary) !important;"></i>
                         <strong>Pay at Counter or Upon Delivery:</strong> In compliance with card processing rules for specialty smoke &amp; vape merchandise, payment is completed safely in person via Cash, Debit, or Credit Card when picking up or receiving your delivery.
                     </p>
 
@@ -145,7 +149,7 @@
                                 <h6 class="text-white text-truncate mb-0 small">{{ $item['product']->name }}</h6>
                                 <span class="text-secondary small">Qty: {{ $item['quantity'] }}</span>
                             </div>
-                            <div class="num text-primary fw-medium small">
+                            <div class="num fw-medium small" style="color: var(--bugs-primary) !important;">
                                 ${{ number_format($item['total'], 2) }}
                             </div>
                         </div>
@@ -164,7 +168,7 @@
                     </div>
                     <div class="d-flex justify-content-between small">
                         <span class="text-secondary">Pickup in Store</span>
-                        <span class="num text-primary">FREE</span>
+                        <span class="num" style="color: var(--bugs-primary) !important;">FREE</span>
                     </div>
                 </div>
 

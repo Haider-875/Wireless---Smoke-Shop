@@ -9,12 +9,12 @@
         <div class="d-inline-flex align-items-center justify-content-center rounded-circle border mb-3" style="width: 70px; height: 70px; border-color: var(--bugs-border-gold) !important; color: var(--bugs-primary); background-color: var(--bugs-card);">
             <i class="bi bi-check-lg fs-1"></i>
         </div>
-        <p class="eyebrow text-primary mb-1">Order Confirmed</p>
+        <p class="eyebrow mb-1" style="color: var(--bugs-primary) !important;">Order Confirmed</p>
         <h1 class="display-6 fw-bold text-white mb-2">Thank you, {{ $order->customer_name }}!</h1>
         <p class="text-secondary">We've received your order and our counter team is preparing it now.</p>
         <div class="d-inline-block px-3 py-1 rounded-pill border" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-card);">
             <span class="small text-secondary">Order Number: </span>
-            <span class="num text-primary fw-bold">{{ $order->order_number }}</span>
+            <span class="num fw-bold" style="color: var(--bugs-primary) !important;">{{ $order->order_number }}</span>
         </div>
     </div>
 
@@ -25,11 +25,11 @@
                 <p class="eyebrow text-secondary mb-1" style="font-size: 0.65rem;">Fulfillment Method</p>
                 <p class="text-white fw-medium mb-0">
                     @if($order->fulfillment_type === 'pickup')
-                        <i class="bi bi-shop text-primary me-1"></i> Store Pickup (10010 Halls Ferry Rd)
+                        <i class="bi bi-shop me-1" style="color: var(--bugs-primary) !important;"></i> Store Pickup (10010 Halls Ferry Rd)
                     @elseif($order->fulfillment_type === 'delivery')
-                        <i class="bi bi-truck text-primary me-1"></i> Local Delivery
+                        <i class="bi bi-truck me-1" style="color: var(--bugs-primary) !important;"></i> Local Delivery
                     @else
-                        <i class="bi bi-box-seam text-primary me-1"></i> Standard Shipping
+                        <i class="bi bi-box-seam me-1" style="color: var(--bugs-primary) !important;"></i> Standard Shipping
                     @endif
                 </p>
                 @if($order->delivery_address)
@@ -92,7 +92,7 @@
 
         <!-- Instructions -->
         <div class="p-3 rounded-3" style="background-color: var(--bugs-card-alt); border: 1px solid var(--bugs-border);">
-            <h6 class="text-white fw-semibold mb-1"><i class="bi bi-info-circle text-primary me-1"></i> Pickup &amp; Age Check Reminder</h6>
+            <h6 class="text-white fw-semibold mb-1"><i class="bi bi-info-circle me-1" style="color: var(--bugs-primary) !important;"></i> Pickup &amp; Age Check Reminder</h6>
             <p class="text-secondary small mb-0">
                 Please have your order number <strong>{{ $order->order_number }}</strong> and a valid government photo ID ready. We card everyone at pickup to comply with Missouri state age requirements for smoke and vape products.
             </p>

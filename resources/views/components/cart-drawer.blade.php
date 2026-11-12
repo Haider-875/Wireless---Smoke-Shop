@@ -2,7 +2,7 @@
 <div class="offcanvas offcanvas-end bugs-offcanvas" tabindex="-1" id="bugsCartOffcanvas" aria-labelledby="bugsCartOffcanvasLabel">
     <div class="offcanvas-header border-bottom py-3 px-4" style="border-color: var(--bugs-border) !important;">
         <h5 class="offcanvas-title text-white fs-6 fw-semibold d-flex align-items-center gap-2 mb-0" id="bugsCartOffcanvasLabel">
-            <i class="bi bi-bag text-primary"></i> Your Bag
+            <i class="bi bi-bag" style="color: var(--bugs-primary) !important;"></i> Your Bag
             <span class="badge rounded-pill text-black ms-1" style="background-color: var(--bugs-primary); font-size: 0.7rem;" id="cartItemBadge">0</span>
         </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -11,14 +11,14 @@
     <!-- Free Delivery Notice / Progress -->
     <div class="px-4 py-2 border-bottom bg-black bg-opacity-25" style="border-color: var(--bugs-border) !important;" id="deliveryThresholdBanner">
         <p class="eyebrow text-secondary mb-0 small" style="font-size: 0.65rem;" id="deliveryNoticeText">
-            <i class="bi bi-truck me-1 text-primary"></i> Free local delivery on orders over $50
+            <i class="bi bi-truck me-1" style="color: var(--bugs-primary) !important;"></i> Free local delivery on orders over $50
         </p>
     </div>
 
     <div class="offcanvas-body d-flex flex-column px-4 py-3">
         <!-- Loading Spinner State -->
         <div id="cartLoadingState" class="flex-grow-1 d-none d-flex flex-column align-items-center justify-content-center text-center p-4">
-            <div class="spinner-border text-primary mb-2" role="status" style="width: 2rem; height: 2rem;">
+            <div class="spinner-border mb-2" role="status" style="width: 2rem; height: 2rem; color: var(--bugs-primary) !important;">
                 <span class="visually-hidden">Loading bag...</span>
             </div>
             <p class="text-secondary small">Updating bag...</p>

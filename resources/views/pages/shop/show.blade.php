@@ -81,15 +81,15 @@
             <div class="border-top pt-4 mt-2" style="border-color: var(--bugs-border) !important;">
                 <ul class="list-unstyled d-flex flex-column gap-3 small text-secondary mb-0">
                     <li class="d-flex align-items-start gap-2">
-                        <i class="bi bi-shield-check text-primary fs-5 mt-n1"></i>
+                        <i class="bi bi-shield-check fs-5 mt-n1" style="color: var(--bugs-primary) !important;"></i>
                         <span><strong>21+ Age Verification Required</strong> — Valid government photo ID strictly checked upon collection or delivery.</span>
                     </li>
                     <li class="d-flex align-items-start gap-2">
-                        <i class="bi bi-truck text-primary fs-5 mt-n1"></i>
+                        <i class="bi bi-truck fs-5 mt-n1" style="color: var(--bugs-primary) !important;"></i>
                         <span><strong>Same-Day Counter Pickup &amp; Local Delivery</strong> — Free local delivery on orders over $50.</span>
                     </li>
                     <li class="d-flex align-items-start gap-2">
-                        <i class="bi bi-shop text-primary fs-5 mt-n1"></i>
+                        <i class="bi bi-shop fs-5 mt-n1" style="color: var(--bugs-primary) !important;"></i>
                         <span><strong>Straight from the Counter</strong> — Have questions? Call the shop at <a href="tel:+13144412851" class="text-white">314-441-2851</a>.</span>
                     </li>
                 </ul>
