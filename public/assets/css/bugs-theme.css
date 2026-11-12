@@ -559,12 +559,12 @@ a, button, .btn {
   overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
-  padding: 1.25rem 1.5rem !important;
+  padding: 1.25rem 1.25rem !important;
 }
 
 @media (max-width: 575.98px) {
   .bugs-offcanvas .offcanvas-body {
-    padding: 1rem 0.875rem !important;
+    padding: 1rem 1rem !important;
   }
 }
 
@@ -586,6 +586,8 @@ a, button, .btn {
   overflow-y: auto !important;
   overflow-x: hidden !important;
   padding-bottom: 0.75rem;
+  width: 100% !important;
+  box-sizing: border-box !important;
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
 }
@@ -596,8 +598,14 @@ a, button, .btn {
   height: 0 !important;
 }
 
+.hover-danger {
+  color: var(--bugs-fg-muted) !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
 .hover-danger:hover {
   color: #ef4444 !important;
+  transform: scale(1.1);
 }
 
 .bugs-modal-content {
