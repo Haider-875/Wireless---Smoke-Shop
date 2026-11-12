@@ -36,8 +36,8 @@
             </a>
         </div>
 
-        <!-- Populated Cart Items Container (Controlled Scroll, No Ugly Browser Bars) -->
-        <div id="cartItemsList" class="bugs-cart-items-container flex-grow-1 d-none">
+        <!-- Populated Cart Items Container (Zero Browser Scrollbars) -->
+        <div id="cartItemsList" class="bugs-cart-items-container flex-grow-1 d-none" style="scrollbar-width: none; -ms-overflow-style: none;">
             <!-- Dynamic Cart Items Rendered via JS -->
         </div>
 

@@ -568,30 +568,32 @@ a, button, .btn {
   }
 }
 
-/* Cart Items Container - No unwanted scrollbars */
+/* Cart Items Container - Completely Hidden Scrollbars (Zero Browser Bars) */
+.bugs-offcanvas,
+.bugs-offcanvas * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.bugs-offcanvas::-webkit-scrollbar,
+.bugs-offcanvas *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
 .bugs-cart-items-container {
   overflow-y: auto !important;
   overflow-x: hidden !important;
-  padding-right: 4px;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(184, 151, 102, 0.25) transparent;
+  padding-bottom: 0.75rem;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
 .bugs-cart-items-container::-webkit-scrollbar {
-  width: 4px;
-}
-
-.bugs-cart-items-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.bugs-cart-items-container::-webkit-scrollbar-thumb {
-  background: rgba(184, 151, 102, 0.25);
-  border-radius: 9999px;
-}
-
-.bugs-cart-items-container::-webkit-scrollbar-thumb:hover {
-  background: var(--bugs-primary);
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .hover-danger:hover {
