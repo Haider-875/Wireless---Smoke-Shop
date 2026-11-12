@@ -128,4 +128,26 @@
         </div>
     @endif
 </div>
+
+@push('schema')
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'Product',
+    'name' => $product->name,
+    'image' => $product->image_url,
+    'description' => $product->description,
+    'sku' => $product->sku ?? ('BUGS-PROD-' . $product->id),
+    'category' => $product->category?->name ?? 'Accessories',
+    'offers' => [
+        '@type' => 'Offer',
+        'url' => route('shop.show', $product->slug),
+        'priceCurrency' => 'USD',
+        'price' => number_format($product->price, 2, '.', ''),
+        'availability' => $product->stock > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+        'itemCondition' => 'https://schema.org/NewCondition',
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+</script>
+@endpush
 @endsection

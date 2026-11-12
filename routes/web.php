@@ -18,7 +18,16 @@ use App\Http\Controllers\AdminController;
 // Homepage & Core Pages
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/repairs', [RepairController::class, 'index'])->name('repairs');
-Route::post('/repairs/quote', [RepairController::class, 'storeQuote'])->name('repairs.quote');
+Route::post('/repairs/quote', [RepairController::class, 'storeQuote'])->middleware('throttle:15,1')->name('repairs.quote');
+
+// Dynamic XML Sitemap
+Route::get('/sitemap.xml', function () {
+    $products = \App\Models\Product::where('is_active', true)->get();
+    $categories = \App\Models\Category::all();
+
+    $content = view('sitemap', compact('products', 'categories'));
+    return response($content, 200)->header('Content-Type', 'text/xml');
+})->name('sitemap');
 
 // Shop Catalog & Product Detail
 Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
@@ -26,7 +35,7 @@ Route::get('/shop/{slug}', [ShopController::class, 'show'])->name('shop.show');
 
 // Checkout Flow
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
-Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::post('/checkout', [CheckoutController::class, 'store'])->middleware('throttle:15,1')->name('checkout.store');
 
 // Order Confirmation & Lookup
 Route::get('/orders/lookup', [OrderController::class, 'lookup'])->name('orders.lookup');

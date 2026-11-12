@@ -7,8 +7,63 @@
     <meta name="theme-color" content="#0a0a0b">
     <link rel="icon" type="image/png" href="{{ asset('assets/images/logo.png') }}">
     <title>@yield('title', 'Bugs Wireless & Smoke Shop — St. Louis, MO')</title>
+    <meta name="description" content="@yield('meta_description', 'Bugs Wireless & Smoke Shop on Halls Ferry Rd, St. Louis. Phone repair, screen replacement, vapes, glass, hookah, and phone accessories. Walk-ins welcome.')">
+    <link rel="canonical" href="@yield('canonical', url()->current())">
+    <meta name="robots" content="@yield('meta_robots', 'index, follow')">
 
-    <!-- Google Fonts -->
+    <!-- OpenGraph / Facebook -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:title" content="@yield('og_title', 'Bugs Wireless & Smoke Shop — St. Louis, MO')">
+    <meta property="og:description" content="@yield('meta_description', 'Bugs Wireless & Smoke Shop on Halls Ferry Rd, St. Louis. Phone repair, screen replacement, vapes, glass, hookah, and phone accessories. Walk-ins welcome.')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="Bugs Wireless & Smoke Shop">
+    <meta property="og:image" content="@yield('og_image', asset('assets/images/lifestyle/hero-display.png'))">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('og_title', 'Bugs Wireless & Smoke Shop — St. Louis, MO')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Bugs Wireless & Smoke Shop on Halls Ferry Rd, St. Louis. Phone repair, screen replacement, vapes, glass, hookah, and phone accessories.')">
+    <meta name="twitter:image" content="@yield('og_image', asset('assets/images/lifestyle/hero-display.png'))">
+
+    <!-- Schema.org LocalBusiness / ElectronicsStore JSON-LD -->
+    <script type="application/ld+json">
+    {!! json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'ElectronicsStore',
+        'name' => 'Bugs Wireless & Smoke Shop',
+        'image' => asset('assets/images/lifestyle/hero-display.png'),
+        'telephone' => '+1-314-441-2851',
+        'priceRange' => '$$',
+        'address' => [
+            '@type' => 'PostalAddress',
+            'streetAddress' => '10010 Halls Ferry Rd',
+            'addressLocality' => 'St. Louis',
+            'addressRegion' => 'MO',
+            'postalCode' => '63136',
+            'addressCountry' => 'US',
+        ],
+        'geo' => [
+            '@type' => 'GeoCoordinates',
+            'latitude' => 38.7490,
+            'longitude' => -90.2315,
+        ],
+        'openingHoursSpecification' => [
+            [
+                '@type' => 'OpeningHoursSpecification',
+                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                'opens' => '10:00',
+                'closes' => '20:00',
+            ],
+        ],
+        'url' => url('/'),
+    ], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @stack('schema')
+
+    <!-- Performance & DNS Hints -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
