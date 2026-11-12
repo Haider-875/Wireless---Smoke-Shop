@@ -100,3 +100,4 @@ class PerformanceSecuritySeoTest extends TestCase
         $this->assertStringContainsString('sitemap.xml', file_get_contents(public_path('robots.txt')));
     }
 }
+
