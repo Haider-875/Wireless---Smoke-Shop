@@ -89,16 +89,6 @@
                             Get Free Quote
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ route('orders.lookup') }}" class="bugs-footer-link">
-                            Track Order
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('admin.login') }}" class="bugs-footer-link" style="opacity: 0.75;">
-                            Staff Portal
-                        </a>
-                    </li>
                 </ul>
             </div>
 
