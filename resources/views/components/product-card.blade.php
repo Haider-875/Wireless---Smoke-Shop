@@ -1,21 +1,12 @@
 @props(['product'])
 
 <article class="bugs-product-card h-100 d-flex flex-column rounded-4 border overflow-hidden position-relative group" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
-    <!-- Badges -->
-    <div class="position-absolute top-0 start-0 p-3 z-2 d-flex flex-column gap-1">
-        @if($product->badge)
-            <span class="badge rounded-pill bg-black bg-opacity-75 text-white border border-secondary px-2 py-1 small fw-normal">
-                {{ $product->badge }}
-            </span>
-        @endif
-    </div>
-
     <!-- Product Image -->
-    <a href="{{ route('shop.show', $product->slug) }}" class="d-block position-relative ratio ratio-1x1 overflow-hidden" style="background-color: #0d0d0f;">
+    <a href="{{ route('shop.show', $product->slug) }}" class="d-block position-relative ratio ratio-1x1 overflow-hidden" style="background-color: #0e0e10;">
         <img src="{{ $product->image_url }}" 
              alt="{{ $product->name }}" 
              loading="lazy" 
-             class="object-fit-cover w-100 h-100 bugs-card-img transition-transform duration-300">
+             class="object-fit-cover w-100 h-100 bugs-card-img">
     </a>
 
     <!-- Card Body -->

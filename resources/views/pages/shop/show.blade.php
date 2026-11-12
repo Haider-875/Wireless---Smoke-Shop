@@ -16,13 +16,6 @@
         <!-- Product Realistic Image -->
         <div class="col-lg-6">
             <div class="rounded-4 overflow-hidden border position-relative ratio ratio-1x1" style="background-color: var(--bugs-card); border-color: var(--bugs-border) !important;">
-                @if($product->badge)
-                    <div class="position-absolute top-0 start-0 p-3 z-2">
-                        <span class="badge rounded-pill bg-black bg-opacity-75 text-white border border-secondary px-3 py-1 fw-normal">
-                            {{ $product->badge }}
-                        </span>
-                    </div>
-                @endif
                 <img src="{{ $product->image_url }}" 
                      alt="{{ $product->name }}" 
                      class="w-100 h-100 object-fit-cover">
@@ -119,4 +112,3 @@
     @endif
 </div>
 @endsection
-
