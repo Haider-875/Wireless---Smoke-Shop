@@ -527,6 +527,64 @@ a, button, .btn {
   transform: scale(1.05);
 }
 
+/* Repair Bench Interactive Capability Points */
+.bugs-repair-point {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.875rem;
+  padding: 0.5rem 0.65rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, background-color, border-color;
+  cursor: pointer;
+}
+
+.bugs-repair-point:hover {
+  background-color: rgba(255, 255, 255, 0.035) !important;
+  border-color: rgba(184, 151, 102, 0.25) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.7);
+}
+
+.bugs-repair-point-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.02);
+  color: var(--bugs-primary);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bugs-repair-point:hover .bugs-repair-point-icon {
+  border-color: var(--bugs-primary);
+  background-color: rgba(184, 151, 102, 0.15);
+  color: #ffffff;
+  transform: scale(1.08);
+  box-shadow: 0 0 16px rgba(184, 151, 102, 0.28);
+}
+
+.bugs-repair-point-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #ffffff;
+  transition: color 0.25s ease;
+}
+
+.bugs-repair-point:hover .bugs-repair-point-title {
+  color: var(--bugs-primary) !important;
+}
+
+.bugs-repair-point-sub {
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--bugs-fg-muted);
+  transition: color 0.25s ease;
+}
+
+.bugs-repair-point:hover .bugs-repair-point-sub {
+  color: #e5e7eb !important;
+}
+
 /* CTA Counter Banner */
 .bugs-cta-card {
   background-color: var(--bugs-card);

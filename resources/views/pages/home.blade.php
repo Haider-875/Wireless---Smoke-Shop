@@ -219,26 +219,26 @@
                     Our technicians work on the counter in front of you. Most screen and battery jobs are finished the same day, and you'll always hear the price before we open a single screw.
                 </p>
 
-                <!-- 6 Capabilities Matching Reference SVG Icons & Typography -->
-                <div class="row g-4 mb-4 pb-2">
+                <!-- 6 Capabilities with Luxury Hover Interactions -->
+                <div class="row g-3 g-sm-4 mb-4 pb-2">
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-start gap-3">
-                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point d-flex align-items-start gap-3 text-decoration-none">
+                            <span class="bugs-repair-point-icon d-flex align-items-center justify-content-center rounded-circle flex-shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
                                     <path d="M12 18h.01"></path>
                                 </svg>
                             </span>
                             <div>
-                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Screen &amp; glass replacement</span>
-                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">iPhone, Galaxy, Pixel</span>
+                                <span class="bugs-repair-point-title d-block">Screen &amp; glass replacement</span>
+                                <span class="bugs-repair-point-sub d-block">iPhone, Galaxy, Pixel</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-start gap-3">
-                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point d-flex align-items-start gap-3 text-decoration-none">
+                            <span class="bugs-repair-point-icon d-flex align-items-center justify-content-center rounded-circle flex-shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"></path>
                                     <path d="M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1"></path>
@@ -247,15 +247,15 @@
                                 </svg>
                             </span>
                             <div>
-                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Battery replacement</span>
-                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">Holds a charge again</span>
+                                <span class="bugs-repair-point-title d-block">Battery replacement</span>
+                                <span class="bugs-repair-point-sub d-block">Holds a charge again</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-start gap-3">
-                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point d-flex align-items-start gap-3 text-decoration-none">
+                            <span class="bugs-repair-point-icon d-flex align-items-center justify-content-center rounded-circle flex-shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M12 22v-5"></path>
                                     <path d="M9 8V2"></path>
@@ -264,30 +264,30 @@
                                 </svg>
                             </span>
                             <div>
-                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Charging port repair</span>
-                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">Loose cable, no charge</span>
+                                <span class="bugs-repair-point-title d-block">Charging port repair</span>
+                                <span class="bugs-repair-point-sub d-block">Loose cable, no charge</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-start gap-3">
-                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point d-flex align-items-start gap-3 text-decoration-none">
+                            <span class="bugs-repair-point-icon d-flex align-items-center justify-content-center rounded-circle flex-shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"></path>
                                     <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"></path>
                                 </svg>
                             </span>
                             <div>
-                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Liquid damage service</span>
-                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">Cleaned and assessed</span>
+                                <span class="bugs-repair-point-title d-block">Liquid damage service</span>
+                                <span class="bugs-repair-point-sub d-block">Cleaned and assessed</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-start gap-3">
-                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point d-flex align-items-start gap-3 text-decoration-none">
+                            <span class="bugs-repair-point-icon d-flex align-items-center justify-content-center rounded-circle flex-shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="22" x2="2" y1="12" y2="12"></line>
                                     <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
@@ -296,15 +296,15 @@
                                 </svg>
                             </span>
                             <div>
-                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Data transfer &amp; backup</span>
-                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">Move to your new phone</span>
+                                <span class="bugs-repair-point-title d-block">Data transfer &amp; backup</span>
+                                <span class="bugs-repair-point-sub d-block">Move to your new phone</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="d-flex align-items-start gap-3">
-                            <span class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--bugs-primary);">
+                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point d-flex align-items-start gap-3 text-decoration-none">
+                            <span class="bugs-repair-point-icon d-flex align-items-center justify-content-center rounded-circle flex-shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M12 20h.01"></path>
                                     <path d="M2 8.82a15 15 0 0 1 20 0"></path>
@@ -313,10 +313,10 @@
                                 </svg>
                             </span>
                             <div>
-                                <span class="d-block text-white" style="font-size: 14px; font-weight: 500; line-height: 1.35;">Carrier activation</span>
-                                <span class="d-block text-secondary" style="font-size: 12px; line-height: 1.35;">Prepaid &amp; postpaid</span>
+                                <span class="bugs-repair-point-title d-block">Carrier activation</span>
+                                <span class="bugs-repair-point-sub d-block">Prepaid &amp; postpaid</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
