@@ -69,7 +69,7 @@
         </div>
 
         @if($products->hasPages())
-            <div class="mt-5 d-flex justify-content-center">
+            <div class="pagination-wrapper my-5 py-3 d-flex justify-content-center">
                 {{ $products->links() }}
             </div>
         @endif
