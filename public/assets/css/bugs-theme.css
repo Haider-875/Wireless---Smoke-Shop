@@ -52,6 +52,8 @@
 /* Base Document */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -63,6 +65,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* Custom Luxury Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #232328;
+  border-radius: 9999px;
+  border: 2px solid #0a0a0b;
+  transition: background-color 0.25s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b89766;
+}
+
+/* Global Interactive Element Smoothness */
+a, button, .btn {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Typography Helpers */
@@ -684,4 +709,197 @@ a.text-primary:hover {
 .form-check-input:checked {
   background-color: #b89766 !important;
   border-color: #b89766 !important;
+}
+
+/* ==========================================================================
+   Luxury Footer & Global Smooth Interaction System
+   ========================================================================== */
+
+/* Smooth Product Card Hover Transitions */
+.bugs-product-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, box-shadow;
+}
+
+.bugs-product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(184, 151, 102, 0.45) !important;
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.9), 0 0 25px -4px rgba(184, 151, 102, 0.15) !important;
+}
+
+.bugs-card-img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform;
+}
+
+.bugs-product-card:hover .bugs-card-img {
+  transform: scale(1.06);
+}
+
+/* Smooth Button Feedback */
+.btn-bugs-primary,
+.btn-bugs-outline,
+.btn-bugs-add-bag {
+  will-change: transform, box-shadow;
+}
+
+.btn-bugs-primary:active,
+.btn-bugs-outline:active {
+  transform: scale(0.97) !important;
+}
+
+/* Footer Section Styling */
+.bugs-footer {
+  background: linear-gradient(180deg, #0a0a0b 0%, #060607 100%);
+  border-top: 1px solid var(--bugs-border) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.bugs-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 151, 102, 0.3), transparent);
+  pointer-events: none;
+}
+
+.bugs-footer-eyebrow {
+  color: var(--bugs-primary) !important;
+  font-family: var(--bugs-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.bugs-footer-link {
+  color: var(--bugs-fg-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0;
+  transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bugs-footer-link:hover {
+  color: #ffffff !important;
+  transform: translateX(5px);
+}
+
+.bugs-footer-link i {
+  color: var(--bugs-primary);
+  font-size: 0.7rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bugs-footer-link:hover i {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Footer Action Pills */
+.bugs-footer-pill {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--bugs-border);
+  color: var(--bugs-fg-muted);
+  padding: 0.5rem 1.15rem;
+  border-radius: 9999px;
+  font-size: 0.825rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bugs-footer-pill:hover {
+  background-color: rgba(184, 151, 102, 0.12);
+  border-color: var(--bugs-primary);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -6px rgba(184, 151, 102, 0.25);
+}
+
+/* Pulsating Live Status Indicator */
+.bugs-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.bugs-pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid #22c55e;
+  animation: bugsPulseAnimation 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes bugsPulseAnimation {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* Storefront Card in Footer */
+.bugs-footer-store-card {
+  background-color: rgba(17, 17, 19, 0.6);
+  border: 1px solid var(--bugs-border-light);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  transition: border-color 0.3s ease, transform 0.25s ease;
+}
+
+.bugs-footer-store-card:hover {
+  border-color: rgba(184, 151, 102, 0.35);
+  transform: translateY(-2px);
+}
+
+.bugs-footer-store-card a:hover {
+  color: var(--bugs-primary) !important;
+}
+
+/* Back to Top Smooth Trigger */
+.bugs-back-to-top {
+  color: var(--bugs-fg-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.bugs-back-to-top:hover {
+  color: var(--bugs-primary) !important;
+  border-color: var(--bugs-border);
+  background-color: rgba(255, 255, 255, 0.03);
+  transform: translateY(-2px);
 }
