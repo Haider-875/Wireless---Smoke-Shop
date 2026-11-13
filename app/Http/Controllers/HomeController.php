@@ -17,8 +17,15 @@ class HomeController extends Controller
         $featuredProducts = Product::where('is_active', true)
             ->where('featured', true)
             ->with('category')
-            ->take(4)
+            ->take(8)
             ->get();
+
+        if ($featuredProducts->isEmpty()) {
+            $featuredProducts = Product::where('is_active', true)
+                ->with('category')
+                ->take(8)
+                ->get();
+        }
 
         return view('pages.home', compact('categories', 'featuredProducts'));
     }

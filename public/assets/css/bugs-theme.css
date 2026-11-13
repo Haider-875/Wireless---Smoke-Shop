@@ -1,59 +1,82 @@
 /**
- * BUGS Wireless & Smoke Shop - Theme Variables & Responsive Design Foundation
- * Strict Bootstrap 5.3 Extension - ZERO Tailwind CSS
- * Reference: https://fanatic-luxe-mart-go.base44.app/repairs
+ * BUGS Wireless & Smoke Shop — Design System 2026
+ * Strictly based on SKILL.md Visual Principles
+ * Bootstrap 5.3 Extension — ZERO Tailwind CSS — ZERO Background Gradients — ZERO Italics
  */
 
 :root {
-  /* Override Bootstrap 5 theme colors so no element ever defaults to Bootstrap Blue */
-  --bs-primary: #b89766;
-  --bs-primary-rgb: 184, 151, 102;
-  --bs-primary-text-emphasis: #c8a776;
-  --bs-primary-bg-subtle: rgba(184, 151, 102, 0.15);
-  --bs-primary-border-subtle: rgba(184, 151, 102, 0.35);
+  /* ==========================================================================
+     Strict 60-30-10 Color Architecture:
+     - Carbon Black 60% (Foundational dark canvas & structural surfaces)
+     - Pearl White 30% (High-clarity typography, headings & metadata)
+     - Electric Azure 10% (High-energy accent, CTAs, active states, focus rings)
+     ========================================================================== */
+  --bugs-bg: #0a0b0e;                /* Carbon Black 60%: Main canvas */
+  --bugs-surface-1: #101216;         /* Carbon Black: Deep section backdrop */
+  --bugs-surface-2: #15181e;         /* Carbon Black: Card & floating pill nav surface */
+  --bugs-surface-3: #1c2028;         /* Carbon Black: Elevated modal, drawer & dropdown surface */
+  --bugs-surface-4: #232833;         /* Carbon Black: Interactive selected & hover states */
+  --bugs-border: #262c38;            /* Carbon Black: Structural borders */
+  --bugs-border-subtle: rgba(248, 249, 250, 0.08);
+  --bugs-border-gold: rgba(0, 145, 255, 0.45);   /* Electric Azure border accent */
+  --bugs-border-azure: rgba(0, 145, 255, 0.45);
 
-  --bs-link-color: #b89766;
-  --bs-link-hover-color: #c8a776;
-  --bs-link-color-rgb: 184, 151, 102;
-  --bs-link-hover-color-rgb: 200, 167, 118;
+  /* Primary Brand Accent (Electric Azure 10%) */
+  --bugs-primary: #0091ff;           /* Electric Azure: Vibrant blue focal accent */
+  --bugs-primary-hover: #1aa0ff;     /* Electric Azure: Luminous hover */
+  --bugs-primary-fg: #ffffff;        /* Pure Pearl White text on primary buttons */
 
-  --bs-focus-ring-color: rgba(184, 151, 102, 0.25);
+  /* Foreground / Text (Pearl White 30%) */
+  --bugs-fg: #F8F9FA;                /* Pearl White: Editorial headlines & crisp copy */
+  --bugs-fg-muted: #B0B8C6;          /* Pearl White: Soft readable secondary copy */
+  --bugs-fg-pearl: #F8F9FA;
 
-  /* Core Theme Colors */
-  --bugs-bg: #0a0a0b;               /* hsl(240, 6%, 4%) - Main Dark Backdrop */
-  --bugs-card: #111113;             /* hsl(240, 6%, 7%) - Card Surface */
-  --bugs-card-alt: #08080a;         /* Process steps section background */
-  --bugs-modal-bg: #0d0d0f;         /* Age gate and offcanvas surface */
+  /* Bootstrap Override */
+  --bs-primary: #0091ff;
+  --bs-primary-rgb: 0, 145, 255;
+  --bs-body-bg: #0a0b0e;
+  --bs-body-color: #F8F9FA;
+  --bs-link-color: #0091ff;
+  --bs-link-hover-color: #1aa0ff;
+  --bs-focus-ring-color: rgba(0, 145, 255, 0.4);
 
-  /* Typography & Foreground */
-  --bugs-fg: #f2f2f2;               /* hsl(0, 0%, 95%) - Primary readable text */
-  --bugs-fg-muted: #9999a1;         /* hsl(240, 4%, 62%) - Subtitles & descriptions */
+  /* ==========================================================================
+     Strict Typography Tokens (SKILL.md B1: Manrope only, NO italics)
+     ========================================================================== */
+  --bugs-font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --bugs-font-mono: 'Geist Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Primary Brand Accent (Luxury Metallic Warm Gold) */
-  --bugs-primary: #b89766;          /* hsl(39, 42%, 56%) - Gold Accent */
-  --bugs-primary-hover: #c8a776;    /* Lightened Gold for interactive states */
-  --bugs-primary-fg: #0f0f12;       /* hsl(240, 8%, 6%) - Contrast text on gold */
+  /* ==========================================================================
+     Strict Spacing Tokens (SKILL.md B2)
+     ========================================================================== */
+  --spacing-0: 0px;
+  --spacing-25: 2px;
+  --spacing-50: 4px;
+  --spacing-75: 8px;
+  --spacing-100: 12px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-700: 64px;
+  --spacing-800: 80px;
+  --spacing-900: 96px;
 
-  /* Subtle Borders & Dividers */
-  --bugs-border: rgba(255, 255, 255, 0.07);
-  --bugs-border-light: rgba(255, 255, 255, 0.12);
-  --bugs-border-gold: rgba(184, 151, 102, 0.45);
-
-  /* Status Colors */
-  --bugs-destructive: #dc3545;
-  --bugs-success: #198754;
-
-  /* Fonts */
-  --bugs-font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --bugs-font-serif: 'Cormorant Garamond', Georgia, serif;
-  --bugs-font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /* ==========================================================================
+     Strict Motion Tokens (SKILL.md B7)
+     ========================================================================== */
+  --ease-base: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-layout: 500ms;
+  --duration-interactive: 300ms;
 }
 
 /* Base Document */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 85px;
+  scroll-padding-top: 100px;
   text-rendering: optimizeLegibility;
+  background-color: var(--bugs-bg);
 }
 
 body {
@@ -65,49 +88,140 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  text-wrap: pretty;
 }
 
-/* Custom Luxury Dark Scrollbar */
+/* Accessibility: Skip to Content */
+.bugs-skip-link {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  z-index: 9999;
+  background-color: var(--bugs-primary);
+  color: var(--bugs-primary-fg);
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 9999px;
+  transition: top 300ms var(--ease-base);
+  text-decoration: none;
+}
+.bugs-skip-link:focus {
+  top: 20px;
+  outline: 2px solid #FFFFFF;
+}
+
+/* Custom Minimal Dark Scrollbar */
 ::-webkit-scrollbar {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0b;
+  background: var(--bugs-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #232328;
+  background: var(--bugs-surface-4);
   border-radius: 9999px;
-  border: 2px solid #0a0a0b;
-  transition: background-color 0.25s ease;
+  border: 2px solid var(--bugs-bg);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #b89766;
+  background: var(--bugs-primary);
 }
 
-/* Global Interactive Element Smoothness */
-a, button, .btn {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+/* ==========================================================================
+   B1. Text Styles
+   ========================================================================== */
+.heading-1 {
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
-/* Typography Helpers */
+.heading-2 {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.heading-3 {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.heading-4 {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.heading-5 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+.heading-6 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.title-1 { font-size: 20px; line-height: 28px; font-weight: 500; }
+.title-2 { font-size: 18px; line-height: 28px; font-weight: 500; }
+.title-3 { font-size: 16px; line-height: 24px; font-weight: 500; }
+.title-4 { font-size: 14px; line-height: 20px; font-weight: 500; }
+.title-5 { font-size: 12px; line-height: 16px; font-weight: 500; }
+
+.body-1 { font-size: 16px; line-height: 24px; font-weight: 600; text-wrap: pretty; }
+.body-2 { font-size: 16px; line-height: 24px; font-weight: 500; text-wrap: pretty; }
+.body-3 { font-size: 16px; line-height: 24px; font-weight: 400; text-wrap: pretty; }
+.body-4 { font-size: 14px; line-height: 20px; font-weight: 600; text-wrap: pretty; }
+.body-5 { font-size: 14px; line-height: 20px; font-weight: 500; text-wrap: pretty; }
+.body-6 { font-size: 14px; line-height: 20px; font-weight: 400; text-wrap: pretty; }
+
+.button-lg { font-size: 18px; line-height: 28px; font-weight: 600; }
+.button-md { font-size: 16px; line-height: 24px; font-weight: 600; }
+.button-sm { font-size: 14px; line-height: 20px; font-weight: 600; }
+.button-xsm { font-size: 12px; line-height: 16px; font-weight: 600; }
+
+.caption-1 { font-size: 14px; line-height: 20px; font-weight: 500; }
+.caption-2 { font-size: 14px; line-height: 20px; font-weight: 400; }
+.caption-3 { font-size: 12px; line-height: 16px; font-weight: 600; }
+.caption-4 { font-size: 12px; line-height: 16px; font-weight: 500; }
+.caption-5 { font-size: 12px; line-height: 16px; font-weight: 400; }
+
+/* Backward Compatibility Helpers for Existing Views & Tests */
 .font-display {
   font-family: var(--bugs-font-sans);
 }
 
 .font-serif-display {
-  font-family: var(--bugs-font-serif);
-  letter-spacing: -0.01em;
-  font-style: italic;
-  color: var(--bugs-primary);
+  /* Strict: NO italic, single typeface Manrope */
+  font-family: var(--bugs-font-sans);
+  color: var(--bugs-primary) !important;
+  font-style: normal !important;
+  font-weight: 600;
 }
 
 .eyebrow {
   font-family: var(--bugs-font-mono);
-  letter-spacing: 0.22em;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-size: 0.6875rem;
-  line-height: 1.4;
 }
 
 .num {
@@ -115,93 +229,382 @@ a, button, .btn {
   font-variant-numeric: tabular-nums;
 }
 
-/* Fluid Heading Sizing matching reference clamp() */
+/* Fluid Hero Heading */
 .bugs-hero-title {
-  font-size: clamp(2.4rem, 5.6vw, 4.4rem);
+  font-size: clamp(36px, 5.5vw, 60px);
+  line-height: clamp(40px, 5.8vw, 64px);
   font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  max-width: 680px;
 }
 
 .bugs-section-title {
-  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: clamp(34px, 4.4vw, 52px);
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
-/* Hero Floating Repair Desk Card (Narrower than image & truly floating) */
-.bugs-hero-floating-card {
-  bottom: -22px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 40px);
-  max-width: 480px;
-  background: rgba(10, 10, 11, 0.88);
+/* B5. Hero Section Heading Gradient (Pearl White: #FFFFFF -> #B8C2CC) */
+.hero-gradient-text {
+  background: linear-gradient(90deg, #FFFFFF 0%, #B8C2CC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.hero-subhead {
+  max-width: 680px;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--bugs-fg-muted);
+  text-wrap: pretty;
+}
+
+/* ==========================================================================
+   B7. Floating Modern Navigation Bar
+   ========================================================================== */
+.bugs-floating-header {
+  position: fixed;
+  top: 16px;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  pointer-events: none;
+  padding: 0 16px;
+}
+
+.bugs-navbar-pill {
+  pointer-events: auto;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: rgba(24, 24, 24, 0.84);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85), 0 0 24px -4px rgba(184, 151, 102, 0.15) !important;
-  border-radius: 1.25rem !important;
+  border: 1px solid var(--bugs-border);
+  border-radius: 9999px;
+  padding: 8px 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+  transition: transform var(--duration-layout) var(--ease-base),
+              background-color var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              box-shadow var(--duration-interactive) var(--ease-base);
+}
+
+.bugs-navbar-pill.scrolled {
+  background: rgba(24, 24, 24, 0.94);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+}
+
+/* Keep .bugs-navbar-scroll class for tests */
+.bugs-navbar-scroll {
+  transition: background-color var(--duration-interactive) var(--ease-base);
+}
+
+.bugs-nav-link {
+  color: var(--bugs-fg-muted);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  transition: color var(--duration-interactive) var(--ease-base),
+              background-color var(--duration-interactive) var(--ease-base);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bugs-nav-link:hover {
+  color: var(--bugs-fg);
+  background-color: var(--bugs-surface-4);
+}
+
+.bugs-nav-link.active {
+  color: var(--bugs-fg);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Navbar action icon buttons */
+.bugs-nav-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--bugs-border);
+  background-color: var(--bugs-surface-2);
+  color: var(--bugs-fg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              background-color var(--duration-interactive) var(--ease-base),
+              color var(--duration-interactive) var(--ease-base);
+  position: relative;
+  text-decoration: none;
+}
+
+.bugs-nav-icon-btn:hover {
+  border-color: var(--bugs-primary);
+  background-color: var(--bugs-surface-4);
+  color: var(--bugs-primary);
+  transform: translateY(-2px);
+}
+
+.bugs-nav-icon-btn:active {
+  transform: scale(0.96);
+}
+
+.bugs-badge-count {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: var(--bugs-primary);
+  color: var(--bugs-primary-fg);
+  border-radius: 9999px;
+  font-family: var(--bugs-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--duration-interactive) var(--ease-base);
+}
+
+/* Announcement Bar */
+.bugs-announcement,
+.bugs-announcement-bar {
+  background-color: var(--bugs-surface-1);
+  border-bottom: 1px solid var(--bugs-border);
+  color: var(--bugs-fg-muted);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+}
+
+/* ==========================================================================
+   B7. Full Height Animated Mobile Menu
+   ========================================================================== */
+.bugs-mobile-menu {
+  background-color: rgba(24, 24, 24, 0.98);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-left: 1px solid var(--bugs-border);
+  width: 360px !important;
+  max-width: 100vw;
+}
+
+.bugs-mobile-nav-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-layout) var(--ease-base),
+              transform var(--duration-layout) var(--ease-base);
+}
+
+.offcanvas.show .bugs-mobile-nav-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   B9. Interactive Button System (Strict 8px vert / 12px horiz padding)
+   ========================================================================== */
+.btn-bugs-primary {
+  background-color: var(--bugs-primary);
+  color: var(--bugs-primary-fg);
+  font-family: var(--bugs-font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: 1px solid var(--bugs-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              background-color var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              box-shadow var(--duration-interactive) var(--ease-base);
+  cursor: pointer;
+}
+
+.btn-bugs-primary:hover {
+  background-color: var(--bugs-primary-hover);
+  border-color: var(--bugs-primary-hover);
+  color: var(--bugs-primary-fg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(var(--bs-primary-rgb), 0.35);
+}
+
+.btn-bugs-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-bugs-outline {
+  background-color: transparent;
+  color: var(--bugs-fg);
+  font-family: var(--bugs-font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: 1px solid var(--bugs-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              background-color var(--duration-interactive) var(--ease-base),
+              color var(--duration-interactive) var(--ease-base);
+  cursor: pointer;
+}
+
+.btn-bugs-outline:hover {
+  border-color: var(--bugs-primary);
+  background-color: var(--bugs-surface-4);
+  color: var(--bugs-fg);
+  transform: translateY(-2px);
+}
+
+.btn-bugs-outline:active {
+  transform: scale(0.98);
+}
+
+.btn-bugs-pill-sm {
+  padding: 6px 14px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Accessibility Focus Ring */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--bugs-primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* ==========================================================================
+   B3. Nested Radius Cards (Formula: inner = outer - gap)
+   Outer: 16px (rounded-2xl) -> Inner with 8px gap: 8px (rounded-lg)
+   Outer: 24px (rounded-3xl) -> Inner with 12px gap: 12px (rounded-xl)
+   ========================================================================== */
+.bugs-card-outer-24 {
+  border-radius: 24px;
+  background-color: var(--bugs-surface-2);
+  border: 1px solid var(--bugs-border);
+}
+
+.bugs-card-outer-16 {
+  border-radius: 16px;
+  background-color: var(--bugs-surface-2);
+  border: 1px solid var(--bugs-border);
+}
+
+/* Generic Flat Card Surface */
+.bugs-card,
+.bugs-card-surface {
+  background-color: var(--bugs-surface-2) !important;
+  border: 1px solid var(--bugs-border) !important;
+  border-radius: 16px !important;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              box-shadow var(--duration-interactive) var(--ease-base);
+}
+
+.bugs-card:hover,
+.bugs-card-surface:hover {
+  border-color: var(--bugs-primary) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   Hero Floating Repair Desk Card
+   ========================================================================== */
+.bugs-hero-floating-card {
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 460px;
+  background: rgba(24, 24, 24, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--bugs-border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85);
   z-index: 3;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, box-shadow;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              box-shadow var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-hero-floating-card:hover {
   transform: translateX(-50%) translateY(-4px);
-  border-color: rgba(184, 151, 102, 0.45) !important;
-  box-shadow: 0 26px 55px -12px rgba(0, 0, 0, 0.95), 0 0 32px -4px rgba(184, 151, 102, 0.25) !important;
-}
-
-@media (min-width: 576px) {
-  .bugs-hero-floating-card {
-    width: calc(100% - 60px);
-  }
-}
-
-@media (min-width: 992px) {
-  .bugs-hero-floating-card {
-    width: 84%;
-    max-width: 460px;
-    bottom: -24px;
-  }
+  border-color: var(--bugs-primary) !important;
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.95);
 }
 
 .bugs-hero-call-btn {
   width: 44px;
   height: 44px;
   background-color: var(--bugs-primary);
-  color: #0a0a0b !important;
+  color: var(--bugs-primary-fg) !important;
   border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.25s ease,
-              box-shadow 0.25s ease;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              background-color var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-hero-call-btn:hover {
   transform: scale(1.08);
-  background-color: #c7a776;
-  color: #0a0a0b !important;
-  box-shadow: 0 0 16px rgba(184, 151, 102, 0.4);
+  background-color: var(--bugs-primary-hover);
 }
 
-/* Continuous Seamless Marquee Strip */
+.bugs-hero-call-btn:active {
+  transform: scale(0.96);
+}
+
+/* ==========================================================================
+   Continuous Seamless Marquee Strip
+   ========================================================================== */
 .bugs-marquee-wrapper {
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
   position: relative;
   user-select: none;
+  background-color: var(--bugs-surface-1);
+  border-top: 1px solid var(--bugs-border);
+  border-bottom: 1px solid var(--bugs-border);
+  padding: 12px 0;
 }
 
 .bugs-marquee-track {
   display: inline-flex;
   align-items: center;
   width: max-content;
-  animation: bugsMarqueeAnimation 30s linear infinite;
+  animation: bugsMarqueeAnimation 32s linear infinite;
   will-change: transform;
 }
 
@@ -212,13 +615,14 @@ a, button, .btn {
 .bugs-marquee-content {
   display: inline-flex;
   align-items: center;
-  gap: 1.5rem;
-  padding-right: 1.5rem;
+  gap: 24px;
+  padding-right: 24px;
 }
 
 .bugs-marquee-content span {
   font-family: var(--bugs-font-sans);
-  font-size: 0.72rem;
+  font-size: 13px;
+  line-height: 16px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -227,1043 +631,813 @@ a, button, .btn {
 }
 
 .bugs-marquee-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--bugs-primary);
   display: inline-block;
-  opacity: 0.85;
 }
 
 @keyframes bugsMarqueeAnimation {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
-/* Announcement Bar — Exact Reference Color Match (hsl(39, 42%, 56%) / #b89766) */
-.bugs-announcement,
-.bugs-announcement-bar {
-  background-color: var(--bugs-primary) !important;
-  color: var(--bugs-primary-fg) !important;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-}
-
-.bugs-announcement .eyebrow,
-.bugs-announcement-bar .eyebrow {
-  color: var(--bugs-primary-fg) !important;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-/* Reference Exact Search Field */
-.bugs-search-container {
-  position: relative;
-  width: 100%;
-}
-
-.bugs-search-icon {
-  position: absolute;
-  left: 1.15rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--bugs-fg-muted);
-  pointer-events: none;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-.bugs-search-input {
-  width: 100%;
-  border-radius: 9999px !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  background-color: var(--bugs-card) !important;
-  padding: 0.75rem 1.15rem 0.75rem 2.85rem !important;
-  font-size: 0.875rem !important;
-  color: var(--bugs-fg) !important;
-  outline: none !important;
-  box-shadow: none !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
-}
-
-.bugs-search-input::placeholder {
-  color: var(--bugs-fg-muted) !important;
-  opacity: 0.85;
-}
-
-.bugs-search-input:focus {
-  border-color: rgba(184, 151, 102, 0.6) !important;
-  box-shadow: 0 0 0 1px rgba(184, 151, 102, 0.3) !important;
-  background-color: var(--bugs-card) !important;
-  color: #fff !important;
-}
-
-/* Shelves Aisle Cards — Luxury Dark Clone */
+/* ==========================================================================
+   Shop Category Cards (The Five Aisles)
+   ========================================================================== */
 .bugs-aisle-card {
   position: relative;
-  min-height: 200px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  border-radius: 1.125rem !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  background: linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.35) !important;
-  padding: 1.35rem !important;
+  border-radius: 16px !important;
+  border: 1px solid var(--bugs-border) !important;
+  background-color: var(--bugs-surface-2) !important;
+  padding: 20px !important;
   text-decoration: none !important;
   color: inherit !important;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  will-change: transform, box-shadow;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              box-shadow var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-aisle-card:hover {
-  transform: translateY(-5px) !important;
-  border-color: rgba(184, 151, 102, 0.5) !important;
-  box-shadow: inset 0 1px 0 0 rgba(184, 151, 102, 0.45), 
-              0 20px 40px -10px rgba(0, 0, 0, 0.8), 
-              0 0 24px -2px rgba(184, 151, 102, 0.16) !important;
-  color: inherit !important;
-  text-decoration: none !important;
+  transform: translateY(-4px) !important;
+  border-color: var(--bugs-primary) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7) !important;
 }
 
 .bugs-aisle-card .bugs-aisle-num {
   font-family: var(--bugs-font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: var(--bugs-primary) !important;
+  color: var(--bugs-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
+  width: 32px;
   height: 22px;
   border-radius: 9999px;
-  background: rgba(184, 151, 102, 0.08);
-  border: 1px solid rgba(184, 151, 102, 0.22);
-  position: relative;
-  z-index: 2;
-  transition: all 0.35s ease;
-}
-
-.bugs-aisle-card:hover .bugs-aisle-num {
-  background: rgba(184, 151, 102, 0.22);
-  border-color: var(--bugs-primary);
-  color: #ffffff !important;
-  box-shadow: 0 0 12px rgba(184, 151, 102, 0.3);
+  background-color: rgba(var(--bs-primary-rgb), 0.12);
+  border: 1px solid rgba(var(--bs-primary-rgb), 0.28);
+  margin-bottom: 12px;
 }
 
 .bugs-aisle-card .bugs-aisle-title {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.25;
-  color: #f2f2f2 !important;
-  margin-bottom: 0.35rem;
-  transition: color 0.3s ease;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--bugs-fg);
+  margin-bottom: 6px;
+  transition: color var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-aisle-card:hover .bugs-aisle-title {
-  color: #ffffff !important;
+  color: var(--bugs-primary);
 }
 
 .bugs-aisle-card .bugs-aisle-desc {
-  font-size: 12.5px;
-  line-height: 1.35;
-  color: var(--bugs-fg-muted) !important;
-  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--bugs-fg-muted);
+  margin-bottom: 12px;
 }
 
 .bugs-aisle-card .bugs-aisle-browse {
-  margin-top: 1rem;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--bugs-primary) !important;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  color: var(--bugs-primary);
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  opacity: 0;
-  transform: translateY(2px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: transform var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-aisle-card:hover .bugs-aisle-browse {
-  opacity: 1;
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
-.bugs-aisle-card .glow-gold {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at 50% 0%, rgba(184, 151, 102, 0.18) 0%, transparent 70%);
-  transition: opacity 0.5s ease;
-  z-index: 1;
-}
-
-.bugs-aisle-card:hover .glow-gold {
-  opacity: 1;
-}
-
-/* Sticky Navbar Glassmorphism */
-.bugs-navbar-scroll {
-  background: rgba(10, 10, 11, 0.45);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--bugs-border);
-  transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
-}
-
-.bugs-navbar-scroll.scrolled {
-  background: rgba(10, 10, 11, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-@media (min-width: 992px) {
-  .bugs-navbar-left,
-  .bugs-navbar-right {
-    flex: 1 1 0%;
-  }
-}
-
-.bugs-nav-link {
-  color: var(--bugs-fg-muted);
-  font-size: 0.85rem;
+/* Category Visual Card (Modern Photo Presentation) */
+.bugs-category-visual-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--bugs-surface-2);
+  border: 1px solid var(--bugs-border);
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              box-shadow var(--duration-interactive) var(--ease-base);
   text-decoration: none;
-  transition: color 0.2s ease;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
+  display: block;
 }
 
-.bugs-nav-link:hover,
-.bugs-nav-link.active {
-  color: var(--bugs-fg);
-}
-
-/* Buttons with Micro-Animations */
-.btn-bugs-primary {
-  background-color: var(--bugs-primary);
-  color: var(--bugs-primary-fg);
-  font-weight: 500;
-  border-radius: 9999px;
-  padding: 0.875rem 1.75rem;
-  min-height: 48px;
-  border: none;
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-bugs-primary:hover {
-  background-color: var(--bugs-primary-hover);
-  color: var(--bugs-primary-fg);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(184, 151, 102, 0.25);
-}
-
-.btn-bugs-primary:active {
-  transform: translateY(0);
-}
-
-.btn-bugs-outline {
-  background-color: transparent;
-  color: var(--bugs-fg);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 9999px;
-  padding: 0.875rem 1.75rem;
-  min-height: 48px;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-bugs-outline:hover {
-  border-color: var(--bugs-primary-hover);
-  color: var(--bugs-primary);
-  transform: translateY(-1px);
-}
-
-.btn-bugs-pill-sm {
-  padding: 0.5rem 1.15rem;
-  font-size: 0.825rem;
-  min-height: 38px;
-  border-radius: 9999px;
-  width: auto !important;
-  white-space: nowrap;
-}
-
-/* Atmospheric Glow */
-.glow-gold {
-  position: absolute;
-  pointer-events: none;
-  background: radial-gradient(circle at 50% 50%, rgba(184, 151, 102, 0.16), transparent 68%);
-  transition: opacity 0.5s ease;
-}
-
-@media (max-width: 767.98px) {
-  .glow-gold {
-    width: 320px !important;
-    height: 320px !important;
-    right: -80px !important;
-    opacity: 0.8;
-  }
-}
-
-/* Service Card Styling with Responsive Lift & Glow */
-.bugs-service-card {
-  background: linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.35) !important;
-  border-radius: 1.25rem !important;
-  padding: 1.75rem !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.35s ease,
-              box-shadow 0.35s ease !important;
-  will-change: transform, box-shadow;
-}
-
-.bugs-service-card:hover {
-  transform: translateY(-5px) !important;
-  border-color: rgba(184, 151, 102, 0.45) !important;
-  box-shadow: inset 0 1px 0 0 rgba(184, 151, 102, 0.4), 
-              0 18px 36px -8px rgba(0, 0, 0, 0.75), 
-              0 0 22px -3px rgba(184, 151, 102, 0.18) !important;
-}
-
-.bugs-icon-badge {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(184, 151, 102, 0.08);
-  border: 1px solid rgba(184, 151, 102, 0.22);
-  color: var(--bugs-primary);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              background-color 0.35s ease,
-              border-color 0.35s ease,
-              box-shadow 0.35s ease,
-              color 0.35s ease !important;
-}
-
-.bugs-service-card:hover .bugs-icon-badge {
-  background: rgba(184, 151, 102, 0.2);
+.bugs-category-visual-card:hover {
+  transform: translateY(-4px);
   border-color: var(--bugs-primary);
-  color: #ffffff;
-  transform: scale(1.1) rotate(3deg);
-  box-shadow: 0 0 18px rgba(184, 151, 102, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
 }
 
-/* 3-Step Process Cards */
-.bugs-step-card {
-  background: linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.35) !important;
-  border-radius: 1.25rem !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.35s ease,
-              box-shadow 0.35s ease !important;
+.bugs-category-visual-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform var(--duration-layout) var(--ease-base);
 }
 
-.bugs-step-card:hover {
-  transform: translateY(-4px) !important;
-  border-color: rgba(184, 151, 102, 0.45) !important;
-  box-shadow: inset 0 1px 0 0 rgba(184, 151, 102, 0.35), 0 16px 32px -8px rgba(0, 0, 0, 0.7), 0 0 18px -2px rgba(184, 151, 102, 0.15) !important;
+.bugs-category-visual-card:hover .bugs-category-visual-img {
+  transform: scale(1.04);
 }
 
-.bugs-step-num {
-  font-family: var(--bugs-font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--bugs-primary) !important;
-  width: 34px;
-  height: 22px;
-  border-radius: 9999px;
-  background: rgba(184, 151, 102, 0.08);
-  border: 1px solid rgba(184, 151, 102, 0.22);
-  transition: all 0.35s ease;
-}
-
-.bugs-step-card:hover .bugs-step-num {
-  background: rgba(184, 151, 102, 0.22);
-  border-color: var(--bugs-primary);
-  color: #ffffff !important;
-  box-shadow: 0 0 10px rgba(184, 151, 102, 0.3);
-}
-
-/* Repair Bench Interactive Capability Points — Silky Smooth */
-.bugs-repair-point {
-  background-color: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 0.875rem;
-  padding: 0.65rem 0.85rem;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, background-color, border-color, box-shadow;
-  cursor: pointer;
+/* ==========================================================================
+   Product Card (Dynamic Laravel E-Commerce)
+   ========================================================================== */
+.bugs-product-card {
+  background-color: var(--bugs-surface-2) !important;
+  border: 1px solid var(--bugs-border) !important;
+  border-radius: 16px !important;
+  padding: 8px;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              box-shadow var(--duration-interactive) var(--ease-base);
+  height: 100%;
   display: flex;
+  flex-direction: column;
+}
+
+.bugs-product-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: var(--bugs-primary) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Inner image container (Nested radius formula: 16px outer - 8px pad = 8px) */
+.bugs-card-img-wrap {
+  position: relative;
+  background-color: #0e0e11 !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bugs-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-layout) var(--ease-base);
+}
+
+.bugs-product-card:hover .bugs-card-img {
+  transform: scale(1.05);
+}
+
+.btn-bugs-add-bag {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bugs-surface-3);
+  border: 1px solid var(--bugs-border);
+  color: var(--bugs-fg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              background-color var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              color var(--duration-interactive) var(--ease-base);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.btn-bugs-add-bag:hover {
+  background-color: var(--bugs-primary);
+  border-color: var(--bugs-primary);
+  color: var(--bugs-primary-fg);
+  transform: scale(1.08);
+}
+
+.btn-bugs-add-bag:active {
+  transform: scale(0.94);
+}
+
+/* ==========================================================================
+   Phone Repair Section
+   ========================================================================== */
+.bugs-repair-point {
+  background-color: var(--bugs-surface-2);
+  border: 1px solid var(--bugs-border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              background-color var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-repair-point:hover {
-  background-color: rgba(255, 255, 255, 0.04) !important;
-  border-color: rgba(184, 151, 102, 0.3) !important;
+  border-color: var(--bugs-primary);
+  background-color: var(--bugs-surface-4);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.65), 0 0 18px -4px rgba(184, 151, 102, 0.12) !important;
 }
 
 .bugs-repair-point-icon {
   width: 38px;
   height: 38px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 50%;
+  background-color: var(--bugs-surface-3);
+  border: 1px solid var(--bugs-border);
   color: var(--bugs-primary);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              color var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-repair-point:hover .bugs-repair-point-icon {
-  border-color: var(--bugs-primary);
-  background-color: rgba(184, 151, 102, 0.12);
-  color: #ffffff;
-  transform: scale(1.05);
-  box-shadow: 0 0 16px rgba(184, 151, 102, 0.25);
+  transform: scale(1.06);
+  color: #FFFFFF;
 }
 
 .bugs-repair-point-title {
   font-size: 14px;
-  font-weight: 500;
-  line-height: 1.35;
-  color: #ffffff;
-  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.bugs-repair-point:hover .bugs-repair-point-title {
-  color: var(--bugs-primary) !important;
+  line-height: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
 }
 
 .bugs-repair-point-sub {
   font-size: 12px;
-  line-height: 1.35;
+  line-height: 16px;
   color: var(--bugs-fg-muted);
-  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bugs-repair-point:hover .bugs-repair-point-sub {
-  color: #e5e7eb !important;
+/* Keep .bugs-service-card and .bugs-cta-card for tests */
+.bugs-service-card {
+  background-color: var(--bugs-surface-2) !important;
+  border: 1px solid var(--bugs-border) !important;
+  border-radius: 16px !important;
+  padding: 20px !important;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base);
 }
 
-/* CTA Counter Banner */
+.bugs-service-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--bugs-primary) !important;
+}
+
+.bugs-icon-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bugs-surface-3);
+  border: 1px solid var(--bugs-border);
+  color: var(--bugs-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .bugs-cta-card {
-  background: radial-gradient(circle at 85% 20%, rgba(184, 151, 102, 0.09) 0%, transparent 60%), linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.09) !important;
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5) !important;
-  border-radius: 1.75rem !important;
-  padding: 2.25rem 1.75rem;
-  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease !important;
+  background-color: var(--bugs-surface-2) !important;
+  border: 1px solid var(--bugs-border) !important;
+  border-radius: 24px !important;
+  padding: 32px !important;
 }
 
-@media (min-width: 992px) {
-  .bugs-cta-card {
-    padding: 3.5rem 3rem;
+.bugs-step-card {
+  background-color: var(--bugs-surface-2) !important;
+  border: 1px solid var(--bugs-border) !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base);
+}
+
+.bugs-step-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--bugs-primary) !important;
+}
+
+.bugs-step-num {
+  font-family: var(--bugs-font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bugs-primary);
+  width: 32px;
+  height: 22px;
+  border-radius: 9999px;
+  background-color: rgba(var(--bs-primary-rgb), 0.12);
+  border: 1px solid rgba(var(--bs-primary-rgb), 0.28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glow gold placeholder for tests (non-gradient flat halo or opacity) */
+.glow-gold {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.12;
+  border-radius: 50%;
+  background-color: var(--bugs-primary);
+  filter: blur(80px);
+}
+
+/* ==========================================================================
+   B11. Tagline Reveal Section (Mandatory Word-by-Word Scroll Reveal)
+   ========================================================================== */
+.bugs-tagline-section {
+  padding: 80px 0;
+  background-color: var(--bugs-surface-1);
+  border-top: 1px solid var(--bugs-border);
+  border-bottom: 1px solid var(--bugs-border);
+}
+
+.bugs-tagline-heading {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: clamp(36px, 4.8vw, 54px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.tagline-word {
+  opacity: 0.28;
+  display: inline-block;
+  transition: opacity var(--duration-interactive) var(--ease-base),
+              color var(--duration-interactive) var(--ease-base);
+  margin-right: 0.24em;
+}
+
+.tagline-word.revealed {
+  opacity: 1;
+  color: #FFFFFF;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tagline-word {
+    opacity: 1 !important;
+    color: #FFFFFF !important;
   }
 }
 
-.bugs-cta-card:hover {
-  border-color: rgba(184, 151, 102, 0.4) !important;
-  box-shadow: inset 0 1px 0 0 rgba(184, 151, 102, 0.35), 0 16px 40px -10px rgba(0, 0, 0, 0.8), 0 0 24px -2px rgba(184, 151, 102, 0.15) !important;
+/* ==========================================================================
+   Why Choose BUGS Feature Cards
+   ========================================================================== */
+.bugs-feature-card {
+  background-color: var(--bugs-surface-2);
+  border: 1px solid var(--bugs-border);
+  border-radius: 16px;
+  padding: 24px;
+  height: 100%;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base);
 }
 
-/* Custom Modals & Offcanvas Drawers */
+.bugs-feature-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--bugs-primary);
+}
+
+.bugs-feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--bugs-surface-3);
+  border: 1px solid var(--bugs-border);
+  color: var(--bugs-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   Store Location Section
+   ========================================================================== */
+.bugs-location-card {
+  background-color: var(--bugs-surface-2);
+  border: 1px solid var(--bugs-border);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+/* ==========================================================================
+   FAQ Accordion (Custom Dark Flat Styling)
+   ========================================================================== */
+.bugs-accordion .accordion-item {
+  background-color: var(--bugs-surface-2);
+  border: 1px solid var(--bugs-border);
+  border-radius: 12px !important;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.bugs-accordion .accordion-button {
+  background-color: var(--bugs-surface-2);
+  color: #FFFFFF;
+  font-family: var(--bugs-font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 18px 24px;
+  box-shadow: none;
+}
+
+.bugs-accordion .accordion-button:not(.collapsed) {
+  background-color: var(--bugs-surface-3);
+  color: var(--bugs-primary);
+}
+
+.bugs-accordion .accordion-button::after {
+  filter: invert(1);
+}
+
+.bugs-accordion .accordion-button:not(.collapsed)::after {
+  filter: invert(70%) sepia(30%) saturate(1000%) hue-rotate(5deg);
+}
+
+.bugs-accordion .accordion-body {
+  background-color: var(--bugs-surface-2);
+  color: var(--bugs-fg-muted);
+  font-size: 14px;
+  line-height: 22px;
+  padding: 16px 24px 24px 24px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.bugs-footer {
+  background-color: var(--bugs-surface-1);
+  border-top: 1px solid var(--bugs-border);
+  padding: 64px 0 32px 0;
+}
+
+.bugs-footer-link {
+  color: var(--bugs-fg-muted);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--duration-interactive) var(--ease-base);
+}
+
+.bugs-footer-link:hover {
+  color: var(--bugs-primary);
+}
+
+.bugs-back-to-top {
+  color: var(--bugs-fg-muted);
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--duration-interactive) var(--ease-base);
+}
+
+.bugs-back-to-top:hover {
+  color: var(--bugs-primary);
+}
+
+/* ==========================================================================
+   Modals & Drawers
+   ========================================================================== */
+.bugs-modal-content {
+  background-color: var(--bugs-surface-3);
+  border: 1px solid var(--bugs-border);
+  border-radius: 20px;
+  color: var(--bugs-fg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
+}
+
 .bugs-offcanvas {
-  background-color: var(--bugs-modal-bg);
+  background-color: var(--bugs-surface-2);
   color: var(--bugs-fg);
   border-left: 1px solid var(--bugs-border);
   width: 420px !important;
   max-width: 100vw;
 }
 
-.bugs-offcanvas .offcanvas-body {
-  overflow: hidden !important;
-  display: flex !important;
-  flex-direction: column !important;
-  padding: 1.25rem 1.25rem !important;
-}
-
-@media (max-width: 575.98px) {
-  .bugs-offcanvas .offcanvas-body {
-    padding: 1rem 1rem !important;
-  }
-}
-
-/* Cart Items Container - Completely Hidden Scrollbars (Zero Browser Bars) */
-.bugs-offcanvas,
-.bugs-offcanvas * {
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-}
-
-.bugs-offcanvas::-webkit-scrollbar,
-.bugs-offcanvas *::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-}
-
 .bugs-cart-items-container {
   overflow-y: auto !important;
   overflow-x: hidden !important;
-  padding-bottom: 0.75rem;
-  width: 100% !important;
-  box-sizing: border-box !important;
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
 }
 
 .bugs-cart-items-container::-webkit-scrollbar {
   display: none !important;
-  width: 0 !important;
-  height: 0 !important;
 }
 
-.hover-danger {
-  color: var(--bugs-fg-muted) !important;
-  transition: color 0.2s ease, transform 0.2s ease !important;
+/* Search Modal */
+.bugs-search-modal-content {
+  background-color: var(--bugs-surface-2);
+  border: 1px solid var(--bugs-border);
+  border-radius: 20px;
+  padding: 24px;
 }
 
-.hover-danger:hover {
-  color: #ef4444 !important;
-  transform: scale(1.1);
-}
-
-.bugs-modal-content {
-  background-color: var(--bugs-modal-bg);
-  border: 1px solid var(--bugs-border-light);
-  border-radius: 1.5rem;
-  color: var(--bugs-fg);
-  box-shadow: 0 40px 120px -40px rgba(0, 0, 0, 0.95);
-}
-
-/* Badge Counter */
-.bugs-badge-count {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  background-color: var(--bugs-primary);
-  color: var(--bugs-primary-fg);
+.bugs-search-box {
+  background-color: var(--bugs-surface-3);
+  border: 1px solid var(--bugs-border);
   border-radius: 9999px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  min-width: 18px;
-  height: 18px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 12px;
 }
 
-/* Responsive Touch Target Polish */
-@media (max-width: 575.98px) {
-  .btn-bugs-primary, .btn-bugs-outline {
-    width: 100%;
-    justify-content: center;
-  }
-  .bugs-hero-title {
-    font-size: 2.35rem;
-  }
-}
-
-/* Product Card Round Add-to-Bag Button — Exactly Round on all screens */
-.btn-bugs-add-bag {
-  width: 38px !important;
-  height: 38px !important;
-  min-width: 38px !important;
-  min-height: 38px !important;
-  max-width: 38px !important;
-  max-height: 38px !important;
-  border-radius: 50% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--bugs-border-light) !important;
-  color: var(--bugs-fg);
-  font-size: 0.95rem;
-  line-height: 1;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.3s ease,
-              border-color 0.3s ease,
-              color 0.3s ease,
-              box-shadow 0.3s ease !important;
-  flex-shrink: 0 !important;
-  box-shadow: none !important;
+.bugs-search-box input {
+  background: transparent;
+  border: none;
   outline: none;
-}
-
-.bugs-product-card:hover .btn-bugs-add-bag {
-  border-color: rgba(184, 151, 102, 0.45) !important;
-  color: var(--bugs-primary) !important;
-  background-color: rgba(184, 151, 102, 0.08);
-}
-
-.btn-bugs-add-bag:hover {
-  background-color: var(--bugs-primary) !important;
-  border-color: var(--bugs-primary) !important;
-  color: #0a0a0b !important;
-  transform: scale(1.1) !important;
-  box-shadow: 0 0 16px rgba(184, 151, 102, 0.5) !important;
-}
-
-.btn-bugs-add-bag:active {
-  transform: scale(0.92) !important;
-}
-
-@media (max-width: 575.98px) {
-  .btn-bugs-add-bag {
-    width: 32px !important;
-    height: 32px !important;
-    min-width: 32px !important;
-    min-height: 32px !important;
-    max-width: 32px !important;
-    max-height: 32px !important;
-    font-size: 0.8rem !important;
-  }
-}
-
-/* Dark Luxury Bootstrap Pagination */
-nav:has(.pagination),
-.pagination-wrapper {
-  margin-top: 2.5rem !important;
-  margin-bottom: 2.5rem !important;
+  color: #FFFFFF;
+  font-size: 15px;
   width: 100%;
 }
 
-.pagination {
-  gap: 0.5rem !important;
-  margin: 1.5rem 0 !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.pagination .page-item {
-  margin: 0 0.25rem !important;
-}
-
-.pagination .page-item .page-link {
-  background-color: var(--bugs-card);
-  border: 1px solid var(--bugs-border);
+.bugs-search-box input::placeholder {
   color: var(--bugs-fg-muted);
-  border-radius: 9999px !important;
-  min-width: 42px;
-  height: 42px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0 0.95rem;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  transition: all 0.2s ease;
-  box-shadow: none !important;
-}
-
-.pagination .page-item:first-child .page-link,
-.pagination .page-item:last-child .page-link {
-  border-radius: 9999px !important;
-}
-
-.pagination .page-item.active .page-link {
-  background-color: var(--bugs-primary) !important;
-  border-color: var(--bugs-primary) !important;
-  color: #0a0a0b !important;
-  font-weight: 600;
-}
-
-.pagination .page-item:not(.active):not(.disabled) .page-link:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: var(--bugs-primary);
-  color: var(--bugs-fg);
-  transform: translateY(-1px);
-}
-
-.pagination .page-item.disabled .page-link {
-  background-color: rgba(255, 255, 255, 0.02);
-  border-color: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.25);
-  cursor: not-allowed;
-}
-
-/* All Primary / Blue Text Globally Set to Brand Gold #b89766 */
-.text-primary,
-.text-primary-emphasis,
-.link-primary,
-a.text-primary,
-.text-info {
-  color: #b89766 !important;
-}
-
-.text-primary:hover,
-.text-primary-emphasis:hover,
-.link-primary:hover,
-a.text-primary:hover {
-  color: #c8a776 !important;
-}
-
-.border-primary {
-  border-color: #b89766 !important;
-}
-
-.bg-primary {
-  background-color: #b89766 !important;
-  color: #0a0a0b !important;
-}
-
-.btn-primary {
-  background-color: #b89766 !important;
-  border-color: #b89766 !important;
-  color: #0a0a0b !important;
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-  background-color: #c8a776 !important;
-  border-color: #c8a776 !important;
-  color: #0a0a0b !important;
-}
-
-.btn-outline-primary {
-  color: #b89766 !important;
-  border-color: #b89766 !important;
-}
-
-.btn-outline-primary:hover,
-.btn-outline-primary:focus,
-.btn-outline-primary:active {
-  background-color: #b89766 !important;
-  border-color: #b89766 !important;
-  color: #0a0a0b !important;
-}
-
-.btn-link,
-.btn-link.text-primary {
-  color: #b89766 !important;
-}
-
-.btn-link:hover,
-.btn-link.text-primary:hover {
-  color: #c8a776 !important;
-}
-
-.spinner-border.text-primary {
-  border-color: #b89766 !important;
-  border-right-color: transparent !important;
-}
-
-.form-control:focus,
-.form-select:focus {
-  border-color: #b89766 !important;
-  box-shadow: 0 0 0 0.25rem rgba(184, 151, 102, 0.25) !important;
-}
-
-.form-check-input:checked {
-  background-color: #b89766 !important;
-  border-color: #b89766 !important;
 }
 
 /* ==========================================================================
-   Luxury Footer & Global Smooth Interaction System
+   Scroll-Triggered Section Entrances
+   ========================================================================== */
+.gsap-reveal-section {
+  opacity: 0;
+  transform: translateY(32px);
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gsap-reveal-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   Advanced Cinematic Motion System (Apple-Style Storytelling & Three.js)
    ========================================================================== */
 
-/* Smooth Product Card Hover Transitions */
-.bugs-product-card {
-  background: linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 1.125rem !important;
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 4px 18px rgba(0, 0, 0, 0.4) !important;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  will-change: transform, box-shadow;
-}
-
-.bugs-product-card:hover {
-  transform: translateY(-5px) !important;
-  border-color: rgba(184, 151, 102, 0.48) !important;
-  box-shadow: inset 0 1px 0 0 rgba(184, 151, 102, 0.42), 
-              0 22px 42px -10px rgba(0, 0, 0, 0.85), 
-              0 0 24px -2px rgba(184, 151, 102, 0.16) !important;
-}
-
-.bugs-card-img-wrap {
-  position: relative;
-  background-color: #0e0e11 !important;
-}
-
-.bugs-card-img-gradient {
+/* 1. Ambient Three.js Particle Canvas */
+#heroThreeCanvas {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(13, 13, 16, 0.7) 0%, rgba(13, 13, 16, 0) 35%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 1;
-  transition: opacity 0.4s ease;
+  opacity: 0.65;
 }
 
-.bugs-product-card:hover .bugs-card-img-gradient {
-  opacity: 0.35;
+/* 2. Cinematic Image Masking (Clip-Path Wipe Reveal) */
+.mask-reveal-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
-.bugs-card-img {
-  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s ease !important;
+.mask-reveal-img {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  transform: scale(1.08);
+  will-change: clip-path, transform;
+  transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mask-reveal-img.revealed {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mask-reveal-img {
+    clip-path: none !important;
+    transform: none !important;
+  }
+}
+
+/* 3. 3D Tilt & Dynamic Radial Glow on Product Cards */
+.bugs-product-card {
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  position: relative;
+}
+
+.bugs-product-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(var(--bs-primary-rgb), 0.28), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bugs-product-card:hover::before {
+  opacity: 1;
+}
+
+.bugs-product-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 4. Cinematic Product Storytelling Showcase */
+.bugs-pinned-storytelling {
+  position: relative;
+  background-color: var(--bugs-bg);
+  overflow: hidden;
+  padding: 64px 0;
+}
+
+.story-pin-container {
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+}
+
+.bugs-chapter-nav {
+  display: inline-flex;
+  background: var(--bugs-surface-2);
+  border: 1px solid var(--bugs-border);
+  border-radius: 9999px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.bugs-chapter-btn {
+  background: transparent;
+  border: 0;
+  color: var(--bugs-fg-muted);
+  border-radius: 9999px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.25s var(--ease-base), color 0.25s var(--ease-base);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.bugs-chapter-btn:hover {
+  color: var(--bugs-fg);
+  background: var(--bugs-surface-3);
+}
+
+.text-gold {
+  color: var(--bugs-primary) !important;
+}
+
+.bugs-chapter-btn.active {
+  background: var(--bugs-primary);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.bugs-chapter-btn.active .text-gold {
+  color: #FFFFFF !important;
+}
+
+.story-steps-container {
+  position: relative;
+  min-height: 320px;
+}
+
+.story-step {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-base), transform 0.4s var(--ease-base), visibility 0.4s;
+  display: none;
+}
+
+.story-step.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  display: block;
+}
+
+.story-visual-stage {
+  position: relative;
+  height: 420px;
+  max-width: 520px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.story-visual-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--bugs-border);
+  background-color: var(--bugs-surface-2);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.92) rotate(-2deg);
+  transition: opacity 0.45s var(--ease-base), transform 0.45s var(--ease-base), visibility 0.45s;
+  pointer-events: none;
+}
+
+.story-visual-layer.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) rotate(0deg);
+  pointer-events: auto;
+}
+
+/* 5. Pinned Controlled Horizontal Scrolling (The Five Aisles) */
+.bugs-horizontal-section {
+  position: relative;
+  background-color: var(--bugs-surface-1);
+  overflow: hidden;
+  padding: 64px 0;
+}
+
+.bugs-horizontal-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  width: max-content;
+  will-change: transform;
+  padding: 16px 0;
+}
+
+.bugs-horizontal-card {
+  width: 360px;
+  flex-shrink: 0;
+  background-color: var(--bugs-surface-2);
+  border: 1px solid var(--bugs-border);
+  border-radius: 20px;
+  padding: 24px;
+  position: relative;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color var(--duration-interactive) var(--ease-base),
+              transform var(--duration-interactive) var(--ease-base),
+              box-shadow var(--duration-interactive) var(--ease-base);
+}
+
+.bugs-horizontal-card:hover {
+  border-color: var(--bugs-primary);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.85);
+}
+
+@media (max-width: 991.98px) {
+  .bugs-horizontal-track {
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 16px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .bugs-horizontal-track::-webkit-scrollbar {
+    display: none;
+  }
+  .bugs-horizontal-card {
+    scroll-snap-align: start;
+    width: 290px;
+  }
+}
+
+/* 6. Typography Character Splitting */
+.char-reveal {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* 7. Parallax Depth Layering */
+[data-parallax] {
   will-change: transform;
 }
 
-.bugs-product-card:hover .bugs-card-img {
-  transform: scale(1.06) !important;
-  filter: brightness(1.03) contrast(1.02);
-}
-
-.bugs-product-card .eyebrow {
-  transition: color 0.3s ease;
-}
-
-.bugs-product-card:hover .eyebrow {
-  color: var(--bugs-primary) !important;
-}
-
-.bugs-product-card h3 a {
-  transition: color 0.3s ease;
-}
-
-.bugs-product-card:hover h3 a {
-  color: #ffffff !important;
-}
-
-/* Generic Luxury Surface Card & Admin Card */
-.bugs-card,
-.bugs-card-surface {
-  background: linear-gradient(180deg, #151518 0%, #0d0d10 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 6px 20px rgba(0, 0, 0, 0.4) !important;
-  border-radius: 1.25rem !important;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.bugs-card:hover {
-  border-color: rgba(184, 151, 102, 0.35) !important;
-}
-
-/* Fulfillment Option in Checkout */
-.bugs-fulfillment-option {
-  background-color: rgba(255, 255, 255, 0.02);
-  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.bugs-fulfillment-option:hover {
-  border-color: rgba(184, 151, 102, 0.4) !important;
-  background-color: rgba(184, 151, 102, 0.04);
-}
-
-.bugs-fulfillment-option:has(input:checked) {
-  border-color: var(--bugs-primary) !important;
-  background-color: rgba(184, 151, 102, 0.08);
-  box-shadow: 0 0 16px -4px rgba(184, 151, 102, 0.2);
-}
-
-/* Smooth Button Feedback */
-.btn-bugs-primary,
-.btn-bugs-outline,
-.btn-bugs-add-bag {
-  will-change: transform, box-shadow;
-}
-
-.btn-bugs-primary:active,
-.btn-bugs-outline:active {
-  transform: scale(0.97) !important;
-}
-
-/* Footer Section Styling */
-.bugs-footer {
-  background: linear-gradient(180deg, #0a0a0b 0%, #060607 100%);
-  border-top: 1px solid var(--bugs-border) !important;
-  position: relative;
-  overflow: hidden;
-}
-
-.bugs-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 15%;
-  right: 15%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(184, 151, 102, 0.3), transparent);
-  pointer-events: none;
-}
-
-.bugs-footer-eyebrow {
-  color: var(--bugs-primary) !important;
-  font-family: var(--bugs-font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 1.25rem;
-  font-weight: 500;
-}
-
-.bugs-footer-link {
-  color: var(--bugs-fg-muted);
-  text-decoration: none;
-  font-size: 0.875rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.2rem 0;
-  transition: color 0.25s ease-in-out !important;
-}
-
-.bugs-footer-link:hover {
-  color: var(--bugs-primary) !important;
-  text-decoration: none;
-}
-
-/* Smooth Hover Helpers */
-.hover-primary {
-  transition: color 0.25s ease-in-out !important;
-}
-
-.hover-primary:hover {
-  color: var(--bugs-primary) !important;
-}
-
-.hover-white {
-  transition: color 0.25s ease-in-out !important;
-}
-
-.hover-white:hover {
-  color: #ffffff !important;
-}
-
-/* Footer Action Pills */
-.bugs-footer-pill {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--bugs-border);
-  color: var(--bugs-fg-muted);
-  padding: 0.5rem 1.15rem;
-  border-radius: 9999px;
-  font-size: 0.825rem;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.bugs-footer-pill:hover {
-  background-color: rgba(184, 151, 102, 0.12);
-  border-color: var(--bugs-primary);
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px -6px rgba(184, 151, 102, 0.25);
-}
-
-/* Pulsating Live Status Indicator */
-.bugs-pulse-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #22c55e;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.bugs-pulse-dot::after {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  border: 2px solid #22c55e;
-  animation: bugsPulseAnimation 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-}
-
-@keyframes bugsPulseAnimation {
-  0% {
-    transform: scale(0.9);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(2.4);
-    opacity: 0;
-  }
-}
-
-/* Storefront Card in Footer */
-.bugs-footer-store-card {
-  background-color: rgba(17, 17, 19, 0.6);
-  border: 1px solid var(--bugs-border-light);
-  border-radius: 1.25rem;
-  padding: 1.5rem;
-  transition: border-color 0.3s ease, transform 0.25s ease;
-}
-
-.bugs-footer-store-card:hover {
-  border-color: rgba(184, 151, 102, 0.35);
-  transform: translateY(-2px);
-}
-
-.bugs-footer-store-card a:hover {
-  color: var(--bugs-primary) !important;
-}
-
-/* Back to Top Smooth Trigger */
-.bugs-back-to-top {
-  color: var(--bugs-fg-muted);
-  text-decoration: none;
-  font-size: 0.8rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.75rem;
-  border-radius: 9999px;
-  border: 1px solid transparent;
-  transition: all 0.25s ease;
-}
-
-.bugs-back-to-top:hover {
-  color: var(--bugs-primary) !important;
-  border-color: var(--bugs-border);
-  background-color: rgba(255, 255, 255, 0.03);
-  transform: translateY(-2px);
-}

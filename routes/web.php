@@ -41,6 +41,10 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->middleware('thro
 Route::get('/orders/lookup', [OrderController::class, 'lookup'])->name('orders.lookup');
 Route::get('/orders/{order_number}', [OrderController::class, 'show'])->name('orders.show');
 
+// Legal Policies & Compliance (SKILL.md B10)
+Route::view('/privacy', 'pages.legal.privacy')->name('privacy');
+Route::view('/terms', 'pages.legal.terms')->name('terms');
+
 /*
 |--------------------------------------------------------------------------
 | Session Cart API Routes (Authoritative Server-Side Prices)

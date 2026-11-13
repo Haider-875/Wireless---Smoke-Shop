@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="theme-color" content="#0a0a0b">
+    <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/png" href="{{ asset('assets/images/logo.png') }}">
     <title>@yield('title', 'Bugs Wireless & Smoke Shop — St. Louis, MO')</title>
     <meta name="description" content="@yield('meta_description', 'Bugs Wireless & Smoke Shop on Halls Ferry Rd, St. Louis. Phone repair, screen replacement, vapes, glass, hookah, and phone accessories. Walk-ins welcome.')">
@@ -61,28 +61,33 @@
     </script>
     @stack('schema')
 
-    <!-- Performance & DNS Hints -->
+    <!-- Performance & Fonts (SKILL.md B1: Manrope only, Geist Mono for code/numbers) -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Phosphor Icons (SKILL.md B6: Local WOFF2 & CSS) -->
+    <link rel="stylesheet" href="{{ asset('assets/css/phosphor-regular.css') }}">
     <!-- Bootstrap 5.3.3 CSS (Local) -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <!-- Bootstrap Icons (Local) -->
+    <!-- Bootstrap Icons (Local - Retained for system compatibility) -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.min.css') }}">
-    <!-- BUGS Custom Design Tokens & Theme CSS -->
+    <!-- BUGS Design Tokens & Custom CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/bugs-theme.css') }}">
 
     @stack('styles')
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <!-- Master Header & Sticky Navbar -->
+    <!-- Skip to Content for Screen Readers & Keyboard Nav -->
+    <a href="#mainContent" class="bugs-skip-link">Skip to main content</a>
+
+    <!-- Master Header & Floating Navbar -->
     @include('components.navbar')
 
     <!-- Main Content Area -->
-    <main class="flex-grow-1">
+    <main id="mainContent" class="flex-grow-1" style="padding-top: 84px;">
         @yield('content')
     </main>
 
@@ -95,9 +100,17 @@
     <!-- 21+ Age Verification Gate Modal -->
     @include('components.age-modal')
 
+    <!-- Quick Search Modal -->
+    @include('components.search-modal')
+
     <!-- Bootstrap 5.3.3 JS Bundle (Local) -->
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-    <!-- Custom Vanilla JS (Scroll Blur, Cart Offcanvas, Age Persistence) -->
+    <!-- Three.js Ambient Particle System (Local) -->
+    <script src="{{ asset('assets/js/three.min.js') }}"></script>
+    <!-- GSAP 3.12.5 & ScrollTrigger (Local) -->
+    <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/ScrollTrigger.min.js') }}"></script>
+    <!-- Custom Application Logic (Cart, Age Gate, Motion & Transitions) -->
     <script src="{{ asset('assets/js/bugs-app.js') }}"></script>
 
     @stack('scripts')
