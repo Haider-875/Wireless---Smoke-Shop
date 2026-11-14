@@ -34,19 +34,23 @@ class PremiumRedesign2026Test extends TestCase
         $response->assertSee('Phone repair,');
         $response->assertSee('the same day');
         $response->assertSee('on Halls Ferry.');
-        $response->assertSee('Walk-in repair desk');
+        $response->assertSee('Free diagnostics');
+        $response->assertSee('Bring it in — we quote the repair before we start.');
         $response->assertSee('30 min');
-        $response->assertSee('21+');
-        $response->assertSee('7 days');
+        $response->assertSee('90 days');
+        $response->assertSee('All carriers');
 
         // 3. Repair Bench Section
         $response->assertSee('The repair bench');
         $response->assertSee('Broken today,');
         $response->assertSee('fixed by tonight');
-        $response->assertSee('Screen replacement');
+        $response->assertSee('Screen & glass replacement');
         $response->assertSee('Battery replacement');
         $response->assertSee('Charging port repair');
         $response->assertSee('Liquid damage service');
+        $response->assertSee('Data transfer & backup');
+        $response->assertSee('Carrier activation');
+        $response->assertSee('from $79');
 
         // 4. Featured Products (Wireless Counter)
         $response->assertSee('The wireless counter');
@@ -94,8 +98,9 @@ class PremiumRedesign2026Test extends TestCase
     {
         $privacyResponse = $this->get(route('privacy'));
         $privacyResponse->assertStatus(200);
-        $privacyResponse->assertSee('Privacy Policy');
-        $privacyResponse->assertSee('21+ Age Verification');
+        $privacyResponse->assertSee('The fine print');
+        $privacyResponse->assertSee('Pickup, returns');
+        $privacyResponse->assertSee('21+ age policy');
 
         $termsResponse = $this->get(route('terms'));
         $termsResponse->assertStatus(200);

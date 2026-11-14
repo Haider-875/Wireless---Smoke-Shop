@@ -203,3 +203,4 @@ if (htmlIdx !== -1) {
 } else {
   console.error('Could not find base document anchor');
 }
+

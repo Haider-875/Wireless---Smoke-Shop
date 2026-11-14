@@ -83,11 +83,11 @@
     <!-- Skip to Content for Screen Readers & Keyboard Nav -->
     <a href="#mainContent" class="bugs-skip-link">Skip to main content</a>
 
-    <!-- Master Header & Floating Navbar -->
+    <!-- Master Header & Navigation -->
     @include('components.navbar')
 
     <!-- Main Content Area -->
-    <main id="mainContent" class="flex-grow-1" style="padding-top: 84px;">
+    <main id="mainContent" class="flex-grow-1">
         @yield('content')
     </main>
 

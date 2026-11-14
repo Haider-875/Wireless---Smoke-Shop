@@ -5,3 +5,4 @@ const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
 if (mainMatch) {
   console.log(mainMatch[1].replace(/<svg[\s\S]*?<\/svg>/gi, '').slice(0, 2000));
 }
+

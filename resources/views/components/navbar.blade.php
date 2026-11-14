@@ -1,60 +1,65 @@
-<header class="bugs-floating-header">
-    @include('components.announcement-bar')
-    <nav class="bugs-navbar-pill bugs-navbar-scroll d-flex align-items-center justify-content-between">
-        <!-- Left: Brand Logo & Identity -->
-        <div class="d-flex align-items-center flex-shrink-0">
+<header class="bugs-header sticky-top z-40">
+    <!-- Top Utility Bar (Exact Reference Match) -->
+    <div class="d-none d-sm-block bg-surface-deep bugs-header-topbar border-bottom" style="border-color: rgba(255, 255, 255, 0.06) !important;">
+        <div class="mx-auto d-flex align-items-center justify-content-between px-4 px-lg-5 py-2" style="max-width: 1400px;">
+            <p class="eyebrow d-flex align-items-center gap-2 mb-0 text-steel" style="font-size: 0.75rem;">
+                <i data-lucide="wrench" style="width: 12px; height: 12px;"></i>
+                <span>Same-day phone repair · walk-ins welcome</span>
+            </p>
+            <p class="eyebrow d-none d-md-block text-secondary mb-0" style="font-size: 0.75rem;">90-day warranty · free diagnostics</p>
+            <p class="eyebrow d-none d-lg-block text-secondary mb-0" style="font-size: 0.75rem;">Open daily 10 – 8</p>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="bugs-header-main bugs-navbar-scroll border-bottom" style="border-color: rgba(255, 255, 255, 0.06) !important;">
+        <div class="mx-auto d-flex align-items-center justify-content-between gap-3 px-4 px-lg-5 py-3" style="max-width: 1400px;">
+            <!-- Brand Logo & Identity -->
             <a class="d-flex align-items-center gap-3 text-white text-decoration-none" href="{{ route('home') }}">
-                <img src="{{ asset('assets/images/logo.png') }}" alt="BUGS" width="36" height="36" class="rounded-circle border border-white border-opacity-10 object-fit-cover">
-                <div class="d-flex flex-column">
-                    <span class="fs-4 fw-bold font-display tracking-tight text-white leading-none">BUGS<span class="text-steel">.</span></span>
-                    <span class="eyebrow text-secondary leading-tight mt-1" style="font-size: 0.65rem; letter-spacing: 0.08em;">
-                        Wireless &amp; Repair <span class="d-none d-sm-inline">&bull; Smoke shop inside</span>
-                    </span>
-                </div>
-            </a>
-        </div>
-
-        <!-- Center: Desktop Navigation Links (Exact Reference Matching) -->
-        <div class="d-none d-xl-flex align-items-center justify-content-center gap-1 mx-2">
-            <a class="bugs-nav-link {{ request()->routeIs('repairs') ? 'active' : '' }}" href="{{ route('repairs') }}">Repairs</a>
-            <a class="bugs-nav-link {{ request('category') === 'phone-accessories' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'phone-accessories']) }}">Phone gear</a>
-            <a class="bugs-nav-link {{ request()->routeIs('shop.index') && !request('category') ? 'active' : '' }}" href="{{ route('shop.index') }}">Shop all</a>
-            <a class="bugs-nav-link {{ in_array(request('category'), ['vapes', 'e-liquids', 'glass-pipes', 'hookah']) ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'vapes']) }}">Smoke shop</a>
-            <a class="bugs-nav-link" href="{{ route('home') }}#visit">Visit us</a>
-            <a class="bugs-nav-link {{ request()->routeIs('orders.lookup') ? 'active' : '' }}" href="{{ route('orders.lookup') }}">Your orders</a>
-        </div>
-
-        <!-- Right: Actions (Hotline, Fix CTA, Bag Trigger, Mobile Toggle) -->
-        <div class="d-flex align-items-center justify-content-end gap-2 flex-shrink-0">
-            <!-- Phone Hotline Pill -->
-            <a href="tel:+13144412851" class="btn btn-bugs-outline d-none d-lg-inline-flex align-items-center gap-2 py-1 px-3" style="font-size: 0.8125rem;">
-                <i data-lucide="phone" class="w-4 h-4 text-steel"></i>
-                <span class="num">314-441-2851</span>
+                <span class="font-display fw-semibold text-white tracking-tight" style="font-size: 26px; line-height: 1;">BUGS<span class="text-steel">.</span></span>
+                <span class="eyebrow d-none d-sm-block text-secondary" style="font-size: 0.72rem; line-height: 1.45; letter-spacing: 0.08em;">
+                    Wireless &amp; Repair<br><span style="color: rgba(229, 169, 59, 0.85);">Smoke shop inside</span>
+                </span>
             </a>
 
-            <!-- Search Modal Trigger Button -->
-            <button type="button" class="bugs-nav-icon-btn d-none d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#bugsSearchModal" aria-label="Search store" title="Search store">
-                <i data-lucide="search" class="w-4 h-4"></i>
-            </button>
+            <!-- Center Navigation Links -->
+            <nav class="d-none d-lg-flex align-items-center gap-4">
+                <a class="bugs-nav-link text-decoration-none {{ request()->routeIs('repairs') ? 'active text-white' : 'text-secondary' }}" href="{{ route('repairs') }}" style="font-size: 13.5px; transition: color 0.2s;">Repairs</a>
+                <a class="bugs-nav-link text-decoration-none {{ request('category') === 'Phone Accessories' || request('category') === 'phone-accessories' ? 'active text-white' : 'text-secondary' }}" href="{{ route('shop.index', ['category' => 'Phone Accessories']) }}" style="font-size: 13.5px; transition: color 0.2s;">Phone gear</a>
+                <a class="bugs-nav-link text-decoration-none {{ request()->routeIs('shop.index') && !request('category') ? 'active text-white' : 'text-secondary' }}" href="{{ route('shop.index') }}" style="font-size: 13.5px; transition: color 0.2s;">Shop all</a>
+                <a class="bugs-nav-link text-decoration-none {{ in_array(request('category'), ['Vapes', 'vapes', 'e-liquids', 'glass-pipes', 'hookah']) ? 'active text-white' : 'text-secondary' }}" href="{{ route('shop.index', ['category' => 'Vapes']) }}" style="font-size: 13.5px; transition: color 0.2s;">Smoke shop</a>
+                <a class="bugs-nav-link text-decoration-none text-secondary" href="{{ route('home') }}#visit" style="font-size: 13.5px; transition: color 0.2s;">Visit us</a>
+                <a class="bugs-nav-link text-decoration-none {{ request()->routeIs('orders.lookup') ? 'active text-white' : 'text-secondary' }}" href="{{ route('orders.lookup') }}" style="font-size: 13.5px; transition: color 0.2s;">Your orders</a>
+            </nav>
 
-            <!-- Primary Fix My Phone Action Button -->
-            <a href="{{ route('repairs') }}" class="btn btn-bugs-primary d-none d-sm-inline-flex align-items-center gap-2 py-1 px-4 text-dark fw-semibold" style="font-size: 0.8125rem;">
-                <i data-lucide="wrench" class="w-4 h-4"></i>
-                <span>Fix my phone</span>
-            </a>
+            <!-- Right Actions -->
+            <div class="d-flex align-items-center gap-2">
+                <!-- Phone Hotline Pill -->
+                <a href="tel:+13144412851" class="d-none d-xl-flex align-items-center gap-2 rounded-pill border border-white border-opacity-10 px-3 py-2 text-decoration-none text-secondary hover-white transition-colors" style="font-size: 13px;">
+                    <i data-lucide="phone" style="width: 14px; height: 14px;" class="text-steel"></i>
+                    <span class="num text-white">314-441-2851</span>
+                </a>
 
-            <!-- Shopping Bag Trigger Button -->
-            <button type="button" class="bugs-nav-icon-btn position-relative" data-bs-toggle="offcanvas" data-bs-target="#bugsCartOffcanvas" aria-controls="bugsCartOffcanvas" aria-label="View shopping bag" title="Shopping Bag">
-                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-                <span class="bugs-badge-count d-none" id="navCartCount">0</span>
-            </button>
+                <!-- Primary Fix My Phone Action Button -->
+                <a href="{{ route('repairs') }}" class="d-none d-sm-flex align-items-center gap-2 rounded-pill px-4 py-2 text-decoration-none fw-semibold transition-transform" style="background-color: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-size: 13px;">
+                    <i data-lucide="wrench" style="width: 14px; height: 14px;"></i>
+                    <span>Fix my phone</span>
+                </a>
 
-            <!-- Mobile Hamburger Toggle Button -->
-            <button class="bugs-nav-icon-btn d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#bugsMobileMenu" aria-controls="bugsMobileMenu" aria-label="Open mobile menu">
-                <i data-lucide="menu" class="w-5 h-5"></i>
-            </button>
+                <!-- Shopping Bag Trigger Button -->
+                <button type="button" class="position-relative d-flex align-items-center gap-2 rounded-pill border border-white border-opacity-10 px-3 py-2 text-white bg-transparent transition-colors hover-steel" data-bs-toggle="offcanvas" data-bs-target="#bugsCartOffcanvas" aria-controls="bugsCartOffcanvas" aria-label="View shopping bag" title="Shopping Bag" style="font-size: 13px;">
+                    <i data-lucide="shopping-bag" style="width: 16px; height: 16px;"></i>
+                    <span class="d-none d-sm-inline">Bag</span>
+                    <span class="bugs-badge-count d-none" id="navCartCount">0</span>
+                </button>
+
+                <!-- Mobile Hamburger Toggle Button -->
+                <button class="d-grid d-lg-none rounded-circle border border-white border-opacity-10 text-white bg-transparent p-0 place-items-center hover-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#bugsMobileMenu" aria-controls="bugsMobileMenu" aria-label="Open mobile menu" style="width: 40px; height: 40px;">
+                    <i data-lucide="menu" style="width: 16px; height: 16px;"></i>
+                </button>
+            </div>
         </div>
-    </nav>
+    </div>
 </header>
 
 <!-- Full-Height Animated Mobile Navigation Drawer -->

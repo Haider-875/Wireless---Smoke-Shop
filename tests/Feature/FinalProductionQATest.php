@@ -18,7 +18,7 @@ class FinalProductionQATest extends TestCase
         // Homepage
         $homeResponse = $this->get('/');
         $homeResponse->assertStatus(200);
-        $homeResponse->assertSee('Walk-in repair desk');
+        $homeResponse->assertSee('Free diagnostics');
         $homeResponse->assertSee('Five aisles, one');
         $homeResponse->assertSee('What everybody');
         $homeResponse->assertSee('10010 Halls Ferry Rd');

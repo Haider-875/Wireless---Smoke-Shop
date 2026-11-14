@@ -27,7 +27,7 @@
                 </h1>
 
                 <p class="text-secondary mb-4 pb-2" style="max-width: 480px; font-size: 1.0625rem; line-height: 1.6;">
-                    Cracked screen, tired battery, dead charging port &mdash; our technicians work the bench in front of you, with the price agreed before a single screw comes out. Phones, tablets and wireless service, plus the tobacco counter in the back.
+                    Cracked screen, tired battery, dead charging port — our technicians work the bench in front of you, with the price agreed before a single screw comes out. Phones, tablets and wireless service, plus the tobacco counter in the back.
                 </p>
 
                 <div class="d-flex flex-wrap align-items-center gap-3 mb-5">
@@ -41,21 +41,21 @@
                     </a>
                 </div>
 
-                <!-- Proof Signals Strip -->
-                <div class="row g-4 pt-4 border-top border-white border-opacity-10" style="max-width: 520px;">
+                <!-- Proof Signals Strip (Exact Reference Match) -->
+                <dl class="row g-4 pt-4 border-top border-white border-opacity-10 mb-0" style="max-width: 520px; border-color: rgba(255, 255, 255, 0.07) !important;">
                     <div class="col-4">
-                        <div class="fw-bold text-white fs-4">30 min</div>
-                        <div class="text-secondary small mt-1">Most screen repairs</div>
+                        <dt class="num text-white fs-5 fw-semibold mb-1">30 min</dt>
+                        <dd class="text-secondary small mb-0" style="font-size: 11.5px; line-height: 1.35;">Most screen repairs</dd>
                     </div>
                     <div class="col-4">
-                        <div class="fw-bold text-white fs-4">21+</div>
-                        <div class="text-secondary small mt-1">ID checked in store</div>
+                        <dt class="num text-white fs-5 fw-semibold mb-1">90 days</dt>
+                        <dd class="text-secondary small mb-0" style="font-size: 11.5px; line-height: 1.35;">Parts &amp; labour warranty</dd>
                     </div>
                     <div class="col-4">
-                        <div class="fw-bold text-white fs-4">7 days</div>
-                        <div class="text-secondary small mt-1">Open 10 &ndash; 8 daily</div>
+                        <dt class="num text-white fs-5 fw-semibold mb-1">All carriers</dt>
+                        <dd class="text-secondary small mb-0" style="font-size: 11.5px; line-height: 1.35;">Activation &amp; data transfer</dd>
                     </div>
-                </div>
+                </dl>
             </div>
 
             <!-- Right: Hero Visual with Overlaid Floating Desk Card -->
@@ -69,16 +69,16 @@
                     </div>
                 </div>
 
-                <!-- Overlaid Floating Repair Desk Card -->
-                <div class="position-absolute p-3 p-sm-4 border border-white border-opacity-10 rounded-4 shadow-lg" 
-                     style="background-color: hsl(var(--surface)); bottom: -24px; left: 24px; right: 24px; max-width: 480px; box-shadow: 0 20px 50px -20px rgba(0,0,0,0.9) !important;">
+                <!-- Overlaid Floating Free Diagnostics Card (Exact Reference Match) -->
+                <div class="position-absolute p-3 p-sm-4 border rounded-4 shadow-lg" 
+                     style="background-color: rgba(9, 10, 12, 0.88); border-color: rgba(255, 255, 255, 0.09) !important; bottom: -24px; left: 16px; right: 16px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 20px 50px -20px rgba(0,0,0,0.9) !important;">
                     <div class="d-flex align-items-center justify-content-between gap-3">
                         <div>
-                            <p class="eyebrow mb-1 text-steel" style="font-size: 0.6875rem; letter-spacing: 0.15em;">Walk-in repair desk</p>
-                            <p class="text-white small mb-0">Cracked screen? Bring it in &mdash; free quote, no appointment.</p>
+                            <p class="eyebrow mb-1 text-steel" style="font-size: 0.6875rem; letter-spacing: 0.15em;">Free diagnostics</p>
+                            <p class="text-white small mb-0">Bring it in — we quote the repair before we start.</p>
                         </div>
-                        <a href="tel:+13144412851" class="btn btn-sm btn-bugs-outline rounded-circle p-2 flex-shrink-0 d-flex align-items-center justify-content-center" title="Call the counter" style="width: 40px; height: 40px;">
-                            <i data-lucide="phone" class="w-4 h-4 text-steel"></i>
+                        <a href="tel:+13144412851" class="btn btn-bugs-primary rounded-circle p-0 flex-shrink-0 d-flex align-items-center justify-content-center text-dark" title="Call the repair bench" aria-label="Call the repair bench" style="width: 44px; height: 44px;">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </div>
@@ -88,7 +88,12 @@
 </section>
 
 <!-- ==========================================================================
-     Section 2: Repair Bench ("Broken today, fixed by tonight.")
+     Section 2: Infinite Marquee Ticker (Exact Reference Placement Between Hero & Repair Bench)
+     ========================================================================== -->
+@include('components.announcement-bar')
+
+<!-- ==========================================================================
+     Section 3: Repair Bench ("Broken today, fixed by tonight.")
      ========================================================================== -->
 <section id="repairs" class="position-relative overflow-hidden py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--background));">
     <div class="pointer-events-none position-absolute glow-steel" style="top: 40px; left: -100px; width: 420px; height: 420px; z-index: 1;"></div>
@@ -97,12 +102,20 @@
         <div class="row align-items-center g-5">
             <!-- Left: Bench Imagery -->
             <div class="col-lg-6 order-2 order-lg-1">
-                <div class="overflow-hidden rounded-4 border border-white border-opacity-10 shadow-lg" style="background-color: hsl(var(--surface-raised));">
+                <div class="overflow-hidden rounded-4 border border-white border-opacity-10 shadow-lg position-relative" style="background-color: hsl(var(--surface-raised));">
                     <div class="ratio ratio-4x3">
                         <img src="{{ asset('assets/images/lifestyle/repair-bench.png') }}" 
                              alt="A technician repairing a phone at the bench" 
                              class="w-100 h-100 object-fit-cover"
                              loading="lazy">
+                    </div>
+                    <!-- Floating 90-day warranty badge (Exact Reference Match) -->
+                    <div class="position-absolute p-3 rounded-3 border" style="bottom: 16px; left: 16px; background-color: rgba(9, 10, 12, 0.85); border-color: rgba(255, 255, 255, 0.1) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+                        <p class="eyebrow text-steel d-flex align-items-center gap-1 mb-1" style="font-size: 0.72rem;">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                            <span>90-day warranty</span>
+                        </p>
+                        <p class="text-white small mb-0" style="font-size: 0.8125rem;">Parts and labour, every repair.</p>
                     </div>
                 </div>
             </div>
@@ -115,39 +128,99 @@
                     <span class="font-serif-display text-steel" style="font-size: 1.05em;">fixed by tonight</span>.
                 </h2>
                 <p class="text-secondary mb-4 pb-2" style="font-size: 1.0625rem; line-height: 1.6;">
-                    Cracked screen, dead battery, bent charging port. Bring it to 10010 Halls Ferry Rd &mdash; we diagnose on the spot, give you the exact price up front, and hand it back fixed the same day.
+                    Our technicians work on the counter in front of you. Most screen and battery jobs are finished the same afternoon — genuine-grade parts, a 90-day warranty and no fee if we can't fix it.
                 </p>
 
-                <!-- 4 Capabilities Grid -->
-                <div class="row g-3 mb-4 pb-2">
-                    <div class="col-sm-6">
-                        <div class="p-3 rounded-3 border border-white border-opacity-10 h-100" style="background-color: hsl(var(--card));">
-                            <span class="text-steel d-block fw-semibold mb-1" style="font-size: 0.9375rem;">Screen replacement</span>
-                            <span class="text-secondary small d-block">OLED, LCD &amp; glass for iPhone, Samsung &amp; Motorola</span>
+                <!-- 6 Capabilities Grid with Starting Prices (Exact Reference Match) -->
+                <ul class="row row-cols-1 row-cols-sm-2 g-4 list-unstyled mb-4 pb-2">
+                    <li class="col d-flex align-items-start gap-3">
+                        <span class="rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(86, 172, 230, 0.25); background: rgba(86, 172, 230, 0.06); color: hsl(var(--steel));">
+                            <i data-lucide="smartphone" style="width: 16px; height: 16px;"></i>
+                        </span>
+                        <div class="min-w-0 flex-grow-1">
+                            <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Screen &amp; glass replacement</span>
+                            <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
+                                <span>iPhone, Galaxy, Pixel</span>
+                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $79</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="p-3 rounded-3 border border-white border-opacity-10 h-100" style="background-color: hsl(var(--card));">
-                            <span class="text-steel d-block fw-semibold mb-1" style="font-size: 0.9375rem;">Battery replacement</span>
-                            <span class="text-secondary small d-block">Fresh batteries with health calibrated and tested</span>
+                    </li>
+                    <li class="col d-flex align-items-start gap-3">
+                        <span class="rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(86, 172, 230, 0.25); background: rgba(86, 172, 230, 0.06); color: hsl(var(--steel));">
+                            <i data-lucide="battery-charging" style="width: 16px; height: 16px;"></i>
+                        </span>
+                        <div class="min-w-0 flex-grow-1">
+                            <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Battery replacement</span>
+                            <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
+                                <span>Holds a charge again</span>
+                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $59</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="p-3 rounded-3 border border-white border-opacity-10 h-100" style="background-color: hsl(var(--card));">
-                            <span class="text-steel d-block fw-semibold mb-1" style="font-size: 0.9375rem;">Charging port repair</span>
-                            <span class="text-secondary small d-block">Cleaned, re-soldered or replaced lightning/USB-C ports</span>
+                    </li>
+                    <li class="col d-flex align-items-start gap-3">
+                        <span class="rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(86, 172, 230, 0.25); background: rgba(86, 172, 230, 0.06); color: hsl(var(--steel));">
+                            <i data-lucide="plug" style="width: 16px; height: 16px;"></i>
+                        </span>
+                        <div class="min-w-0 flex-grow-1">
+                            <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Charging port repair</span>
+                            <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
+                                <span>Loose cable, no charge</span>
+                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $49</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="p-3 rounded-3 border border-white border-opacity-10 h-100" style="background-color: hsl(var(--card));">
-                            <span class="text-steel d-block fw-semibold mb-1" style="font-size: 0.9375rem;">Liquid damage service</span>
-                            <span class="text-secondary small d-block">Cleaned, assessed and corrosion remediation</span>
+                    </li>
+                    <li class="col d-flex align-items-start gap-3">
+                        <span class="rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(86, 172, 230, 0.25); background: rgba(86, 172, 230, 0.06); color: hsl(var(--steel));">
+                            <i data-lucide="droplets" style="width: 16px; height: 16px;"></i>
+                        </span>
+                        <div class="min-w-0 flex-grow-1">
+                            <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Liquid damage service</span>
+                            <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
+                                <span>Cleaned and assessed</span>
+                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $39</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                    <li class="col d-flex align-items-start gap-3">
+                        <span class="rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(86, 172, 230, 0.25); background: rgba(86, 172, 230, 0.06); color: hsl(var(--steel));">
+                            <i data-lucide="hard-drive" style="width: 16px; height: 16px;"></i>
+                        </span>
+                        <div class="min-w-0 flex-grow-1">
+                            <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Data transfer &amp; backup</span>
+                            <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
+                                <span>Move to your new phone</span>
+                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $29</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col d-flex align-items-start gap-3">
+                        <span class="rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px; border: 1px solid rgba(86, 172, 230, 0.25); background: rgba(86, 172, 230, 0.06); color: hsl(var(--steel));">
+                            <i data-lucide="wifi" style="width: 16px; height: 16px;"></i>
+                        </span>
+                        <div class="min-w-0 flex-grow-1">
+                            <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Carrier activation</span>
+                            <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
+                                <span>Prepaid &amp; postpaid</span>
+                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">no charge</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
 
                 <div class="d-flex flex-wrap align-items-center gap-3">
                     <a href="{{ route('repairs') }}" class="btn btn-bugs-primary px-4 py-3 rounded-pill fw-semibold text-dark d-inline-flex align-items-center gap-2">
+                        <span>See repair services</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="tel:+13144412851" class="btn btn-bugs-outline px-4 py-3 rounded-pill text-white d-inline-flex align-items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4 text-steel"></i>
+                        <span>Call the bench</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
                         <span>See repair services</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
@@ -172,7 +245,7 @@
                 <h2 class="display-6 fw-semibold text-white tracking-tight mb-0">
                     Gear for the phone<span class="font-serif-display text-steel"> you just fixed</span>.
                 </h2>
-                <p class="text-secondary small mt-2 mb-0">What everybody gets with a new screen &mdash; cases, tempered glass, audio, and fast chargers.</p>
+                <p class="text-secondary small mt-2 mb-0">What everybody gets with a new screen — cases, tempered glass, audio, and fast chargers.</p>
             </div>
             <a href="{{ route('shop.index') }}" class="text-white text-decoration-none d-inline-flex align-items-center gap-2 hover-steel" style="font-size: 0.9375rem;">
                 <span>Shop all products</span>
@@ -204,7 +277,7 @@
                 </h2>
             </div>
             <p class="text-secondary small mb-0" style="max-width: 380px; line-height: 1.6;">
-                Vapes, nic salts, hand-blown glass and hookah &mdash; stocked online too, ready for pickup or local delivery. Adults 21+ with valid ID, always.
+                Vapes, nic salts, hand-blown glass and hookah — stocked online too, ready for pickup or local delivery. Adults 21+ with valid ID, always.
             </p>
         </div>
 
@@ -297,7 +370,7 @@
                     <span class="font-serif-display text-steel" style="font-size: 1.05em;">and a look around</span>.
                 </h2>
                 <p class="text-secondary mb-4 pb-2" style="max-width: 480px; font-size: 1.0625rem; line-height: 1.6;">
-                    We're on Halls Ferry Road with parking right out front. Walk in for a repair quote, pick up an online order, or browse the counter &mdash; bring your ID for anything 21+.
+                    We're on Halls Ferry Road with parking right out front. Walk in for a repair quote, pick up an online order, or browse the counter — bring your ID for anything 21+.
                 </p>
 
                 <div class="d-flex flex-column gap-3 mb-4">

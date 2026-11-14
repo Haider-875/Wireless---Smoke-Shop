@@ -56,3 +56,4 @@ for (const p of pages) {
 }
 
 console.log('All local screenshot captures completed.');
+

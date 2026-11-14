@@ -41,6 +41,6 @@ class SharedComponentsTest extends TestCase
         $response->assertSee('10010 Halls Ferry Rd, St. Louis, MO 63136');
         $response->assertSee('Mon – Sun · 10:00 AM – 8:00 PM');
         $response->assertSee('https://www.instagram.com/bugs_wirless_and_smoke_shop/', false);
-        $response->assertSee('21+ Only. Valid government-issued photo ID required', false);
+        $response->assertSee('Tobacco & vape products for adults 21+ · Nicotine is addictive');
     }
 }

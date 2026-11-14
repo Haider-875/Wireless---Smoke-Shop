@@ -490,37 +490,50 @@ body {
 /* ==========================================================================
    B7. Floating Modern Navigation Bar
    ========================================================================== */
-.bugs-floating-header {
-  position: fixed;
-  top: 16px;
-  left: 0;
-  right: 0;
+/* Header & Navigation — Exact 1:1 Reference Sticky Full-Width Layout */
+.bugs-header {
+  position: sticky;
+  top: 0;
   z-index: 1040;
-  pointer-events: none;
-  padding: 0 16px;
+  width: 100%;
 }
 
-.bugs-navbar-pill {
-  pointer-events: auto;
-  max-width: 1280px;
-  margin: 0 auto;
-  background: rgba(24, 24, 24, 0.84);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--bugs-border);
-  border-radius: 9999px;
-  padding: 8px 16px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
-  transition: transform var(--duration-layout) var(--ease-base),
-    background-color var(--duration-interactive) var(--ease-base),
+.bugs-header-topbar {
+  background-color: hsl(var(--surface-deep));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.bugs-header-main {
+  background: rgba(9, 10, 12, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background-color var(--duration-interactive) var(--ease-base),
     border-color var(--duration-interactive) var(--ease-base),
     box-shadow var(--duration-interactive) var(--ease-base);
 }
 
+.bugs-header-main.scrolled {
+  background: rgba(9, 10, 12, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Fallback & compatibility styles */
+.bugs-floating-header {
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+  width: 100%;
+}
+
+.bugs-navbar-pill {
+  width: 100%;
+  transition: background-color var(--duration-interactive) var(--ease-base);
+}
+
 .bugs-navbar-pill.scrolled {
-  background: rgba(24, 24, 24, 0.94);
-  border-color: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+  background: rgba(9, 10, 12, 0.95);
 }
 
 /* Keep .bugs-navbar-scroll class for tests */
@@ -529,28 +542,21 @@ body {
 }
 
 .bugs-nav-link {
-  color: var(--bugs-fg-muted);
-  font-size: 14px;
+  color: hsl(var(--muted-foreground));
+  font-size: 13.5px;
   line-height: 20px;
   font-weight: 500;
   text-decoration: none;
-  padding: 6px 12px;
-  border-radius: 9999px;
-  transition: color var(--duration-interactive) var(--ease-base),
-    background-color var(--duration-interactive) var(--ease-base);
+  padding: 4px 0;
+  transition: color var(--duration-interactive) var(--ease-base);
   display: inline-flex;
   align-items: center;
   gap: 4px;
 }
 
-.bugs-nav-link:hover {
-  color: var(--bugs-fg);
-  background-color: var(--bugs-surface-4);
-}
-
+.bugs-nav-link:hover,
 .bugs-nav-link.active {
-  color: var(--bugs-fg);
-  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff !important;
 }
 
 /* Navbar action icon buttons */
