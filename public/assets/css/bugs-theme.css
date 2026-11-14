@@ -1991,3 +1991,68 @@ textarea:focus-visible {
   transform: translateY(-50%) scale(1.08);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
+
+/* ==========================================================================
+   Product Card Action Buttons (Add to Bag & WhatsApp Direct)
+   ========================================================================== */
+.btn-product-cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50% !important;
+  background-color: hsl(var(--surface-deep));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  padding: 0;
+  cursor: pointer;
+  transition: all var(--duration-interactive) var(--ease-base);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.btn-product-cart:hover,
+.btn-product-cart:focus {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #090a0c;
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.25);
+}
+
+.btn-product-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50% !important;
+  background-color: rgba(37, 211, 102, 0.14);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  color: #25D366;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--duration-interactive) var(--ease-base);
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.18);
+  flex-shrink: 0;
+}
+
+.btn-product-whatsapp:hover,
+.btn-product-whatsapp:focus {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: #090a0c !important;
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.btn-product-whatsapp svg {
+  width: 17px;
+  height: 17px;
+  transition: transform var(--duration-interactive) var(--ease-base);
+}
+
+.btn-product-whatsapp:hover svg {
+  transform: scale(1.1);
+}

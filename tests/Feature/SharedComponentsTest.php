@@ -42,5 +42,9 @@ class SharedComponentsTest extends TestCase
         $response->assertSee('Mon – Sun · 10:00 AM – 8:00 PM');
         $response->assertSee('https://www.instagram.com/bugs_wirless_and_smoke_shop/', false);
         $response->assertSee('Tobacco & vape products for adults 21+ · Nicotine is addictive');
+
+        // 5. Product WhatsApp Inquiry Button
+        $response->assertSee('btn-product-whatsapp');
+        $response->assertSee('https://wa.me/13144412851', false);
     }
 }
