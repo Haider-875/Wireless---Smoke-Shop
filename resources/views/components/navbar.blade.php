@@ -70,10 +70,10 @@
             </a>
 
             <!-- Shopping Bag Trigger Button -->
-            <button type="button" class="bugs-nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#bugsCartOffcanvas" aria-controls="bugsCartOffcanvas" aria-label="View shopping bag" title="Shopping Bag">
+            {{-- <button type="button" class="bugs-nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#bugsCartOffcanvas" aria-controls="bugsCartOffcanvas" aria-label="View shopping bag" title="Shopping Bag">
                 <i class="ph ph-shopping-bag fs-5"></i>
                 <span class="bugs-badge-count d-none" id="navCartCount">0</span>
-            </button>
+            </button> --}}
 
             <!-- Mobile Hamburger Toggle Button -->
             <button class="bugs-nav-icon-btn d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#bugsMobileMenu" aria-controls="bugsMobileMenu" aria-label="Open mobile menu">
