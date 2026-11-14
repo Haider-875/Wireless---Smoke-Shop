@@ -356,7 +356,7 @@
 <section id="visit" class="py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--surface-deep));">
     <div class="container-fluid px-4 px-lg-5 py-5" style="max-width: 1400px;">
         <div class="row align-items-center g-5">
-            <!-- Left: Location Info & Actions -->
+            <!-- Left: Location Info & Details -->
             <div class="col-lg-6">
                 <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">Visit the counter</p>
                 <h2 class="display-5 fw-semibold text-white tracking-tight mb-4" style="line-height: 1.15; letter-spacing: -0.025em;">
@@ -367,58 +367,64 @@
                     We're on Halls Ferry Road with parking right out front. Walk in for a repair quote, pick up an online order, or browse the counter — bring your ID for anything 21+.
                 </p>
 
-                <div class="d-flex flex-column gap-3 mb-4">
+                <div class="d-flex flex-column gap-4 mb-2">
                     <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" 
                        target="_blank" 
                        rel="noreferrer" 
-                       class="d-flex align-items-center gap-3 text-secondary text-decoration-none hover-white">
-                        <i data-lucide="map-pin" class="w-5 h-5 text-steel flex-shrink-0"></i>
-                        <span>10010 Halls Ferry Rd, St. Louis, MO 63136</span>
+                       class="group d-flex align-items-start gap-3 text-decoration-none">
+                        <i data-lucide="map-pin" class="text-steel mt-1 flex-shrink-0" style="width: 18px; height: 18px;"></i>
+                        <div>
+                            <span class="eyebrow d-block text-secondary mb-1" style="font-size: 0.6875rem; letter-spacing: 0.12em;">Address</span>
+                            <span class="d-block text-white group-hover:text-steel transition-colors" style="font-size: 15px;">10010 Halls Ferry Rd, St. Louis, MO 63136</span>
+                        </div>
                     </a>
 
-                    <a href="tel:+13144412851" class="d-flex align-items-center gap-3 text-secondary text-decoration-none hover-white">
-                        <i data-lucide="phone" class="w-5 h-5 text-steel flex-shrink-0"></i>
-                        <span>314-441-2851</span>
+                    <a href="tel:+13144412851" class="group d-flex align-items-start gap-3 text-decoration-none">
+                        <i data-lucide="phone" class="text-steel mt-1 flex-shrink-0" style="width: 18px; height: 18px;"></i>
+                        <div>
+                            <span class="eyebrow d-block text-secondary mb-1" style="font-size: 0.6875rem; letter-spacing: 0.12em;">Call the counter</span>
+                            <span class="num d-block text-white group-hover:text-steel transition-colors" style="font-size: 15px;">314-441-2851</span>
+                        </div>
                     </a>
 
-                    <div class="d-flex align-items-center gap-3 text-secondary">
-                        <i data-lucide="clock" class="w-5 h-5 text-steel flex-shrink-0"></i>
-                        <span>Mon – Sun · 10:00 AM – 8:00 PM</span>
+                    <div class="d-flex align-items-start gap-3">
+                        <i data-lucide="clock" class="text-steel mt-1 flex-shrink-0" style="width: 18px; height: 18px;"></i>
+                        <div>
+                            <span class="eyebrow d-block text-secondary mb-1" style="font-size: 0.6875rem; letter-spacing: 0.12em;">Hours</span>
+                            <span class="d-block text-white" style="font-size: 15px;">Mon – Sun · 10:00 AM – 8:00 PM</span>
+                        </div>
                     </div>
 
-                    <a href="https://www.instagram.com/bugs_wirless_and_smoke_shop/" 
-                       target="_blank" 
-                       rel="noreferrer" 
-                       class="d-flex align-items-center gap-3 text-secondary text-decoration-none hover-white">
-                        <i data-lucide="instagram" class="w-5 h-5 text-steel flex-shrink-0"></i>
-                        <span>@bugs_wirless_and_smoke_shop</span>
-                    </a>
-                </div>
-
-                <div class="d-flex flex-wrap align-items-center gap-3">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" 
-                       target="_blank" 
-                       rel="noreferrer" 
-                       class="btn btn-bugs-primary px-4 py-3 rounded-pill fw-semibold text-dark d-inline-flex align-items-center gap-2">
-                        <i data-lucide="navigation" class="w-4 h-4"></i>
-                        <span>Get directions</span>
-                    </a>
-                    <a href="tel:+13144412851" class="btn btn-bugs-outline px-4 py-3 rounded-pill text-white d-inline-flex align-items-center gap-2">
-                        <i data-lucide="phone-call" class="w-4 h-4 text-steel"></i>
-                        <span>Call the counter</span>
-                    </a>
+                    <div class="d-flex align-items-start gap-3">
+                        <i data-lucide="shield-check" class="text-steel mt-1 flex-shrink-0" style="width: 18px; height: 18px;"></i>
+                        <div>
+                            <span class="eyebrow d-block text-secondary mb-1" style="font-size: 0.6875rem; letter-spacing: 0.12em;">Every repair</span>
+                            <span class="d-block text-white" style="font-size: 15px;">90-day parts &amp; labour warranty</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Right: Storefront Photo -->
+            <!-- Right: Interactive Google Map with Overlay Direction Button -->
             <div class="col-lg-6">
-                <div class="overflow-hidden rounded-4 border border-white border-opacity-10 shadow-lg" style="background-color: hsl(var(--surface-raised));">
-                    <div class="ratio ratio-4x3">
-                        <img src="{{ asset('assets/images/lifestyle/store-counter.png') }}" 
-                             alt="Unlocked phones, cases and earbuds on display inside the shop" 
-                             class="w-100 h-100 object-fit-cover"
-                             loading="lazy">
-                    </div>
+                <div class="bugs-map-container">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=10010+Halls+Ferry+Rd,+St.+Louis,+MO+63136&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        class="bugs-map-iframe"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="BUGS Wireless &amp; Smoke Shop Location Map"
+                        aria-label="Google Map showing 10010 Halls Ferry Rd, St. Louis, MO 63136">
+                    </iframe>
+
+                    <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" 
+                       target="_blank" 
+                       rel="noreferrer" 
+                       class="bugs-map-btn"
+                       aria-label="Get directions in Google Maps">
+                        <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+                        <span>Get directions</span>
+                    </a>
                 </div>
             </div>
         </div>
