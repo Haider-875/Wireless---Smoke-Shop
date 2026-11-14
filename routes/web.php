@@ -8,12 +8,16 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DeployController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes — BUGS Wireless & Smoke Shop
 |--------------------------------------------------------------------------
 */
+
+// Production Web Migration & Deployment Runner (Protected by secret token)
+Route::get('/deploy/migrate', [DeployController::class, 'migrate'])->middleware('throttle:10,1')->name('deploy.migrate');
 
 // Homepage & Core Pages
 Route::get('/', [HomeController::class, 'index'])->name('home');
