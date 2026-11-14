@@ -107,15 +107,15 @@
             </div>
         </div>
 
-        <!-- Recent Repair Inquiries -->
+        <!-- Recent Inquiries -->
         <div class="col-lg-5">
             <div class="bugs-card p-4 border h-100">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h5 class="font-display text-white mb-0">Latest Repair Inquiries</h5>
+                    <h5 class="font-display text-white mb-0">Latest Inquiries</h5>
                     <a href="{{ route('admin.inquiries') }}" class="btn btn-link btn-sm text-primary text-decoration-none">View All &rarr;</a>
                 </div>
                 @if($recentInquiries->isEmpty())
-                    <p class="text-secondary small py-4 text-center mb-0">No repair inquiries submitted yet.</p>
+                    <p class="text-secondary small py-4 text-center mb-0">No inquiries submitted yet.</p>
                 @else
                     <div class="list-group list-group-flush bg-transparent">
                         @foreach($recentInquiries as $inq)
@@ -127,7 +127,7 @@
                                 </span>
                             </div>
                             <div class="text-secondary small mb-1">
-                                <i class="bi bi-phone me-1"></i> {{ $inq->device_model }} &bull; {{ $inq->repair_needed }}
+                                <i class="bi bi-phone me-1"></i> {{ $inq->device_model }} &bull; <span class="text-white-50">{{ $inq->service_needed ?? 'General Inquiry' }}</span>
                             </div>
                             <div class="text-muted small">
                                 <i class="bi bi-telephone me-1"></i> {{ $inq->phone }}

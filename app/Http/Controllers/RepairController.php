@@ -71,20 +71,28 @@ class RepairController extends Controller
     }
 
     /**
-     * Store a repair quote inquiry in the database.
+     * Store an inquiry or repair quote in the database.
      */
     public function storeQuote(RepairQuoteRequest $request): JsonResponse|RedirectResponse
     {
-        $inquiry = RepairInquiry::create($request->validated());
+        $data = $request->validated();
+        if (empty($data['inquiry_type'])) {
+            $data['inquiry_type'] = 'repair_quote';
+        }
+        $inquiry = RepairInquiry::create($data);
+
+        $message = $data['inquiry_type'] === 'device_inquiry'
+            ? 'Thank you! We received your device inquiry. Our Halls Ferry counter team will contact you shortly!'
+            : 'Thank you! We received your repair quote request. We will contact you shortly.';
 
         if ($request->wantsJson()) {
             return response()->json([
                 'success' => true,
-                'message' => 'Thank you! We received your repair quote request. We will contact you shortly.',
+                'message' => $message,
                 'inquiry' => $inquiry
             ], 201);
         }
 
-        return redirect()->route('repairs')->with('success', 'Thank you! We received your repair quote request. We will contact you shortly.');
+        return back()->with('success', $message);
     }
 }

@@ -19,6 +19,7 @@ use App\Http\Controllers\AdminController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/repairs', [RepairController::class, 'index'])->name('repairs');
 Route::post('/repairs/quote', [RepairController::class, 'storeQuote'])->middleware('throttle:15,1')->name('repairs.quote');
+Route::post('/inquiry', [RepairController::class, 'storeQuote'])->middleware('throttle:15,1')->name('inquiry.store');
 
 // Dynamic XML Sitemap
 Route::get('/sitemap.xml', function () {
@@ -83,7 +84,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/orders', [AdminController::class, 'orders'])->name('orders');
     Route::patch('/orders/{order}/status', [AdminController::class, 'updateOrderStatus'])->name('orders.status');
 
-    // Repair Inquiries Management
+    // Repair & Device Inquiries Management
     Route::get('/inquiries', [AdminController::class, 'inquiries'])->name('inquiries');
     Route::patch('/inquiries/{inquiry}/status', [AdminController::class, 'updateInquiryStatus'])->name('inquiries.status');
+    Route::delete('/inquiries/{inquiry}', [AdminController::class, 'deleteInquiry'])->name('inquiries.delete');
 });

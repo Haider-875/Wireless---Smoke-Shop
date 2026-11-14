@@ -29,7 +29,7 @@
             </a>
         </h3>
 
-        <div class="mt-auto pt-2 d-flex align-items-center justify-content-between">
+        <div class="mt-auto pt-2 d-flex align-items-center justify-content-between gap-2">
             <div class="d-flex flex-column">
                 @if($product->formatted_compare_at_price)
                     <span class="num text-secondary text-decoration-line-through caption-5" style="line-height: 1;">
@@ -41,14 +41,30 @@
                 </span>
             </div>
 
-            <!-- Quick Add to Bag Button -->
-            <button type="button" 
-                    class="btn-bugs-add-bag" 
-                    title="Add to Bag"
-                    aria-label="Add {{ $product->name }} to bag"
-                    data-add-to-cart="{{ $product->id }}">
-                <i class="ph ph-bag-plus fs-5"></i>
-            </button>
+            <div class="d-flex align-items-center gap-1">
+                <!-- Inquiry Option -->
+                <button type="button" 
+                        class="btn btn-sm btn-bugs-outline p-2 d-inline-flex align-items-center justify-content-center" 
+                        title="Inquire about {{ $product->name }}"
+                        aria-label="Inquire about {{ $product->name }}"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#inquiryModal"
+                        data-device-model="{{ $product->name }}"
+                        data-product-id="{{ $product->id }}"
+                        data-inquiry-type="device_inquiry"
+                        style="width: 36px; height: 36px; border-radius: 8px;">
+                    <i class="ph ph-chat-circle-dots fs-5"></i>
+                </button>
+
+                <!-- Quick Add to Bag Button -->
+                <button type="button" 
+                        class="btn-bugs-add-bag" 
+                        title="Add to Bag"
+                        aria-label="Add {{ $product->name }} to bag"
+                        data-add-to-cart="{{ $product->id }}">
+                    <i class="ph ph-bag-plus fs-5"></i>
+                </button>
+            </div>
         </div>
     </div>
 </article>

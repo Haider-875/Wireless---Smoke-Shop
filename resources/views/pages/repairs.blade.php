@@ -3,16 +3,6 @@
 @section('title', 'Phone & Tablet Repair — Bugs Wireless & Smoke Shop, St. Louis')
 
 @section('content')
-<!-- Flash Messages -->
-@if(session('success'))
-<div class="container-fluid px-3 px-lg-5 pt-3" style="max-width: 1280px;">
-    <div class="alert alert-success alert-dismissible fade show border-0 text-white" style="background-color: #198754;" role="alert">
-        <i class="bi bi-check-circle-fill me-2"></i> {{ session('success') }}
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-</div>
-@endif
-
 <!-- Hero Section with Ambient Gold Glow -->
 <section class="position-relative overflow-hidden border-bottom py-5 py-lg-5" style="border-color: var(--bugs-border) !important;">
     <div class="glow-gold" style="top: 0; right: -120px; width: 460px; height: 460px;"></div>
