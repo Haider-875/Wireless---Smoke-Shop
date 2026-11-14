@@ -1,83 +1,57 @@
 <header class="bugs-floating-header">
     @include('components.announcement-bar')
     <nav class="bugs-navbar-pill bugs-navbar-scroll d-flex align-items-center justify-content-between">
-        <!-- Left: Brand Logo -->
+        <!-- Left: Brand Logo & Identity -->
         <div class="d-flex align-items-center flex-shrink-0">
-            <a class="d-flex align-items-center gap-2 text-white text-decoration-none" href="{{ route('home') }}">
-                <span class="fs-4 fw-bold font-display tracking-tight">BUGS<span style="color: var(--bugs-primary)">.</span></span>
-                <span class="eyebrow d-none d-sm-block text-secondary leading-tight ms-1" style="font-size: 0.65rem;">
-                    Wireless &amp;<br>Smoke Shop
-                </span>
+            <a class="d-flex align-items-center gap-3 text-white text-decoration-none" href="{{ route('home') }}">
+                <img src="{{ asset('assets/images/logo.png') }}" alt="BUGS" width="36" height="36" class="rounded-circle border border-white border-opacity-10 object-fit-cover">
+                <div class="d-flex flex-column">
+                    <span class="fs-4 fw-bold font-display tracking-tight text-white leading-none">BUGS<span class="text-steel">.</span></span>
+                    <span class="eyebrow text-secondary leading-tight mt-1" style="font-size: 0.65rem; letter-spacing: 0.08em;">
+                        Wireless &amp; Repair <span class="d-none d-sm-inline">&bull; Smoke shop inside</span>
+                    </span>
+                </div>
             </a>
         </div>
 
-        <!-- Center: Desktop Navigation Links (Editorial 2026 Layout) -->
+        <!-- Center: Desktop Navigation Links (Exact Reference Matching) -->
         <div class="d-none d-xl-flex align-items-center justify-content-center gap-1 mx-2">
-            <a class="bugs-nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
-            
-            <!-- Shop Dropdown -->
-            <div class="dropdown">
-                <a class="bugs-nav-link dropdown-toggle {{ request()->routeIs('shop.*') && request('category') !== 'smartphones' ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Shop
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark border shadow-lg p-2" style="background-color: var(--bugs-surface-3); border-color: var(--bugs-border) !important; border-radius: 14px; min-width: 200px;">
-                    <li><a class="dropdown-item py-2 px-3 rounded-2 text-white small" href="{{ route('shop.index') }}"><i class="ph ph-squares-four me-2 text-warning"></i> Shop All Stock</a></li>
-                    <li><hr class="dropdown-divider border-secondary border-opacity-25 my-1"></li>
-                    <li><a class="dropdown-item py-2 px-3 rounded-2 text-white small hover-white" href="{{ route('shop.index', ['category' => 'smartphones']) }}"><i class="ph ph-device-mobile me-2 text-warning"></i> Smartphones &amp; Stock</a></li>
-                    <li><a class="dropdown-item py-2 px-3 rounded-2 text-white-50 small hover-white" href="{{ route('shop.index', ['category' => 'vapes']) }}">Vapes &amp; Pods</a></li>
-                    <li><a class="dropdown-item py-2 px-3 rounded-2 text-white-50 small hover-white" href="{{ route('shop.index', ['category' => 'e-liquids']) }}">E-Liquids</a></li>
-                    <li><a class="dropdown-item py-2 px-3 rounded-2 text-white-50 small hover-white" href="{{ route('shop.index', ['category' => 'glass-pipes']) }}">Glass &amp; Pipes</a></li>
-                    <li><a class="dropdown-item py-2 px-3 rounded-2 text-white-50 small hover-white" href="{{ route('shop.index', ['category' => 'hookah']) }}">Hookah &amp; Shisha</a></li>
-                    <li><a class="dropdown-item py-2 px-3 rounded-2 text-white-50 small hover-white" href="{{ route('shop.index', ['category' => 'phone-accessories']) }}">Phone Accessories</a></li>
-                </ul>
-            </div>
-
-            <a class="bugs-nav-link {{ request('category') === 'smartphones' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'smartphones']) }}">Smartphones</a>
-            <a class="bugs-nav-link {{ request()->routeIs('repairs') ? 'active' : '' }}" href="{{ route('repairs') }}">Phone Repair</a>
-            <button type="button" class="bugs-nav-link bg-transparent border-0 d-inline-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-inquiry-type="general_inquiry" style="cursor: pointer;">
-                <span>Inquiry</span>
-            </button>
-            <a class="bugs-nav-link" href="{{ route('home') }}#visit">Contact</a>
+            <a class="bugs-nav-link {{ request()->routeIs('repairs') ? 'active' : '' }}" href="{{ route('repairs') }}">Repairs</a>
+            <a class="bugs-nav-link {{ request('category') === 'phone-accessories' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'phone-accessories']) }}">Phone gear</a>
+            <a class="bugs-nav-link {{ request()->routeIs('shop.index') && !request('category') ? 'active' : '' }}" href="{{ route('shop.index') }}">Shop all</a>
+            <a class="bugs-nav-link {{ in_array(request('category'), ['vapes', 'e-liquids', 'glass-pipes', 'hookah']) ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'vapes']) }}">Smoke shop</a>
+            <a class="bugs-nav-link" href="{{ route('home') }}#visit">Visit us</a>
+            <a class="bugs-nav-link {{ request()->routeIs('orders.lookup') ? 'active' : '' }}" href="{{ route('orders.lookup') }}">Your orders</a>
         </div>
 
-        <!-- Right: Actions (Search, Phone, Account, Cart Bag, Mobile Toggle) -->
+        <!-- Right: Actions (Hotline, Fix CTA, Bag Trigger, Mobile Toggle) -->
         <div class="d-flex align-items-center justify-content-end gap-2 flex-shrink-0">
-            <!-- Fast Inquiry Trigger Icon Button -->
-            <button type="button" 
-                    class="bugs-nav-icon-btn d-none d-md-inline-flex" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#inquiryModal"
-                    data-inquiry-type="general_inquiry"
-                    title="Send Counter or Repair Inquiry"
-                    aria-label="Send Inquiry">
-                <i class="ph ph-chat-circle-dots fs-5" style="color: var(--bugs-primary);"></i>
-            </button>
-
             <!-- Phone Hotline Pill -->
             <a href="tel:+13144412851" class="btn btn-bugs-outline d-none d-lg-inline-flex align-items-center gap-2 py-1 px-3" style="font-size: 0.8125rem;">
-                <i class="ph ph-phone" style="color: var(--bugs-primary);"></i>
+                <i data-lucide="phone" class="w-4 h-4 text-steel"></i>
                 <span class="num">314-441-2851</span>
             </a>
 
             <!-- Search Modal Trigger Button -->
-            <button type="button" class="bugs-nav-icon-btn" data-bs-toggle="modal" data-bs-target="#bugsSearchModal" aria-label="Search store">
-                <i class="ph ph-magnifying-glass fs-5"></i>
+            <button type="button" class="bugs-nav-icon-btn d-none d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#bugsSearchModal" aria-label="Search store" title="Search store">
+                <i data-lucide="search" class="w-4 h-4"></i>
             </button>
 
-            <!-- Account / Order Lookup Icon Button -->
-            <a href="{{ route('orders.lookup') }}" class="bugs-nav-icon-btn {{ request()->routeIs('orders.lookup') ? 'text-warning border-warning' : '' }}" aria-label="Account and orders" title="Track Your Orders">
-                <i class="ph ph-user fs-5"></i>
+            <!-- Primary Fix My Phone Action Button -->
+            <a href="{{ route('repairs') }}" class="btn btn-bugs-primary d-none d-sm-inline-flex align-items-center gap-2 py-1 px-4 text-dark fw-semibold" style="font-size: 0.8125rem;">
+                <i data-lucide="wrench" class="w-4 h-4"></i>
+                <span>Fix my phone</span>
             </a>
 
             <!-- Shopping Bag Trigger Button -->
-            {{-- <button type="button" class="bugs-nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#bugsCartOffcanvas" aria-controls="bugsCartOffcanvas" aria-label="View shopping bag" title="Shopping Bag">
-                <i class="ph ph-shopping-bag fs-5"></i>
+            <button type="button" class="bugs-nav-icon-btn position-relative" data-bs-toggle="offcanvas" data-bs-target="#bugsCartOffcanvas" aria-controls="bugsCartOffcanvas" aria-label="View shopping bag" title="Shopping Bag">
+                <i data-lucide="shopping-bag" class="w-5 h-5"></i>
                 <span class="bugs-badge-count d-none" id="navCartCount">0</span>
-            </button> --}}
+            </button>
 
             <!-- Mobile Hamburger Toggle Button -->
             <button class="bugs-nav-icon-btn d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#bugsMobileMenu" aria-controls="bugsMobileMenu" aria-label="Open mobile menu">
-                <i class="ph ph-list fs-5"></i>
+                <i data-lucide="menu" class="w-5 h-5"></i>
             </button>
         </div>
     </nav>
@@ -86,81 +60,71 @@
 <!-- Full-Height Animated Mobile Navigation Drawer -->
 <div class="offcanvas offcanvas-start bugs-mobile-menu" tabindex="-1" id="bugsMobileMenu" aria-labelledby="bugsMobileMenuLabel">
     <div class="offcanvas-header border-bottom py-3 px-4" style="border-color: var(--bugs-border) !important;">
-        <span class="fs-4 fw-bold font-display text-white">BUGS<span style="color: var(--bugs-primary)">.</span></span>
+        <div class="d-flex align-items-center gap-2">
+            <img src="{{ asset('assets/images/logo.png') }}" alt="BUGS" width="28" height="28" class="rounded-circle">
+            <span class="fs-4 fw-bold font-display text-white">BUGS<span class="text-steel">.</span></span>
+        </div>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body d-flex flex-column p-4">
         <ul class="nav flex-column gap-2 mb-4" id="bugsMobileNavList">
             <li class="nav-item bugs-mobile-nav-item">
                 <a class="bugs-nav-link fs-6 w-100 py-2 {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
-                    <i class="ph ph-house me-2"></i> Home
-                </a>
-            </li>
-            <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request()->routeIs('shop.index') && !request('category') ? 'active' : '' }}" href="{{ route('shop.index') }}">
-                    <i class="ph ph-squares-four me-2"></i> Shop All Stock
-                </a>
-            </li>
-            <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'smartphones' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'smartphones']) }}">
-                    <i class="ph ph-device-mobile me-2 text-warning"></i> Smartphones &amp; Counter Stock
-                </a>
-            </li>
-            <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'vapes' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'vapes']) }}">
-                    <i class="ph ph-wind me-2"></i> Vapes &amp; Pods
-                </a>
-            </li>
-            <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'e-liquids' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'e-liquids']) }}">
-                    <i class="ph ph-drop me-2"></i> E-Liquids
-                </a>
-            </li>
-            <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'glass-pipes' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'glass-pipes']) }}">
-                    <i class="ph ph-flame me-2"></i> Glass &amp; Pipes
-                </a>
-            </li>
-            <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'hookah' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'hookah']) }}">
-                    <i class="ph ph-sparkle me-2"></i> Hookah &amp; Shisha
-                </a>
-            </li>
-            <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'phone-accessories' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'phone-accessories']) }}">
-                    <i class="ph ph-headphones me-2"></i> Phone Accessories
+                    <i data-lucide="home" class="w-4 h-4 me-2"></i> Home
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
                 <a class="bugs-nav-link fs-6 w-100 py-2 {{ request()->routeIs('repairs') ? 'active' : '' }}" href="{{ route('repairs') }}">
-                    <i class="ph ph-wrench me-2"></i> Phone Repair
+                    <i data-lucide="wrench" class="w-4 h-4 me-2 text-steel"></i> Phone &amp; Tablet Repairs
+                </a>
+            </li>
+            <li class="nav-item bugs-mobile-nav-item">
+                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request()->routeIs('shop.index') && !request('category') ? 'active' : '' }}" href="{{ route('shop.index') }}">
+                    <i data-lucide="layout-grid" class="w-4 h-4 me-2"></i> Shop All Products
+                </a>
+            </li>
+            <li class="nav-item bugs-mobile-nav-item">
+                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'phone-accessories' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'phone-accessories']) }}">
+                    <i data-lucide="smartphone" class="w-4 h-4 me-2"></i> Phone Accessories
+                </a>
+            </li>
+            <li class="nav-item bugs-mobile-nav-item">
+                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'vapes' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'vapes']) }}">
+                    <i data-lucide="wind" class="w-4 h-4 me-2"></i> Vapes &amp; Pods
+                </a>
+            </li>
+            <li class="nav-item bugs-mobile-nav-item">
+                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'e-liquids' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'e-liquids']) }}">
+                    <i data-lucide="droplet" class="w-4 h-4 me-2"></i> E-Liquids
+                </a>
+            </li>
+            <li class="nav-item bugs-mobile-nav-item">
+                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'glass-pipes' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'glass-pipes']) }}">
+                    <i data-lucide="flame" class="w-4 h-4 me-2"></i> Glass &amp; Pipes
+                </a>
+            </li>
+            <li class="nav-item bugs-mobile-nav-item">
+                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'hookah' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'hookah']) }}">
+                    <i data-lucide="sparkles" class="w-4 h-4 me-2"></i> Hookah &amp; Shisha
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
                 <a class="bugs-nav-link fs-6 w-100 py-2" href="{{ route('home') }}#visit">
-                    <i class="ph ph-map-pin me-2"></i> Contact &amp; Hours
+                    <i data-lucide="map-pin" class="w-4 h-4 me-2"></i> Visit Us (10010 Halls Ferry)
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
                 <a class="bugs-nav-link fs-6 w-100 py-2 {{ request()->routeIs('orders.lookup') ? 'active' : '' }}" href="{{ route('orders.lookup') }}">
-                    <i class="ph ph-receipt me-2"></i> Your Orders
+                    <i data-lucide="receipt" class="w-4 h-4 me-2"></i> Track Your Orders
                 </a>
             </li>
         </ul>
 
         <div class="mt-auto border-top pt-4" style="border-color: var(--bugs-border) !important;">
-            <button type="button" 
-                    class="btn btn-bugs-outline w-100 py-3 mb-2 gap-2 d-flex align-items-center justify-content-center"
-                    data-bs-toggle="modal" 
-                    data-bs-target="#inquiryModal"
-                    data-inquiry-type="general_inquiry"
-                    style="border-color: var(--bugs-primary); color: var(--bugs-primary);">
-                <i class="ph ph-chat-circle-dots fs-5"></i> Send Counter Inquiry
-            </button>
-            <a href="tel:+13144412851" class="btn btn-bugs-primary w-100 py-3 mb-2 gap-2">
-                <i class="ph ph-phone-call fs-5"></i> Call 314-441-2851
+            <a href="tel:+13144412851" class="btn btn-bugs-primary w-100 py-3 mb-2 gap-2 text-dark fw-semibold d-flex align-items-center justify-content-center">
+                <i data-lucide="phone" class="w-4 h-4"></i> Call 314-441-2851
             </a>
-            <p class="caption-5 text-secondary text-center mb-0 mt-3">10010 Halls Ferry Rd, St. Louis, MO 63136</p>
+            <p class="caption-5 text-secondary text-center mb-0 mt-3" style="font-size: 0.75rem;">10010 Halls Ferry Rd, St. Louis, MO 63136 &bull; Open daily 10 &ndash; 8</p>
         </div>
     </div>
 </div>

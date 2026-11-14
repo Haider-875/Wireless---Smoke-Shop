@@ -1,33 +1,29 @@
-<!-- Age Verification Modal (21+ Gate) -->
+<!-- Age Verification Modal (21+ Gate - Exact Reference Matching) -->
 <div class="modal fade" id="bugsAgeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="bugsAgeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
-        <div class="modal-content bugs-modal-content p-4 p-md-5 text-center">
-            <div class="d-inline-flex align-items-center justify-content-center mx-auto mb-3 rounded-circle border" style="width: 56px; height: 56px; border-color: var(--bugs-border); background-color: var(--bugs-surface-2); color: var(--bugs-primary);">
-                <i class="ph ph-identification-card fs-3"></i>
-            </div>
-
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 448px;">
+        <div class="modal-content border border-white border-opacity-10 p-4 p-md-5 text-center shadow-lg" style="background-color: hsl(var(--surface)); border-radius: 1.5rem; box-shadow: 0 40px 120px -40px rgba(0,0,0,1) !important;">
             <div>
-                <p class="font-display fs-2 fw-bold tracking-tight mb-0 text-white">
-                    BUGS<span style="color: var(--bugs-primary)">.</span>
+                <p class="font-display fs-2 fw-semibold tracking-tight mb-0 text-white">
+                    BUGS<span class="text-steel">.</span>
                 </p>
-                <p class="eyebrow mt-1 text-secondary" style="font-size: 0.65rem;">Wireless &amp; Smoke Shop</p>
+                <p class="eyebrow mt-2 text-secondary mb-0" style="font-size: 0.6875rem; letter-spacing: 0.2em;">Wireless &middot; Repair &middot; Smoke</p>
             </div>
 
-            <h2 class="heading-4 text-white mt-3" id="bugsAgeModalLabel">Are you 21 or older?</h2>
-            <p class="body-3 text-secondary mt-2 mb-0" style="text-wrap: balance;">
-                We sell nicotine and smoking products. You must be 21+ with a valid government-issued photo ID to buy them in store and upon pickup.
+            <h2 class="fs-4 text-white mt-4 mb-0 fw-semibold" id="bugsAgeModalLabel">Are you 21 or older?</h2>
+            <p class="text-secondary mt-3 mb-0" style="font-size: 0.875rem; line-height: 1.6; text-wrap: balance;">
+                Our tobacco and vape counter is 21+ with valid ID, in store and at pickup. Repairs, devices and accessories are open to everyone.
             </p>
 
             <div class="mt-4 d-grid gap-2">
-                <button type="button" class="btn btn-bugs-primary py-2" id="btnConfirmAge">
+                <button type="button" class="btn btn-bugs-primary py-3 rounded-pill fw-semibold text-dark" id="btnConfirmAge">
                     Yes, I'm 21 or older
                 </button>
-                <a href="https://www.google.com" class="btn btn-bugs-outline py-2">
+                <a href="https://www.google.com" class="btn btn-bugs-outline py-3 rounded-pill text-secondary">
                     No, take me out
                 </a>
             </div>
             
-            <p class="caption-5 text-secondary mt-3 mb-0" style="font-size: 11px;">
+            <p class="text-secondary mt-3 mb-0 opacity-75" style="font-size: 11px;">
                 Strict ID verification enforced at 10010 Halls Ferry Rd.
             </p>
         </div>

@@ -35,7 +35,7 @@ class ResponsiveAndAnimationTest extends TestCase
     }
 
     /**
-     * Test advanced cinematic motion design elements on homepage.
+     * Test motion, animations and interactive elements on homepage matching reference.
      */
     public function test_advanced_cinematic_motion_elements_render(): void
     {
@@ -43,34 +43,29 @@ class ResponsiveAndAnimationTest extends TestCase
 
         $response->assertStatus(200);
 
-        // 1. Motion and 3D Asset scripts
-        $response->assertSee('assets/js/three.min.js');
+        // 1. Motion and Icon Asset scripts
         $response->assertSee('assets/js/gsap.min.js');
         $response->assertSee('assets/js/ScrollTrigger.min.js');
+        $response->assertSee('assets/js/lucide.min.js');
         $response->assertSee('assets/js/bugs-app.js');
 
-        // 2. Three.js Ambient Particle Canvas in Hero
-        $response->assertSee('id="heroThreeCanvas"', false);
+        // 2. Ambient radial lighting and glows
+        $response->assertSee('glow-platinum');
+        $response->assertSee('glow-steel');
+        $response->assertSee('glow-gold');
 
-        // 3. Pinned Apple-style Product Storytelling Section
-        $response->assertSee('id="cinematicStorytelling"', false);
-        $response->assertSee('story-pin-container');
-        $response->assertSee('story-step');
-        $response->assertSee('story-visual-stage');
-        $response->assertSee('story-visual-layer');
+        // 3. Infinite Marquee Announcement Ticker
+        $response->assertSee('marquee-track');
+        $response->assertSee('marquee-content');
+        $response->assertSee('Same-day screen repair');
 
-        // 4. Controlled Horizontal Scrolling Section
-        $response->assertSee('id="horizontalAislesSection"', false);
-        $response->assertSee('id="horizontalTrack"', false);
-        $response->assertSee('bugs-horizontal-track');
-        $response->assertSee('bugs-horizontal-card');
+        // 4. Interactive Drawers and Modals
+        $response->assertSee('id="bugsCartOffcanvas"', false);
+        $response->assertSee('id="bugsAgeModal"', false);
+        $response->assertSee('id="bugsSearchModal"', false);
 
-        // 5. Image Masking Classes
-        $response->assertSee('mask-reveal-wrap');
-        $response->assertSee('mask-reveal-img');
-
-        // 6. Final Cinematic CTA
-        $response->assertSee('id="cinematicFinalCta"', false);
-        $response->assertSee('Step up to the counter.');
+        // 5. Card motion and transitions
+        $response->assertSee('transition-all');
+        $response->assertSee('ratio-1x1');
     }
 }

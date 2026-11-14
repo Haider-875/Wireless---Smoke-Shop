@@ -15,7 +15,7 @@ class RoutesAndLayoutTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('BUGS');
-        $response->assertSee('Your smoke shop');
+        $response->assertSee('Phone repair');
         $response->assertSee('assets/css/bootstrap.min.css');
         $response->assertSee('assets/css/bugs-theme.css');
         $response->assertDontSee('tailwindcss');

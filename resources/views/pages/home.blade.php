@@ -1,85 +1,84 @@
 @extends('layouts.app')
 
-@section('title', 'BUGS Wireless & Smoke Shop — Vapes, Glass & Phone Repair in St. Louis, MO')
-@section('meta_description', 'Bugs Wireless & Smoke Shop on Halls Ferry Rd, St. Louis. Phone repair, screen replacement, vapes, glass, hookah, and phone accessories. Walk-ins welcome.')
+@section('title', 'Bugs Wireless — Phone & Tablet Repair on Halls Ferry, St. Louis')
+@section('meta_description', 'Phone and tablet repair while you wait on Halls Ferry Rd, St. Louis. Screen replacement, fresh batteries, charging ports, wireless gear and 21+ smoke shop inside.')
 
 @section('content')
 <!-- ==========================================================================
-     Section 1: Cinematic Hero Section (Apple-Style Entrance & Ambient Depth)
+     Section 1: Hero Section (Exact Reference Layout & Typography)
      ========================================================================== -->
-<section class="position-relative overflow-hidden py-4 py-lg-5" style="background-color: var(--bugs-bg); min-height: 88vh; display: flex; align-items: center;">
-    <!-- Three.js Ambient Particle & Depth Canvas -->
-    <canvas id="heroThreeCanvas" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.65;"></canvas>
+<section class="position-relative overflow-hidden py-5" style="background-color: hsl(var(--background)); min-height: 85vh; display: flex; align-items: center;">
+    <!-- Radial Ambient Auras -->
+    <div class="pointer-events-none position-absolute glow-platinum" style="top: -100px; left: -120px; width: 520px; height: 520px; z-index: 1;"></div>
+    <div class="pointer-events-none position-absolute glow-steel" style="bottom: -80px; right: -100px; width: 460px; height: 460px; z-index: 1;"></div>
 
-    <div class="glow-gold" style="top: -60px; right: -80px; width: 480px; height: 480px; z-index: 1;"></div>
-    <div class="container-fluid px-3 px-lg-5 py-3 py-lg-4 position-relative" style="max-width: 1400px; z-index: 2;">
-        <div class="row align-items-center g-5">
-            <!-- Left: Hero Messaging & CTAs -->
-            <div class="col-lg-6 hero-content-col">
-                <p class="eyebrow mb-3 d-inline-flex align-items-center gap-2" style="color: var(--bugs-primary);">
-                    <i class="ph ph-map-pin fs-6"></i>
-                    Halls Ferry &bull; St. Louis, MO
+    <div class="container-fluid px-4 px-lg-5 position-relative" style="max-width: 1400px; z-index: 2;">
+        <div class="row align-items-center g-5 py-4">
+            <!-- Left: Hero Text & Actions -->
+            <div class="col-lg-6 reveal">
+                <p class="eyebrow d-inline-flex align-items-center gap-2 text-steel mb-3" style="font-size: 0.75rem; letter-spacing: 0.15em;">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i> Certified repair counter · St. Louis
                 </p>
 
-                <!-- Hero Heading with dark theme gradient: #FFFFFF -> #9B9B9B (B5) -->
-                <h1 class="bugs-hero-title mb-3">
-                    <span class="hero-gradient-text">Your smoke shop.<br>Your phone doctor.</span>
+                <h1 class="display-3 fw-semibold text-white tracking-tight mb-4" style="line-height: 1.05; letter-spacing: -0.03em;">
+                    Phone repair,<br>
+                    <span class="font-serif-display text-steel" style="font-size: 1.05em;">the same day</span><br>
+                    on Halls Ferry.
                 </h1>
 
-                <!-- Subheadline capped at 680px (B5) -->
-                <p class="hero-subhead body-2 mb-4">
-                    Everything you need, from premium accessories to expert phone repairs, all in one place on Halls Ferry Road. Same counter, same afternoon.
+                <p class="text-secondary mb-4 pb-2" style="max-width: 480px; font-size: 1.0625rem; line-height: 1.6;">
+                    Cracked screen, tired battery, dead charging port &mdash; our technicians work the bench in front of you, with the price agreed before a single screw comes out. Phones, tablets and wireless service, plus the tobacco counter in the back.
                 </p>
 
-                <!-- Clear CTAs -->
-                <div class="d-flex flex-wrap align-items-center gap-3 mb-4 pb-2">
-                    <a href="{{ route('shop.index') }}" class="btn btn-bugs-primary">
-                        <span>Shop the shelves</span>
-                        <i class="ph ph-arrow-right fs-5"></i>
-                    </a>
-                    <a href="{{ route('repairs') }}" class="btn btn-bugs-outline">
-                        <i class="ph ph-wrench fs-5"></i>
+                <div class="d-flex flex-wrap align-items-center gap-3 mb-5">
+                    <a href="{{ route('repairs') }}" class="btn btn-bugs-primary px-4 py-3 rounded-pill fw-semibold text-dark d-inline-flex align-items-center gap-2">
+                        <i data-lucide="wrench" class="w-4 h-4"></i>
                         <span>Fix my phone</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ms-1"></i>
+                    </a>
+                    <a href="{{ route('shop.index', ['category' => 'phone-accessories']) }}" class="btn btn-bugs-outline px-4 py-3 rounded-pill text-white d-inline-flex align-items-center gap-2">
+                        <span>Shop phones &amp; accessories</span>
                     </a>
                 </div>
 
                 <!-- Proof Signals Strip -->
-                <div class="row g-3 pt-3 border-top" style="border-color: var(--bugs-border) !important; max-width: 520px;">
+                <div class="row g-4 pt-4 border-top border-white border-opacity-10" style="max-width: 520px;">
                     <div class="col-4">
-                        <div class="num text-white title-1 fw-bold">30 min</div>
-                        <div class="caption-4 text-secondary mt-1">Most screen repairs</div>
+                        <div class="fw-bold text-white fs-4">30 min</div>
+                        <div class="text-secondary small mt-1">Most screen repairs</div>
                     </div>
                     <div class="col-4">
-                        <div class="num text-white title-1 fw-bold">21+</div>
-                        <div class="caption-4 text-secondary mt-1">ID checked in store</div>
+                        <div class="fw-bold text-white fs-4">21+</div>
+                        <div class="text-secondary small mt-1">ID checked in store</div>
                     </div>
                     <div class="col-4">
-                        <div class="num text-white title-1 fw-bold">7 days</div>
-                        <div class="caption-4 text-secondary mt-1">Open 10 &ndash; 8 daily</div>
+                        <div class="fw-bold text-white fs-4">7 days</div>
+                        <div class="text-secondary small mt-1">Open 10 &ndash; 8 daily</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right: Hero Visual with Animated Mask & Overlaid Floating Desk Card -->
-            <div class="col-lg-6 position-relative mt-5 mt-lg-0 pb-4 pb-sm-0">
-                <div class="bugs-card-outer-24 overflow-hidden position-relative p-2" style="background-color: var(--bugs-surface-2);">
-                    <div class="ratio ratio-4x3 mask-reveal-wrap" style="min-height: 380px; border-radius: 16px; overflow: hidden;">
+            <!-- Right: Hero Visual with Overlaid Floating Desk Card -->
+            <div class="col-lg-6 position-relative">
+                <div class="overflow-hidden rounded-4 border border-white border-opacity-10 shadow-lg" style="background-color: hsl(var(--surface-raised));">
+                    <div class="ratio ratio-4x3">
                         <img src="{{ asset('assets/images/lifestyle/hero-display.png') }}" 
-                             alt="Bugs Wireless and Smoke Shop Store Counter" 
-                             class="w-100 h-100 object-fit-cover hero-visual-img mask-reveal-img"
+                             alt="A technician replacing a phone screen at a repair bench" 
+                             class="w-100 h-100 object-fit-cover"
                              loading="eager">
                     </div>
                 </div>
 
-                <!-- Overlaid Floating Repair Desk Card with Parallax Depth -->
-                <div class="bugs-hero-floating-card position-absolute p-3 p-sm-4 border" data-parallax="0.12">
+                <!-- Overlaid Floating Repair Desk Card -->
+                <div class="position-absolute p-3 p-sm-4 border border-white border-opacity-10 rounded-4 shadow-lg" 
+                     style="background-color: hsl(var(--surface)); bottom: -24px; left: 24px; right: 24px; max-width: 480px; box-shadow: 0 20px 50px -20px rgba(0,0,0,0.9) !important;">
                     <div class="d-flex align-items-center justify-content-between gap-3">
                         <div>
-                            <p class="eyebrow mb-1" style="color: var(--bugs-primary) !important; font-size: 11px;">Walk-in repair desk</p>
-                            <p class="body-4 text-white mb-0">Cracked screen? Bring it in &mdash; free quote, no appointment.</p>
+                            <p class="eyebrow mb-1 text-steel" style="font-size: 0.6875rem; letter-spacing: 0.15em;">Walk-in repair desk</p>
+                            <p class="text-white small mb-0">Cracked screen? Bring it in &mdash; free quote, no appointment.</p>
                         </div>
-                        <a href="tel:+13144412851" aria-label="Call 314-441-2851" class="bugs-hero-call-btn flex-shrink-0" title="Call the counter">
-                            <i class="ph ph-phone-call fs-5"></i>
+                        <a href="tel:+13144412851" class="btn btn-sm btn-bugs-outline rounded-circle p-2 flex-shrink-0 d-flex align-items-center justify-content-center" title="Call the counter" style="width: 40px; height: 40px;">
+                            <i data-lucide="phone" class="w-4 h-4 text-steel"></i>
                         </a>
                     </div>
                 </div>
@@ -89,233 +88,73 @@
 </section>
 
 <!-- ==========================================================================
-     Marquee Strip
+     Section 2: Repair Bench ("Broken today, fixed by tonight.")
      ========================================================================== -->
-<div class="bugs-marquee-wrapper" aria-label="Store highlights ticker">
-    <div class="bugs-marquee-track">
-        <div class="bugs-marquee-content">
-            <span>Same-day screen repair</span>
-            <span class="bugs-marquee-dot"></span>
-            <span>21+ age verified</span>
-            <span class="bugs-marquee-dot"></span>
-            <span>Walk-ins welcome</span>
-            <span class="bugs-marquee-dot"></span>
-            <span>Free local delivery over $50</span>
-            <span class="bugs-marquee-dot"></span>
-            <span>Clean glass guaranteed</span>
-            <span class="bugs-marquee-dot"></span>
-            <span>Direct carrier unlocking</span>
-            <span class="bugs-marquee-dot"></span>
-        </div>
-        <div class="bugs-marquee-content" aria-hidden="true">
-            <span>Same-day screen repair</span>
-            <span class="bugs-marquee-dot"></span>
-            <span>21+ age verified</span>
-            <span class="bugs-marquee-dot"></span>
-            <span>Walk-ins welcome</span>
-            <span class="bugs-marquee-dot"></span>
-            <span>Free local delivery over $50</span>
-            <span class="bugs-marquee-dot"></span>
-            <span>Clean glass guaranteed</span>
-            <span class="bugs-marquee-dot"></span>
-            <span>Direct carrier unlocking</span>
-            <span class="bugs-marquee-dot"></span>
-        </div>
-    </div>
-</div>
+<section id="repairs" class="position-relative overflow-hidden py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--background));">
+    <div class="pointer-events-none position-absolute glow-steel" style="top: 40px; left: -100px; width: 420px; height: 420px; z-index: 1;"></div>
 
-<!-- ==========================================================================
-     Section 2: Brand Experience Section (Editorial Asymmetric Layout)
-     ========================================================================== -->
-<section class="py-5 gsap-reveal-section" style="background-color: var(--bugs-surface-1);">
-    <div class="container-fluid px-3 px-lg-5 py-4" style="max-width: 1400px;">
-        <div class="row align-items-center g-4 g-lg-5">
-            <div class="col-lg-5">
-                <span class="eyebrow" style="color: var(--bugs-primary);">The BUGS Standard</span>
-                <h2 class="heading-2 text-white mt-2 mb-3">Two worlds, one counter.</h2>
-                <p class="body-2 text-secondary mb-4">
-                    BUGS was built on a simple premise: why drive across town for premium vape and smoking essentials, then visit a detached mall kiosk for phone diagnostics?
-                </p>
-                <p class="body-3 text-secondary mb-4">
-                    On one side, you find curated vapor devices, premium freebase and nic salts, hand-blown borosilicate glass, and authentic hookah setups. On the other side, an open workbench staffed by certified repair technicians who test, quote, and fix your device right before your eyes.
-                </p>
-
-                <div class="d-flex flex-column gap-3">
-                    <div class="d-flex align-items-center gap-3">
-                        <div class="d-flex align-items-center justify-content-center rounded-circle border" style="width: 36px; height: 36px; border-color: var(--bugs-border); background-color: var(--bugs-surface-3); color: var(--bugs-primary);">
-                            <i class="ph ph-check-circle fs-5"></i>
-                        </div>
-                        <span class="body-2 text-white">100% genuine hardware and authentic liquids</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                        <div class="d-flex align-items-center justify-content-center rounded-circle border" style="width: 36px; height: 36px; border-color: var(--bugs-border); background-color: var(--bugs-surface-3); color: var(--bugs-primary);">
-                            <i class="ph ph-check-circle fs-5"></i>
-                        </div>
-                        <span class="body-2 text-white">Upfront quotes before opening a single screw</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                        <div class="d-flex align-items-center justify-content-center rounded-circle border" style="width: 36px; height: 36px; border-color: var(--bugs-border); background-color: var(--bugs-surface-3); color: var(--bugs-primary);">
-                            <i class="ph ph-check-circle fs-5"></i>
-                        </div>
-                        <span class="body-2 text-white">Strict 21+ compliance for complete peace of mind</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-7">
-                <div class="row g-3">
-                    <div class="col-sm-6" data-parallax="0.08">
-                        <div class="bugs-card-outer-16 p-2 h-100">
-                            <div class="ratio ratio-4x3 rounded-3 overflow-hidden mb-3 mask-reveal-wrap">
-                                <img src="{{ asset('assets/images/lifestyle/store-counter.png') }}" 
-                                     alt="Inside BUGS Wireless & Smoke Shop Counter" 
-                                     loading="lazy" 
-                                     class="w-100 h-100 object-fit-cover mask-reveal-img">
-                            </div>
-                            <div class="px-2 pb-2">
-                                <span class="eyebrow" style="color: var(--bugs-primary);">Storefront</span>
-                                <h3 class="title-3 text-white mt-1 mb-1">10010 Halls Ferry Rd</h3>
-                                <p class="caption-4 text-secondary mb-0">Easy access with dedicated storefront parking.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6" data-parallax="-0.08">
-                        <div class="bugs-card-outer-16 p-2 h-100">
-                            <div class="ratio ratio-4x3 rounded-3 overflow-hidden mb-3 mask-reveal-wrap">
-                                <img src="{{ asset('assets/images/lifestyle/repair-bench.png') }}" 
-                                     alt="Certified phone repair bench at BUGS" 
-                                     loading="lazy" 
-                                     class="w-100 h-100 object-fit-cover mask-reveal-img">
-                            </div>
-                            <div class="px-2 pb-2">
-                                <span class="eyebrow" style="color: var(--bugs-primary);">Workbench</span>
-                                <h3 class="title-3 text-white mt-1 mb-1">Open Diagnostic Counter</h3>
-                                <p class="caption-4 text-secondary mb-0">Repairs completed in front of you with full transparency.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-     Section 3: Cinematic Product Storytelling Showcase
-     Interactive Chapter Navigation & Smooth Morphing Showcase
-     ========================================================================== -->
-<section id="cinematicStorytelling" class="bugs-pinned-storytelling position-relative">
-    <div class="container-fluid px-3 px-lg-5" style="max-width: 1400px;">
-        <!-- Interactive Chapter Navigation Bar -->
-        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4 pb-2 border-bottom" style="border-color: var(--bugs-border) !important;">
-            <div class="bugs-chapter-nav" role="tablist" aria-label="Story chapters">
-                <button type="button" class="bugs-chapter-btn active" data-chapter="0" role="tab" aria-selected="true">
-                    <span class="num me-2 text-gold">01</span> Smoke Craft
-                </button>
-                <button type="button" class="bugs-chapter-btn" data-chapter="1" role="tab" aria-selected="false">
-                    <span class="num me-2 text-gold">02</span> Vapor Engineering
-                </button>
-                <button type="button" class="bugs-chapter-btn" data-chapter="2" role="tab" aria-selected="false">
-                    <span class="num me-2 text-gold">03</span> Phone Doctor
-                </button>
-            </div>
-            <div class="caption-4 text-secondary d-none d-md-block">
-                <i class="ph ph-sliders-horizontal me-1 text-warning"></i> Click or scroll to explore our three counter specialties
-            </div>
-        </div>
-
-        <div class="story-pin-container row align-items-center g-5">
-            <!-- Left: Dynamic Interactive Story Copy (Crossfades on Scroll/Click) -->
-            <div class="col-lg-6">
-                <div class="story-steps-container position-relative">
-                    <!-- Step 1: Smoke Shop & Pure Glass -->
-                    <div class="story-step active" data-story-step="0">
-                        <span class="eyebrow mb-2 d-inline-block" style="color: var(--bugs-primary);">Chapter 01 &bull; Smoke Craft</span>
-                        <h2 class="heading-1 text-white mb-3">Pure borosilicate glass &amp; smoking craft.</h2>
-                        <p class="body-2 text-secondary mb-4">
-                            Hand-selected beakers, heady glass, quartz bangers, and thick-wall rigs built to withstand everyday sessions. Thermal shock resistant, crystal clear, and inspected piece by piece.
-                        </p>
-                        <div class="d-flex flex-wrap align-items-center gap-3">
-                            <a href="{{ route('shop.index', ['category' => 'glass-pipes']) }}" class="btn btn-bugs-primary btn-bugs-pill-sm">
-                                <span>Browse glass collection</span>
-                                <i class="ph ph-arrow-right fs-6"></i>
-                            </a>
-                            <span class="caption-4 text-secondary border-start ps-3" style="border-color: var(--bugs-border) !important;">
-                                Lab-grade borosilicate &bull; 21+ only
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Step 2: Vapor Engineering -->
-                    <div class="story-step" data-story-step="1">
-                        <span class="eyebrow mb-2 d-inline-block" style="color: var(--bugs-primary);">Chapter 02 &bull; Vapor Engineering</span>
-                        <h2 class="heading-1 text-white mb-3">Curated disposables, mods &amp; premium salts.</h2>
-                        <p class="body-2 text-secondary mb-4">
-                            From high-capacity smart disposables with HD battery displays to refillable pod mods and clean nicotine salts. Fresh stock rotated weekly directly from verified distributors.
-                        </p>
-                        <div class="d-flex flex-wrap align-items-center gap-3">
-                            <a href="{{ route('shop.index', ['category' => 'vapes']) }}" class="btn btn-bugs-primary btn-bugs-pill-sm">
-                                <span>Explore vapor collection</span>
-                                <i class="ph ph-arrow-right fs-6"></i>
-                            </a>
-                            <span class="caption-4 text-secondary border-start ps-3" style="border-color: var(--bugs-border) !important;">
-                                0mg to 50mg nic salts &bull; Leak-tested
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Step 3: Phone Doctor Bench -->
-                    <div class="story-step" data-story-step="2">
-                        <span class="eyebrow mb-2 d-inline-block" style="color: var(--bugs-primary);">Chapter 03 &bull; Phone Doctor</span>
-                        <h2 class="heading-1 text-white mb-3">Precision micro-soldering &amp; same-day restoration.</h2>
-                        <p class="body-2 text-secondary mb-4">
-                            Shattered OLED? Degraded battery? Charging port failing to make contact? Our master bench technician fixes your phone right on the front counter in 30 to 45 minutes with zero surprise fees.
-                        </p>
-                        <div class="d-flex flex-wrap align-items-center gap-3">
-                            <a href="{{ route('repairs') }}" class="btn btn-bugs-primary btn-bugs-pill-sm">
-                                <span>Get free diagnosis</span>
-                                <i class="ph ph-wrench fs-6"></i>
-                            </a>
-                            <span class="caption-4 text-secondary border-start ps-3" style="border-color: var(--bugs-border) !important;">
-                                30-minute average turn-around
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right: Layered Visual Stage with 3D Rotation & Smooth Morph -->
-            <div class="col-lg-6">
-                <div class="story-visual-stage position-relative">
-                    <!-- Layer 1: Glassware -->
-                    <div class="story-visual-layer active" data-visual-layer="0">
-                        <img src="{{ asset('assets/images/products/glass-ember-beaker.png') }}" 
-                             alt="Ember Heavy Wall Beaker Bong" 
-                             class="w-100 h-100 object-fit-contain p-4">
-                        <div class="position-absolute bottom-0 start-0 m-3 px-3 py-1.5 rounded-pill border" style="background: rgba(19, 18, 9, 0.9); backdrop-filter: blur(12px); border-color: var(--bugs-border-gold) !important;">
-                            <span class="caption-4 text-white"><i class="ph ph-sparkle text-warning me-1"></i> Borosilicate Beaker 9mm</span>
-                        </div>
-                    </div>
-
-                    <!-- Layer 2: Vapor Hardware -->
-                    <div class="story-visual-layer" data-visual-layer="1">
-                        <img src="{{ asset('assets/images/products/vape-midnight-ice.png') }}" 
-                             alt="Midnight Ice Vapor Device" 
-                             class="w-100 h-100 object-fit-contain p-4">
-                        <div class="position-absolute bottom-0 start-0 m-3 px-3 py-1.5 rounded-pill border" style="background: rgba(19, 18, 9, 0.9); backdrop-filter: blur(12px); border-color: var(--bugs-border-gold) !important;">
-                            <span class="caption-4 text-white"><i class="ph ph-wind text-info me-1"></i> Dual-Mesh 15K Rechargeable</span>
-                        </div>
-                    </div>
-
-                    <!-- Layer 3: Tech Workbench -->
-                    <div class="story-visual-layer" data-visual-layer="2">
+    <div class="container-fluid px-4 px-lg-5 py-5 position-relative" style="max-width: 1400px; z-index: 2;">
+        <div class="row align-items-center g-5">
+            <!-- Left: Bench Imagery -->
+            <div class="col-lg-6 order-2 order-lg-1">
+                <div class="overflow-hidden rounded-4 border border-white border-opacity-10 shadow-lg" style="background-color: hsl(var(--surface-raised));">
+                    <div class="ratio ratio-4x3">
                         <img src="{{ asset('assets/images/lifestyle/repair-bench.png') }}" 
-                             alt="BUGS Certified Tech Workbench" 
-                             class="w-100 h-100 object-fit-cover">
-                        <div class="position-absolute bottom-0 start-0 m-3 px-3 py-1.5 rounded-pill border" style="background: rgba(19, 18, 9, 0.9); backdrop-filter: blur(12px); border-color: var(--bugs-border-gold) !important;">
-                            <span class="caption-4 text-white"><i class="ph ph-cpu text-success me-1"></i> Live Bench Diagnostic</span>
+                             alt="A technician repairing a phone at the bench" 
+                             class="w-100 h-100 object-fit-cover"
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Bench Messaging & Capabilities -->
+            <div class="col-lg-6 order-1 order-lg-2">
+                <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">The repair bench</p>
+                <h2 class="display-5 fw-semibold text-white tracking-tight mb-4" style="line-height: 1.15; letter-spacing: -0.025em;">
+                    Broken today,<br>
+                    <span class="font-serif-display text-steel" style="font-size: 1.05em;">fixed by tonight</span>.
+                </h2>
+                <p class="text-secondary mb-4 pb-2" style="font-size: 1.0625rem; line-height: 1.6;">
+                    Cracked screen, dead battery, bent charging port. Bring it to 10010 Halls Ferry Rd &mdash; we diagnose on the spot, give you the exact price up front, and hand it back fixed the same day.
+                </p>
+
+                <!-- 4 Capabilities Grid -->
+                <div class="row g-3 mb-4 pb-2">
+                    <div class="col-sm-6">
+                        <div class="p-3 rounded-3 border border-white border-opacity-10 h-100" style="background-color: hsl(var(--card));">
+                            <span class="text-steel d-block fw-semibold mb-1" style="font-size: 0.9375rem;">Screen replacement</span>
+                            <span class="text-secondary small d-block">OLED, LCD &amp; glass for iPhone, Samsung &amp; Motorola</span>
                         </div>
                     </div>
+                    <div class="col-sm-6">
+                        <div class="p-3 rounded-3 border border-white border-opacity-10 h-100" style="background-color: hsl(var(--card));">
+                            <span class="text-steel d-block fw-semibold mb-1" style="font-size: 0.9375rem;">Battery replacement</span>
+                            <span class="text-secondary small d-block">Fresh batteries with health calibrated and tested</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="p-3 rounded-3 border border-white border-opacity-10 h-100" style="background-color: hsl(var(--card));">
+                            <span class="text-steel d-block fw-semibold mb-1" style="font-size: 0.9375rem;">Charging port repair</span>
+                            <span class="text-secondary small d-block">Cleaned, re-soldered or replaced lightning/USB-C ports</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="p-3 rounded-3 border border-white border-opacity-10 h-100" style="background-color: hsl(var(--card));">
+                            <span class="text-steel d-block fw-semibold mb-1" style="font-size: 0.9375rem;">Liquid damage service</span>
+                            <span class="text-secondary small d-block">Cleaned, assessed and corrosion remediation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                    <a href="{{ route('repairs') }}" class="btn btn-bugs-primary px-4 py-3 rounded-pill fw-semibold text-dark d-inline-flex align-items-center gap-2">
+                        <span>See repair services</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="tel:+13144412851" class="btn btn-bugs-outline px-4 py-3 rounded-pill text-white d-inline-flex align-items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4 text-steel"></i>
+                        <span>Call the bench</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -323,96 +162,28 @@
 </section>
 
 <!-- ==========================================================================
-     Section 4: Shop Categories (The Five Aisles)
-     Responsive Shelf Layout & Touch-Swipe on Mobile
+     Section 3: Wireless Counter ("Gear for the phone you just fixed.")
      ========================================================================== -->
-<section id="shelves" class="bugs-horizontal-section py-5">
-    <div id="horizontalAislesSection"></div>
-    <div class="container-fluid px-3 px-lg-5 mb-4" style="max-width: 1400px;">
-        <div class="row align-items-end justify-content-between g-4">
-            <div class="col-lg-7">
-                <p class="eyebrow mb-2" style="color: var(--bugs-primary);">What's on the shelves</p>
-                <h2 class="heading-2 text-white mb-0">
-                    Six aisles, one <span style="color: var(--bugs-primary);">counter</span>.
-                </h2>
-            </div>
-            <div class="col-lg-5 col-xl-4 text-lg-end">
-                <p class="body-3 text-secondary mb-0">
-                    Everything in the store is stocked online too. Reserve for pickup or have it delivered across St. Louis.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Controlled Horizontal Scrolling Track -->
-    <div class="container-fluid px-3 px-lg-5" style="max-width: 1400px; overflow: visible;">
-        <div class="bugs-horizontal-track" id="horizontalTrack">
-            @php
-                $aisles = [
-                    ['slug' => 'smartphones', 'name' => 'Smartphones & Stock', 'desc' => 'Unlocked iPhones, Samsung & Pixel counter stock', 'img' => 'cat-smartphones.jpg', 'icon' => 'ph-device-mobile', 'tag' => 'Unlocked & Bench-Tested'],
-                    ['slug' => 'vapes', 'name' => 'Vapes', 'desc' => 'Disposables, pods and rechargeables', 'img' => 'cat-vapes.jpg', 'icon' => 'ph-wind', 'tag' => '15K+ Puffs'],
-                    ['slug' => 'e-liquids', 'name' => 'E-Liquids', 'desc' => 'Nic salts and freebase, 0–50mg', 'img' => 'cat-eliquid.jpg', 'icon' => 'ph-drop', 'tag' => 'Premium Blends'],
-                    ['slug' => 'glass-pipes', 'name' => 'Glass & Pipes', 'desc' => 'Beakers, spoons and hand-blown pieces', 'img' => 'cat-glass.jpg', 'icon' => 'ph-flame', 'tag' => 'Heavy Borosilicate'],
-                    ['slug' => 'hookah', 'name' => 'Hookah', 'desc' => 'Stems, hoses, bowls and shisha', 'img' => 'cat-hookah.jpg', 'icon' => 'ph-sparkle', 'tag' => 'Authentic Shisha'],
-                    ['slug' => 'phone-accessories', 'name' => 'Phone Accessories', 'desc' => 'Cases, glass, audio and power', 'img' => 'cat-accessories.jpg', 'icon' => 'ph-device-mobile', 'tag' => 'Tough Armor'],
-                ];
-            @endphp
-            @foreach($aisles as $index => $aisle)
-                <a href="{{ route('shop.index', ['category' => $aisle['slug']]) }}" class="bugs-horizontal-card">
-                    <div>
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <span class="num text-secondary body-4 fw-bold">Aisle 0{{ $index + 1 }}</span>
-                            <span class="caption-5 text-white px-2 py-0.5 rounded-pill border" style="border-color: var(--bugs-border); background-color: var(--bugs-surface-3);">
-                                {{ $aisle['tag'] }}
-                            </span>
-                        </div>
-
-                        <div class="ratio ratio-16x9 rounded-3 overflow-hidden mb-3" style="background-color: var(--bugs-surface-3);">
-                            <img src="{{ asset('assets/images/categories/' . $aisle['img']) }}" 
-                                 alt="{{ $aisle['name'] }}" 
-                                 loading="lazy" 
-                                 class="w-100 h-100 object-fit-cover">
-                        </div>
-
-                        <h3 class="title-2 text-white mb-2">{{ $aisle['name'] }}</h3>
-                        <p class="body-4 text-secondary mb-0">{{ $aisle['desc'] }}</p>
-                    </div>
-
-                    <div class="d-flex align-items-center justify-content-between pt-3 mt-3 border-top" style="border-color: var(--bugs-border) !important;">
-                        <span class="caption-3 fw-medium text-white">Browse aisle</span>
-                        <div class="d-flex align-items-center justify-content-center rounded-circle border" style="width: 32px; height: 32px; border-color: var(--bugs-border); background-color: var(--bugs-surface-3); color: var(--bugs-primary);">
-                            <i class="ph ph-arrow-up-right fs-6"></i>
-                        </div>
-                    </div>
-                </a>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-     Section 5: Featured Products ("What everybody grabs.")
-     Dynamic products from Laravel database with 3D Tilt Hover and Staggered Entrance
-     ========================================================================== -->
-<section class="py-5 border-top gsap-reveal-section" style="background-color: var(--bugs-surface-1); border-color: var(--bugs-border) !important;">
-    <div class="container-fluid px-3 px-lg-5 py-4" style="max-width: 1400px;">
-        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 pb-2">
+<section class="py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--surface));">
+    <div class="container-fluid px-4 px-lg-5 py-5" style="max-width: 1400px;">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5">
             <div>
-                <p class="eyebrow mb-2" style="color: var(--bugs-primary);">Moving fastest</p>
-                <h2 class="heading-2 text-white mb-0">
-                    What everybody <span style="color: var(--bugs-primary);">grabs</span>.
+                <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">The wireless counter</p>
+                <h2 class="display-6 fw-semibold text-white tracking-tight mb-0">
+                    Gear for the phone<span class="font-serif-display text-steel"> you just fixed</span>.
                 </h2>
+                <p class="text-secondary small mt-2 mb-0">What everybody gets with a new screen &mdash; cases, tempered glass, audio, and fast chargers.</p>
             </div>
-            <a href="{{ route('shop.index') }}" class="btn btn-bugs-outline btn-bugs-pill-sm mt-3 mt-sm-0">
+            <a href="{{ route('shop.index') }}" class="text-white text-decoration-none d-inline-flex align-items-center gap-2 hover-steel" style="font-size: 0.9375rem;">
                 <span>Shop all products</span>
-                <i class="ph ph-arrow-right fs-6"></i>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
         </div>
 
-        <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-xl-4 bugs-product-grid">
-            @foreach($featuredProducts as $prod)
-                <div class="col product-card-wrapper">
-                    <x-product-card :product="$prod" />
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+            @foreach($featuredProducts->take(4) as $product)
+                <div class="col">
+                    @include('components.product-card', ['product' => $product])
                 </div>
             @endforeach
         </div>
@@ -420,658 +191,169 @@
 </section>
 
 <!-- ==========================================================================
-     Section 5.5: In-Store Smartphone Counter Showcase & Live Device Inventory
-     Real Counter Showcase Images & One-Click Inquiry System
+     Section 4: Smoke Shop ("The smoke shop side of the counter.")
      ========================================================================== -->
-<section id="phones" class="py-5 position-relative overflow-hidden border-top border-bottom" style="background-color: var(--bugs-surface-1); border-color: var(--bugs-border) !important;">
-    <div class="glow-gold" style="top: 10%; right: -150px; width: 500px; height: 500px; opacity: 0.18;"></div>
-    <div class="glow-gold" style="bottom: 10%; left: -150px; width: 450px; height: 450px; opacity: 0.12;"></div>
-
-    <div class="container-fluid px-3 px-lg-5 py-4 position-relative" style="max-width: 1400px; z-index: 2;">
-        <!-- Header -->
-        <div class="row align-items-end justify-content-between mb-4 pb-2 g-3">
-            <div class="col-lg-7">
-                <p class="eyebrow mb-2 d-inline-flex align-items-center gap-2" style="color: var(--bugs-primary);">
-                    <i class="ph ph-device-mobile-camera fs-5"></i>
-                    Live In-Store Showcase &bull; 10010 Halls Ferry Rd
-                </p>
-                <h2 class="heading-2 text-white mb-2">
-                    Smartphones on the <span style="color: var(--bugs-primary);">counter</span>.
+<section id="shelves" class="position-relative overflow-hidden py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--background));">
+    <div class="pointer-events-none position-absolute glow-gold" style="top: 10%; right: -120px; width: 440px; height: 440px; z-index: 1;"></div>
+    <div class="container-fluid px-4 px-lg-5 py-5 position-relative" style="max-width: 1400px; z-index: 2;">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5">
+            <div>
+                <p class="eyebrow text-gold mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">Also in store · 21+ counter · Five aisles, one counter</p>
+                <h2 class="display-6 fw-semibold text-white tracking-tight mb-0">
+                    The smoke shop<span class="font-serif-display text-gold"> side</span> of the counter.
                 </h2>
-                <p class="body-3 text-secondary mb-0" style="max-width: 680px;">
-                    Real devices on our showroom floor today. Unlocked Apple iPhones, Samsung Galaxy Ultra series, and Google Pixel flagships. Tested, bench-verified clean ESNs, and ready for walk-in pickup or same-day activation.
-                </p>
             </div>
-            <div class="col-lg-5 text-lg-end d-flex flex-wrap justify-content-lg-end gap-2">
-                <button type="button" 
-                        class="btn btn-bugs-primary btn-bugs-pill-sm gap-2" 
-                        data-bs-toggle="modal" 
-                        data-bs-target="#inquiryModal"
-                        data-device-model="In-Store Smartphone Stock"
-                        data-service-needed="Price & Stock Check"
-                        data-inquiry-type="device_inquiry">
-                    <i class="ph ph-chat-circle-dots fs-5"></i>
-                    <span>Inquire on any device</span>
-                </button>
-                <a href="{{ route('shop.index', ['category' => 'smartphones']) }}" class="btn btn-bugs-outline btn-bugs-pill-sm gap-1">
-                    <span>View phone catalog</span>
-                    <i class="ph ph-arrow-right fs-6"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- Phone Counter Cards Grid -->
-        <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3 mb-5">
-            @forelse($phoneShowcase as $phone)
-                <div class="col">
-                    <div class="bugs-card h-100 d-flex flex-column position-relative overflow-hidden group p-3 border" style="background-color: var(--bugs-surface-2); border-color: var(--bugs-border) !important; border-radius: 18px; transition: transform 0.25s ease, border-color 0.25s ease;">
-                        <!-- Display Image inside Counter -->
-                        <div class="ratio ratio-4x3 rounded-3 overflow-hidden position-relative mb-3" style="background-color: #0b0b0e;">
-                            <img src="{{ $phone->image_url }}" 
-                                 alt="{{ $phone->name }}" 
-                                 loading="lazy" 
-                                 class="w-100 h-100 object-fit-cover bugs-card-img"
-                                 style="transition: transform 0.4s ease;">
-                            
-                            @if($phone->badge)
-                                <div class="position-absolute top-0 start-0 m-2">
-                                    <span class="caption-5 py-1 px-2.5 rounded-pill fw-semibold" style="background-color: rgba(14, 14, 17, 0.85); backdrop-filter: blur(8px); border: 1px solid var(--bugs-border); color: var(--bugs-primary);">
-                                        <i class="ph ph-shield-check me-1"></i>{{ $phone->badge }}
-                                    </span>
-                                </div>
-                            @endif
-
-                            <div class="position-absolute bottom-0 end-0 m-2">
-                                <span class="caption-5 py-1 px-2 rounded-pill text-white" style="background-color: rgba(0, 0, 0, 0.75); backdrop-filter: blur(6px); font-size: 10px;">
-                                    <i class="ph ph-map-pin me-1 text-warning"></i>In Counter
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Card Information -->
-                        <div class="d-flex flex-column flex-grow-1">
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span class="eyebrow" style="color: var(--bugs-primary); font-size: 11px;">
-                                    {{ $phone->category?->name ?? 'Smartphones' }}
-                                </span>
-                                <span class="caption-5 text-success d-inline-flex align-items-center gap-1">
-                                    <span class="d-inline-block rounded-circle bg-success" style="width: 6px; height: 6px;"></span>
-                                    In Stock ({{ $phone->stock }} units)
-                                </span>
-                            </div>
-
-                            <h3 class="title-3 text-white mb-2 leading-snug">
-                                <a href="{{ route('shop.show', $phone->slug) }}" class="text-white text-decoration-none hover-primary">
-                                    {{ $phone->name }}
-                                </a>
-                            </h3>
-
-                            <p class="body-4 text-secondary mb-3" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
-                                {{ $phone->description }}
-                            </p>
-
-                            <!-- Feature Tags -->
-                            <div class="d-flex flex-wrap gap-1.5 mb-3">
-                                <span class="caption-5 px-2 py-0.5 rounded-pill border text-secondary" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-surface-3);">
-                                    <i class="ph ph-check me-1 text-primary"></i>Clean ESN
-                                </span>
-                                <span class="caption-5 px-2 py-0.5 rounded-pill border text-secondary" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-surface-3);">
-                                    <i class="ph ph-broadcast me-1 text-primary"></i>Unlocked / Multi-Carrier
-                                </span>
-                                <span class="caption-5 px-2 py-0.5 rounded-pill border text-secondary" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-surface-3);">
-                                    <i class="ph ph-battery-charging me-1 text-primary"></i>Health Tested
-                                </span>
-                            </div>
-
-                            <!-- Price and Action Buttons -->
-                            <div class="mt-auto pt-3 border-top d-flex flex-column gap-2" style="border-color: var(--bugs-border) !important;">
-                                <div class="d-flex align-items-baseline justify-content-between mb-1">
-                                    <div>
-                                        <span class="caption-4 text-secondary d-block">Starting from</span>
-                                        <div class="d-flex align-items-baseline gap-2">
-                                            <span class="num fw-bold heading-4 text-white" style="color: var(--bugs-primary) !important;">
-                                                {{ $phone->formatted_price }}
-                                            </span>
-                                            @if($phone->formatted_compare_at_price)
-                                                <span class="num text-secondary text-decoration-line-through caption-3">
-                                                    {{ $phone->formatted_compare_at_price }}
-                                                </span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <span class="caption-5 text-secondary">Walk-in or Hold</span>
-                                </div>
-
-                                <div class="d-flex gap-2">
-                                    {{-- Add to Cart temporarily commented out
-                                    <button type="button" 
-                                            class="btn btn-bugs-primary flex-grow-1 py-2.5 px-3 gap-2 d-inline-flex align-items-center justify-content-center fw-bold"
-                                            title="Add {{ $phone->name }} to Cart"
-                                            data-add-to-cart="{{ $phone->id }}"
-                                            style="font-size: 0.875rem;">
-                                        <i class="ph ph-bag-plus fs-5"></i>
-                                        <span>Add to Cart</span>
-                                    </button>
-                                    --}}
-
-                                    <button type="button" 
-                                            class="btn btn-bugs-primary w-100 py-2.5 px-3 gap-2 d-inline-flex align-items-center justify-content-center fw-semibold"
-                                            data-bs-toggle="modal" 
-                                            data-bs-target="#inquiryModal"
-                                            data-device-model="{{ $phone->name }}"
-                                            data-product-id="{{ $phone->id }}"
-                                            data-service-needed="Hold / Pricing Inquiry"
-                                            data-inquiry-type="device_inquiry"
-                                            style="font-size: 0.875rem;">
-                                        <i class="ph ph-chat-circle-dots fs-5"></i>
-                                        <span>Inquire / Check Stock</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @empty
-                <div class="col-12 text-center py-5 text-secondary">
-                    Showcase stock updating daily at the counter.
-                </div>
-            @endforelse
-        </div>
-
-        <!-- Storefront Real Photo & Counter Visit Banner -->
-        <div class="bugs-card p-3 p-md-4 border position-relative overflow-hidden" style="background-color: var(--bugs-surface-2); border-color: var(--bugs-border) !important; border-radius: 20px;">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-5">
-                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden border" style="border-color: var(--bugs-border) !important; min-height: 220px;">
-                        <img src="{{ asset('assets/images/store/bugs-storefront-night.jpg') }}" 
-                             alt="Bugs Wireless & Smoke Shop storefront with Rick & Morty mural at night" 
-                             loading="lazy" 
-                             class="w-100 h-100 object-fit-cover">
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="d-inline-flex align-items-center gap-2 mb-2">
-                        <span class="badge rounded-pill px-2.5 py-1 text-black fw-bold" style="background-color: var(--bugs-primary); font-size: 11px;">
-                            VISIT IN PERSON
-                        </span>
-                        <span class="caption-4 text-secondary">&bull; 10010 Halls Ferry Rd, St. Louis, MO 63136</span>
-                    </div>
-                    <h3 class="heading-3 text-white mb-2">
-                        Look for the Rick &amp; Morty mural. Walk right in.
-                    </h3>
-                    <p class="body-3 text-secondary mb-3">
-                        Our store counter is fully stocked with phones, accessories, vapes, and repair parts. No appointments needed — bring your trade-in, inspect the device in your hand, and walk out activated in 15 minutes.
-                    </p>
-                    <div class="d-flex flex-wrap align-items-center gap-3">
-                        <a href="tel:+13144412851" class="btn btn-bugs-primary btn-bugs-pill-sm gap-2">
-                            <i class="ph ph-phone-call fs-5"></i>
-                            <span>Call 314-441-2851</span>
-                        </a>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" target="_blank" rel="noreferrer" class="btn btn-bugs-outline btn-bugs-pill-sm gap-2">
-                            <i class="ph ph-navigation-arrow fs-5"></i>
-                            <span>Get Directions</span>
-                        </a>
-                        <button type="button" 
-                                class="btn btn-link text-secondary text-decoration-none small hover-white d-inline-flex align-items-center gap-1"
-                                data-bs-toggle="modal" 
-                                data-bs-target="#inquiryModal"
-                                data-device-model="General Counter Inquiry"
-                                data-inquiry-type="general_inquiry">
-                            <i class="ph ph-paper-plane-tilt"></i> Message Counter Online
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-     Section 6: The Repair Bench Highlight
-     ========================================================================== -->
-<section id="repairs" class="py-5 gsap-reveal-section" style="background-color: var(--bugs-bg);">
-    <div class="container-fluid px-3 px-lg-5 py-4" style="max-width: 1400px;">
-        <div class="row align-items-center g-5">
-            <!-- Left: Workbench Photo Card with Floating Diagnosis Badge -->
-            <div class="col-lg-6 order-2 order-lg-1" data-parallax="0.08">
-                <div class="bugs-card-outer-24 overflow-hidden position-relative p-2" style="background-color: var(--bugs-surface-2);">
-                    <div class="ratio ratio-4x3 mask-reveal-wrap" style="min-height: 360px; border-radius: 16px; overflow: hidden;">
-                        <img src="{{ asset('assets/images/lifestyle/repair-bench.png') }}" 
-                             alt="Phone Repair Workbench at Bugs Wireless" 
-                             loading="lazy"
-                             class="w-100 h-100 object-fit-cover mask-reveal-img">
-                    </div>
-                    <!-- Overlaid Floating Diagnosis Card on Bottom-Left -->
-                    <div class="position-absolute bottom-0 start-0 m-3 m-sm-4 p-3 border" style="background: rgba(24, 24, 24, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-color: var(--bugs-border) !important; border-radius: 12px; z-index: 2;">
-                        <p class="eyebrow mb-1" style="color: var(--bugs-primary) !important; font-size: 11px;">Free diagnosis</p>
-                        <p class="body-4 text-white mb-0">Walk in, we'll quote it first.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right: Repair Details & Capabilities -->
-            <div class="col-lg-6 order-1 order-lg-2">
-                <p class="eyebrow mb-2" style="color: var(--bugs-primary) !important;">The repair bench</p>
-                <h2 class="heading-2 text-white mb-3">
-                    Broken today,<br>
-                    <span style="color: var(--bugs-primary);">fixed by tonight</span>.
-                </h2>
-                <p class="body-2 text-secondary mb-4 pb-2" style="max-width: 520px;">
-                    Our technicians work on the counter in front of you. Most screen and battery jobs are finished the same day, and you will always hear the price before we open a single screw.
-                </p>
-
-                <!-- 6 Capabilities with Phosphor Icons -->
-                <div class="row g-2 g-sm-3 mb-4 pb-2">
-                    <div class="col-sm-6">
-                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point">
-                            <span class="bugs-repair-point-icon">
-                                <i class="ph ph-device-mobile fs-5"></i>
-                            </span>
-                            <div>
-                                <span class="bugs-repair-point-title d-block">Screen &amp; glass replacement</span>
-                                <span class="bugs-repair-point-sub d-block">iPhone, Galaxy, Pixel</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point">
-                            <span class="bugs-repair-point-icon">
-                                <i class="ph ph-battery-charging fs-5"></i>
-                            </span>
-                            <div>
-                                <span class="bugs-repair-point-title d-block">Battery replacement</span>
-                                <span class="bugs-repair-point-sub d-block">Holds a charge again</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point">
-                            <span class="bugs-repair-point-icon">
-                                <i class="ph ph-plug fs-5"></i>
-                            </span>
-                            <div>
-                                <span class="bugs-repair-point-title d-block">Charging port repair</span>
-                                <span class="bugs-repair-point-sub d-block">Loose cable, no charge</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point">
-                            <span class="bugs-repair-point-icon">
-                                <i class="ph ph-drop fs-5"></i>
-                            </span>
-                            <div>
-                                <span class="bugs-repair-point-title d-block">Liquid damage service</span>
-                                <span class="bugs-repair-point-sub d-block">Cleaned and assessed</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point">
-                            <span class="bugs-repair-point-icon">
-                                <i class="ph ph-arrows-left-right fs-5"></i>
-                            </span>
-                            <div>
-                                <span class="bugs-repair-point-title d-block">Data transfer &amp; backup</span>
-                                <span class="bugs-repair-point-sub d-block">Move to your new phone</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <a href="{{ route('repairs') }}#quote" class="bugs-repair-point">
-                            <span class="bugs-repair-point-icon">
-                                <i class="ph ph-broadcast fs-5"></i>
-                            </span>
-                            <div>
-                                <span class="bugs-repair-point-title d-block">Carrier activation</span>
-                                <span class="bugs-repair-point-sub d-block">Prepaid &amp; postpaid</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <a href="{{ route('repairs') }}" class="btn btn-bugs-outline">
-                    <span>Explore Repair Services</span>
-                    <i class="ph ph-arrow-right fs-5"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-     Section 7: Mandatory Tagline Reveal Section (SKILL.md B11)
-     Word-by-word scroll reveal animation with GSAP ScrollTrigger
-     ========================================================================== -->
-<section class="bugs-tagline-section" id="brandTaglineSection">
-    <div class="container px-3 px-lg-5 text-center">
-        <span class="eyebrow mb-3 d-inline-block" style="color: var(--bugs-primary);">Our Commitment</span>
-        <h2 class="bugs-tagline-heading text-white">
-            <span class="tagline-word">From</span>
-            <span class="tagline-word">the</span>
-            <span class="tagline-word">purest</span>
-            <span class="tagline-word">glass</span>
-            <span class="tagline-word">and</span>
-            <span class="tagline-word">smoothest</span>
-            <span class="tagline-word">vapor</span>
-            <span class="tagline-word">to</span>
-            <span class="tagline-word">precision</span>
-            <span class="tagline-word">screen</span>
-            <span class="tagline-word">restoration,</span>
-            <span class="tagline-word">we</span>
-            <span class="tagline-word">bring</span>
-            <span class="tagline-word">genuine</span>
-            <span class="tagline-word">care</span>
-            <span class="tagline-word">and</span>
-            <span class="tagline-word">honest</span>
-            <span class="tagline-word">pricing</span>
-            <span class="tagline-word">to</span>
-            <span class="tagline-word">every</span>
-            <span class="tagline-word">visit</span>
-            <span class="tagline-word">on</span>
-            <span class="tagline-word">Halls</span>
-            <span class="tagline-word">Ferry.</span>
-        </h2>
-    </div>
-</section>
-
-<!-- ==========================================================================
-     Section 8: Why Choose BUGS (Outcome & Proof Benefits)
-     ========================================================================== -->
-<section class="py-5 gsap-reveal-section" style="background-color: var(--bugs-bg);">
-    <div class="container-fluid px-3 px-lg-5 py-4" style="max-width: 1400px;">
-        <div class="text-center mb-5" style="max-width: 680px; margin-left: auto; margin-right: auto;">
-            <span class="eyebrow" style="color: var(--bugs-primary);">Why Customers Return</span>
-            <h2 class="heading-2 text-white mt-2 mb-2">Built on speed, honesty, and local care.</h2>
-            <p class="body-3 text-secondary">
-                We know your phone is your lifeline and your smoke session is your wind down. Here is how we make every visit seamless.
+            <p class="text-secondary small mb-0" style="max-width: 380px; line-height: 1.6;">
+                Vapes, nic salts, hand-blown glass and hookah &mdash; stocked online too, ready for pickup or local delivery. Adults 21+ with valid ID, always.
             </p>
         </div>
 
-        <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <!-- 5 Interactive Aisle Cards Grid -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-3">
+            <!-- 01 Vapes -->
             <div class="col">
-                <div class="bugs-feature-card">
-                    <div class="bugs-feature-icon">
-                        <i class="ph ph-lightning"></i>
+                <a href="{{ route('shop.index', ['category' => 'vapes']) }}" class="card h-100 p-4 border border-white border-opacity-10 text-decoration-none group transition-all duration-300" style="background-color: hsl(var(--card)); border-radius: 1rem; min-height: 190px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="eyebrow text-gold fw-bold" style="font-size: 0.8125rem;">01</span>
+                        <i data-lucide="wind" class="w-5 h-5 text-secondary group-hover:text-gold transition-colors"></i>
                     </div>
-                    <h3 class="title-2 text-white mb-2">Same-day repairs</h3>
-                    <p class="body-3 text-secondary mb-0">
-                        Most screen and battery swaps take 30 to 45 minutes right in front of you. Walk in with a damaged screen, leave with a pristine display.
-                    </p>
-                </div>
+                    <div>
+                        <h3 class="fs-5 fw-semibold text-white mb-1">Vapes</h3>
+                        <p class="text-secondary small mb-0">Disposables, pods and rechargeables</p>
+                    </div>
+                </a>
             </div>
 
+            <!-- 02 E-Liquids -->
             <div class="col">
-                <div class="bugs-feature-card">
-                    <div class="bugs-feature-icon">
-                        <i class="ph ph-door-open"></i>
+                <a href="{{ route('shop.index', ['category' => 'e-liquids']) }}" class="card h-100 p-4 border border-white border-opacity-10 text-decoration-none group transition-all duration-300" style="background-color: hsl(var(--card)); border-radius: 1rem; min-height: 190px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="eyebrow text-gold fw-bold" style="font-size: 0.8125rem;">02</span>
+                        <i data-lucide="droplet" class="w-5 h-5 text-secondary group-hover:text-gold transition-colors"></i>
                     </div>
-                    <h3 class="title-2 text-white mb-2">Walk-in service</h3>
-                    <p class="body-3 text-secondary mb-0">
-                        No appointments or booking queues. Step in anytime Monday through Sunday between 10:00 AM and 8:00 PM.
-                    </p>
-                </div>
+                    <div>
+                        <h3 class="fs-5 fw-semibold text-white mb-1">E-Liquids</h3>
+                        <p class="text-secondary small mb-0">Nic salts and freebase, 0–50mg</p>
+                    </div>
+                </a>
             </div>
 
+            <!-- 03 Glass & Pipes -->
             <div class="col">
-                <div class="bugs-feature-card">
-                    <div class="bugs-feature-icon">
-                        <i class="ph ph-shield-check"></i>
+                <a href="{{ route('shop.index', ['category' => 'glass-pipes']) }}" class="card h-100 p-4 border border-white border-opacity-10 text-decoration-none group transition-all duration-300" style="background-color: hsl(var(--card)); border-radius: 1rem; min-height: 190px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="eyebrow text-gold fw-bold" style="font-size: 0.8125rem;">03</span>
+                        <i data-lucide="flame" class="w-5 h-5 text-secondary group-hover:text-gold transition-colors"></i>
                     </div>
-                    <h3 class="title-2 text-white mb-2">Free diagnosis</h3>
-                    <p class="body-3 text-secondary mb-0">
-                        Zero bench fees. We inspect your device, pinpoint the issue, and provide an accurate quote before you spend a single dollar.
-                    </p>
-                </div>
+                    <div>
+                        <h3 class="fs-5 fw-semibold text-white mb-1">Glass &amp; Pipes</h3>
+                        <p class="text-secondary small mb-0">Beakers, spoons and hand-blown pieces</p>
+                    </div>
+                </a>
             </div>
 
+            <!-- 04 Hookah -->
             <div class="col">
-                <div class="bugs-feature-card">
-                    <div class="bugs-feature-icon">
-                        <i class="ph ph-identification-card"></i>
+                <a href="{{ route('shop.index', ['category' => 'hookah']) }}" class="card h-100 p-4 border border-white border-opacity-10 text-decoration-none group transition-all duration-300" style="background-color: hsl(var(--card)); border-radius: 1rem; min-height: 190px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="eyebrow text-gold fw-bold" style="font-size: 0.8125rem;">04</span>
+                        <i data-lucide="sparkles" class="w-5 h-5 text-secondary group-hover:text-gold transition-colors"></i>
                     </div>
-                    <h3 class="title-2 text-white mb-2">Strict 21+ verification</h3>
-                    <p class="body-3 text-secondary mb-0">
-                        We check valid photo identification for every tobacco and vapor transaction, ensuring fully compliant and responsible adult retail.
-                    </p>
-                </div>
+                    <div>
+                        <h3 class="fs-5 fw-semibold text-white mb-1">Hookah</h3>
+                        <p class="text-secondary small mb-0">Stems, hoses, bowls and shisha</p>
+                    </div>
+                </a>
             </div>
 
+            <!-- 05 Phone Accessories -->
             <div class="col">
-                <div class="bugs-feature-card">
-                    <div class="bugs-feature-icon">
-                        <i class="ph ph-truck"></i>
+                <a href="{{ route('shop.index', ['category' => 'phone-accessories']) }}" class="card h-100 p-4 border border-white border-opacity-10 text-decoration-none group transition-all duration-300" style="background-color: hsl(var(--card)); border-radius: 1rem; min-height: 190px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="eyebrow text-gold fw-bold" style="font-size: 0.8125rem;">05</span>
+                        <i data-lucide="headphones" class="w-5 h-5 text-secondary group-hover:text-gold transition-colors"></i>
                     </div>
-                    <h3 class="title-2 text-white mb-2">Local delivery</h3>
-                    <p class="body-3 text-secondary mb-0">
-                        Free delivery on orders over $50 within the St. Louis delivery zone. Order online and receive it discreetly at your door.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="bugs-feature-card">
-                    <div class="bugs-feature-icon">
-                        <i class="ph ph-clock-countdown"></i>
+                    <div>
+                        <h3 class="fs-5 fw-semibold text-white mb-1">Phone Accessories</h3>
+                        <p class="text-secondary small mb-0">Cases, glass, audio and power</p>
                     </div>
-                    <h3 class="title-2 text-white mb-2">Open 7 days a week</h3>
-                    <p class="body-3 text-secondary mb-0">
-                        Open from 10:00 AM until 8:00 PM every single day of the week, including weekends and most holidays.
-                    </p>
-                </div>
+                </a>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ==========================================================================
-     Section 9: Store Location & Visit Section (`#visit`)
+     Section 5: Visit The Counter ("Repairs, activation and a look around.")
      ========================================================================== -->
-<section class="py-5 gsap-reveal-section" id="visit" style="background-color: var(--bugs-surface-1);">
-    <div class="container-fluid px-3 px-lg-5 py-4" style="max-width: 1400px;">
-        <div class="row g-4 align-items-center">
+<section id="visit" class="py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--surface-deep));">
+    <div class="container-fluid px-4 px-lg-5 py-5" style="max-width: 1400px;">
+        <div class="row align-items-center g-5">
+            <!-- Left: Location Info & Actions -->
             <div class="col-lg-6">
-                <p class="eyebrow mb-2" style="color: var(--bugs-primary);">Come through</p>
-                <h2 class="heading-2 text-white mb-3">
-                    Ten minutes from <span style="color: var(--bugs-primary);">wherever you are</span>.
+                <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">Visit the counter</p>
+                <h2 class="display-5 fw-semibold text-white tracking-tight mb-4" style="line-height: 1.15; letter-spacing: -0.025em;">
+                    Repairs, activation<br>
+                    <span class="font-serif-display text-steel" style="font-size: 1.05em;">and a look around</span>.
                 </h2>
-                <p class="body-2 text-secondary mb-4" style="max-width: 540px;">
-                    We are located on Halls Ferry Road in St. Louis with easy parking right outside our front door. Bring your ID &mdash; we card everyone, every time.
+                <p class="text-secondary mb-4 pb-2" style="max-width: 480px; font-size: 1.0625rem; line-height: 1.6;">
+                    We're on Halls Ferry Road with parking right out front. Walk in for a repair quote, pick up an online order, or browse the counter &mdash; bring your ID for anything 21+.
                 </p>
 
                 <div class="d-flex flex-column gap-3 mb-4">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" target="_blank" rel="noreferrer" class="bugs-service-card text-decoration-none d-flex align-items-center gap-3">
-                        <div class="bugs-icon-badge flex-shrink-0">
-                            <i class="ph ph-map-pin fs-5"></i>
-                        </div>
-                        <div>
-                            <span class="eyebrow text-secondary d-block" style="font-size: 11px;">Address</span>
-                            <span class="text-white body-2 fw-medium">10010 Halls Ferry Rd, St. Louis, MO 63136</span>
-                        </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" 
+                       target="_blank" 
+                       rel="noreferrer" 
+                       class="d-flex align-items-center gap-3 text-secondary text-decoration-none hover-white">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-steel flex-shrink-0"></i>
+                        <span>10010 Halls Ferry Rd, St. Louis, MO 63136</span>
                     </a>
 
-                    <a href="tel:+13144412851" class="bugs-service-card text-decoration-none d-flex align-items-center gap-3">
-                        <div class="bugs-icon-badge flex-shrink-0">
-                            <i class="ph ph-phone fs-5"></i>
-                        </div>
-                        <div>
-                            <span class="eyebrow text-secondary d-block" style="font-size: 11px;">Call the counter</span>
-                            <span class="num text-white body-2 fw-medium">314-441-2851</span>
-                        </div>
+                    <a href="tel:+13144412851" class="d-flex align-items-center gap-3 text-secondary text-decoration-none hover-white">
+                        <i data-lucide="phone" class="w-5 h-5 text-steel flex-shrink-0"></i>
+                        <span>314-441-2851</span>
                     </a>
 
-                    <div class="bugs-service-card d-flex align-items-center gap-3">
-                        <div class="bugs-icon-badge flex-shrink-0">
-                            <i class="ph ph-clock fs-5"></i>
-                        </div>
-                        <div>
-                            <span class="eyebrow text-secondary d-block" style="font-size: 11px;">Hours</span>
-                            <span class="text-white body-2 fw-medium">Mon &ndash; Sun &bull; 10:00 AM &ndash; 8:00 PM</span>
-                        </div>
+                    <div class="d-flex align-items-center gap-3 text-secondary">
+                        <i data-lucide="clock" class="w-5 h-5 text-steel flex-shrink-0"></i>
+                        <span>Mon – Sun · 10:00 AM – 8:00 PM</span>
                     </div>
+
+                    <a href="https://www.instagram.com/bugs_wirless_and_smoke_shop/" 
+                       target="_blank" 
+                       rel="noreferrer" 
+                       class="d-flex align-items-center gap-3 text-secondary text-decoration-none hover-white">
+                        <i data-lucide="instagram" class="w-5 h-5 text-steel flex-shrink-0"></i>
+                        <span>@bugs_wirless_and_smoke_shop</span>
+                    </a>
                 </div>
 
-                <div class="d-flex flex-wrap gap-3">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" target="_blank" rel="noreferrer" class="btn btn-bugs-primary">
-                        <i class="ph ph-navigation-arrow fs-5"></i>
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" 
+                       target="_blank" 
+                       rel="noreferrer" 
+                       class="btn btn-bugs-primary px-4 py-3 rounded-pill fw-semibold text-dark d-inline-flex align-items-center gap-2">
+                        <i data-lucide="navigation" class="w-4 h-4"></i>
                         <span>Get directions</span>
                     </a>
-                    <a href="tel:+13144412851" class="btn btn-bugs-outline">
-                        <i class="ph ph-phone fs-5"></i>
-                        <span>Call 314-441-2851</span>
+                    <a href="tel:+13144412851" class="btn btn-bugs-outline px-4 py-3 rounded-pill text-white d-inline-flex align-items-center gap-2">
+                        <i data-lucide="phone-call" class="w-4 h-4 text-steel"></i>
+                        <span>Call the counter</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Right: Retail Store Counter Photo with Mask -->
-            <div class="col-lg-6" data-parallax="-0.06">
-                <div class="bugs-card-outer-24 overflow-hidden p-2" style="background-color: var(--bugs-surface-2);">
-                    <div class="ratio ratio-4x3 rounded-3 overflow-hidden mask-reveal-wrap">
+            <!-- Right: Storefront Photo -->
+            <div class="col-lg-6">
+                <div class="overflow-hidden rounded-4 border border-white border-opacity-10 shadow-lg" style="background-color: hsl(var(--surface-raised));">
+                    <div class="ratio ratio-4x3">
                         <img src="{{ asset('assets/images/lifestyle/store-counter.png') }}" 
-                             alt="Inside Bugs Wireless and Smoke Shop Store Counter" 
-                             loading="lazy"
-                             class="w-100 h-100 object-fit-cover mask-reveal-img">
+                             alt="Unlocked phones, cases and earbuds on display inside the shop" 
+                             class="w-100 h-100 object-fit-cover"
+                             loading="lazy">
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-     Section 10: Clean Modern FAQ Accordion
-     ========================================================================== -->
-<section class="py-5 gsap-reveal-section" style="background-color: var(--bugs-bg);">
-    <div class="container px-3 px-lg-5 py-4" style="max-width: 960px;">
-        <div class="text-center mb-5">
-            <span class="eyebrow" style="color: var(--bugs-primary);">Frequently Asked Questions</span>
-            <h2 class="heading-2 text-white mt-2 mb-2">Got questions? We have answers.</h2>
-            <p class="body-3 text-secondary">
-                Everything you need to know about our repair bench, shopping experience, and store policies.
-            </p>
-        </div>
-
-        <div class="accordion bugs-accordion" id="bugsFaqAccordion">
-            <!-- Question 1: Phone Repairs -->
-            <div class="accordion-item">
-                <h3 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        How fast can my phone screen or battery be replaced?
-                    </button>
-                </h3>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#bugsFaqAccordion">
-                    <div class="accordion-body">
-                        Most common screen and battery replacements for iPhone and Samsung Galaxy models are completed within 30 to 45 minutes on our front counter. You can wait comfortably in our store while our technician restores your device.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 2: Free Diagnosis & Estimates -->
-            <div class="accordion-item">
-                <h3 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Do I have to pay for a phone diagnosis?
-                    </button>
-                </h3>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#bugsFaqAccordion">
-                    <div class="accordion-body">
-                        No. All diagnostics at BUGS Wireless are 100% free with zero bench fee. We inspect your device, test its functionality, and provide a firm, transparent quote before you decide whether to proceed with the repair.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 3: Walk-in vs Appointment -->
-            <div class="accordion-item">
-                <h3 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Do I need an appointment for phone repair or shopping?
-                    </button>
-                </h3>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#bugsFaqAccordion">
-                    <div class="accordion-body">
-                        No appointment is ever needed. Walk-ins are always welcome seven days a week between 10:00 AM and 8:00 PM. Just bring your device or browse our smoke shop shelves at your convenience.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 4: Store Hours -->
-            <div class="accordion-item">
-                <h3 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        What are your operating hours and location?
-                    </button>
-                </h3>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#bugsFaqAccordion">
-                    <div class="accordion-body">
-                        We are open Monday through Sunday, 10:00 AM to 8:00 PM. Our storefront is located at 10010 Halls Ferry Rd, St. Louis, MO 63136 with ample free parking directly in front of the counter.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 5: Order Pickup & Local Delivery -->
-            <div class="accordion-item">
-                <h3 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        How does in-store pickup and local delivery work?
-                    </button>
-                </h3>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#bugsFaqAccordion">
-                    <div class="accordion-body">
-                        You can reserve items online through our website. For in-store pickup, items are set aside at the counter for immediate collection. For local delivery, orders over $50 qualify for free delivery within our St. Louis delivery zone.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 6: 21+ Age Verification -->
-            <div class="accordion-item">
-                <h3 class="accordion-header" id="headingSix">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        What identification is required for purchasing?
-                    </button>
-                </h3>
-                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#bugsFaqAccordion">
-                    <div class="accordion-body">
-                        In accordance with federal and Missouri state laws, all vapor, tobacco, nicotine, and smoking accessory purchases require proof of age (21+). A valid government-issued photo ID (driver's license, passport, or state ID) must be presented in person at the counter or upon delivery.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==========================================================================
-     Section 11: Cinematic Final Brand Statement & Call-To-Action
-     Large Editorial Typography with Cinematic Entrance & Dual CTAs
-     ========================================================================== -->
-<section id="cinematicFinalCta" class="py-5 position-relative overflow-hidden" style="background-color: var(--bugs-surface-1); border-top: 1px solid var(--bugs-border);">
-    <div class="glow-gold" style="bottom: -100px; left: 50%; transform: translateX(-50%); width: 600px; height: 350px;"></div>
-    <div class="container px-3 px-lg-5 py-5 text-center position-relative" style="max-width: 980px; z-index: 2;">
-        <span class="eyebrow mb-3 d-inline-flex align-items-center gap-2" style="color: var(--bugs-primary);">
-            <i class="ph ph-crown fs-5"></i>
-            St. Louis Destination
-        </span>
-        <h2 class="display-3 fw-bold text-white mb-4" style="letter-spacing: -0.03em; line-height: 1.08;">
-            Step up to the counter.<br>
-            <span style="color: var(--bugs-primary);">We'll take care of the rest.</span>
-        </h2>
-        <p class="body-1 text-secondary mb-5 mx-auto" style="max-width: 640px;">
-            Whether you need emergency screen restoration before dinner or fresh vapor accessories for the weekend, BUGS on Halls Ferry Road has you covered.
-        </p>
-
-        <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
-            <a href="{{ route('shop.index') }}" class="btn btn-bugs-primary btn-lg px-4 py-3">
-                <span>Explore all products</span>
-                <i class="ph ph-arrow-right fs-5"></i>
-            </a>
-            <a href="tel:+13144412851" class="btn btn-bugs-outline btn-lg px-4 py-3">
-                <i class="ph ph-phone-call fs-5"></i>
-                <span>Call the counter: 314-441-2851</span>
-            </a>
         </div>
     </div>
 </section>

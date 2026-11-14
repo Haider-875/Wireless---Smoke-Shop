@@ -61,12 +61,12 @@
     </script>
     @stack('schema')
 
-    <!-- Performance & Fonts (SKILL.md B1: Manrope only, Geist Mono for code/numbers) -->
+    <!-- Performance & Fonts (Exact Reference Match: Manrope, Cormorant Garamond, JetBrains Mono) -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Phosphor Icons (SKILL.md B6: Local WOFF2 & CSS) -->
     <link rel="stylesheet" href="{{ asset('assets/css/phosphor-regular.css') }}">
@@ -116,6 +116,15 @@
     <!-- GSAP 3.12.5 & ScrollTrigger (Local) -->
     <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
     <script src="{{ asset('assets/js/ScrollTrigger.min.js') }}"></script>
+    <!-- Lucide Icons (Exact Reference Matching SVG Icons) -->
+    <script src="{{ asset('assets/js/lucide.min.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                window.lucide.createIcons();
+            }
+        });
+    </script>
     <!-- Custom Application Logic (Cart, Age Gate, Motion & Transitions) -->
     <script src="{{ asset('assets/js/bugs-app.js') }}"></script>
 

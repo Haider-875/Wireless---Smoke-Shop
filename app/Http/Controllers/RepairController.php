@@ -93,6 +93,6 @@ class RepairController extends Controller
             ], 201);
         }
 
-        return back()->with('success', $message);
+        return back(fallback: route('repairs'))->with('success', $message);
     }
 }

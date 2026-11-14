@@ -88,6 +88,7 @@ Route::get('/orders/lookup', [OrderController::class, 'lookup'])->name('orders.l
 Route::get('/orders/{order_number}', [OrderController::class, 'show'])->name('orders.show');
 
 // Legal Policies & Compliance (SKILL.md B10)
+Route::view('/policies', 'pages.legal.privacy')->name('policies');
 Route::view('/privacy', 'pages.legal.privacy')->name('privacy');
 Route::view('/terms', 'pages.legal.terms')->name('terms');
 

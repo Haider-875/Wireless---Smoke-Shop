@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Update Drawer Subtotals
-            const subtotalEls = document.querySelectorAll('#drawerCartSubtotal, #drawerCartSubtotalBar');
+            const subtotalEls = document.querySelectorAll('#drawerCartSubtotal, #drawerCartSubtotalBar, #cartSubtotalText');
             subtotalEls.forEach(el => {
                 el.textContent = this.formatted_subtotal;
             });
@@ -221,9 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Render Items in Cart Drawer
-            const itemsContainer = document.getElementById('drawerCartItems');
-            const emptyState = document.getElementById('drawerCartEmpty');
-            const checkoutBtn = document.getElementById('drawerCheckoutBtn');
+            const itemsContainer = document.getElementById('drawerCartItems') || document.getElementById('cartItemsList');
+            const emptyState = document.getElementById('drawerCartEmpty') || document.getElementById('cartEmptyState');
+            const checkoutBtn = document.getElementById('drawerCheckoutBtn') || document.getElementById('btnCartCheckout');
 
             if (itemsContainer && emptyState) {
                 if (this.items.length === 0) {
@@ -271,6 +271,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     `).join('');
                     if (checkoutBtn) checkoutBtn.classList.remove('disabled');
+                    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                        window.lucide.createIcons();
+                    }
                 }
             }
         }

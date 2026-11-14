@@ -9,7 +9,7 @@ use Tests\TestCase;
 class PremiumRedesign2026Test extends TestCase
 {
     /**
-     * Test that the homepage renders all required 2026 redesign sections and tokens.
+     * Test that the homepage renders all required reference sections and design tokens.
      */
     public function test_homepage_renders_all_required_sections_and_tokens(): void
     {
@@ -18,111 +18,73 @@ class PremiumRedesign2026Test extends TestCase
 
         // 1. Navigation & Header
         $response->assertSee('BUGS');
-        $response->assertSee('bugs-floating-header');
-        $response->assertSee('bugs-navbar-pill');
-        $response->assertSee('Home');
-        $response->assertSee('Shop');
-        $response->assertSee('Vapes');
-        $response->assertSee('E-Liquids');
-        $response->assertSee('Glass &amp; Pipes', false);
-        $response->assertSee('Hookah');
-        $response->assertSee('Phone Repair');
-        $response->assertSee('Contact');
+        $response->assertSee('Repairs');
+        $response->assertSee('Phone gear');
+        $response->assertSee('Shop all');
+        $response->assertSee('Smoke shop');
+        $response->assertSee('Visit us');
+        $response->assertSee('Your orders');
         $response->assertSee('314-441-2851');
-        $response->assertSee('id="navCartCount"', false);
-        $response->assertSee('data-bs-target="#bugsSearchModal"', false);
-        $response->assertSee('data-bs-target="#bugsMobileMenu"', false);
-
-        // 2. Cinematic Hero Section
-        $response->assertSee('Your smoke shop.');
-        $response->assertSee('Your phone doctor.');
-        $response->assertSee('Everything you need, from premium accessories to expert phone repairs, all in one place');
-        $response->assertSee('Shop the shelves');
         $response->assertSee('Fix my phone');
+        $response->assertSee('id="navCartCount"', false);
+        $response->assertSee('data-bs-target="#bugsCartOffcanvas"', false);
+
+        // 2. Exact Reference Hero Section
+        $response->assertSee('Certified repair counter · St. Louis');
+        $response->assertSee('Phone repair,');
+        $response->assertSee('the same day');
+        $response->assertSee('on Halls Ferry.');
         $response->assertSee('Walk-in repair desk');
         $response->assertSee('30 min');
         $response->assertSee('21+');
         $response->assertSee('7 days');
 
-        // 3. Brand Experience Section
-        $response->assertSee('Two worlds, one counter.');
-        $response->assertSee('The BUGS Standard');
-        $response->assertSee('Open Diagnostic Counter');
+        // 3. Repair Bench Section
+        $response->assertSee('The repair bench');
+        $response->assertSee('Broken today,');
+        $response->assertSee('fixed by tonight');
+        $response->assertSee('Screen replacement');
+        $response->assertSee('Battery replacement');
+        $response->assertSee('Charging port repair');
+        $response->assertSee('Liquid damage service');
 
-        // 4. Shop Categories (Five Aisles)
-        $response->assertSee('Five aisles, one');
-        $response->assertSee('What\'s on the shelves', false);
+        // 4. Featured Products (Wireless Counter)
+        $response->assertSee('The wireless counter');
+        $response->assertSee('Gear for the phone');
+        $response->assertSee('you just fixed');
+        $response->assertSee('What everybody gets with a new screen');
+        $response->assertSee('Shop all products');
+        $response->assertSee('data-add-to-cart=', false);
+
+        // 5. Smoke Shop Aisles (Five Aisles)
+        $response->assertSee('The smoke shop');
+        $response->assertSee('side of the counter.');
         $response->assertSee('Disposables, pods and rechargeables');
         $response->assertSee('Nic salts and freebase, 0–50mg');
         $response->assertSee('Beakers, spoons and hand-blown pieces');
         $response->assertSee('Stems, hoses, bowls and shisha');
         $response->assertSee('Cases, glass, audio and power');
 
-        // 5. Featured Products
-        $response->assertSee('What everybody');
-        $response->assertSee('Moving fastest');
-        $response->assertSee('Shop all products');
-        $response->assertSee('data-add-to-cart=', false);
-
-        // 6. Repair Bench Section
-        $response->assertSee('The repair bench');
-        $response->assertSee('Broken today,');
-        $response->assertSee('fixed by tonight');
-        $response->assertSee('Screen &amp; glass replacement', false);
-        $response->assertSee('Battery replacement');
-        $response->assertSee('Charging port repair');
-        $response->assertSee('Liquid damage service');
-        $response->assertSee('Data transfer &amp; backup', false);
-        $response->assertSee('Carrier activation');
-        $response->assertSee('Explore Repair Services');
-
-        // 7. Mandatory Tagline Reveal Section (SKILL.md B11)
-        $response->assertSee('id="brandTaglineSection"', false);
-        $response->assertSee('class="tagline-word"', false);
-        $response->assertSee('From');
-        $response->assertSee('purest');
-        $response->assertSee('smoothest');
-        $response->assertSee('restoration');
-
-        // 8. Why Choose BUGS Section
-        $response->assertSee('Why Customers Return');
-        $response->assertSee('Same-day repairs');
-        $response->assertSee('Walk-in service');
-        $response->assertSee('Free diagnosis');
-        $response->assertSee('Strict 21+ verification');
-        $response->assertSee('Local delivery');
-        $response->assertSee('Open 7 days a week');
-
-        // 9. Store Location & Hours
-        $response->assertSee('Come through');
-        $response->assertSee('Ten minutes from');
+        // 6. Store Location & Hours
+        $response->assertSee('Visit the counter');
         $response->assertSee('10010 Halls Ferry Rd, St. Louis, MO 63136');
         $response->assertSee('Mon – Sun · 10:00 AM – 8:00 PM');
         $response->assertSee('Get directions');
 
-        // 10. FAQ Section
-        $response->assertSee('Frequently Asked Questions');
-        $response->assertSee('How fast can my phone screen or battery be replaced?');
-        $response->assertSee('Do I have to pay for a phone diagnosis?');
-        $response->assertSee('Do I need an appointment for phone repair or shopping?');
-        $response->assertSee('What are your operating hours and location?');
-        $response->assertSee('How does in-store pickup and local delivery work?');
-        $response->assertSee('What identification is required for purchasing?');
+        // 7. Footer & Compliance
+        $response->assertSee('bugs_wirless_and_smoke_shop');
+        $response->assertSee('/policies#shipping');
+        $response->assertSee('/policies#returns');
+        $response->assertSee('/policies#age');
+        $response->assertSee('/policies#privacy');
 
-        // 11. Footer & Compliance
-        $response->assertSee('The Shelves');
-        $response->assertSee('Repair Bench');
-        $response->assertSee('Visit The Counter');
-        $response->assertSee('https://www.instagram.com/bugs_wirless_and_smoke_shop/', false);
-        $response->assertSee('Privacy Policy');
-        $response->assertSee('Terms and Conditions');
-        $response->assertSee('Back to top');
-
-        // 12. Modern Icons & Motion Libraries
-        $response->assertSee('phosphor-regular.css');
-        $response->assertSee('gsap.min.js');
-        $response->assertSee('ScrollTrigger.min.js');
-        $response->assertSee('bugs-app.js');
+        // 8. Design System Assets & Libraries
+        $response->assertSee('assets/css/bootstrap.min.css');
+        $response->assertSee('assets/css/bugs-theme.css');
+        $response->assertSee('assets/js/gsap.min.js');
+        $response->assertSee('assets/js/ScrollTrigger.min.js');
+        $response->assertSee('assets/js/lucide.min.js');
+        $response->assertSee('assets/js/bugs-app.js');
     }
 
     /**

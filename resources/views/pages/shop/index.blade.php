@@ -1,56 +1,54 @@
 @extends('layouts.app')
 
-@section('title', 'Shop All Stock — BUGS Wireless & Smoke Shop')
-@section('meta_description', 'Browse vapes, e-liquids, glass pipes, hookah, and phone accessories at BUGS Wireless & Smoke Shop in St. Louis, MO.')
+@section('title', 'Everything in stock — BUGS Wireless & Smoke Shop')
+@section('meta_description', 'Everything in stock at BUGS Wireless & Smoke Shop on Halls Ferry Rd, St. Louis. Phone accessories, chargers, vapes, glass, and hookah.')
 
 @section('content')
-<div class="container-fluid px-3 px-lg-5 py-4 py-lg-5" style="max-width: 1400px;">
-    <!-- Page Header -->
-    <div class="row align-items-end mb-4 pb-2 g-3">
-        <div class="col-lg-6">
-            <span class="eyebrow mb-2 d-block" style="color: var(--bugs-primary);">The Inventory</span>
-            <h1 class="heading-2 text-white mb-2">
-                Everything in <span style="color: var(--bugs-primary);">stock</span>.
+<div class="container-fluid px-4 px-lg-5 py-5" style="max-width: 1400px;">
+    <!-- Page Header (Exact Reference Match) -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-4 mb-4 pb-2">
+        <div>
+            <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">The shelves</p>
+            <h1 class="display-5 fw-semibold text-white tracking-tight mb-2">
+                Everything in stock.
             </h1>
-            <p class="body-3 text-secondary mb-0">
-                Reserve online for same-day counter pickup or local St. Louis delivery. Valid 21+ photo ID required.
+            <p class="text-secondary small mb-0" style="max-width: 520px; line-height: 1.6;">
+                Pick up at 10010 Halls Ferry Rd or get local delivery over $50. Age verified in store for 21+ items.
             </p>
         </div>
-        <div class="col-lg-6 d-flex justify-content-lg-end">
-            <!-- Search Form -->
-            <form action="{{ route('shop.index') }}" method="GET" class="bugs-search-container" style="max-width: 440px;">
-                @if(request('category'))
-                    <input type="hidden" name="category" value="{{ request('category') }}">
-                @endif
-                <span class="bugs-search-icon">
-                    <i class="ph ph-magnifying-glass fs-5" style="color: var(--bugs-primary);"></i>
-                </span>
+
+        <!-- Search Bar -->
+        <form action="{{ route('shop.index') }}" method="GET" class="position-relative" style="min-width: 280px; max-width: 380px;">
+            @if(request('category'))
+                <input type="hidden" name="category" value="{{ request('category') }}">
+            @endif
+            <div class="d-flex align-items-center rounded-pill border border-white border-opacity-10 px-3 py-2" style="background-color: hsl(var(--surface));">
+                <i data-lucide="search" class="w-4 h-4 text-secondary me-2 flex-shrink-0"></i>
                 <input type="text" 
                        name="search" 
                        value="{{ request('search') }}" 
-                       placeholder="Search vapes, glass, chargers..." 
+                       placeholder="Search products..." 
                        aria-label="Search products" 
-                       class="bugs-search-input">
+                       class="bg-transparent border-0 text-white w-100 p-0" 
+                       style="outline: none; font-size: 0.875rem;">
                 @if(request('search'))
-                    <a href="{{ route('shop.index', request('category') ? ['category' => request('category')] : []) }}" 
-                       class="position-absolute end-0 top-50 translate-middle-y me-3 text-secondary text-decoration-none" 
-                       title="Clear Search" style="z-index: 3;">
-                        <i class="ph ph-x-circle fs-5"></i>
+                    <a href="{{ route('shop.index', request('category') ? ['category' => request('category')] : []) }}" class="text-secondary text-decoration-none ms-2">
+                        <i data-lucide="x" class="w-4 h-4"></i>
                     </a>
                 @endif
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 
     <!-- Category Filter Pills -->
-    <div class="d-flex flex-wrap gap-2 mb-4 pb-3 border-bottom" style="border-color: var(--bugs-border) !important;">
+    <div class="d-flex flex-wrap gap-2 mb-5 pb-3 border-bottom border-white border-opacity-10">
         <a href="{{ route('shop.index', request('search') ? ['search' => request('search')] : []) }}" 
-           class="btn btn-sm {{ !request('category') ? 'btn-bugs-primary' : 'btn-bugs-outline' }} btn-bugs-pill-sm px-3">
+           class="btn btn-sm rounded-pill px-3 py-1.5 {{ !request('category') ? 'btn-bugs-primary text-dark fw-semibold' : 'btn-bugs-outline text-secondary' }}" style="font-size: 0.8125rem;">
             All Products
         </a>
         @foreach($categories as $category)
             <a href="{{ route('shop.index', array_merge(['category' => $category->slug], request('search') ? ['search' => request('search')] : [])) }}" 
-               class="btn btn-sm {{ request('category') === $category->slug ? 'btn-bugs-primary' : 'btn-bugs-outline' }} btn-bugs-pill-sm px-3">
+               class="btn btn-sm rounded-pill px-3 py-1.5 {{ request('category') === $category->slug ? 'btn-bugs-primary text-dark fw-semibold' : 'btn-bugs-outline text-secondary' }}" style="font-size: 0.8125rem;">
                 {{ $category->name }}
             </a>
         @endforeach
@@ -58,7 +56,7 @@
 
     <!-- Products Grid -->
     @if($products->count() > 0)
-        <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-xl-4">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 g-md-4">
             @foreach($products as $product)
                 <div class="col">
                     <x-product-card :product="$product" />
@@ -72,14 +70,14 @@
             </div>
         @endif
     @else
-        <!-- Composed Empty State (SKILL.md B9) -->
-        <div class="py-5 text-center my-4 bugs-card p-5" style="max-width: 600px; margin: 0 auto;">
-            <div class="d-flex align-items-center justify-content-center rounded-circle border mx-auto mb-3" style="width: 64px; height: 64px; border-color: var(--bugs-border) !important; background-color: var(--bugs-surface-3); color: var(--bugs-primary);">
-                <i class="ph ph-magnifying-glass fs-2"></i>
+        <!-- Empty State -->
+        <div class="py-5 text-center my-4 p-5 rounded-4 border border-white border-opacity-10" style="background-color: hsl(var(--card)); max-width: 540px; margin: 0 auto;">
+            <div class="d-flex align-items-center justify-content-center rounded-circle border border-white border-opacity-10 mx-auto mb-3" style="width: 56px; height: 56px; background-color: hsl(var(--surface)); color: hsl(var(--foreground));">
+                <i data-lucide="search" class="w-6 h-6"></i>
             </div>
-            <h3 class="title-2 text-white mb-2">No matching products found</h3>
-            <p class="body-3 text-secondary mb-4">Try checking your search terms or selecting another category.</p>
-            <a href="{{ route('shop.index') }}" class="btn btn-bugs-primary btn-bugs-pill-sm px-4">
+            <h3 class="fs-5 text-white fw-semibold mb-2">No matching products found</h3>
+            <p class="text-secondary small mb-4">Try checking your search terms or selecting another category.</p>
+            <a href="{{ route('shop.index') }}" class="btn btn-bugs-primary px-4 py-2 rounded-pill fw-semibold text-dark" style="font-size: 0.875rem;">
                 View All In-Stock Products
             </a>
         </div>
