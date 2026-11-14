@@ -34,12 +34,21 @@
   --surface-deep: 220 11% 3.5%;
   --radius: 0.875rem;
 
-  /* Typography Families */
+  /* Typography Families — Google Fonts: Manrope */
   --font-heading: 'Manrope', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: 'Manrope', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-display: 'Manrope', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Cormorant Garamond', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Explicit Manrope & Token Bindings */
+  --bugs-font-sans: 'Manrope', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --bugs-font-display: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --bugs-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Bootstrap 5.3 Typography Overrides */
+  --bs-body-font-family: 'Manrope', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --bs-font-sans-serif: 'Manrope', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Mapped Hex & RGB Tokens for Bootstrap 5.3 Compatibility */
   --bugs-bg: #090b0e;
@@ -194,6 +203,7 @@ html {
   scroll-padding-top: 100px;
   text-rendering: optimizeLegibility;
   background-color: var(--bugs-bg);
+  font-family: var(--bugs-font-sans);
 }
 
 body {
@@ -206,6 +216,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   text-wrap: pretty;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--bugs-font-sans);
 }
 
 /* Accessibility: Skip to Content */

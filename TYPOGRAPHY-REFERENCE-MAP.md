@@ -146,3 +146,4 @@ body {
   font-variant-numeric: tabular-nums !important;
 }
 ```
+
