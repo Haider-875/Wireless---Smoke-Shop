@@ -27,6 +27,7 @@
                 <a class="bugs-nav-link text-decoration-none {{ request()->routeIs('repairs') ? 'active text-white' : 'text-secondary' }}" href="{{ route('repairs') }}" style="font-size: 13.5px; transition: color 0.2s;">Repairs</a>
                 <a class="bugs-nav-link text-decoration-none {{ request('category') === 'Phone Accessories' || request('category') === 'phone-accessories' ? 'active text-white' : 'text-secondary' }}" href="{{ route('shop.index', ['category' => 'Phone Accessories']) }}" style="font-size: 13.5px; transition: color 0.2s;">Phone gear</a>
                 <a class="bugs-nav-link text-decoration-none {{ in_array(request('category'), ['Vapes', 'vapes', 'e-liquids', 'glass-pipes', 'hookah']) ? 'active text-white' : 'text-secondary' }}" href="{{ route('shop.index', ['category' => 'Vapes']) }}" style="font-size: 13.5px; transition: color 0.2s;">Smoke shop</a>
+                <a class="bugs-nav-link text-decoration-none {{ request()->routeIs('gallery') ? 'active text-white' : 'text-secondary' }}" href="{{ route('gallery') }}" style="font-size: 13.5px; transition: color 0.2s;">Gallery</a>
                 <a class="bugs-nav-link text-decoration-none text-secondary" href="{{ route('home') }}#visit" style="font-size: 13.5px; transition: color 0.2s;">Visit us</a>
                 <a class="bugs-nav-link text-decoration-none {{ request()->routeIs('orders.lookup') ? 'active text-white' : 'text-secondary' }}" href="{{ route('orders.lookup') }}" style="font-size: 13.5px; transition: color 0.2s;">Your orders</a>
             </nav>
@@ -105,6 +106,11 @@
             <li class="nav-item bugs-mobile-nav-item">
                 <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'hookah' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'hookah']) }}">
                     <i data-lucide="sparkles" class="w-4 h-4 me-2"></i> Hookah &amp; Shisha
+                </a>
+            </li>
+            <li class="nav-item bugs-mobile-nav-item">
+                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request()->routeIs('gallery') ? 'active' : '' }}" href="{{ route('gallery') }}">
+                    <i data-lucide="image" class="w-4 h-4 me-2 text-steel"></i> Store Gallery
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">

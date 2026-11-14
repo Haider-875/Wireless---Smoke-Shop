@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\RepairController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ShopController;
@@ -62,6 +63,7 @@ Route::get('/deploy/migrate', [DeployController::class, 'migrate'])->middleware(
 
 // Homepage & Core Pages
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/repairs', [RepairController::class, 'index'])->name('repairs');
 Route::post('/repairs/quote', [RepairController::class, 'storeQuote'])->middleware('throttle:15,1')->name('repairs.quote');
 Route::post('/inquiry', [RepairController::class, 'storeQuote'])->middleware('throttle:15,1')->name('inquiry.store');
