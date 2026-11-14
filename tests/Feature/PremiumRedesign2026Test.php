@@ -20,7 +20,7 @@ class PremiumRedesign2026Test extends TestCase
         $response->assertSee('BUGS');
         $response->assertSee('Repairs');
         $response->assertSee('Phone gear');
-        $response->assertSee('Shop all');
+        $response->assertDontSee('Shop all');
         $response->assertSee('Smoke shop');
         $response->assertSee('Visit us');
         $response->assertSee('Your orders');
@@ -57,7 +57,7 @@ class PremiumRedesign2026Test extends TestCase
         $response->assertSee('Gear for the phone');
         $response->assertSee('you just fixed');
         $response->assertSee('What everybody gets with a new screen');
-        $response->assertSee('Shop all products');
+        $response->assertDontSee('Shop all products');
         $response->assertSee('data-add-to-cart=', false);
 
         // 5. Smoke Shop Aisles (Five Aisles)

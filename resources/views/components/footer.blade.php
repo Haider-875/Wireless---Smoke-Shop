@@ -43,7 +43,6 @@
                     <li><a href="{{ route('shop.index', ['category' => 'Phone Accessories']) }}" class="text-secondary text-decoration-none hover-steel">Cases, glass &amp; audio</a></li>
                     <li><a href="{{ route('shop.index', ['category' => 'Vapes']) }}" class="text-secondary text-decoration-none hover-steel">Vapes &amp; disposables</a></li>
                     <li><a href="{{ route('shop.index', ['category' => 'Glass & Pipes']) }}" class="text-secondary text-decoration-none hover-steel">Glass &amp; pipes</a></li>
-                    <li><a href="{{ route('shop.index') }}" class="text-secondary text-decoration-none hover-steel">All products</a></li>
                 </ul>
             </div>
 

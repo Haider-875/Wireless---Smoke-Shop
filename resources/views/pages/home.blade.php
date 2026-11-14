@@ -239,18 +239,12 @@
      ========================================================================== -->
 <section class="py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--surface));">
     <div class="container-fluid px-4 px-lg-5 py-5" style="max-width: 1400px;">
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5">
-            <div>
-                <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">The wireless counter</p>
-                <h2 class="display-6 fw-semibold text-white tracking-tight mb-0">
-                    Gear for the phone<span class="font-serif-display text-steel"> you just fixed</span>.
-                </h2>
-                <p class="text-secondary small mt-2 mb-0">What everybody gets with a new screen — cases, tempered glass, audio, and fast chargers.</p>
-            </div>
-            <a href="{{ route('shop.index') }}" class="text-white text-decoration-none d-inline-flex align-items-center gap-2 hover-steel" style="font-size: 0.9375rem;">
-                <span>Shop all products</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
+        <div class="mb-5">
+            <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">The wireless counter</p>
+            <h2 class="display-6 fw-semibold text-white tracking-tight mb-0">
+                Gear for the phone<span class="font-serif-display text-steel"> you just fixed</span>.
+            </h2>
+            <p class="text-secondary small mt-2 mb-0">What everybody gets with a new screen — cases, tempered glass, audio, and fast chargers.</p>
         </div>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
