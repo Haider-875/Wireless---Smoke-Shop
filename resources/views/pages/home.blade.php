@@ -221,18 +221,7 @@
         </div>
     </div>
 </section>
-                        <span>See repair services</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <a href="tel:+13144412851" class="btn btn-bugs-outline px-4 py-3 rounded-pill text-white d-inline-flex align-items-center gap-2">
-                        <i data-lucide="phone" class="w-4 h-4 text-steel"></i>
-                        <span>Call the bench</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <!-- ==========================================================================
      Section 3: Wireless Counter ("Gear for the phone you just fixed.")
