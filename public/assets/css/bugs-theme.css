@@ -11,24 +11,36 @@
      - Pearl White 30% (High-clarity typography, headings & metadata)
      - Electric Azure 10% (High-energy accent, CTAs, active states, focus rings)
      ========================================================================== */
-  --bugs-bg: #0a0b0e;                /* Carbon Black 60%: Main canvas */
-  --bugs-surface-1: #101216;         /* Carbon Black: Deep section backdrop */
-  --bugs-surface-2: #15181e;         /* Carbon Black: Card & floating pill nav surface */
-  --bugs-surface-3: #1c2028;         /* Carbon Black: Elevated modal, drawer & dropdown surface */
-  --bugs-surface-4: #232833;         /* Carbon Black: Interactive selected & hover states */
-  --bugs-border: #262c38;            /* Carbon Black: Structural borders */
+  --bugs-bg: #0a0b0e;
+  /* Carbon Black 60%: Main canvas */
+  --bugs-surface-1: #101216;
+  /* Carbon Black: Deep section backdrop */
+  --bugs-surface-2: #15181e;
+  /* Carbon Black: Card & floating pill nav surface */
+  --bugs-surface-3: #1c2028;
+  /* Carbon Black: Elevated modal, drawer & dropdown surface */
+  --bugs-surface-4: #232833;
+  /* Carbon Black: Interactive selected & hover states */
+  --bugs-border: #262c38;
+  /* Carbon Black: Structural borders */
   --bugs-border-subtle: rgba(248, 249, 250, 0.08);
-  --bugs-border-gold: rgba(0, 145, 255, 0.45);   /* Electric Azure border accent */
+  --bugs-border-gold: rgba(0, 145, 255, 0.45);
+  /* Electric Azure border accent */
   --bugs-border-azure: rgba(0, 145, 255, 0.45);
 
   /* Primary Brand Accent (Electric Azure 10%) */
-  --bugs-primary: #0091ff;           /* Electric Azure: Vibrant blue focal accent */
-  --bugs-primary-hover: #1aa0ff;     /* Electric Azure: Luminous hover */
-  --bugs-primary-fg: #ffffff;        /* Pure Pearl White text on primary buttons */
+  --bugs-primary: #0091ff;
+  /* Electric Azure: Vibrant blue focal accent */
+  --bugs-primary-hover: #1aa0ff;
+  /* Electric Azure: Luminous hover */
+  --bugs-primary-fg: #ffffff;
+  /* Pure Pearl White text on primary buttons */
 
   /* Foreground / Text (Pearl White 30%) */
-  --bugs-fg: #F8F9FA;                /* Pearl White: Editorial headlines & crisp copy */
-  --bugs-fg-muted: #B0B8C6;          /* Pearl White: Soft readable secondary copy */
+  --bugs-fg: #F8F9FA;
+  /* Pearl White: Editorial headlines & crisp copy */
+  --bugs-fg-muted: #B0B8C6;
+  /* Pearl White: Soft readable secondary copy */
   --bugs-fg-pearl: #F8F9FA;
 
   /* Bootstrap Override */
@@ -46,6 +58,51 @@
   --bugs-font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --bugs-font-mono: 'Geist Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
+  --bs-primary: #b89766;
+  --bs-primary-rgb: 184, 151, 102;
+  --bs-primary-text-emphasis: #c8a776;
+  --bs-primary-bg-subtle: rgba(184, 151, 102, 0.15);
+  --bs-primary-border-subtle: rgba(184, 151, 102, 0.35);
+
+  --bs-link-color: #b89766;
+  --bs-link-hover-color: #c8a776;
+  --bs-link-color-rgb: 184, 151, 102;
+  --bs-link-hover-color-rgb: 200, 167, 118;
+
+  --bs-focus-ring-color: rgba(184, 151, 102, 0.25);
+
+  /* Core Theme Colors */
+  --bugs-bg: #0a0a0b;
+  /* hsl(240, 6%, 4%) - Main Dark Backdrop */
+  --bugs-card: #111113;
+  /* hsl(240, 6%, 7%) - Card Surface */
+  --bugs-card-alt: #08080a;
+  /* Process steps section background */
+  --bugs-modal-bg: #0d0d0f;
+  /* Age gate and offcanvas surface */
+
+  /* Typography & Foreground */
+  --bugs-fg: #f2f2f2;
+  /* hsl(0, 0%, 95%) - Primary readable text */
+  --bugs-fg-muted: #9999a1;
+  /* hsl(240, 4%, 62%) - Subtitles & descriptions */
+
+  /* Primary Brand Accent (Luxury Metallic Warm Gold) */
+  --bugs-primary: #b89766;
+  /* hsl(39, 42%, 56%) - Gold Accent */
+  --bugs-primary-hover: #c8a776;
+  /* Lightened Gold for interactive states */
+  --bugs-primary-fg: #0f0f12;
+  /* hsl(240, 8%, 6%) - Contrast text on gold */
+
+  /* Subtle Borders & Dividers */
+  --bugs-border: rgba(255, 255, 255, 0.07);
+  --bugs-border-light: rgba(255, 255, 255, 0.12);
+  --bugs-border-gold: rgba(184, 151, 102, 0.45);
+
+  /* Status Colors */
+  --bugs-destructive: #dc3545;
+  --bugs-success: #198754;
   /* ==========================================================================
      Strict Spacing Tokens (SKILL.md B2)
      ========================================================================== */
@@ -106,6 +163,7 @@ body {
   transition: top 300ms var(--ease-base);
   text-decoration: none;
 }
+
 .bugs-skip-link:focus {
   top: 20px;
   outline: 2px solid #FFFFFF;
@@ -116,14 +174,17 @@ body {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bugs-bg);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--bugs-surface-4);
   border-radius: 9999px;
   border: 2px solid var(--bugs-bg);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--bugs-primary);
 }
@@ -178,29 +239,131 @@ body {
   text-wrap: balance;
 }
 
-.title-1 { font-size: 20px; line-height: 28px; font-weight: 500; }
-.title-2 { font-size: 18px; line-height: 28px; font-weight: 500; }
-.title-3 { font-size: 16px; line-height: 24px; font-weight: 500; }
-.title-4 { font-size: 14px; line-height: 20px; font-weight: 500; }
-.title-5 { font-size: 12px; line-height: 16px; font-weight: 500; }
+.title-1 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+}
 
-.body-1 { font-size: 16px; line-height: 24px; font-weight: 600; text-wrap: pretty; }
-.body-2 { font-size: 16px; line-height: 24px; font-weight: 500; text-wrap: pretty; }
-.body-3 { font-size: 16px; line-height: 24px; font-weight: 400; text-wrap: pretty; }
-.body-4 { font-size: 14px; line-height: 20px; font-weight: 600; text-wrap: pretty; }
-.body-5 { font-size: 14px; line-height: 20px; font-weight: 500; text-wrap: pretty; }
-.body-6 { font-size: 14px; line-height: 20px; font-weight: 400; text-wrap: pretty; }
+.title-2 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+}
 
-.button-lg { font-size: 18px; line-height: 28px; font-weight: 600; }
-.button-md { font-size: 16px; line-height: 24px; font-weight: 600; }
-.button-sm { font-size: 14px; line-height: 20px; font-weight: 600; }
-.button-xsm { font-size: 12px; line-height: 16px; font-weight: 600; }
+.title-3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
 
-.caption-1 { font-size: 14px; line-height: 20px; font-weight: 500; }
-.caption-2 { font-size: 14px; line-height: 20px; font-weight: 400; }
-.caption-3 { font-size: 12px; line-height: 16px; font-weight: 600; }
-.caption-4 { font-size: 12px; line-height: 16px; font-weight: 500; }
-.caption-5 { font-size: 12px; line-height: 16px; font-weight: 400; }
+.title-4 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.title-5 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.body-1 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  text-wrap: pretty;
+}
+
+.body-2 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  text-wrap: pretty;
+}
+
+.body-3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-wrap: pretty;
+}
+
+.body-4 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  text-wrap: pretty;
+}
+
+.body-5 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-wrap: pretty;
+}
+
+.body-6 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-wrap: pretty;
+}
+
+.button-lg {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.button-md {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.button-sm {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.button-xsm {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.caption-1 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.caption-2 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.caption-3 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.caption-4 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.caption-5 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
 
 /* Backward Compatibility Helpers for Existing Views & Tests */
 .font-display {
@@ -289,9 +452,9 @@ body {
   padding: 8px 16px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
   transition: transform var(--duration-layout) var(--ease-base),
-              background-color var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base),
-              box-shadow var(--duration-interactive) var(--ease-base);
+    background-color var(--duration-interactive) var(--ease-base),
+    border-color var(--duration-interactive) var(--ease-base),
+    box-shadow var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-navbar-pill.scrolled {
@@ -314,7 +477,7 @@ body {
   padding: 6px 12px;
   border-radius: 9999px;
   transition: color var(--duration-interactive) var(--ease-base),
-              background-color var(--duration-interactive) var(--ease-base);
+    background-color var(--duration-interactive) var(--ease-base);
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -342,9 +505,9 @@ body {
   align-items: center;
   justify-content: center;
   transition: transform var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base),
-              background-color var(--duration-interactive) var(--ease-base),
-              color var(--duration-interactive) var(--ease-base);
+    border-color var(--duration-interactive) var(--ease-base),
+    background-color var(--duration-interactive) var(--ease-base),
+    color var(--duration-interactive) var(--ease-base);
   position: relative;
   text-decoration: none;
 }
@@ -406,7 +569,7 @@ body {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity var(--duration-layout) var(--ease-base),
-              transform var(--duration-layout) var(--ease-base);
+    transform var(--duration-layout) var(--ease-base);
 }
 
 .offcanvas.show .bugs-mobile-nav-item {
@@ -433,9 +596,9 @@ body {
   gap: 8px;
   text-decoration: none;
   transition: transform var(--duration-interactive) var(--ease-base),
-              background-color var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base),
-              box-shadow var(--duration-interactive) var(--ease-base);
+    background-color var(--duration-interactive) var(--ease-base),
+    border-color var(--duration-interactive) var(--ease-base),
+    box-shadow var(--duration-interactive) var(--ease-base);
   cursor: pointer;
 }
 
@@ -467,9 +630,9 @@ body {
   gap: 8px;
   text-decoration: none;
   transition: transform var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base),
-              background-color var(--duration-interactive) var(--ease-base),
-              color var(--duration-interactive) var(--ease-base);
+    border-color var(--duration-interactive) var(--ease-base),
+    background-color var(--duration-interactive) var(--ease-base),
+    color var(--duration-interactive) var(--ease-base);
   cursor: pointer;
 }
 
@@ -524,8 +687,8 @@ textarea:focus-visible {
   border: 1px solid var(--bugs-border) !important;
   border-radius: 16px !important;
   transition: transform var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base),
-              box-shadow var(--duration-interactive) var(--ease-base);
+    border-color var(--duration-interactive) var(--ease-base),
+    box-shadow var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-card:hover,
@@ -552,8 +715,8 @@ textarea:focus-visible {
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85);
   z-index: 3;
   transition: transform var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base),
-              box-shadow var(--duration-interactive) var(--ease-base);
+    border-color var(--duration-interactive) var(--ease-base),
+    box-shadow var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-hero-floating-card:hover {
@@ -573,7 +736,7 @@ textarea:focus-visible {
   justify-content: center;
   text-decoration: none;
   transition: transform var(--duration-interactive) var(--ease-base),
-              background-color var(--duration-interactive) var(--ease-base);
+    background-color var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-hero-call-btn:hover {
@@ -639,8 +802,13 @@ textarea:focus-visible {
 }
 
 @keyframes bugsMarqueeAnimation {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ==========================================================================
@@ -660,8 +828,8 @@ textarea:focus-visible {
   text-decoration: none !important;
   color: inherit !important;
   transition: transform var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base),
-              box-shadow var(--duration-interactive) var(--ease-base);
+    border-color var(--duration-interactive) var(--ease-base),
+    box-shadow var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-aisle-card:hover {
@@ -730,8 +898,8 @@ textarea:focus-visible {
   background-color: var(--bugs-surface-2);
   border: 1px solid var(--bugs-border);
   transition: transform var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base),
-              box-shadow var(--duration-interactive) var(--ease-base);
+    border-color var(--duration-interactive) var(--ease-base),
+    box-shadow var(--duration-interactive) var(--ease-base);
   text-decoration: none;
   display: block;
 }
@@ -763,8 +931,8 @@ textarea:focus-visible {
   border-radius: 16px !important;
   padding: 8px;
   transition: transform var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base),
-              box-shadow var(--duration-interactive) var(--ease-base);
+    border-color var(--duration-interactive) var(--ease-base),
+    box-shadow var(--duration-interactive) var(--ease-base);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -807,9 +975,9 @@ textarea:focus-visible {
   justify-content: center;
   font-size: 16px;
   transition: transform var(--duration-interactive) var(--ease-base),
-              background-color var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base),
-              color var(--duration-interactive) var(--ease-base);
+    background-color var(--duration-interactive) var(--ease-base),
+    border-color var(--duration-interactive) var(--ease-base),
+    color var(--duration-interactive) var(--ease-base);
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;
@@ -839,8 +1007,8 @@ textarea:focus-visible {
   gap: 12px;
   text-decoration: none;
   transition: transform var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base),
-              background-color var(--duration-interactive) var(--ease-base);
+    border-color var(--duration-interactive) var(--ease-base),
+    background-color var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-repair-point:hover {
@@ -861,7 +1029,7 @@ textarea:focus-visible {
   justify-content: center;
   flex-shrink: 0;
   transition: transform var(--duration-interactive) var(--ease-base),
-              color var(--duration-interactive) var(--ease-base);
+    color var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-repair-point:hover .bugs-repair-point-icon {
@@ -889,7 +1057,7 @@ textarea:focus-visible {
   border-radius: 16px !important;
   padding: 20px !important;
   transition: transform var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base);
+    border-color var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-service-card:hover {
@@ -922,7 +1090,7 @@ textarea:focus-visible {
   border-radius: 16px !important;
   padding: 24px !important;
   transition: transform var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base);
+    border-color var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-step-card:hover {
@@ -979,7 +1147,7 @@ textarea:focus-visible {
   opacity: 0.28;
   display: inline-block;
   transition: opacity var(--duration-interactive) var(--ease-base),
-              color var(--duration-interactive) var(--ease-base);
+    color var(--duration-interactive) var(--ease-base);
   margin-right: 0.24em;
 }
 
@@ -1005,7 +1173,7 @@ textarea:focus-visible {
   padding: 24px;
   height: 100%;
   transition: transform var(--duration-interactive) var(--ease-base),
-              border-color var(--duration-interactive) var(--ease-base);
+    border-color var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-feature-card:hover {
@@ -1260,7 +1428,7 @@ textarea:focus-visible {
   opacity: 1;
 }
 
-.bugs-product-card > * {
+.bugs-product-card>* {
   position: relative;
   z-index: 1;
 }
@@ -1403,8 +1571,8 @@ textarea:focus-visible {
   flex-direction: column;
   justify-content: space-between;
   transition: border-color var(--duration-interactive) var(--ease-base),
-              transform var(--duration-interactive) var(--ease-base),
-              box-shadow var(--duration-interactive) var(--ease-base);
+    transform var(--duration-interactive) var(--ease-base),
+    box-shadow var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-horizontal-card:hover {
@@ -1421,9 +1589,11 @@ textarea:focus-visible {
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
   }
+
   .bugs-horizontal-track::-webkit-scrollbar {
     display: none;
   }
+
   .bugs-horizontal-card {
     scroll-snap-align: start;
     width: 290px;
@@ -1440,4 +1610,3 @@ textarea:focus-visible {
 [data-parallax] {
   will-change: transform;
 }
-
