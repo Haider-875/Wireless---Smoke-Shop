@@ -16,6 +16,47 @@ use App\Http\Controllers\DeployController;
 |--------------------------------------------------------------------------
 */
 
+// Simple 1-click route to migrate & seed all new phone cards and super admin on production
+Route::get('/seed-data', function () {
+    try {
+        // Run database migrations
+        \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+        $migrateOut = \Illuminate\Support\Facades\Artisan::output();
+
+        // Run consolidated new data seeder
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
+            '--class' => 'Database\\Seeders\\NewDataSeeder',
+            '--force' => true,
+        ]);
+        $seedOut = \Illuminate\Support\Facades\Artisan::output();
+
+        // Clear view and config caches
+        \Illuminate\Support\Facades\Artisan::call('optimize:clear');
+
+        return response("
+            <div style='font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 24px; border-radius: 12px; background: #111; color: #fff; border: 1px solid #333;'>
+                <h2 style='color: #22c55e; margin-top: 0;'>✅ Success! Data Seeded</h2>
+                <p>Migrations applied, all 6 smartphone cards added, and Super Admin created.</p>
+                <div style='background: #000; padding: 12px; border-radius: 6px; font-family: monospace; font-size: 12px; color: #a3e635; margin: 16px 0;'>"
+                    . nl2br(e($migrateOut . $seedOut)) . "
+                </div>
+                <p style='margin-bottom: 0;'>
+                    <a href='/' style='color: #FFB800; font-weight: bold; text-decoration: none;'>&larr; View Live Homepage</a> &bull; 
+                    <a href='/shop?category=smartphones' style='color: #FFB800; font-weight: bold; text-decoration: none;'>View Phone Cards</a> &bull; 
+                    <a href='/admin/login' style='color: #FFB800; font-weight: bold; text-decoration: none;'>Admin Login</a>
+                </p>
+            </div>
+        ", 200)->header('Content-Type', 'text/html');
+    } catch (\Throwable $e) {
+        return response("
+            <div style='font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 24px; border-radius: 12px; background: #111; color: #fff; border: 1px solid #ef4444;'>
+                <h2 style='color: #ef4444; margin-top: 0;'>❌ Migration / Seeding Error</h2>
+                <pre style='background: #000; padding: 12px; border-radius: 6px; color: #ef4444; font-size: 12px; white-space: pre-wrap;'>" . e($e->getMessage()) . "</pre>
+            </div>
+        ", 500)->header('Content-Type', 'text/html');
+    }
+})->name('seed-data');
+
 // Production Web Migration & Deployment Runner (Protected by secret token)
 Route::get('/deploy/migrate', [DeployController::class, 'migrate'])->middleware('throttle:10,1')->name('deploy.migrate');
 
