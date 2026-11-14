@@ -1693,3 +1693,85 @@ textarea:focus-visible {
 [data-parallax] {
   will-change: transform;
 }
+
+/* ==========================================================================
+   Pagination — Luxury Dark Manrope Design System
+   ========================================================================== */
+.pagination-wrapper {
+  width: 100%;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination .page-item {
+  margin: 0;
+  list-style: none;
+}
+
+.pagination .page-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  font-family: var(--bugs-font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--bugs-fg-muted);
+  background-color: hsl(var(--card));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px !important;
+  text-decoration: none;
+  transition: all var(--duration-interactive) var(--ease-base);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pagination .page-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.pagination .page-link:hover {
+  color: #ffffff;
+  background-color: hsl(var(--surface-raised));
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.pagination .page-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(92, 185, 234, 0.35);
+  border-color: hsl(var(--steel));
+}
+
+.pagination .page-item.active .page-link {
+  z-index: 3;
+  color: hsl(var(--primary-foreground)) !important;
+  background-color: hsl(var(--primary)) !important;
+  border-color: hsl(var(--primary)) !important;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(234, 237, 240, 0.25);
+  transform: none;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: rgba(255, 255, 255, 0.25) !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none;
+}

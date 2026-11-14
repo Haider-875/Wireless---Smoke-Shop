@@ -25,10 +25,7 @@
                 <p class="eyebrow text-secondary mb-3" style="font-size: 0.75rem; letter-spacing: 0.15em;">Repairs</p>
                 <ul class="list-unstyled d-flex flex-column gap-2 mb-0" style="font-size: 0.875rem;">
                     <li>
-                        <a href="{{ route('repairs') }}" class="text-secondary text-decoration-none hover-steel d-inline-flex align-items-center gap-1.5">
-                            <i data-lucide="wrench" class="w-3.5 h-3.5 text-steel"></i>
-                            <span>Phone &amp; tablet repair</span>
-                        </a>
+                        <a href="{{ route('repairs') }}" class="text-secondary text-decoration-none hover-steel">Phone &amp; tablet repair</a>
                     </li>
                     <li><a href="{{ route('repairs') }}" class="text-secondary text-decoration-none hover-steel">Carrier activation</a></li>
                     <li><a href="{{ route('repairs') }}" class="text-secondary text-decoration-none hover-steel">Data transfer &amp; backup</a></li>
