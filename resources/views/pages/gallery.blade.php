@@ -3,7 +3,7 @@
 @section('title', 'Store & Inventory Gallery · BUGS Wireless & Smoke Shop')
 @section('meta_description', 'Real photos of BUGS Wireless & Smoke Shop at 10010 Halls Ferry Rd, St. Louis, MO. View our storefront, custom mural, unlocked iPhones, Samsung Galaxy phones, and phone accessories.')
 @section('og_title', 'Store & Inventory Gallery · BUGS Wireless & Smoke Shop')
-@section('og_image', asset('assets/images/gallery/5.jpeg'))
+@section('og_image', asset('assets/images/gallery/1.jpeg'))
 
 @section('content')
 <div class="py-5" style="background-color: hsl(var(--background));">
@@ -25,7 +25,7 @@
                     Inside the shop<span class="font-serif-display text-steel"> and on the shelves</span>.
                 </h1>
                 <p class="text-secondary mb-0" style="font-size: 1.0625rem; line-height: 1.6;">
-                    Take a look at our authentic storefront, custom Rick &amp; Morty mural, and live inventory of certified unlocked iPhones, Samsung Galaxy devices, and counter gear in St. Louis, MO.
+                    Take a look at our live in-store inventory of certified unlocked iPhones, Samsung Galaxy devices, Google Pixels, and counter gear in St. Louis, MO.
                 </p>
             </div>
 
@@ -53,9 +53,6 @@
             <span class="text-secondary small me-2 d-none d-sm-inline">Filter:</span>
             <button type="button" class="gallery-filter-btn active" data-filter="all">
                 All Photos
-            </button>
-            <button type="button" class="gallery-filter-btn" data-filter="store">
-                Storefront &amp; Exterior
             </button>
             <button type="button" class="gallery-filter-btn" data-filter="iphones">
                 Unlocked iPhones

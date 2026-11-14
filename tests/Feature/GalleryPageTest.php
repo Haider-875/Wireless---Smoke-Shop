@@ -20,21 +20,27 @@ class GalleryPageTest extends TestCase
         $response->assertSee('and on the shelves');
         $response->assertSee('10010 Halls Ferry Rd &middot; In-store showcase', false);
 
-        // All 8 gallery images
-        for ($i = 1; $i <= 8; $i++) {
-            $response->assertSee("assets/images/gallery/{$i}.jpeg");
+        // Verified Device Images are present
+        $deviceImages = [1, 2, 3, 4, 7, 8];
+        foreach ($deviceImages as $num) {
+            $response->assertSee("assets/images/gallery/{$num}.jpeg");
         }
 
+        // Storefront exterior images are removed as requested
+        $response->assertDontSee("assets/images/gallery/5.jpeg");
+        $response->assertDontSee("assets/images/gallery/6.jpeg");
+
         // Key titles
-        $response->assertSee('Storefront &amp; Iconic Rick &amp; Morty Mural', false);
-        $response->assertSee('BUGS Wireless &amp; Smoke Shop Entrance', false);
+        $response->assertDontSee('Storefront &amp; Iconic Rick &amp; Morty Mural', false);
+        $response->assertDontSee('BUGS Wireless &amp; Smoke Shop Entrance', false);
         $response->assertSee('Apple iPhone Pro &amp; Pro Max Display Shelf', false);
         $response->assertSee('Samsung Galaxy S24 Ultra &amp; Google Pixel Showcase', false);
         $response->assertSee('Google Pixel 8 Pro Bay Blue &amp; Galaxy S24', false);
 
-        // Filter pills
+        // Filter pills (Storefront & Exterior button removed)
         $response->assertSee('All Photos');
-        $response->assertSee('Storefront &amp; Exterior', false);
+        $response->assertDontSee('Storefront &amp; Exterior', false);
+        $response->assertDontSee('Storefront & Exterior');
         $response->assertSee('Unlocked iPhones');
         $response->assertSee('Samsung &amp; Google Pixel', false);
 
