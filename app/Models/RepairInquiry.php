@@ -17,9 +17,17 @@ class RepairInquiry extends Model
     protected $fillable = [
         'name',
         'phone',
+        'email',
         'device_model',
         'service_needed',
+        'inquiry_type',
+        'product_id',
         'notes',
         'status',
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

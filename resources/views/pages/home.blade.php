@@ -333,7 +333,7 @@
             <div class="col-lg-7">
                 <p class="eyebrow mb-2" style="color: var(--bugs-primary);">What's on the shelves</p>
                 <h2 class="heading-2 text-white mb-0">
-                    Five aisles, one <span style="color: var(--bugs-primary);">counter</span>.
+                    Six aisles, one <span style="color: var(--bugs-primary);">counter</span>.
                 </h2>
             </div>
             <div class="col-lg-5 col-xl-4 text-lg-end">
@@ -349,6 +349,7 @@
         <div class="bugs-horizontal-track" id="horizontalTrack">
             @php
                 $aisles = [
+                    ['slug' => 'smartphones', 'name' => 'Smartphones & Stock', 'desc' => 'Unlocked iPhones, Samsung & Pixel counter stock', 'img' => 'cat-smartphones.jpg', 'icon' => 'ph-device-mobile', 'tag' => 'Unlocked & Bench-Tested'],
                     ['slug' => 'vapes', 'name' => 'Vapes', 'desc' => 'Disposables, pods and rechargeables', 'img' => 'cat-vapes.jpg', 'icon' => 'ph-wind', 'tag' => '15K+ Puffs'],
                     ['slug' => 'e-liquids', 'name' => 'E-Liquids', 'desc' => 'Nic salts and freebase, 0–50mg', 'img' => 'cat-eliquid.jpg', 'icon' => 'ph-drop', 'tag' => 'Premium Blends'],
                     ['slug' => 'glass-pipes', 'name' => 'Glass & Pipes', 'desc' => 'Beakers, spoons and hand-blown pieces', 'img' => 'cat-glass.jpg', 'icon' => 'ph-flame', 'tag' => 'Heavy Borosilicate'],
@@ -414,6 +415,208 @@
                     <x-product-card :product="$prod" />
                 </div>
             @endforeach
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+     Section 5.5: In-Store Smartphone Counter Showcase & Live Device Inventory
+     Real Counter Showcase Images & One-Click Inquiry System
+     ========================================================================== -->
+<section id="phones" class="py-5 position-relative overflow-hidden border-top border-bottom" style="background-color: var(--bugs-surface-1); border-color: var(--bugs-border) !important;">
+    <div class="glow-gold" style="top: 10%; right: -150px; width: 500px; height: 500px; opacity: 0.18;"></div>
+    <div class="glow-gold" style="bottom: 10%; left: -150px; width: 450px; height: 450px; opacity: 0.12;"></div>
+
+    <div class="container-fluid px-3 px-lg-5 py-4 position-relative" style="max-width: 1400px; z-index: 2;">
+        <!-- Header -->
+        <div class="row align-items-end justify-content-between mb-4 pb-2 g-3">
+            <div class="col-lg-7">
+                <p class="eyebrow mb-2 d-inline-flex align-items-center gap-2" style="color: var(--bugs-primary);">
+                    <i class="ph ph-device-mobile-camera fs-5"></i>
+                    Live In-Store Showcase &bull; 10010 Halls Ferry Rd
+                </p>
+                <h2 class="heading-2 text-white mb-2">
+                    Smartphones on the <span style="color: var(--bugs-primary);">counter</span>.
+                </h2>
+                <p class="body-3 text-secondary mb-0" style="max-width: 680px;">
+                    Real devices on our showroom floor today. Unlocked Apple iPhones, Samsung Galaxy Ultra series, and Google Pixel flagships. Tested, bench-verified clean ESNs, and ready for walk-in pickup or same-day activation.
+                </p>
+            </div>
+            <div class="col-lg-5 text-lg-end d-flex flex-wrap justify-content-lg-end gap-2">
+                <button type="button" 
+                        class="btn btn-bugs-primary btn-bugs-pill-sm gap-2" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#inquiryModal"
+                        data-device-model="In-Store Smartphone Stock"
+                        data-service-needed="Price & Stock Check"
+                        data-inquiry-type="device_inquiry">
+                    <i class="ph ph-chat-circle-dots fs-5"></i>
+                    <span>Inquire on any device</span>
+                </button>
+                <a href="{{ route('shop.index', ['category' => 'smartphones']) }}" class="btn btn-bugs-outline btn-bugs-pill-sm gap-1">
+                    <span>View phone catalog</span>
+                    <i class="ph ph-arrow-right fs-6"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Phone Counter Cards Grid -->
+        <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3 mb-5">
+            @forelse($phoneShowcase as $phone)
+                <div class="col">
+                    <div class="bugs-card h-100 d-flex flex-column position-relative overflow-hidden group p-3 border" style="background-color: var(--bugs-surface-2); border-color: var(--bugs-border) !important; border-radius: 18px; transition: transform 0.25s ease, border-color 0.25s ease;">
+                        <!-- Display Image inside Counter -->
+                        <div class="ratio ratio-4x3 rounded-3 overflow-hidden position-relative mb-3" style="background-color: #0b0b0e;">
+                            <img src="{{ $phone->image_url }}" 
+                                 alt="{{ $phone->name }}" 
+                                 loading="lazy" 
+                                 class="w-100 h-100 object-fit-cover bugs-card-img"
+                                 style="transition: transform 0.4s ease;">
+                            
+                            @if($phone->badge)
+                                <div class="position-absolute top-0 start-0 m-2">
+                                    <span class="caption-5 py-1 px-2.5 rounded-pill fw-semibold" style="background-color: rgba(14, 14, 17, 0.85); backdrop-filter: blur(8px); border: 1px solid var(--bugs-border); color: var(--bugs-primary);">
+                                        <i class="ph ph-shield-check me-1"></i>{{ $phone->badge }}
+                                    </span>
+                                </div>
+                            @endif
+
+                            <div class="position-absolute bottom-0 end-0 m-2">
+                                <span class="caption-5 py-1 px-2 rounded-pill text-white" style="background-color: rgba(0, 0, 0, 0.75); backdrop-filter: blur(6px); font-size: 10px;">
+                                    <i class="ph ph-map-pin me-1 text-warning"></i>In Counter
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Card Information -->
+                        <div class="d-flex flex-column flex-grow-1">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span class="eyebrow" style="color: var(--bugs-primary); font-size: 11px;">
+                                    {{ $phone->category?->name ?? 'Smartphones' }}
+                                </span>
+                                <span class="caption-5 text-success d-inline-flex align-items-center gap-1">
+                                    <span class="d-inline-block rounded-circle bg-success" style="width: 6px; height: 6px;"></span>
+                                    In Stock ({{ $phone->stock }} units)
+                                </span>
+                            </div>
+
+                            <h3 class="title-3 text-white mb-2 leading-snug">
+                                <a href="{{ route('shop.show', $phone->slug) }}" class="text-white text-decoration-none hover-primary">
+                                    {{ $phone->name }}
+                                </a>
+                            </h3>
+
+                            <p class="body-4 text-secondary mb-3" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                                {{ $phone->description }}
+                            </p>
+
+                            <!-- Feature Tags -->
+                            <div class="d-flex flex-wrap gap-1.5 mb-3">
+                                <span class="caption-5 px-2 py-0.5 rounded-pill border text-secondary" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-surface-3);">
+                                    <i class="ph ph-check me-1 text-primary"></i>Clean ESN
+                                </span>
+                                <span class="caption-5 px-2 py-0.5 rounded-pill border text-secondary" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-surface-3);">
+                                    <i class="ph ph-broadcast me-1 text-primary"></i>Unlocked / Multi-Carrier
+                                </span>
+                                <span class="caption-5 px-2 py-0.5 rounded-pill border text-secondary" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-surface-3);">
+                                    <i class="ph ph-battery-charging me-1 text-primary"></i>Health Tested
+                                </span>
+                            </div>
+
+                            <!-- Price and Action Buttons -->
+                            <div class="mt-auto pt-3 border-top d-flex flex-column gap-2" style="border-color: var(--bugs-border) !important;">
+                                <div class="d-flex align-items-baseline justify-content-between mb-1">
+                                    <div>
+                                        <span class="caption-4 text-secondary d-block">Starting from</span>
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <span class="num fw-bold heading-4 text-white" style="color: var(--bugs-primary) !important;">
+                                                {{ $phone->formatted_price }}
+                                            </span>
+                                            @if($phone->formatted_compare_at_price)
+                                                <span class="num text-secondary text-decoration-line-through caption-3">
+                                                    {{ $phone->formatted_compare_at_price }}
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <span class="caption-5 text-secondary">Walk-in or Hold</span>
+                                </div>
+
+                                <div class="d-flex gap-2">
+                                    <button type="button" 
+                                            class="btn btn-bugs-primary flex-grow-1 py-2 gap-2 d-inline-flex align-items-center justify-content-center"
+                                            data-bs-toggle="modal" 
+                                            data-bs-target="#inquiryModal"
+                                            data-device-model="{{ $phone->name }}"
+                                            data-product-id="{{ $phone->id }}"
+                                            data-service-needed="Hold / Pricing Inquiry"
+                                            data-inquiry-type="device_inquiry">
+                                        <i class="ph ph-chat-circle-dots fs-5"></i>
+                                        <span>Inquire / Hold</span>
+                                    </button>
+
+                                    <button type="button" 
+                                            class="btn btn-bugs-outline py-2 px-3 d-inline-flex align-items-center justify-content-center"
+                                            title="Add {{ $phone->name }} to Cart"
+                                            data-add-to-cart="{{ $phone->id }}">
+                                        <i class="ph ph-bag-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @empty
+                <div class="col-12 text-center py-5 text-secondary">
+                    Showcase stock updating daily at the counter.
+                </div>
+            @endforelse
+        </div>
+
+        <!-- Storefront Real Photo & Counter Visit Banner -->
+        <div class="bugs-card p-3 p-md-4 border position-relative overflow-hidden" style="background-color: var(--bugs-surface-2); border-color: var(--bugs-border) !important; border-radius: 20px;">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-5">
+                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden border" style="border-color: var(--bugs-border) !important; min-height: 220px;">
+                        <img src="{{ asset('assets/images/store/bugs-storefront-night.jpg') }}" 
+                             alt="Bugs Wireless & Smoke Shop storefront with Rick & Morty mural at night" 
+                             loading="lazy" 
+                             class="w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 mb-2">
+                        <span class="badge rounded-pill px-2.5 py-1 text-black fw-bold" style="background-color: var(--bugs-primary); font-size: 11px;">
+                            VISIT IN PERSON
+                        </span>
+                        <span class="caption-4 text-secondary">&bull; 10010 Halls Ferry Rd, St. Louis, MO 63136</span>
+                    </div>
+                    <h3 class="heading-3 text-white mb-2">
+                        Look for the Rick &amp; Morty mural. Walk right in.
+                    </h3>
+                    <p class="body-3 text-secondary mb-3">
+                        Our store counter is fully stocked with phones, accessories, vapes, and repair parts. No appointments needed — bring your trade-in, inspect the device in your hand, and walk out activated in 15 minutes.
+                    </p>
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <a href="tel:+13144412851" class="btn btn-bugs-primary btn-bugs-pill-sm gap-2">
+                            <i class="ph ph-phone-call fs-5"></i>
+                            <span>Call 314-441-2851</span>
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" target="_blank" rel="noreferrer" class="btn btn-bugs-outline btn-bugs-pill-sm gap-2">
+                            <i class="ph ph-navigation-arrow fs-5"></i>
+                            <span>Get Directions</span>
+                        </a>
+                        <button type="button" 
+                                class="btn btn-link text-secondary text-decoration-none small hover-white d-inline-flex align-items-center gap-1"
+                                data-bs-toggle="modal" 
+                                data-bs-target="#inquiryModal"
+                                data-device-model="General Counter Inquiry"
+                                data-inquiry-type="general_inquiry">
+                            <i class="ph ph-paper-plane-tilt"></i> Message Counter Online
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

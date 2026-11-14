@@ -24,8 +24,11 @@ class RepairQuoteRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:50'],
+            'email' => ['nullable', 'email', 'max:255'],
             'device_model' => ['required', 'string', 'max:255'],
             'service_needed' => ['required', 'string', 'max:255'],
+            'inquiry_type' => ['nullable', 'string', 'max:100'],
+            'product_id' => ['nullable', 'integer'],
             'notes' => ['nullable', 'string', 'max:1000'],
         ];
     }

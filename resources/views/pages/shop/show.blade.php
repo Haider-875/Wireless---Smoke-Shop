@@ -71,6 +71,17 @@
                     <i class="ph ph-bag-plus fs-5"></i>
                     <span>Add to Bag</span>
                 </button>
+
+                <button type="button" 
+                        class="btn btn-bugs-outline py-3 px-4 gap-2 d-inline-flex align-items-center"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#inquiryModal"
+                        data-device-model="{{ $product->name }}"
+                        data-product-id="{{ $product->id }}"
+                        data-inquiry-type="device_inquiry">
+                    <i class="ph ph-chat-circle-dots fs-5"></i>
+                    <span>Inquire / Hold</span>
+                </button>
             </div>
 
             <!-- Compliance & Store Guarantee List -->

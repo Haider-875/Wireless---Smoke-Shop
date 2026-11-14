@@ -27,6 +27,14 @@ class HomeController extends Controller
                 ->get();
         }
 
-        return view('pages.home', compact('categories', 'featuredProducts'));
+        $phoneShowcase = Product::where('is_active', true)
+            ->whereHas('category', function ($query) {
+                $query->where('slug', 'smartphones');
+            })
+            ->latest()
+            ->take(6)
+            ->get();
+
+        return view('pages.home', compact('categories', 'featuredProducts', 'phoneShowcase'));
     }
 }

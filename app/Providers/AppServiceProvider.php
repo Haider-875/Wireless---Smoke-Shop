@@ -64,5 +64,18 @@ class AppServiceProvider extends ServiceProvider
             config(['database.default' => 'sqlite']);
             config(['database.connections.sqlite.database' => database_path('database.sqlite')]);
         }
+
+        // Share pending inquiries count with all admin views
+        \Illuminate\Support\Facades\View::composer('pages.admin.*', function ($view) {
+            try {
+                if (\Illuminate\Support\Facades\Schema::hasTable('repair_inquiries')) {
+                    $view->with('pendingInquiriesCount', \App\Models\RepairInquiry::where('status', 'pending')->count());
+                } else {
+                    $view->with('pendingInquiriesCount', 0);
+                }
+            } catch (\Throwable $e) {
+                $view->with('pendingInquiriesCount', 0);
+            }
+        });
     }
 }

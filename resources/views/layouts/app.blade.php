@@ -97,6 +97,12 @@
     <!-- Slide-Out Cart Bag Offcanvas Drawer -->
     @include('components.cart-drawer')
 
+    <!-- Floating Toast Notification System (Luxury Dark Aesthetic) -->
+    @include('components.toast-notification')
+
+    <!-- Fast Device & Repair Inquiry Modal -->
+    @include('components.inquiry-modal')
+
     <!-- 21+ Age Verification Gate Modal -->
     @include('components.age-modal')
 

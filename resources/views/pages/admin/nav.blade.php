@@ -1,7 +1,9 @@
 <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-4 border-bottom" style="border-color: var(--bugs-border) !important;">
     <div class="d-flex align-items-center gap-3">
         <span class="fs-4 fw-bold font-display text-white">BUGS<span style="color: var(--bugs-primary)">.</span> Admin</span>
-        <span class="badge rounded-pill bg-primary text-black px-2 py-1 small">Staff Portal</span>
+        <span class="badge rounded-pill {{ (Auth::user() && method_exists(Auth::user(), 'isSuperAdmin') && Auth::user()->isSuperAdmin()) ? 'bg-warning text-black' : 'bg-primary text-black' }} px-2 py-1 small fw-bold">
+            {{ (Auth::user() && method_exists(Auth::user(), 'isSuperAdmin') && Auth::user()->isSuperAdmin()) ? 'SUPER ADMIN' : 'STAFF PORTAL' }}
+        </span>
     </div>
     <div class="d-flex align-items-center gap-2 mt-2 mt-sm-0">
         <span class="text-secondary small me-2">{{ Auth::user()->name ?? 'Admin' }}</span>
@@ -31,8 +33,11 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('admin.inquiries*') ? 'active bg-primary text-black fw-semibold' : 'text-secondary' }}" href="{{ route('admin.inquiries') }}">
-            <i class="bi bi-tools me-1"></i> Repair Inquiries
+        <a class="nav-link {{ request()->routeIs('admin.inquiries*') ? 'active bg-primary text-black fw-semibold' : 'text-secondary' }} d-inline-flex align-items-center" href="{{ route('admin.inquiries') }}">
+            <i class="bi bi-chat-left-dots me-1"></i> Inquiries
+            @if(isset($pendingInquiriesCount) && $pendingInquiriesCount > 0)
+                <span class="badge rounded-pill bg-warning text-black ms-2 px-2 py-0.5" style="font-size: 11px;">{{ $pendingInquiriesCount }}</span>
+            @endif
         </a>
     </li>
     <li class="nav-item ms-auto">

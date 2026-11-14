@@ -54,6 +54,12 @@ class Product extends Model
         }
 
         if ($this->image) {
+            if (str_starts_with($this->image, 'assets/')) {
+                return asset($this->image);
+            }
+            if (file_exists(public_path('assets/images/phones/' . $this->image))) {
+                return asset('assets/images/phones/' . $this->image);
+            }
             $base = pathinfo($this->image, PATHINFO_FILENAME);
             if (file_exists(public_path('assets/images/products/' . $base . '.png'))) {
                 return asset('assets/images/products/' . $base . '.png');
