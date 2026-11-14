@@ -120,3 +120,4 @@ class NewDataSeeder extends Seeder
         );
     }
 }
+
