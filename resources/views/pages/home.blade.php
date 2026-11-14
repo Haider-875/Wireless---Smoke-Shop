@@ -544,22 +544,25 @@
 
                                 <div class="d-flex gap-2">
                                     <button type="button" 
-                                            class="btn btn-bugs-primary flex-grow-1 py-2 gap-2 d-inline-flex align-items-center justify-content-center"
+                                            class="btn btn-bugs-primary flex-grow-1 py-2.5 px-3 gap-2 d-inline-flex align-items-center justify-content-center fw-bold"
+                                            title="Add {{ $phone->name }} to Cart"
+                                            data-add-to-cart="{{ $phone->id }}"
+                                            style="font-size: 0.875rem;">
+                                        <i class="ph ph-bag-plus fs-5"></i>
+                                        <span>Add to Cart</span>
+                                    </button>
+
+                                    <button type="button" 
+                                            class="btn btn-bugs-outline py-2.5 px-3 gap-1.5 d-inline-flex align-items-center justify-content-center"
                                             data-bs-toggle="modal" 
                                             data-bs-target="#inquiryModal"
                                             data-device-model="{{ $phone->name }}"
                                             data-product-id="{{ $phone->id }}"
                                             data-service-needed="Hold / Pricing Inquiry"
-                                            data-inquiry-type="device_inquiry">
-                                        <i class="ph ph-chat-circle-dots fs-5"></i>
-                                        <span>Inquire / Hold</span>
-                                    </button>
-
-                                    <button type="button" 
-                                            class="btn btn-bugs-outline py-2 px-3 d-inline-flex align-items-center justify-content-center"
-                                            title="Add {{ $phone->name }} to Cart"
-                                            data-add-to-cart="{{ $phone->id }}">
-                                        <i class="ph ph-bag-plus fs-5"></i>
+                                            data-inquiry-type="device_inquiry"
+                                            style="font-size: 0.875rem;">
+                                        <i class="ph ph-chat-circle-dots fs-5" style="color: var(--bugs-primary);"></i>
+                                        <span>Inquire</span>
                                     </button>
                                 </div>
                             </div>

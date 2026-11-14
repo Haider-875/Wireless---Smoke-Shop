@@ -29,22 +29,35 @@
             </a>
         </h3>
 
-        <div class="mt-auto pt-2 d-flex align-items-center justify-content-between gap-2">
-            <div class="d-flex flex-column">
-                @if($product->formatted_compare_at_price)
-                    <span class="num text-secondary text-decoration-line-through caption-5" style="line-height: 1;">
-                        {{ $product->formatted_compare_at_price }}
+        <div class="mt-auto pt-3 border-top d-flex flex-column gap-2" style="border-color: var(--bugs-border) !important;">
+            <div class="d-flex align-items-baseline justify-content-between">
+                <div class="d-flex align-items-baseline gap-2">
+                    <span class="num fw-bold title-2" style="color: var(--bugs-primary); line-height: 1.2;">
+                        {{ $product->formatted_price }}
                     </span>
-                @endif
-                <span class="num fw-bold title-2" style="color: var(--bugs-primary); line-height: 1.2;">
-                    {{ $product->formatted_price }}
-                </span>
+                    @if($product->formatted_compare_at_price)
+                        <span class="num text-secondary text-decoration-line-through caption-5" style="line-height: 1;">
+                            {{ $product->formatted_compare_at_price }}
+                        </span>
+                    @endif
+                </div>
+                <span class="caption-5 text-secondary">In Stock</span>
             </div>
 
-            <div class="d-flex align-items-center gap-1">
-                <!-- Inquiry Option -->
+            <!-- Action Buttons: Clear, Visible 'Add to Cart' & 'Inquire' -->
+            <div class="d-flex gap-1.5 mt-1">
                 <button type="button" 
-                        class="btn btn-sm btn-bugs-outline p-2 d-inline-flex align-items-center justify-content-center" 
+                        class="btn btn-bugs-primary btn-sm flex-grow-1 py-2 px-2 d-inline-flex align-items-center justify-content-center gap-1.5 fw-bold" 
+                        title="Add {{ $product->name }} to Cart"
+                        aria-label="Add {{ $product->name }} to cart"
+                        data-add-to-cart="{{ $product->id }}"
+                        style="font-size: 0.8125rem;">
+                    <i class="ph ph-bag-plus fs-5"></i>
+                    <span>Add to Cart</span>
+                </button>
+
+                <button type="button" 
+                        class="btn btn-bugs-outline btn-sm py-2 px-2.5 d-inline-flex align-items-center justify-content-center" 
                         title="Inquire about {{ $product->name }}"
                         aria-label="Inquire about {{ $product->name }}"
                         data-bs-toggle="modal" 
@@ -52,17 +65,8 @@
                         data-device-model="{{ $product->name }}"
                         data-product-id="{{ $product->id }}"
                         data-inquiry-type="device_inquiry"
-                        style="width: 36px; height: 36px; border-radius: 8px;">
-                    <i class="ph ph-chat-circle-dots fs-5"></i>
-                </button>
-
-                <!-- Quick Add to Bag Button -->
-                <button type="button" 
-                        class="btn-bugs-add-bag" 
-                        title="Add to Bag"
-                        aria-label="Add {{ $product->name }} to bag"
-                        data-add-to-cart="{{ $product->id }}">
-                    <i class="ph ph-bag-plus fs-5"></i>
+                        style="border-radius: 8px;">
+                    <i class="ph ph-chat-circle-dots fs-5" style="color: var(--bugs-primary);"></i>
                 </button>
             </div>
         </div>
