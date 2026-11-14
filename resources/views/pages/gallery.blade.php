@@ -20,10 +20,7 @@
         <!-- Header Hero Section -->
         <div class="d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-4 pb-4 mb-4 border-bottom border-white border-opacity-10">
             <div style="max-width: 760px;">
-                <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill border border-white border-opacity-10 mb-3" style="background-color: hsl(var(--surface));">
-                    <span class="rounded-circle" style="width: 8px; height: 8px; background-color: #22c55e;"></span>
-                    <span class="eyebrow text-steel" style="font-size: 0.72rem; letter-spacing: 0.14em;">10010 Halls Ferry Rd · Live In-Store Showcase</span>
-                </div>
+                <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">10010 Halls Ferry Rd &middot; In-store showcase</p>
                 <h1 class="display-5 fw-bold text-white tracking-tight mb-3" style="line-height: 1.15; letter-spacing: -0.025em;">
                     Inside the shop<span class="font-serif-display text-steel"> and on the shelves</span>.
                 </h1>
@@ -32,7 +29,7 @@
                 </p>
             </div>
 
-            <!-- Quick Action Links -->
+            <!-- Quick Action Buttons -->
             <div class="d-flex flex-wrap align-items-center gap-2">
                 <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" 
                    target="_blank" 
@@ -51,37 +48,34 @@
             </div>
         </div>
 
-        <!-- Filter Pills Bar -->
+        <!-- Filter Buttons Bar -->
         <div class="d-flex flex-wrap align-items-center gap-2 mb-4 pb-2">
             <span class="text-secondary small me-2 d-none d-sm-inline">Filter:</span>
-            <button type="button" class="btn btn-sm btn-bugs-primary rounded-pill px-3 py-1.5 gallery-filter-btn active" data-filter="all">
-                All Photos ({{ count($photos) }})
+            <button type="button" class="gallery-filter-btn active" data-filter="all">
+                All Photos
             </button>
-            <button type="button" class="btn btn-sm btn-bugs-outline rounded-pill px-3 py-1.5 gallery-filter-btn text-white" data-filter="store">
-                Storefront &amp; Exterior (2)
+            <button type="button" class="gallery-filter-btn" data-filter="store">
+                Storefront &amp; Exterior
             </button>
-            <button type="button" class="btn btn-sm btn-bugs-outline rounded-pill px-3 py-1.5 gallery-filter-btn text-white" data-filter="iphones">
-                Unlocked iPhones (4)
+            <button type="button" class="gallery-filter-btn" data-filter="iphones">
+                Unlocked iPhones
             </button>
-            <button type="button" class="btn btn-sm btn-bugs-outline rounded-pill px-3 py-1.5 gallery-filter-btn text-white" data-filter="android">
-                Samsung &amp; Google Pixel (2)
+            <button type="button" class="gallery-filter-btn" data-filter="android">
+                Samsung &amp; Google Pixel
             </button>
         </div>
 
-        <!-- Gallery Showcase Grid -->
+        <!-- Gallery Showcase Grid (Clean Photos Without Badges) -->
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4" id="galleryGrid">
             @foreach($photos as $index => $photo)
                 <div class="col gallery-item" data-category="{{ $photo['category'] }}">
-                    <div class="card h-100 border border-white border-opacity-10 overflow-hidden group shadow-sm" 
-                         style="background-color: hsl(var(--card)); border-radius: 1.25rem; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="card h-100 gallery-card">
                         
-                        <!-- Image Container with Hover Overlay -->
-                        <div class="position-relative overflow-hidden cursor-pointer gallery-card-trigger" 
-                             style="aspect-ratio: 3 / 4; background-color: hsl(var(--surface-raised));"
+                        <!-- Image Container (Unobstructed, Clickable) -->
+                        <div class="gallery-card-img-wrap gallery-card-trigger" 
                              data-index="{{ $index }}"
                              data-img="{{ asset('assets/images/gallery/' . $photo['file']) }}"
                              data-title="{{ $photo['title'] }}"
-                             data-badge="{{ $photo['badge'] }}"
                              data-desc="{{ $photo['description'] }}"
                              data-meta="{{ $photo['meta'] }}"
                              role="button"
@@ -90,25 +84,15 @@
                             
                             <img src="{{ asset('assets/images/gallery/' . $photo['file']) }}" 
                                  alt="{{ $photo['title'] }}" 
-                                 class="w-100 h-100 object-fit-cover gallery-img" 
-                                 loading="lazy"
-                                 style="transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);">
+                                 class="gallery-card-img" 
+                                 loading="lazy">
 
-                            <!-- Top Floating Badge -->
-                            <div class="position-absolute top-0 start-0 m-3 z-2">
-                                <span class="badge rounded-pill text-white border border-white border-opacity-20 px-3 py-1.5 fw-medium" 
-                                      style="background: rgba(9, 10, 12, 0.85); backdrop-filter: blur(8px); font-size: 0.72rem; letter-spacing: 0.04em;">
-                                    {{ $photo['badge'] }}
-                                </span>
-                            </div>
-
-                            <!-- Hover Overlay with Zoom Pill -->
-                            <div class="position-absolute inset-0 d-flex flex-column align-items-center justify-content-center opacity-0 group-hover-opacity-100 transition-opacity z-2 p-3 text-center"
-                                 style="background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(9, 10, 12, 0.85) 100%);">
-                                <div class="btn btn-bugs-primary btn-sm rounded-pill px-3 py-1.5 fw-semibold text-dark d-inline-flex align-items-center gap-1.5 shadow">
+                            <!-- Hover Overlay with Zoom Button -->
+                            <div class="gallery-card-overlay">
+                                <span class="btn btn-bugs-primary btn-sm rounded-pill px-3 py-1.5 fw-semibold text-dark d-inline-flex align-items-center gap-1.5 shadow">
                                     <i data-lucide="maximize-2" style="width: 14px; height: 14px;"></i>
-                                    <span style="font-size: 12px;">Tap to view</span>
-                                </div>
+                                    <span style="font-size: 12px;">Enlarge</span>
+                                </span>
                             </div>
                         </div>
 
@@ -122,23 +106,22 @@
                                 <h3 class="fs-6 fw-semibold text-white mb-2" style="line-height: 1.4;">
                                     {{ $photo['title'] }}
                                 </h3>
-                                <p class="text-secondary small mb-0" style="font-size: 0.8125rem; line-height: 1.55;">
+                                <p class="text-secondary small mb-3" style="font-size: 0.8125rem; line-height: 1.55;">
                                     {{ $photo['description'] }}
                                 </p>
                             </div>
 
-                            <div class="pt-3 mt-3 border-top border-white border-opacity-10 d-flex align-items-center justify-content-between">
-                                <span class="text-white-50" style="font-size: 0.75rem;">Photo #{{ $index + 1 }}</span>
+                            <!-- Styled Action Button -->
+                            <div class="pt-3 border-top border-white border-opacity-10">
                                 <button type="button" 
-                                        class="btn btn-link p-0 text-steel text-decoration-none small fw-semibold d-inline-flex align-items-center gap-1 gallery-card-trigger"
+                                        class="btn btn-gallery-action gallery-card-trigger"
                                         data-index="{{ $index }}"
                                         data-img="{{ asset('assets/images/gallery/' . $photo['file']) }}"
                                         data-title="{{ $photo['title'] }}"
-                                        data-badge="{{ $photo['badge'] }}"
                                         data-desc="{{ $photo['description'] }}"
                                         data-meta="{{ $photo['meta'] }}">
-                                    <span>Expand</span>
-                                    <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+                                    <i data-lucide="maximize-2" style="width: 14px; height: 14px;"></i>
+                                    <span>View full photo</span>
                                 </button>
                             </div>
                         </div>
@@ -194,7 +177,7 @@
 </div>
 
 <!-- ==========================================================================
-     Interactive Lightbox Modal
+     Interactive Lightbox Modal (Clean View Without Badges)
      ========================================================================== -->
 <div class="modal fade" id="galleryLightboxModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -202,40 +185,33 @@
             
             <!-- Modal Header -->
             <div class="modal-header border-bottom border-white border-opacity-10 px-4 py-3">
-                <div class="d-flex align-items-center gap-2">
-                    <span class="badge rounded-pill text-white border border-white border-opacity-20 px-2.5 py-1" id="lightboxBadge" style="background: hsl(var(--surface)); font-size: 0.72rem;">
-                        Badge
-                    </span>
-                    <h5 class="modal-title fs-6 fw-semibold text-white mb-0" id="galleryModalLabel">Photo Details</h5>
-                </div>
+                <h5 class="modal-title fs-6 fw-semibold text-white mb-0" id="galleryModalLabel">Photo Details</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <!-- Modal Body (Full Resolution Photo with Controls) -->
+            <!-- Modal Body (Full Resolution Photo with Navigation Buttons) -->
             <div class="modal-body p-0 position-relative d-flex align-items-center justify-content-center" style="background-color: #000; min-height: 480px; max-height: 75vh;">
                 <!-- Full Photo -->
                 <img id="lightboxImage" src="" alt="BUGS Gallery" class="img-fluid" style="max-height: 75vh; width: auto; object-fit: contain;">
 
                 <!-- Nav Button: Previous -->
                 <button type="button" 
-                        class="btn position-absolute top-50 start-0 translate-middle-y m-3 rounded-circle text-white border border-white border-opacity-20 p-2 d-inline-flex align-items-center justify-content-center" 
+                        class="lightbox-nav-btn start-0 ms-3" 
                         id="lightboxPrevBtn"
-                        style="width: 44px; height: 44px; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px); z-index: 10;"
                         aria-label="Previous photo">
                     <i data-lucide="chevron-left" class="w-5 h-5"></i>
                 </button>
 
                 <!-- Nav Button: Next -->
                 <button type="button" 
-                        class="btn position-absolute top-50 end-0 translate-middle-y m-3 rounded-circle text-white border border-white border-opacity-20 p-2 d-inline-flex align-items-center justify-content-center" 
+                        class="lightbox-nav-btn end-0 me-3" 
                         id="lightboxNextBtn"
-                        style="width: 44px; height: 44px; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px); z-index: 10;"
                         aria-label="Next photo">
                     <i data-lucide="chevron-right" class="w-5 h-5"></i>
                 </button>
             </div>
 
-            <!-- Modal Footer (Description & Direct In-Store CTA) -->
+            <!-- Modal Footer (Description & In-Store CTA) -->
             <div class="modal-footer border-top border-white border-opacity-10 px-4 py-3 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
                 <div class="text-start">
                     <p class="eyebrow text-steel mb-1" id="lightboxMeta" style="font-size: 0.7rem; letter-spacing: 0.12em;">Meta</p>
@@ -245,7 +221,7 @@
                     <a href="https://www.google.com/maps/search/?api=1&query=Bugs+Wireless+%26+Smoke+Shop+10010+Halls+Ferry+Rd+St+Louis+MO+63136" 
                        target="_blank" 
                        rel="noreferrer" 
-                       class="btn btn-bugs-primary btn-sm px-3 py-2 rounded-pill fw-semibold text-dark d-inline-flex align-items-center gap-1.5">
+                       class="btn btn-bugs-primary btn-sm px-4 py-2 rounded-pill fw-semibold text-dark d-inline-flex align-items-center gap-1.5 shadow">
                         <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
                         <span>See at counter</span>
                     </a>
@@ -271,7 +247,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxTitle = document.getElementById('galleryModalLabel');
-    const lightboxBadge = document.getElementById('lightboxBadge');
     const lightboxMeta = document.getElementById('lightboxMeta');
     const lightboxDesc = document.getElementById('lightboxDesc');
     const prevBtn = document.getElementById('lightboxPrevBtn');
@@ -290,7 +265,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (lightboxImage) lightboxImage.src = photoUrl;
         if (lightboxTitle) lightboxTitle.textContent = photo.title;
-        if (lightboxBadge) lightboxBadge.textContent = photo.badge;
         if (lightboxMeta) lightboxMeta.textContent = photo.meta;
         if (lightboxDesc) lightboxDesc.textContent = photo.description;
 
@@ -299,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Attach click events to all cards and buttons
+    // Attach click events to cards and action buttons
     galleryItems.forEach(el => {
         el.addEventListener('click', function (e) {
             e.preventDefault();
@@ -321,7 +295,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Lightbox Next/Prev controls
+    // Lightbox navigation controls
     if (prevBtn) {
         prevBtn.addEventListener('click', function () {
             showPhotoAtIndex(currentIndex - 1);
@@ -349,12 +323,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const filter = this.getAttribute('data-filter');
 
             // Toggle active pill style
-            filterBtns.forEach(b => {
-                b.classList.remove('active', 'btn-bugs-primary');
-                b.classList.add('btn-bugs-outline', 'text-white');
-            });
-            this.classList.remove('btn-bugs-outline', 'text-white');
-            this.classList.add('active', 'btn-bugs-primary');
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
 
             // Filter cards
             cards.forEach(card => {
@@ -367,24 +337,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     card.classList.add('d-none');
                 }
             });
-        });
-    });
-
-    // Card hover subtle scale
-    document.querySelectorAll('.gallery-item .card').forEach(card => {
-        card.addEventListener('mouseenter', function () {
-            const img = this.querySelector('.gallery-img');
-            if (img) img.style.transform = 'scale(1.05)';
-            this.style.transform = 'translateY(-4px)';
-            this.style.borderColor = 'rgba(255, 255, 255, 0.22)';
-            this.style.boxShadow = '0 12px 28px rgba(0, 0, 0, 0.45)';
-        });
-        card.addEventListener('mouseleave', function () {
-            const img = this.querySelector('.gallery-img');
-            if (img) img.style.transform = 'scale(1)';
-            this.style.transform = 'none';
-            this.style.borderColor = 'rgba(255, 255, 255, 0.08)';
-            this.style.boxShadow = 'none';
         });
     });
 });

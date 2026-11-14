@@ -18,14 +18,14 @@ class GalleryPageTest extends TestCase
         $response->assertSee('Store & Inventory Gallery');
         $response->assertSee('Inside the shop');
         $response->assertSee('and on the shelves');
-        $response->assertSee('10010 Halls Ferry Rd · Live In-Store Showcase');
+        $response->assertSee('10010 Halls Ferry Rd &middot; In-store showcase', false);
 
         // All 8 gallery images
         for ($i = 1; $i <= 8; $i++) {
             $response->assertSee("assets/images/gallery/{$i}.jpeg");
         }
 
-        // Key titles and badges
+        // Key titles
         $response->assertSee('Storefront &amp; Iconic Rick &amp; Morty Mural', false);
         $response->assertSee('BUGS Wireless &amp; Smoke Shop Entrance', false);
         $response->assertSee('Apple iPhone Pro &amp; Pro Max Display Shelf', false);
@@ -33,14 +33,16 @@ class GalleryPageTest extends TestCase
         $response->assertSee('Google Pixel 8 Pro Bay Blue &amp; Galaxy S24', false);
 
         // Filter pills
-        $response->assertSee('All Photos (8)');
-        $response->assertSee('Storefront &amp; Exterior (2)', false);
-        $response->assertSee('Unlocked iPhones (4)');
-        $response->assertSee('Samsung &amp; Google Pixel (2)', false);
+        $response->assertSee('All Photos');
+        $response->assertSee('Storefront &amp; Exterior', false);
+        $response->assertSee('Unlocked iPhones');
+        $response->assertSee('Samsung &amp; Google Pixel', false);
 
-        // Interactive Lightbox Modal
+        // Interactive Lightbox Modal & Buttons
         $response->assertSee('id="galleryLightboxModal"', false);
         $response->assertSee('id="lightboxImage"', false);
+        $response->assertSee('btn-gallery-action');
+        $response->assertDontSee('id="lightboxBadge"', false);
 
         // Location & Counter CTA
         $response->assertSee('10010 Halls Ferry Rd, St. Louis, MO 63136');
