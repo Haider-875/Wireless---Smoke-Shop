@@ -52,8 +52,9 @@
                 {{ $product->description }}
             </p>
 
-            <!-- Quantity & Add to Cart Controls -->
+            <!-- Quantity & Add to Cart Controls (Add to Bag temporarily commented out, Inquiry active) -->
             <div class="d-flex flex-wrap flex-sm-nowrap align-items-center gap-2 gap-sm-3 mb-4 pb-2">
+                {{-- Add to Bag temporarily commented out
                 <div class="d-flex align-items-center border rounded-pill px-3 py-2 flex-shrink-0" style="border-color: var(--bugs-border) !important; background-color: var(--bugs-surface-3);">
                     <button type="button" class="btn btn-sm text-secondary p-0 border-0" aria-label="Decrease quantity" onclick="const el = document.getElementById('productQuantityInput'); el.value = Math.max(1, parseInt(el.value, 10) - 1);">
                         <i class="ph ph-minus fs-5"></i>
@@ -71,16 +72,17 @@
                     <i class="ph ph-bag-plus fs-5"></i>
                     <span>Add to Bag</span>
                 </button>
+                --}}
 
                 <button type="button" 
-                        class="btn btn-bugs-outline py-3 px-4 gap-2 d-inline-flex align-items-center"
+                        class="btn btn-bugs-primary w-100 py-3 px-4 gap-2 d-inline-flex align-items-center justify-content-center fw-semibold"
                         data-bs-toggle="modal" 
                         data-bs-target="#inquiryModal"
                         data-device-model="{{ $product->name }}"
                         data-product-id="{{ $product->id }}"
                         data-inquiry-type="device_inquiry">
                     <i class="ph ph-chat-circle-dots fs-5"></i>
-                    <span>Inquire / Hold</span>
+                    <span>Inquire / Check Stock</span>
                 </button>
             </div>
 

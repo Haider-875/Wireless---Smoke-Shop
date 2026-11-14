@@ -543,6 +543,7 @@
                                 </div>
 
                                 <div class="d-flex gap-2">
+                                    {{-- Add to Cart temporarily commented out
                                     <button type="button" 
                                             class="btn btn-bugs-primary flex-grow-1 py-2.5 px-3 gap-2 d-inline-flex align-items-center justify-content-center fw-bold"
                                             title="Add {{ $phone->name }} to Cart"
@@ -551,9 +552,10 @@
                                         <i class="ph ph-bag-plus fs-5"></i>
                                         <span>Add to Cart</span>
                                     </button>
+                                    --}}
 
                                     <button type="button" 
-                                            class="btn btn-bugs-outline py-2.5 px-3 gap-1.5 d-inline-flex align-items-center justify-content-center"
+                                            class="btn btn-bugs-primary w-100 py-2.5 px-3 gap-2 d-inline-flex align-items-center justify-content-center fw-semibold"
                                             data-bs-toggle="modal" 
                                             data-bs-target="#inquiryModal"
                                             data-device-model="{{ $phone->name }}"
@@ -561,8 +563,8 @@
                                             data-service-needed="Hold / Pricing Inquiry"
                                             data-inquiry-type="device_inquiry"
                                             style="font-size: 0.875rem;">
-                                        <i class="ph ph-chat-circle-dots fs-5" style="color: var(--bugs-primary);"></i>
-                                        <span>Inquire</span>
+                                        <i class="ph ph-chat-circle-dots fs-5"></i>
+                                        <span>Inquire / Check Stock</span>
                                     </button>
                                 </div>
                             </div>

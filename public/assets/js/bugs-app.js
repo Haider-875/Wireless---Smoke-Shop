@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
             geometry.setAttribute('scale', new THREE.BufferAttribute(scales, 1));
 
             const material = new THREE.PointsMaterial({
-                color: 0x0091ff,
+                color: 0xb89766,
                 size: 0.35,
                 transparent: true,
                 opacity: 0.65,

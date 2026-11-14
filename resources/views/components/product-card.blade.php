@@ -44,8 +44,9 @@
                 <span class="caption-5 text-secondary">In Stock</span>
             </div>
 
-            <!-- Action Buttons: Clear, Visible 'Add to Cart' & 'Inquire' -->
-            <div class="d-flex gap-1.5 mt-1">
+            <!-- Action Buttons: Inquiry active, Add to Cart commented out -->
+            <div class="mt-1">
+                {{-- Add to Cart temporarily commented out
                 <button type="button" 
                         class="btn btn-bugs-primary btn-sm flex-grow-1 py-2 px-2 d-inline-flex align-items-center justify-content-center gap-1.5 fw-bold" 
                         title="Add {{ $product->name }} to Cart"
@@ -55,9 +56,10 @@
                     <i class="ph ph-bag-plus fs-5"></i>
                     <span>Add to Cart</span>
                 </button>
+                --}}
 
                 <button type="button" 
-                        class="btn btn-bugs-outline btn-sm py-2 px-2.5 d-inline-flex align-items-center justify-content-center" 
+                        class="btn btn-bugs-outline btn-sm w-100 py-2 px-3 d-inline-flex align-items-center justify-content-center gap-2" 
                         title="Inquire about {{ $product->name }}"
                         aria-label="Inquire about {{ $product->name }}"
                         data-bs-toggle="modal" 
@@ -65,8 +67,9 @@
                         data-device-model="{{ $product->name }}"
                         data-product-id="{{ $product->id }}"
                         data-inquiry-type="device_inquiry"
-                        style="border-radius: 8px;">
-                    <i class="ph ph-chat-circle-dots fs-5" style="color: var(--bugs-primary);"></i>
+                        style="border-color: var(--bugs-primary); color: var(--bugs-primary); font-size: 0.8125rem; font-weight: 600;">
+                    <i class="ph ph-chat-circle-dots fs-5"></i>
+                    <span>Inquire Now</span>
                 </button>
             </div>
         </div>
