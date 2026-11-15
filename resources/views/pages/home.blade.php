@@ -20,10 +20,11 @@
                     <i data-lucide="shield-check" class="w-4 h-4"></i> Certified repair counter · St. Louis
                 </p>
 
-                <h1 class="display-3 fw-semibold text-white tracking-tight mb-4" style="line-height: 1.05; letter-spacing: -0.03em;">
-                    Phone repair,<br>
-                    <span class="font-serif-display text-steel" style="font-size: 1.05em;">the same day</span><br>
-                    on Halls Ferry.
+                <h1 class="display-3 fw-semibold text-white tracking-tight mb-2" style="line-height: 1.05; letter-spacing: -0.03em;">
+                    Your One-Stop<br>
+                    <span class="font-serif-display text-steel" style="font-size: 0.55em;">Destination For Mobile Repairs & Electronics </span>
+                    <br>
+                    Smoking Devices.
                 </h1>
 
                 <p class="text-secondary mb-4 pb-2" style="max-width: 480px; font-size: 1.0625rem; line-height: 1.6;">
