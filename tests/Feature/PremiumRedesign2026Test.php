@@ -52,13 +52,15 @@ class PremiumRedesign2026Test extends TestCase
         $response->assertSee('Carrier activation');
         $response->assertSee('from $79');
 
-        // 4. Featured Products (Wireless Counter)
+        // 4. Featured Counter Cards (Mobile Repair Cards with WhatsApp & Turnaround Badges)
         $response->assertSee('The wireless counter');
         $response->assertSee('Gear for the phone');
         $response->assertSee('you just fixed');
         $response->assertSee('What everybody gets with a new screen');
         $response->assertDontSee('Shop all products');
-        $response->assertSee('data-add-to-cart=', false);
+        $response->assertSee('btn-product-whatsapp');
+        $response->assertSee('Screen &amp; Glass Replacement', false);
+        $response->assertSee('30 Min Turnaround');
 
         // 5. Smoke Shop Aisles (Five Aisles)
         $response->assertSee('The smoke shop');

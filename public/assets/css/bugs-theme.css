@@ -2056,3 +2056,19 @@ textarea:focus-visible {
 .btn-product-whatsapp:hover svg {
   transform: scale(1.1);
 }
+
+.repair-bench-card {
+  position: relative;
+  background-color: hsl(var(--card));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: transform var(--duration-interactive) var(--ease-base),
+              border-color var(--duration-interactive) var(--ease-base),
+              box-shadow var(--duration-interactive) var(--ease-base);
+}
+
+.repair-bench-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(86, 172, 230, 0.45) !important;
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(86, 172, 230, 0.12);
+}

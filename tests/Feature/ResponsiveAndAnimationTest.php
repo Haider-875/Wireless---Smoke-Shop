@@ -66,6 +66,6 @@ class ResponsiveAndAnimationTest extends TestCase
 
         // 5. Card motion and transitions
         $response->assertSee('transition-all');
-        $response->assertSee('ratio-1x1');
+        $response->assertSee('repair-bench-card');
     }
 }

@@ -226,20 +226,103 @@
 <!-- ==========================================================================
      Section 3: Wireless Counter ("Gear for the phone you just fixed.")
      ========================================================================== -->
+@php
+$counterRepairCards = [
+    [
+        'title' => 'Screen & Glass Replacement',
+        'icon' => 'smartphone',
+        'badge' => '30 Min Turnaround',
+        'price' => 'from $79',
+        'warranty' => '90-Day Warranty · OEM-Spec',
+        'description' => 'Cracked glass, dead touch, or vertical lines. Factory-grade OLED & LCD panels fitted on the bench while you wait.',
+        'whatsapp_msg' => 'Hello BUGS Wireless, I need a quote for Screen & Glass Replacement at 10010 Halls Ferry Rd.'
+    ],
+    [
+        'title' => 'Battery Replacement',
+        'icon' => 'battery-charging',
+        'badge' => 'Same-Day Swap',
+        'price' => 'from $59',
+        'warranty' => '90-Day Warranty · Fresh Cells',
+        'description' => 'Rapid battery drain, swelling, or sudden shutdowns. Fresh high-capacity cells installed to restore 100% all-day health.',
+        'whatsapp_msg' => 'Hello BUGS Wireless, I need a quote for Battery Replacement at 10010 Halls Ferry Rd.'
+    ],
+    [
+        'title' => 'Charging Port Repair',
+        'icon' => 'zap',
+        'badge' => 'Quick Bench Fix',
+        'price' => 'from $49',
+        'warranty' => '90-Day Warranty · Fast-Charge',
+        'description' => 'Loose cord, intermittent connection, or zero charge. Thoroughly cleaned, micro-soldered, or flex port replaced.',
+        'whatsapp_msg' => 'Hello BUGS Wireless, I need a quote for Charging Port Repair at 10010 Halls Ferry Rd.'
+    ],
+    [
+        'title' => 'Liquid Damage & Diagnostics',
+        'icon' => 'droplet',
+        'badge' => 'Free Diagnostic',
+        'price' => 'from $39',
+        'warranty' => '90-Day Warranty · No-Fix No-Fee',
+        'description' => 'Water drop, pool immersion, or dead board. Ultrasonic chemical cleaning, board inspection, and honest quotes.',
+        'whatsapp_msg' => 'Hello BUGS Wireless, I need a quote for Liquid Damage & Diagnostics at 10010 Halls Ferry Rd.'
+    ],
+];
+@endphp
+
 <section class="py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--surface));">
     <div class="container-fluid px-4 px-lg-5 py-5" style="max-width: 1400px;">
-        <div class="mb-5">
-            <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">The wireless counter</p>
-            <h2 class="display-6 fw-semibold text-white tracking-tight mb-0">
-                Gear for the phone<span class="font-serif-display text-steel"> you just fixed</span>.
-            </h2>
-            <p class="text-secondary small mt-2 mb-0">What everybody gets with a new screen — cases, tempered glass, audio, and fast chargers.</p>
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5">
+            <div>
+                <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">The wireless counter</p>
+                <h2 class="display-6 fw-semibold text-white tracking-tight mb-0">
+                    Gear for the phone<span class="font-serif-display text-steel"> you just fixed</span>.
+                </h2>
+                <p class="text-secondary small mt-2 mb-0">What everybody gets with a new screen — cases, tempered glass, audio, and fast chargers.</p>
+            </div>
+            <div>
+                <a href="{{ route('repairs') }}" class="btn btn-sm btn-bugs-outline rounded-pill px-4 py-2 text-white fw-semibold d-inline-flex align-items-center gap-2">
+                    <span>View all repair services</span>
+                    <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                </a>
+            </div>
         </div>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
-            @foreach($featuredProducts->take(4) as $product)
+            @foreach($counterRepairCards as $card)
                 <div class="col">
-                    @include('components.product-card', ['product' => $product])
+                    <article class="repair-bench-card p-4 rounded-4 border border-white border-opacity-10 h-100 d-flex flex-column transition-all duration-300" style="background-color: hsl(var(--card));">
+                        <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                            <span class="rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px; border: 1px solid rgba(86, 172, 230, 0.35); background: rgba(86, 172, 230, 0.08); color: hsl(var(--steel));">
+                                <i data-lucide="{{ $card['icon'] }}" style="width: 20px; height: 20px;"></i>
+                            </span>
+                            <span class="badge rounded-pill fw-semibold" style="font-size: 11px; padding: 4px 10px; background: rgba(86, 172, 230, 0.12); border: 1px solid rgba(86, 172, 230, 0.3); color: hsl(var(--steel));">
+                                {{ $card['badge'] }}
+                            </span>
+                        </div>
+
+                        <h3 class="fs-5 fw-semibold text-white mb-1" style="line-height: 1.35;">{{ $card['title'] }}</h3>
+                        <div class="d-flex align-items-baseline gap-2 mb-2">
+                            <span class="fs-5 fw-bold text-steel num">{{ $card['price'] }}</span>
+                            <span class="badge bg-white bg-opacity-5 text-secondary border border-white border-opacity-10 fw-normal" style="font-size: 10.5px;">{{ $card['warranty'] }}</span>
+                        </div>
+
+                        <p class="text-secondary small leading-relaxed mb-4 flex-grow-1" style="font-size: 13px; line-height: 1.55;">{{ $card['description'] }}</p>
+
+                        <div class="d-flex align-items-center gap-2 pt-3 border-top border-white border-opacity-10 mt-auto">
+                            <a href="{{ route('repairs') }}" class="btn btn-sm btn-bugs-outline rounded-pill px-3 py-2 text-white fw-semibold flex-grow-1 text-center d-inline-flex align-items-center justify-content-center gap-1" style="font-size: 13px;">
+                                <span>Book repair</span>
+                                <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
+                            </a>
+                            <a href="https://wa.me/13144412851?text={{ urlencode($card['whatsapp_msg']) }}" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="btn-product-whatsapp" 
+                               aria-label="Inquire about {{ $card['title'] }} on WhatsApp"
+                               title="Inquire on WhatsApp (+1 314-441-2851)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.54 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.16.25-.64.81-.78.98-.15.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.41 1.02 2.58.12.16 1.76 2.68 4.25 3.76.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
                 </div>
             @endforeach
         </div>
