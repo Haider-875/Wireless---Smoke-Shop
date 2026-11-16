@@ -2246,5 +2246,29 @@ html, body {
     width: 100% !important;
     justify-content: center;
   }
+
+  /* Section 3: Repair bench buttons side-by-side with equal width on small screens */
+  .repair-bench-btn-group {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .repair-bench-btn-group .repair-bench-btn {
+    flex: 1 1 0% !important;
+    width: 50% !important;
+    min-width: 0 !important;
+    font-size: 13px !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+  }
+  .repair-bench-btn-group .repair-bench-btn span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 

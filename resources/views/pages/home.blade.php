@@ -208,13 +208,13 @@
                     </li>
                 </ul>
 
-                <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3">
-                    <a href="{{ route('repairs') }}" class="btn btn-bugs-primary px-3.5 px-sm-4 py-2.5 py-sm-3 rounded-pill fw-semibold text-dark d-inline-flex align-items-center gap-2">
+                <div class="d-flex align-items-center gap-2 gap-sm-3 repair-bench-btn-group mt-4">
+                    <a href="{{ route('repairs') }}" class="btn btn-bugs-primary repair-bench-btn px-3.5 px-sm-4 py-2.5 py-sm-3 rounded-pill fw-semibold text-dark d-inline-flex align-items-center justify-content-center gap-1.5 gap-sm-2 text-nowrap">
                         <span>See repair services</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        <i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0"></i>
                     </a>
-                    <a href="tel:+13144412851" class="btn btn-bugs-outline px-3.5 px-sm-4 py-2.5 py-sm-3 rounded-pill text-white d-inline-flex align-items-center gap-2">
-                        <i data-lucide="phone" class="w-4 h-4 text-steel"></i>
+                    <a href="tel:+13144412851" class="btn btn-bugs-outline repair-bench-btn px-3.5 px-sm-4 py-2.5 py-sm-3 rounded-pill text-white d-inline-flex align-items-center justify-content-center gap-1.5 gap-sm-2 text-nowrap">
+                        <i data-lucide="phone" class="w-4 h-4 text-steel flex-shrink-0"></i>
                         <span>Call the bench</span>
                     </a>
                 </div>
