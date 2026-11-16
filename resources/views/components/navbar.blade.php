@@ -84,7 +84,7 @@
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'phone-accessories' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'phone-accessories']) }}">
+                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'Phone Accessories' || request('category') === 'phone-accessories' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'Phone Accessories']) }}">
                     <i data-lucide="smartphone" class="w-4 h-4 me-2"></i> Phone Accessories
                 </a>
             </li>

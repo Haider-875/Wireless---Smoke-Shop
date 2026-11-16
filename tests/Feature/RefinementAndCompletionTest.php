@@ -40,6 +40,25 @@ class RefinementAndCompletionTest extends TestCase
     }
 
     /**
+     * Test shop catalog phone accessories filter shows exclusively mobile content and cards.
+     */
+    public function test_shop_catalog_phone_accessories_shows_only_mobile_content(): void
+    {
+        $response = $this->get('/shop?category=Phone%20Accessories');
+        $response->assertStatus(200);
+        $response->assertSee('Phone accessories.');
+        $response->assertSee('The wireless counter');
+        $response->assertSee('Fog Guard Clear Case');
+        $response->assertSee('Armor Glass Screen Shield');
+        $response->assertSee('Pulse Buds Wireless');
+        $response->assertSee('Ember Power Bank 10K');
+        $response->assertDontSee('Midnight Ice 20K Disposable');
+        $response->assertDontSee('Ember Beaker Bong');
+        $response->assertDontSee('Brass Haze Hookah');
+        $response->assertDontSee('Age verified in store for 21+ items');
+    }
+
+    /**
      * Test product detail page loads with accurate data.
      */
     public function test_product_detail_page_loads_successfully(): void

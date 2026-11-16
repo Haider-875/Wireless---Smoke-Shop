@@ -19,9 +19,35 @@ class ShopController extends Controller
 
         $activeCategory = null;
         if ($request->filled('category')) {
-            $activeCategory = Category::where('slug', $request->query('category'))->first();
+            $catInput = trim($request->query('category'));
+            $catSlug = \Illuminate\Support\Str::slug($catInput);
+
+            // Match category by slug, slugified input, or display name
+            $activeCategory = Category::where('slug', $catInput)
+                ->orWhere('slug', $catSlug)
+                ->orWhere('name', 'like', $catInput)
+                ->first();
+
             if ($activeCategory) {
-                $query->where('category_id', $activeCategory->id);
+                // If it is a phone or mobile category, match all phone/mobile category IDs
+                $isMobile = str_contains(strtolower($activeCategory->slug), 'phone') ||
+                            str_contains(strtolower($activeCategory->name), 'phone') ||
+                            str_contains(strtolower($activeCategory->slug), 'mobile') ||
+                            str_contains(strtolower($activeCategory->slug), 'smartphones');
+
+                if ($isMobile) {
+                    $mobileCategoryIds = Category::where(function ($q) {
+                        $q->where('slug', 'like', '%phone%')
+                          ->orWhere('name', 'like', '%phone%')
+                          ->orWhere('slug', 'like', '%mobile%')
+                          ->orWhere('name', 'like', '%mobile%')
+                          ->orWhere('slug', 'smartphones');
+                    })->pluck('id');
+
+                    $query->whereIn('category_id', $mobileCategoryIds);
+                } else {
+                    $query->where('category_id', $activeCategory->id);
+                }
             }
         }
 

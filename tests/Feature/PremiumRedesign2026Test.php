@@ -31,9 +31,9 @@ class PremiumRedesign2026Test extends TestCase
 
         // 2. Exact Reference Hero Section
         $response->assertSee('Certified repair counter · St. Louis');
-        $response->assertSee('Phone repair,');
-        $response->assertSee('the same day');
-        $response->assertSee('on Halls Ferry.');
+        $response->assertSee('Your One-Stop');
+        $response->assertSee('Destination For Mobile Repairs');
+        $response->assertSee('Smoking Devices.');
         $response->assertSee('Free diagnostics');
         $response->assertSee('Bring it in — we quote the repair before we start.');
         $response->assertSee('30 min');
