@@ -1,9 +1,11 @@
 <header class="bugs-header sticky-top z-40">
-    <!-- Top Utility Bar (Exact Reference Match) -->
-    <div class="d-none d-sm-block bg-surface-deep bugs-header-topbar border-bottom" style="border-color: rgba(255, 255, 255, 0.06) !important;">
-        <div class="mx-auto d-flex align-items-center justify-content-between px-4 px-lg-5 py-2" style="max-width: 1400px;">
-            <p class="eyebrow d-flex align-items-center gap-2 mb-0 text-steel" style="font-size: 0.75rem;">
-                <i data-lucide="wrench" style="width: 12px; height: 12px;"></i>
+    <!-- Top Utility / Announcement Bar (Visible across all viewports) -->
+    <div class="bg-surface-deep bugs-header-topbar border-bottom" style="border-color: rgba(255, 255, 255, 0.06) !important;">
+        <div class="mx-auto d-flex align-items-center justify-content-center justify-content-md-between px-3 px-sm-4 px-lg-5 py-1.5 py-sm-2" style="max-width: 1400px;">
+            <p class="eyebrow d-flex align-items-center justify-content-center gap-2 mb-0 text-steel text-center" style="font-size: 0.72rem; letter-spacing: 0.03em;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
                 <span>Same-day phone repair · walk-ins welcome</span>
             </p>
             <p class="eyebrow d-none d-md-block text-secondary mb-0" style="font-size: 0.75rem;">90-day warranty · free diagnostics</p>
@@ -47,15 +49,22 @@
                 </a>
 
                 <!-- Shopping Bag Trigger Button -->
-                <button type="button" class="position-relative d-inline-flex align-items-center justify-content-center gap-1.5 rounded-pill border border-white border-opacity-10 px-2.5 px-sm-3 py-1.5 text-white bg-transparent transition-colors hover-steel flex-shrink-0" data-bs-toggle="offcanvas" data-bs-target="#bugsCartOffcanvas" aria-controls="bugsCartOffcanvas" aria-label="View shopping bag" title="Shopping Bag" style="font-size: 13px; height: 38px;">
-                    <i data-lucide="shopping-bag" style="width: 16px; height: 16px;"></i>
-                    <span class="d-none d-sm-inline">Bag</span>
+                <button type="button" class="position-relative d-inline-flex align-items-center justify-content-center gap-1.5 border border-white border-opacity-10 px-2.5 px-sm-3 py-1.5 text-white bg-transparent transition-colors hover-steel flex-shrink-0" data-bs-toggle="offcanvas" data-bs-target="#bugsCartOffcanvas" aria-controls="bugsCartOffcanvas" aria-label="View shopping bag" title="Shopping Bag" style="font-size: 13px; height: 38px; border-radius: 8px !important;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
+                        <path d="M6 9V7a6 6 0 0 1 12 0v2"></path>
+                        <path d="M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <span class="d-inline">Bag</span>
                     <span class="bugs-badge-count d-none" id="navCartCount">0</span>
                 </button>
 
                 <!-- Mobile Hamburger Toggle Button -->
-                <button class="bugs-hamburger-btn d-inline-flex d-lg-none rounded-circle border border-white border-opacity-10 text-white bg-transparent p-0 align-items-center justify-content-center hover-white flex-shrink-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#bugsMobileMenu" aria-controls="bugsMobileMenu" aria-label="Open mobile menu" style="width: 38px; height: 38px;">
-                    <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
+                <button class="bugs-hamburger-btn d-inline-flex d-lg-none border border-white border-opacity-10 text-white bg-transparent p-0 align-items-center justify-content-center hover-white flex-shrink-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#bugsMobileMenu" aria-controls="bugsMobileMenu" aria-label="Open mobile menu" style="width: 38px; height: 38px; border-radius: 8px !important;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="4" x2="20" y1="12" y2="12"></line>
+                        <line x1="4" x2="20" y1="6" y2="6"></line>
+                        <line x1="4" x2="20" y1="18" y2="18"></line>
+                    </svg>
                 </button>
             </div>
         </div>
