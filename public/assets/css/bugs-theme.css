@@ -1348,11 +1348,13 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: color var(--duration-interactive) var(--ease-base);
+  transition: color var(--duration-interactive) var(--ease-base),
+              transform var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-footer-link:hover {
   color: var(--bugs-primary);
+  transform: translateX(4px);
 }
 
 .bugs-back-to-top {
@@ -1362,11 +1364,118 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  transition: color var(--duration-interactive) var(--ease-base);
+  transition: color var(--duration-interactive) var(--ease-base),
+              transform var(--duration-interactive) var(--ease-base);
 }
 
 .bugs-back-to-top:hover {
   color: var(--bugs-primary);
+  transform: translateY(-2px);
+}
+
+/* Footer Hover Effects & Micro-Animations */
+.bugs-footer a {
+  display: inline-flex;
+  transition: color 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              text-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Category & Repair Nav Links */
+.bugs-footer ul li a {
+  position: relative;
+  transition: color 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              text-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bugs-footer ul li a:hover,
+.bugs-footer a.hover-steel:hover {
+  color: #56ace6 !important;
+  transform: translateX(5px);
+  text-shadow: 0 0 10px rgba(86, 172, 230, 0.4);
+}
+
+/* Icon Micro-Animations inside Footer Links */
+.bugs-footer a i,
+.bugs-footer a svg {
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* General hover-steel icon motion */
+.bugs-footer a.hover-steel:hover i,
+.bugs-footer a.hover-steel:hover svg {
+  color: #56ace6 !important;
+  transform: scale(1.15) translateY(-1px);
+}
+
+/* Instagram link hover */
+.bugs-footer a[href*="instagram"]:hover {
+  color: rgba(229, 169, 59, 0.95) !important;
+  transform: translateX(5px);
+  text-shadow: 0 0 12px rgba(229, 169, 59, 0.45);
+}
+
+.bugs-footer a[href*="instagram"]:hover i,
+.bugs-footer a[href*="instagram"]:hover svg {
+  color: rgba(229, 169, 59, 1) !important;
+  transform: scale(1.2) rotate(-8deg);
+}
+
+/* Phone hotline link hover */
+.bugs-footer a[href^="tel:"]:hover {
+  transform: translateX(5px);
+}
+
+.bugs-footer a[href^="tel:"]:hover .num {
+  color: #56ace6 !important;
+  text-shadow: 0 0 12px rgba(86, 172, 230, 0.5);
+}
+
+.bugs-footer a[href^="tel:"]:hover i,
+.bugs-footer a[href^="tel:"]:hover svg {
+  transform: scale(1.22) rotate(12deg);
+  color: #56ace6 !important;
+}
+
+/* Google Maps address link hover */
+.bugs-footer a[href*="maps"]:hover {
+  color: #ffffff !important;
+  transform: translateX(5px);
+}
+
+.bugs-footer a[href*="maps"]:hover i,
+.bugs-footer a[href*="maps"]:hover svg {
+  transform: scale(1.2) translateY(-2px);
+  color: #56ace6 !important;
+}
+
+/* Bottom Policy Links hover */
+.bugs-footer .hover-white {
+  position: relative;
+  transition: color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              text-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bugs-footer .hover-white:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Brand heading subtle interactive accent */
+.bugs-footer .font-display {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bugs-footer .font-display:hover .text-steel {
+  color: rgba(229, 169, 59, 1) !important;
+  text-shadow: 0 0 10px rgba(229, 169, 59, 0.7);
+  transition: all 0.25s ease;
 }
 
 /* ==========================================================================
