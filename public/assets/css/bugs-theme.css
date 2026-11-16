@@ -2072,3 +2072,179 @@ textarea:focus-visible {
   border-color: rgba(86, 172, 230, 0.45) !important;
   box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(86, 172, 230, 0.12);
 }
+
+/* ==========================================================================
+   Mobile Precision Refinements (<= 767.98px & <= 575.98px)
+   ========================================================================== */
+
+/* 1. Global Viewport & Overflow Hardening */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+@media (max-width: 767.98px) {
+  /* 2. Responsive Heading & Typography Scale */
+  .display-3 {
+    font-size: 2.15rem !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+  }
+  .display-4 {
+    font-size: 1.85rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
+  }
+  .display-5 {
+    font-size: 1.65rem !important;
+    line-height: 1.25 !important;
+  }
+  .display-6 {
+    font-size: 1.35rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* 3. Button Mobile Sizing */
+  .btn-bugs-primary,
+  .btn-bugs-outline {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    padding: 10px 18px !important;
+  }
+  .btn-bugs-pill {
+    padding: 9px 18px !important;
+    font-size: 13.5px !important;
+  }
+  .btn-bugs-pill-sm {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
+
+  /* 4. Hamburger & Header Refinements */
+  .bugs-hamburger-btn {
+    width: 38px !important;
+    height: 38px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+  }
+  .bugs-hamburger-btn svg,
+  .bugs-hamburger-btn [data-lucide="menu"] {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* 5. Mobile Product Cards - Prevent Content Overflow */
+  .product-card,
+  article .card {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+  .product-card .card-body,
+  article .card > div.p-3 {
+    padding: 10px 10px !important;
+  }
+  .product-card-title {
+    font-size: 13.5px !important;
+    line-height: 1.35 !important;
+    min-height: 2.7em !important;
+  }
+  .btn-product-cart,
+  .btn-product-whatsapp {
+    width: 30px !important;
+    height: 30px !important;
+    flex-shrink: 0 !important;
+  }
+  .btn-product-cart svg,
+  .btn-product-whatsapp svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .product-price-val {
+    font-size: 13.5px !important;
+  }
+  .product-compare-val {
+    font-size: 11px !important;
+  }
+
+  /* 6. Mobile Repair Cards (The wireless counter) */
+  .repair-bench-card {
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+  .repair-bench-card h3 {
+    font-size: 1.05rem !important;
+  }
+
+  /* 7. Footer Mobile Optimization */
+  .bugs-footer {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .bugs-footer .row.pb-5 {
+    padding-bottom: 1.5rem !important;
+  }
+  .bugs-footer .eyebrow {
+    margin-bottom: 0.5rem !important;
+  }
+  .bugs-footer ul.gap-2 {
+    gap: 0.35rem !important;
+  }
+  .bugs-footer p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .bugs-footer .border-top.mt-4.pt-4 {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+    gap: 0.75rem !important;
+  }
+
+  /* 8. Proof Signals Strip (30 min / 90 days / All carriers) */
+  .proof-signal-item dt {
+    font-size: 1.15rem !important;
+  }
+  .proof-signal-item dd {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Extra tight screens (320px - 575px) */
+  .display-3 {
+    font-size: 1.85rem !important;
+    line-height: 1.15 !important;
+  }
+  .display-4 {
+    font-size: 1.65rem !important;
+  }
+  .display-5 {
+    font-size: 1.45rem !important;
+  }
+  .display-6 {
+    font-size: 1.25rem !important;
+  }
+
+  /* Contain padding on mobile */
+  .container-fluid {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  /* Hero button group full-width on mobile */
+  .hero-btn-group {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+  .hero-btn-group .btn {
+    width: 100% !important;
+    justify-content: center;
+  }
+}
+

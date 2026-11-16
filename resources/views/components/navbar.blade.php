@@ -13,10 +13,10 @@
 
     <!-- Main Navigation Bar -->
     <div class="bugs-header-main bugs-navbar-scroll border-bottom" style="border-color: rgba(255, 255, 255, 0.06) !important;">
-        <div class="mx-auto d-flex align-items-center justify-content-between gap-3 px-4 px-lg-5 py-3" style="max-width: 1400px;">
+        <div class="mx-auto d-flex align-items-center justify-content-between gap-2 gap-sm-3 px-3 px-sm-4 px-lg-5 py-2.5 py-sm-3" style="max-width: 1400px;">
             <!-- Brand Logo & Identity -->
-            <a class="d-flex align-items-center gap-3 text-white text-decoration-none" href="{{ route('home') }}">
-                <span class="font-display fw-semibold text-white tracking-tight" style="font-size: 26px; line-height: 1;">BUGS<span class="text-steel">.</span></span>
+            <a class="d-flex align-items-center gap-2 gap-sm-3 text-white text-decoration-none" href="{{ route('home') }}">
+                <span class="font-display fw-semibold text-white tracking-tight" style="font-size: 24px; line-height: 1;">BUGS<span class="text-steel">.</span></span>
                 <span class="eyebrow d-none d-sm-block text-secondary" style="font-size: 0.72rem; line-height: 1.45; letter-spacing: 0.08em;">
                     Wireless &amp; Repair<br><span style="color: rgba(229, 169, 59, 0.85);">Smoke shop inside</span>
                 </span>
@@ -47,15 +47,15 @@
                 </a>
 
                 <!-- Shopping Bag Trigger Button -->
-                <button type="button" class="position-relative d-flex align-items-center gap-2 rounded-pill border border-white border-opacity-10 px-3 py-2 text-white bg-transparent transition-colors hover-steel" data-bs-toggle="offcanvas" data-bs-target="#bugsCartOffcanvas" aria-controls="bugsCartOffcanvas" aria-label="View shopping bag" title="Shopping Bag" style="font-size: 13px;">
+                <button type="button" class="position-relative d-inline-flex align-items-center justify-content-center gap-1.5 rounded-pill border border-white border-opacity-10 px-2.5 px-sm-3 py-1.5 text-white bg-transparent transition-colors hover-steel flex-shrink-0" data-bs-toggle="offcanvas" data-bs-target="#bugsCartOffcanvas" aria-controls="bugsCartOffcanvas" aria-label="View shopping bag" title="Shopping Bag" style="font-size: 13px; height: 38px;">
                     <i data-lucide="shopping-bag" style="width: 16px; height: 16px;"></i>
                     <span class="d-none d-sm-inline">Bag</span>
                     <span class="bugs-badge-count d-none" id="navCartCount">0</span>
                 </button>
 
                 <!-- Mobile Hamburger Toggle Button -->
-                <button class="d-grid d-lg-none rounded-circle border border-white border-opacity-10 text-white bg-transparent p-0 place-items-center hover-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#bugsMobileMenu" aria-controls="bugsMobileMenu" aria-label="Open mobile menu" style="width: 40px; height: 40px;">
-                    <i data-lucide="menu" style="width: 16px; height: 16px;"></i>
+                <button class="bugs-hamburger-btn d-inline-flex d-lg-none rounded-circle border border-white border-opacity-10 text-white bg-transparent p-0 align-items-center justify-content-center hover-white flex-shrink-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#bugsMobileMenu" aria-controls="bugsMobileMenu" aria-label="Open mobile menu" style="width: 38px; height: 38px;">
+                    <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
                 </button>
             </div>
         </div>

@@ -31,28 +31,28 @@
                     Cracked screen, tired battery, dead charging port — our technicians work the bench in front of you, with the price agreed before a single screw comes out. Phones, tablets and wireless service, plus the tobacco counter in the back.
                 </p>
 
-                <div class="d-flex flex-wrap align-items-center gap-3 mb-5">
-                    <a href="{{ route('repairs') }}" class="btn btn-bugs-primary px-4 py-3 rounded-pill fw-semibold text-dark d-inline-flex align-items-center gap-2">
-                        <i data-lucide="wrench" class="w-4 h-4"></i>
+                <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3 mb-4 mb-md-5 hero-btn-group">
+                    <a href="{{ route('repairs') }}" class="btn btn-bugs-primary px-3.5 px-sm-4 py-2.5 py-sm-3 rounded-pill fw-semibold text-dark d-inline-flex align-items-center justify-content-center gap-2">
+                        <!-- <i data-lucide="wrench" class="w-4 h-4"></i> -->
                         <span>Fix my phone</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 ms-1"></i>
+                        <!-- <i data-lucide="arrow-right" class="w-4 h-4 ms-1"></i> -->
                     </a>
-                    <a href="{{ route('shop.index', ['category' => 'phone-accessories']) }}" class="btn btn-bugs-outline px-4 py-3 rounded-pill text-white d-inline-flex align-items-center gap-2">
+                    <a href="{{ route('shop.index', ['category' => 'Phone Accessories']) }}" class="btn btn-bugs-outline px-3.5 px-sm-4 py-2.5 py-sm-3 rounded-pill text-white d-inline-flex align-items-center justify-content-center gap-2">
                         <span>Shop phones &amp; accessories</span>
                     </a>
                 </div>
 
                 <!-- Proof Signals Strip (Exact Reference Match) -->
-                <dl class="row g-4 pt-4 border-top border-white border-opacity-10 mb-0" style="max-width: 520px; border-color: rgba(255, 255, 255, 0.07) !important;">
-                    <div class="col-4">
+                <dl class="row g-2 g-sm-4 pt-3 pt-sm-4 border-top border-white border-opacity-10 mb-0 proof-signals-strip" style="max-width: 520px; border-color: rgba(255, 255, 255, 0.07) !important;">
+                    <div class="col-4 proof-signal-item">
                         <dt class="num text-white fs-5 fw-semibold mb-1">30 min</dt>
                         <dd class="text-secondary small mb-0" style="font-size: 11.5px; line-height: 1.35;">Most screen repairs</dd>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 proof-signal-item">
                         <dt class="num text-white fs-5 fw-semibold mb-1">90 days</dt>
                         <dd class="text-secondary small mb-0" style="font-size: 11.5px; line-height: 1.35;">Parts &amp; labour warranty</dd>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 proof-signal-item">
                         <dt class="num text-white fs-5 fw-semibold mb-1">All carriers</dt>
                         <dd class="text-secondary small mb-0" style="font-size: 11.5px; line-height: 1.35;">Activation &amp; data transfer</dd>
                     </div>
@@ -99,8 +99,8 @@
 <section id="repairs" class="position-relative overflow-hidden py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--background));">
     <div class="pointer-events-none position-absolute glow-steel" style="top: 40px; left: -100px; width: 420px; height: 420px; z-index: 1;"></div>
 
-    <div class="container-fluid px-4 px-lg-5 py-5 position-relative" style="max-width: 1400px; z-index: 2;">
-        <div class="row align-items-center g-5">
+    <div class="container-fluid px-3 px-sm-4 px-lg-5 py-3 py-md-5 position-relative" style="max-width: 1400px; z-index: 2;">
+        <div class="row align-items-center g-4 g-lg-5">
             <!-- Left: Bench Imagery -->
             <div class="col-lg-6 order-2 order-lg-1">
                 <div class="overflow-hidden rounded-4 border border-white border-opacity-10 shadow-lg position-relative" style="background-color: hsl(var(--surface-raised));">
@@ -208,12 +208,12 @@
                     </li>
                 </ul>
 
-                <div class="d-flex flex-wrap align-items-center gap-3">
-                    <a href="{{ route('repairs') }}" class="btn btn-bugs-primary px-4 py-3 rounded-pill fw-semibold text-dark d-inline-flex align-items-center gap-2">
+                <div class="d-flex flex-wrap align-items-center gap-2 gap-sm-3">
+                    <a href="{{ route('repairs') }}" class="btn btn-bugs-primary px-3.5 px-sm-4 py-2.5 py-sm-3 rounded-pill fw-semibold text-dark d-inline-flex align-items-center gap-2">
                         <span>See repair services</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
-                    <a href="tel:+13144412851" class="btn btn-bugs-outline px-4 py-3 rounded-pill text-white d-inline-flex align-items-center gap-2">
+                    <a href="tel:+13144412851" class="btn btn-bugs-outline px-3.5 px-sm-4 py-2.5 py-sm-3 rounded-pill text-white d-inline-flex align-items-center gap-2">
                         <i data-lucide="phone" class="w-4 h-4 text-steel"></i>
                         <span>Call the bench</span>
                     </a>
@@ -268,9 +268,9 @@ $counterRepairCards = [
 ];
 @endphp
 
-<section class="py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--surface));">
-    <div class="container-fluid px-4 px-lg-5 py-5" style="max-width: 1400px;">
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5">
+<section class="position-relative overflow-hidden py-4 py-md-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--surface));">
+    <div class="container-fluid px-3 px-sm-4 px-lg-5 py-3 py-md-5" style="max-width: 1400px;">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4 mb-md-5">
             <div>
                 <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">The wireless counter</p>
                 <h2 class="display-6 fw-semibold text-white tracking-tight mb-0">
@@ -279,17 +279,17 @@ $counterRepairCards = [
                 <p class="text-secondary small mt-2 mb-0">What everybody gets with a new screen — cases, tempered glass, audio, and fast chargers.</p>
             </div>
             <div>
-                <a href="{{ route('repairs') }}" class="btn btn-sm btn-bugs-outline rounded-pill px-4 py-2 text-white fw-semibold d-inline-flex align-items-center gap-2">
+                <a href="{{ route('repairs') }}" class="btn btn-sm btn-bugs-outline rounded-pill px-3.5 px-sm-4 py-2 text-white fw-semibold d-inline-flex align-items-center gap-2">
                     <span>View all repair services</span>
                     <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
                 </a>
             </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 g-md-4">
             @foreach($counterRepairCards as $card)
                 <div class="col">
-                    <article class="repair-bench-card p-4 rounded-4 border border-white border-opacity-10 h-100 d-flex flex-column transition-all duration-300" style="background-color: hsl(var(--card));">
+                    <article class="repair-bench-card p-3.5 p-sm-4 rounded-4 border border-white border-opacity-10 h-100 d-flex flex-column transition-all duration-300" style="background-color: hsl(var(--card));">
                         <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
                             <span class="rounded-circle d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px; border: 1px solid rgba(86, 172, 230, 0.35); background: rgba(86, 172, 230, 0.08); color: hsl(var(--steel));">
                                 <i data-lucide="{{ $card['icon'] }}" style="width: 20px; height: 20px;"></i>
@@ -333,10 +333,10 @@ $counterRepairCards = [
 <!-- ==========================================================================
      Section 4: Smoke Shop ("The smoke shop side of the counter.")
      ========================================================================== -->
-<section id="shelves" class="position-relative overflow-hidden py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--background));">
+<section id="shelves" class="position-relative overflow-hidden py-4 py-md-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--background));">
     <div class="pointer-events-none position-absolute glow-gold" style="top: 10%; right: -120px; width: 440px; height: 440px; z-index: 1;"></div>
-    <div class="container-fluid px-4 px-lg-5 py-5 position-relative" style="max-width: 1400px; z-index: 2;">
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5">
+    <div class="container-fluid px-3 px-sm-4 px-lg-5 py-3 py-md-5 position-relative" style="max-width: 1400px; z-index: 2;">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4 mb-md-5">
             <div>
                 <p class="eyebrow text-gold mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">Also in store · 21+ counter · Five aisles, one counter</p>
                 <h2 class="display-6 fw-semibold text-white tracking-tight mb-0">
@@ -426,9 +426,9 @@ $counterRepairCards = [
 <!-- ==========================================================================
      Section 5: Visit The Counter ("Repairs, activation and a look around.")
      ========================================================================== -->
-<section id="visit" class="py-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--surface-deep));">
-    <div class="container-fluid px-4 px-lg-5 py-5" style="max-width: 1400px;">
-        <div class="row align-items-center g-5">
+<section id="visit" class="position-relative overflow-hidden py-4 py-md-5 border-top border-white border-opacity-10" style="background-color: hsl(var(--surface-deep));">
+    <div class="container-fluid px-3 px-sm-4 px-lg-5 py-3 py-md-5" style="max-width: 1400px;">
+        <div class="row align-items-center g-4 g-lg-5">
             <!-- Left: Location Info & Details -->
             <div class="col-lg-6">
                 <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">Visit the counter</p>

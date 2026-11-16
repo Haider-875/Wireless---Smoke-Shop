@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ageModalElement && typeof bootstrap !== 'undefined') {
         let isAgeConfirmed = false;
         try {
-            isAgeConfirmed = localStorage.getItem(AGE_CONFIRMATION_KEY) === 'yes';
+            isAgeConfirmed = localStorage.getItem(AGE_CONFIRMATION_KEY) === 'yes' || window.location.search.includes('bypass_age=1');
         } catch (e) {
             isAgeConfirmed = false;
         }

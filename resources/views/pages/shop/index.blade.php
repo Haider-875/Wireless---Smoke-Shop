@@ -20,9 +20,9 @@
 @endif
 
 @section('content')
-<div class="container-fluid px-4 px-lg-5 py-5" style="max-width: 1400px;">
+<div class="container-fluid px-3 px-sm-4 px-lg-5 py-4 py-md-5" style="max-width: 1400px;">
     <!-- Page Header (Exact Reference Match) -->
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-4 mb-4 pb-2">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 gap-md-4 mb-4 pb-2">
         <div>
             @if($isPhoneCategory)
                 <p class="eyebrow text-steel mb-2" style="font-size: 0.75rem; letter-spacing: 0.15em;">The wireless counter</p>
@@ -52,7 +52,7 @@
         </div>
 
         <!-- Search Bar -->
-        <form action="{{ route('shop.index') }}" method="GET" class="position-relative" style="min-width: 280px; max-width: 380px;">
+        <form action="{{ route('shop.index') }}" method="GET" class="position-relative w-100" style="max-width: 380px;">
             @if(request('category'))
                 <input type="hidden" name="category" value="{{ $activeCategory ? $activeCategory->slug : request('category') }}">
             @endif
@@ -75,7 +75,7 @@
     </div>
 
     <!-- Category Filter Pills -->
-    <div class="d-flex flex-wrap gap-2 mb-5 pb-3 border-bottom border-white border-opacity-10">
+    <div class="d-flex flex-wrap gap-1.5 gap-sm-2 mb-4 mb-md-5 pb-3 border-bottom border-white border-opacity-10">
         <a href="{{ route('shop.index', request('search') ? ['search' => request('search')] : []) }}" 
            class="btn btn-sm rounded-pill px-3 py-1.5 {{ !$activeCategory ? 'btn-bugs-primary text-dark fw-semibold' : 'btn-bugs-outline text-secondary' }}" style="font-size: 0.8125rem;">
             All Products
@@ -93,7 +93,7 @@
 
     <!-- Products Grid -->
     @if($products->count() > 0)
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 g-md-4">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2.5 g-sm-3 g-md-4">
             @foreach($products as $product)
                 <div class="col">
                     <x-product-card :product="$product" />
