@@ -78,7 +78,13 @@
                 <a href="/policies#privacy" class="text-secondary text-decoration-none hover-white">Privacy</a>
             </nav>
             <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-2 gap-sm-3 text-secondary">
-                <p class="mb-0">&copy; {{ date('Y') }} Bugs Wireless &amp; Smoke Shop. All rights reserved.</p>
+                <div class="d-flex flex-wrap align-items-center gap-2">
+                    <p class="mb-0">&copy; {{ date('Y') }} Bugs Wireless &amp; Smoke Shop. All rights reserved.</p>
+                    <span class="d-none d-sm-inline opacity-50">·</span>
+                    <p class="mb-0">
+                        <a href="https://azorasolution.com" target="_blank" rel="noopener noreferrer" class="text-secondary text-decoration-none hover-steel">Designed By Azora Solution</a>
+                    </p>
+                </div>
                 <p class="mb-0 num text-uppercase" style="letter-spacing: 0.15em; font-size: 11px;">Tobacco &amp; vape products for adults 21+ · Nicotine is addictive</p>
             </div>
         </div>
