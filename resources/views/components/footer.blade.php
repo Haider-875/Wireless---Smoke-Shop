@@ -57,7 +57,7 @@
                     </a>
 
                     <a href="tel:+13144412851" class="d-flex align-items-center gap-2 text-secondary text-decoration-none hover-steel">
-                        <i data-lucide="phone" class="w-4 h-4 text-steel flex-shrink-0"></i>
+                        <i data-lucide="phone" class="w-4 h-2 text-steel flex-shrink-0"></i>
                         <span class="num text-white">314-441-2851</span>
                     </a>
 
