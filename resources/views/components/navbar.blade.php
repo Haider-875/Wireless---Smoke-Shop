@@ -73,72 +73,145 @@
 
 <!-- Full-Height Animated Mobile Navigation Drawer -->
 <div class="offcanvas offcanvas-start bugs-mobile-menu" tabindex="-1" id="bugsMobileMenu" aria-labelledby="bugsMobileMenuLabel">
-    <div class="offcanvas-header border-bottom py-3 px-4" style="border-color: var(--bugs-border) !important;">
+    <div class="offcanvas-header border-bottom py-3 px-3.5" style="border-color: rgba(255, 255, 255, 0.08) !important;">
         <div class="d-flex align-items-center gap-2">
-            <img src="{{ asset('assets/images/logo.png') }}" alt="BUGS" width="28" height="28" class="rounded-circle">
-            <span class="fs-4 fw-bold font-display text-white">BUGS<span class="text-steel">.</span></span>
+            <span class="fs-4 fw-bold font-display text-white tracking-tight" id="bugsMobileMenuLabel">BUGS<span class="text-steel">.</span></span>
+            <span class="badge rounded-pill fw-normal text-secondary border border-white border-opacity-10 px-2 py-0.5" style="font-size: 10px; letter-spacing: 0.04em;">Wireless &amp; Smoke</span>
         </div>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="font-size: 12px;"></button>
     </div>
-    <div class="offcanvas-body d-flex flex-column p-4">
-        <ul class="nav flex-column gap-2 mb-4" id="bugsMobileNavList">
+    <div class="offcanvas-body d-flex flex-column px-3 py-3">
+        <ul class="nav flex-column gap-1 mb-3" id="bugsMobileNavList">
             <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
-                    <i data-lucide="home" class="w-4 h-4 me-2"></i> Home
+                <a class="bugs-mobile-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
+                    <span class="d-flex align-items-center gap-2.5">
+                        <span class="nav-icon-box">
+                            <i data-lucide="home" style="width: 14px; height: 14px;"></i>
+                        </span>
+                        <span>Home</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="nav-arrow" style="width: 13px; height: 13px;"></i>
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request()->routeIs('repairs') ? 'active' : '' }}" href="{{ route('repairs') }}">
-                    <i data-lucide="wrench" class="w-4 h-4 me-2 text-steel"></i> Phone &amp; Tablet Repairs
+                <a class="bugs-mobile-link {{ request()->routeIs('repairs') ? 'active' : '' }}" href="{{ route('repairs') }}">
+                    <span class="d-flex align-items-center gap-2.5">
+                        <span class="nav-icon-box">
+                            <i data-lucide="wrench" style="width: 14px; height: 14px;"></i>
+                        </span>
+                        <span>Phone &amp; Tablet Repairs</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="nav-arrow" style="width: 13px; height: 13px;"></i>
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'Phone Accessories' || request('category') === 'phone-accessories' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'Phone Accessories']) }}">
-                    <i data-lucide="smartphone" class="w-4 h-4 me-2"></i> Phone Accessories
+                <a class="bugs-mobile-link {{ request('category') === 'Phone Accessories' || request('category') === 'phone-accessories' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'Phone Accessories']) }}">
+                    <span class="d-flex align-items-center gap-2.5">
+                        <span class="nav-icon-box">
+                            <i data-lucide="smartphone" style="width: 14px; height: 14px;"></i>
+                        </span>
+                        <span>Phone Accessories</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="nav-arrow" style="width: 13px; height: 13px;"></i>
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'vapes' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'vapes']) }}">
-                    <i data-lucide="wind" class="w-4 h-4 me-2"></i> Vapes &amp; Pods
+                <a class="bugs-mobile-link {{ request('category') === 'vapes' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'vapes']) }}">
+                    <span class="d-flex align-items-center gap-2.5">
+                        <span class="nav-icon-box">
+                            <i data-lucide="wind" style="width: 14px; height: 14px;"></i>
+                        </span>
+                        <span>Vapes &amp; Pods</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="nav-arrow" style="width: 13px; height: 13px;"></i>
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'e-liquids' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'e-liquids']) }}">
-                    <i data-lucide="droplet" class="w-4 h-4 me-2"></i> E-Liquids
+                <a class="bugs-mobile-link {{ request('category') === 'e-liquids' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'e-liquids']) }}">
+                    <span class="d-flex align-items-center gap-2.5">
+                        <span class="nav-icon-box">
+                            <i data-lucide="droplet" style="width: 14px; height: 14px;"></i>
+                        </span>
+                        <span>E-Liquids</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="nav-arrow" style="width: 13px; height: 13px;"></i>
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'glass-pipes' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'glass-pipes']) }}">
-                    <i data-lucide="flame" class="w-4 h-4 me-2"></i> Glass &amp; Pipes
+                <a class="bugs-mobile-link {{ request('category') === 'glass-pipes' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'glass-pipes']) }}">
+                    <span class="d-flex align-items-center gap-2.5">
+                        <span class="nav-icon-box">
+                            <i data-lucide="flame" style="width: 14px; height: 14px;"></i>
+                        </span>
+                        <span>Glass &amp; Pipes</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="nav-arrow" style="width: 13px; height: 13px;"></i>
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request('category') === 'hookah' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'hookah']) }}">
-                    <i data-lucide="sparkles" class="w-4 h-4 me-2"></i> Hookah &amp; Shisha
+                <a class="bugs-mobile-link {{ request('category') === 'hookah' ? 'active' : '' }}" href="{{ route('shop.index', ['category' => 'hookah']) }}">
+                    <span class="d-flex align-items-center gap-2.5">
+                        <span class="nav-icon-box">
+                            <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i>
+                        </span>
+                        <span>Hookah &amp; Shisha</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="nav-arrow" style="width: 13px; height: 13px;"></i>
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request()->routeIs('gallery') ? 'active' : '' }}" href="{{ route('gallery') }}">
-                    <i data-lucide="image" class="w-4 h-4 me-2 text-steel"></i> Store Gallery
+                <a class="bugs-mobile-link {{ request()->routeIs('gallery') ? 'active' : '' }}" href="{{ route('gallery') }}">
+                    <span class="d-flex align-items-center gap-2.5">
+                        <span class="nav-icon-box">
+                            <i data-lucide="image" style="width: 14px; height: 14px;"></i>
+                        </span>
+                        <span>Store Gallery</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="nav-arrow" style="width: 13px; height: 13px;"></i>
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2" href="{{ route('home') }}#visit">
-                    <i data-lucide="map-pin" class="w-4 h-4 me-2"></i> Visit Us (10010 Halls Ferry)
+                <a class="bugs-mobile-link" href="{{ route('home') }}#visit">
+                    <span class="d-flex align-items-center gap-2.5">
+                        <span class="nav-icon-box">
+                            <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+                        </span>
+                        <span>Visit Us (10010 Halls Ferry)</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="nav-arrow" style="width: 13px; height: 13px;"></i>
                 </a>
             </li>
             <li class="nav-item bugs-mobile-nav-item">
-                <a class="bugs-nav-link fs-6 w-100 py-2 {{ request()->routeIs('orders.lookup') ? 'active' : '' }}" href="{{ route('orders.lookup') }}">
-                    <i data-lucide="receipt" class="w-4 h-4 me-2"></i> Track Your Orders
+                <a class="bugs-mobile-link {{ request()->routeIs('orders.lookup') ? 'active' : '' }}" href="{{ route('orders.lookup') }}">
+                    <span class="d-flex align-items-center gap-2.5">
+                        <span class="nav-icon-box">
+                            <i data-lucide="receipt" style="width: 14px; height: 14px;"></i>
+                        </span>
+                        <span>Track Your Orders</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="nav-arrow" style="width: 13px; height: 13px;"></i>
                 </a>
             </li>
         </ul>
 
-        <div class="mt-auto border-top pt-4" style="border-color: var(--bugs-border) !important;">
-            <a href="tel:+13144412851" class="btn btn-bugs-primary w-100 py-3 mb-2 gap-2 text-dark fw-semibold d-flex align-items-center justify-content-center">
-                <i data-lucide="phone" class="w-4 h-4"></i> Call 314-441-2851
+        <div class="mt-auto border-top pt-3" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+            <a href="tel:+13144412851" class="btn btn-bugs-primary w-100 py-2.5 rounded-pill mb-2 gap-2 text-dark fw-semibold d-flex align-items-center justify-content-center" style="font-size: 13.5px;">
+                <i data-lucide="phone" style="width: 14px; height: 14px;"></i>
+                <span>Call 314-441-2851</span>
             </a>
-            <p class="caption-5 text-secondary text-center mb-0 mt-3" style="font-size: 0.75rem;">10010 Halls Ferry Rd, St. Louis, MO 63136 &bull; Open daily 10 &ndash; 8</p>
+            <p class="caption-5 text-secondary text-center mb-1" style="font-size: 0.72rem; line-height: 1.45;">
+                10010 Halls Ferry Rd, St. Louis &bull; Open daily 10 &ndash; 8
+            </p>
+
+            <!-- Brand watermark at the foot of menu with fade-out at bottom ("paon wali side se opacity kam ho") -->
+            <div class="bugs-mobile-menu-brand">
+                <div class="bugs-mobile-menu-brand-name">
+                    BUGS<span>.</span>
+                </div>
+                <div class="bugs-mobile-menu-brand-sub">
+                    Wireless &amp; Smoke Shop
+                </div>
+            </div>
         </div>
     </div>
 </div>
