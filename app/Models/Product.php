@@ -61,13 +61,16 @@ class Product extends Model
                 return asset('assets/images/phones/' . $this->image);
             }
             $base = pathinfo($this->image, PATHINFO_FILENAME);
-            if (file_exists(public_path('assets/images/products/' . $base . '.png'))) {
+            $pngPath = public_path('assets/images/products/' . $base . '.png');
+            if (file_exists($pngPath) && filesize($pngPath) > 0) {
                 return asset('assets/images/products/' . $base . '.png');
             }
-            if (file_exists(public_path('assets/images/products/' . $base . '.jpg'))) {
+            $jpgPath = public_path('assets/images/products/' . $base . '.jpg');
+            if (file_exists($jpgPath) && filesize($jpgPath) > 0) {
                 return asset('assets/images/products/' . $base . '.jpg');
             }
-            if (file_exists(public_path('assets/images/products/' . $this->image))) {
+            $origPath = public_path('assets/images/products/' . $this->image);
+            if (file_exists($origPath) && filesize($origPath) > 0) {
                 return asset('assets/images/products/' . $this->image);
             }
         }
