@@ -142,7 +142,7 @@
                             <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Screen &amp; glass replacement</span>
                             <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
                                 <span>iPhone, Galaxy, Pixel</span>
-                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $79</span>
+                                <!-- <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $79</span> -->
                             </div>
                         </div>
                     </li>
@@ -154,7 +154,7 @@
                             <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Battery replacement</span>
                             <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
                                 <span>Holds a charge again</span>
-                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $59</span>
+                                <!-- <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $59</span> -->
                             </div>
                         </div>
                     </li>
@@ -166,7 +166,7 @@
                             <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Charging port repair</span>
                             <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
                                 <span>Loose cable, no charge</span>
-                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $49</span>
+                                <!-- <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $49</span> -->
                             </div>
                         </div>
                     </li>
@@ -178,7 +178,7 @@
                             <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Liquid damage service</span>
                             <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
                                 <span>Cleaned and assessed</span>
-                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $39</span>
+                                <!-- <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $39</span> -->
                             </div>
                         </div>
                     </li>
@@ -190,7 +190,7 @@
                             <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Data transfer &amp; backup</span>
                             <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
                                 <span>Move to your new phone</span>
-                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $29</span>
+                                <!-- <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">from $29</span> -->
                             </div>
                         </div>
                     </li>
@@ -202,7 +202,7 @@
                             <span class="d-block text-white fw-semibold" style="font-size: 14px; line-height: 1.4;">Carrier activation</span>
                             <div class="d-flex flex-wrap align-items-baseline gap-2 mt-1" style="font-size: 12px; color: hsl(var(--muted-foreground));">
                                 <span>Prepaid &amp; postpaid</span>
-                                <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">no charge</span>
+                                <!-- <span class="num fw-semibold" style="font-size: 11px; color: rgba(86, 172, 230, 0.95);">no charge</span> -->
                             </div>
                         </div>
                     </li>
@@ -233,7 +233,6 @@ $counterRepairCards = [
         'title' => 'Screen & Glass Replacement',
         'icon' => 'smartphone',
         'badge' => '30 Min Turnaround',
-        'price' => 'from $79',
         'warranty' => '90-Day Warranty · OEM-Spec',
         'description' => 'Cracked glass, dead touch, or vertical lines. Factory-grade OLED & LCD panels fitted on the bench while you wait.',
         'whatsapp_msg' => 'Hello BUGS Wireless, I need a quote for Screen & Glass Replacement at 10010 Halls Ferry Rd.'
@@ -242,7 +241,6 @@ $counterRepairCards = [
         'title' => 'Battery Replacement',
         'icon' => 'battery-charging',
         'badge' => 'Same-Day Swap',
-        'price' => 'from $59',
         'warranty' => '90-Day Warranty · Fresh Cells',
         'description' => 'Rapid battery drain, swelling, or sudden shutdowns. Fresh high-capacity cells installed to restore 100% all-day health.',
         'whatsapp_msg' => 'Hello BUGS Wireless, I need a quote for Battery Replacement at 10010 Halls Ferry Rd.'
@@ -251,7 +249,6 @@ $counterRepairCards = [
         'title' => 'Charging Port Repair',
         'icon' => 'zap',
         'badge' => 'Quick Bench Fix',
-        'price' => 'from $49',
         'warranty' => '90-Day Warranty · Fast-Charge',
         'description' => 'Loose cord, intermittent connection, or zero charge. Thoroughly cleaned, micro-soldered, or flex port replaced.',
         'whatsapp_msg' => 'Hello BUGS Wireless, I need a quote for Charging Port Repair at 10010 Halls Ferry Rd.'
@@ -260,7 +257,6 @@ $counterRepairCards = [
         'title' => 'Liquid Damage & Diagnostics',
         'icon' => 'droplet',
         'badge' => 'Free Diagnostic',
-        'price' => 'from $39',
         'warranty' => '90-Day Warranty · No-Fix No-Fee',
         'description' => 'Water drop, pool immersion, or dead board. Ultrasonic chemical cleaning, board inspection, and honest quotes.',
         'whatsapp_msg' => 'Hello BUGS Wireless, I need a quote for Liquid Damage & Diagnostics at 10010 Halls Ferry Rd.'
@@ -281,7 +277,6 @@ $counterRepairCards = [
             <div>
                 <a href="{{ route('repairs') }}" class="btn btn-sm btn-bugs-outline rounded-pill px-3.5 px-sm-4 py-2 text-white fw-semibold d-inline-flex align-items-center gap-2">
                     <span>View all repair services</span>
-                    <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
                 </a>
             </div>
         </div>
@@ -301,7 +296,6 @@ $counterRepairCards = [
 
                         <h3 class="fs-5 fw-semibold text-white mb-1" style="line-height: 1.35;">{{ $card['title'] }}</h3>
                         <div class="d-flex align-items-baseline gap-2 mb-2">
-                            <span class="fs-5 fw-bold text-steel num">{{ $card['price'] }}</span>
                             <span class="badge bg-white bg-opacity-5 text-secondary border border-white border-opacity-10 fw-normal" style="font-size: 10.5px;">{{ $card['warranty'] }}</span>
                         </div>
 
@@ -310,7 +304,6 @@ $counterRepairCards = [
                         <div class="d-flex align-items-center gap-2 pt-3 border-top border-white border-opacity-10 mt-auto">
                             <a href="{{ route('repairs') }}" class="btn btn-sm btn-bugs-outline rounded-pill px-3 py-2 text-white fw-semibold flex-grow-1 text-center d-inline-flex align-items-center justify-content-center gap-1" style="font-size: 13px;">
                                 <span>Book repair</span>
-                                <i data-lucide="arrow-up-right" style="width: 14px; height: 14px;"></i>
                             </a>
                             <a href="https://wa.me/13144412851?text={{ urlencode($card['whatsapp_msg']) }}" 
                                target="_blank" 
