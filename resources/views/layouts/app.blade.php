@@ -75,7 +75,7 @@
     <!-- Bootstrap Icons (Local - Retained for system compatibility) -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.min.css') }}">
     <!-- BUGS Design Tokens & Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bugs-theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bugs-theme.css') }}?v={{ @filemtime(public_path('assets/css/bugs-theme.css')) ?: '2.0.1' }}">
 
     @stack('styles')
 </head>
@@ -126,7 +126,7 @@
         });
     </script>
     <!-- Custom Application Logic (Cart, Age Gate, Motion & Transitions) -->
-    <script src="{{ asset('assets/js/bugs-app.js') }}"></script>
+    <script src="{{ asset('assets/js/bugs-app.js') }}?v={{ @filemtime(public_path('assets/js/bugs-app.js')) ?: '2.0.1' }}"></script>
 
     @stack('scripts')
 </body>
