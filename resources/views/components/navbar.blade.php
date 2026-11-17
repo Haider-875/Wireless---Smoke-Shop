@@ -44,7 +44,7 @@
 
                 <!-- Primary Fix My Phone Action Button -->
                 <a href="{{ route('repairs') }}" class="d-none d-sm-flex align-items-center gap-2 rounded-pill px-4 py-2 text-decoration-none fw-semibold transition-transform" style="background-color: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-size: 13px;">
-                    <i data-lucide="wrench" style="width: 14px; height: 14px;"></i>
+                    <!-- <i data-lucide="wrench" style="width: 14px; height: 14px;"></i> -->
                     <span>Fix my phone</span>
                 </a>
 
